@@ -2,8 +2,8 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Hero Class", menuName = "Breezeblocks/New Hero Class", order = 1)]
-public class ClassesData : ScriptableObject
+[CreateAssetMenu(fileName = "New Actor Data", menuName = "Breezeblocks/New Actor Data", order = 1)]
+public class ActorData : ScriptableObject
 {
     [FoldoutGroup("Class Info", expanded:true)]
     [SerializeField]

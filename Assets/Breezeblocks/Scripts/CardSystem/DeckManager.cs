@@ -7,7 +7,7 @@ public class DeckManager : MonoBehaviour
 {
     [FoldoutGroup("Deck Configuration", expanded: true)]
     [SerializeField] 
-    private ClassesData _heroClass;
+    private ActorData _actorData;
 
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
@@ -30,7 +30,7 @@ public class DeckManager : MonoBehaviour
 
     private void InitializeDeck()
     {
-        _currentDeck = new List<CardData>(_heroClass.StartingCards);
+        _currentDeck = new List<CardData>(_actorData.StartingCards);
         Shuffle();
     }
 
@@ -43,12 +43,13 @@ public class DeckManager : MonoBehaviour
         }
     }
 
-    public CardData DrawCard()
+    private void DrawCard()
     {
         if (_currentDeck.Count == 0)
         {
             Debug.LogWarning("Deck is empty!");
-            return null;
+            Shuffle();
+            return;
         }
 
         CardData drawnCard = _currentDeck[0];
@@ -57,8 +58,14 @@ public class DeckManager : MonoBehaviour
         CardUI card = ObjectPooler.SpawnFromPool("Card", _canvasGroup.transform.position, Quaternion.identity).GetComponent<CardUI>();
         card.Initialize(drawnCard);
         card.transform.SetParent(_canvasGroup, false);
+    }
 
-        return drawnCard;
+    public void DrawCards(int Quantity)
+    {
+        for (int i = 0; i < Quantity; i++)
+        {
+            DrawCard();
+        }
     }
 
     public bool AddCard(CardData card)

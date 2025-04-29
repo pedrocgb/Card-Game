@@ -10,23 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 846fe29fb228318439d02bed391d5f77, type: 3}
-  m_Name: Warrior Data
+  m_Name: Skeleton
   m_EditorClassIdentifier: 
-  _className: Warrior
+  _className: Skeleton
   _baseActionsPerTurn: 3
-  _baseMaxHealth: 20
-  _initiativeBonus: 0
+  _baseMaxHealth: 8
+  _initiativeBonus: 1
   _baseMinDamage: 1
   _baseMaxDamage: 6
   _startingCards:
   - {fileID: 11400000, guid: 69f6e7ed0b27252469e7f790ce5640a0, type: 2}
   - {fileID: 11400000, guid: 69f6e7ed0b27252469e7f790ce5640a0, type: 2}
   - {fileID: 11400000, guid: 69f6e7ed0b27252469e7f790ce5640a0, type: 2}
-  - {fileID: 11400000, guid: 88c0f90e0d3fcf84190a9fb80a71a6bd, type: 2}
-  - {fileID: 11400000, guid: 88c0f90e0d3fcf84190a9fb80a71a6bd, type: 2}
-  - {fileID: 11400000, guid: 88c0f90e0d3fcf84190a9fb80a71a6bd, type: 2}
-  - {fileID: 11400000, guid: 12c1ca002830cd4498fccd5fc0852a2c, type: 2}
-  - {fileID: 11400000, guid: d900b1356339c414aaabf33f34e3e1dd, type: 2}
-  - {fileID: 11400000, guid: 1733f8981fb71254dbcf0015e88594e2, type: 2}
-  - {fileID: 11400000, guid: 230147e2485655d4ca2ea519edf04459, type: 2}
+  - {fileID: 11400000, guid: 69f6e7ed0b27252469e7f790ce5640a0, type: 2}
+  - {fileID: 11400000, guid: 69f6e7ed0b27252469e7f790ce5640a0, type: 2}
   _baseCardBuy: 2
