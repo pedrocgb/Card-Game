@@ -1,17 +1,31 @@
 using System.Collections.Generic;
+using Breezeblocks.Managers;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class DeckManager : MonoBehaviour
 {
-    [Header("Deck Configuration")]
+    [FoldoutGroup("Deck Configuration", expanded: true)]
     [SerializeField] 
     private ClassesData _heroClass;
 
+    [FoldoutGroup("Components", expanded: true)]
+    [SerializeField]
+    private RectTransform _canvasGroup = null;
+
     private List<CardData> _currentDeck = new List<CardData>();
 
-    private void Awake()
+    private void Start()
     {
         InitializeDeck();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            DrawCard();
+        }
     }
 
     private void InitializeDeck()
@@ -39,6 +53,11 @@ public class DeckManager : MonoBehaviour
 
         CardData drawnCard = _currentDeck[0];
         _currentDeck.RemoveAt(0);
+
+        CardUI card = ObjectPooler.SpawnFromPool("Card", _canvasGroup.transform.position, Quaternion.identity).GetComponent<CardUI>();
+        card.Initialize(drawnCard);
+        card.transform.SetParent(_canvasGroup, false);
+
         return drawnCard;
     }
 

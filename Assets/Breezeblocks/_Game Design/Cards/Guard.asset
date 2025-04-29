@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: Guard
   m_EditorClassIdentifier: 
   _cardName: Guard
-  _cardDescription: 
+  _cardDescription: Give 10 Guard.
+  _cardImage: {fileID: 21300000, guid: 11ac6f7fdb72b7343998e14d360562bc, type: 3}
   _cardCost: 1
   _cardType: 2
+  _positions: 
+  _posIcon: {fileID: 21300000, guid: 82ad41af0fecd294c8aa2ad5394e66aa, type: 3}
   _target: 1
   _targetType: 1
-  _positions: 
   _targetPositions: 
+  _targetIcon: {fileID: 21300000, guid: 4a2fe08ef900a304a954bfc81bc411de, type: 3}

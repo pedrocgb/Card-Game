@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: Double Swing
   m_EditorClassIdentifier: 
   _cardName: Double Swing
-  _cardDescription: 
+  _cardDescription: Deals double base damage.
+  _cardImage: {fileID: 21300000, guid: 80db627b73b93834eb837bf7ea279e6b, type: 3}
   _cardCost: 2
   _cardType: 1
+  _positions: 01000000
+  _posIcon: {fileID: 21300000, guid: 001ac87b5ae03b94b87880e9ee832b94, type: 3}
   _target: 3
   _targetType: 1
-  _positions: 01000000
   _targetPositions: 01000000
+  _targetIcon: {fileID: 21300000, guid: 70c5b1f1e2a0ccc4fae52aa9b14ce692, type: 3}

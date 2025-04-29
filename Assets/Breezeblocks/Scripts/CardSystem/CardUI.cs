@@ -16,6 +16,9 @@ public class CardUI : MonoBehaviour
     private TextMeshProUGUI _cardDescriptionText = null;
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
+    private TextMeshProUGUI _cardCostText = null;
+    [FoldoutGroup("Components", expanded: true)]
+    [SerializeField]
     private Image _positionIcon = null;
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
@@ -33,6 +36,7 @@ public class CardUI : MonoBehaviour
     {
         _cardNameText.text = _cardData.CardName;
         _cardDescriptionText.text = _cardData.CardDescription;
+        _cardCostText.text = _cardData.CardCost.ToString();
         _cardImage.sprite = _cardData.CardImage;
         _positionIcon.sprite = _cardData.PositionIcon;
         _targetIcon.sprite = _cardData.TargetIcon;

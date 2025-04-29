@@ -29,14 +29,12 @@ public class CardData : ScriptableObject
     public UEnums.CardTypes CardType => _cardType;
 
 
+   
     [FoldoutGroup("Positions", expanded: true)]
+    [HideIf("_target",UEnums.Target.Self)]
     [SerializeField]
-    private UEnums.Target _target = UEnums.Target.Self;
-    public UEnums.Target Target => _target;
-    [FoldoutGroup("Positions", expanded: true)]
-    [SerializeField]
-    private UEnums.TargetType _targetType = UEnums.TargetType.Single;
-    public UEnums.TargetType TargetType => _targetType;
+    private List<UEnums.Positions> _positions = new List<UEnums.Positions>();
+    public List<UEnums.Positions> Positions => _positions;
     [FoldoutGroup("Positions", expanded: true)]
     [SerializeField]
     private Sprite _posIcon = null;
@@ -44,10 +42,13 @@ public class CardData : ScriptableObject
 
 
     [FoldoutGroup("Targets", expanded: true)]
-    [HideIf("_target",UEnums.Target.Self)]
     [SerializeField]
-    private List<UEnums.Positions> _positions = new List<UEnums.Positions>();
-    public List<UEnums.Positions> Positions => _positions;
+    private UEnums.Target _target = UEnums.Target.Self;
+    public UEnums.Target Target => _target;
+    [FoldoutGroup("Targets", expanded: true)]
+    [SerializeField]
+    private UEnums.TargetType _targetType = UEnums.TargetType.Single;
+    public UEnums.TargetType TargetType => _targetType;
     [FoldoutGroup("Targets", expanded: true)]
     [HideIf("_target", UEnums.Target.Self)]
     [SerializeField]
