@@ -36,7 +36,7 @@ public class CombatManager : MonoBehaviour
             Debug.Log($"{c.name}: {c.CurrentInitiative}");
         }
 
-        Invoke(nameof(StartRound), 2f); // Simulate a delay before starting the round
+        Invoke(nameof(StartRound), 2f);
     }
 
     private void StartRound()
@@ -71,10 +71,6 @@ public class CombatManager : MonoBehaviour
         {
             _currentCombatent.Deck.DrawCards(_currentCombatent.CardBuy);
         }
-
-        // Here you would implement the logic for the actor to take their turn
-
-        Invoke(nameof(EndTurn), 10f); // Simulate a delay for the actor's turn
     }
 
     private void EndTurn()

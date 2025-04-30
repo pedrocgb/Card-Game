@@ -23,6 +23,10 @@ public class CardUI : MonoBehaviour
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
     private Image _targetIcon = null;
+    [FoldoutGroup("Components", expanded: true)]
+    [SerializeField]
+    private CardUIAnimations _cardAnimations = null;
+    public CardUIAnimations Animations => _cardAnimations;
 
     private CardData _cardData = null;
 

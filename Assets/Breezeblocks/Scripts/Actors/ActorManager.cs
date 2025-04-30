@@ -2,13 +2,12 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 
 [RequireComponent(typeof(DeckManager))]
-public class ActorManager : MonoBehaviour
+public abstract class ActorManager : MonoBehaviour
 {
     [FoldoutGroup("Settings", expanded: true)]
     [SerializeField]
     private ActorData _actorData = null;
-    [FoldoutGroup("Settings", expanded: true)]
-    [SerializeField]
+
     private DeckManager _deck = null;
     public DeckManager Deck => _deck;
 
@@ -34,6 +33,13 @@ public class ActorManager : MonoBehaviour
         set { _currentInitiative = value; }
     }
 
+    protected bool _isMyTurn = false;
+
+    private void Awake()
+    {
+        _deck = GetComponent<DeckManager>();
+    }
+
     private void Start()
     {
         Initialize();
@@ -54,6 +60,11 @@ public class ActorManager : MonoBehaviour
     }
 
     public void EndTurn()
+    {
+
+    }
+
+    public virtual void StartTurn()
     {
 
     }
