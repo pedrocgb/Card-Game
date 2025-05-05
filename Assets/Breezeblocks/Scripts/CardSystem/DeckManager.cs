@@ -1,56 +1,47 @@
-using System.Collections;
 using System.Collections.Generic;
-using Breezeblocks.Managers;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
+[RequireComponent(typeof(ActorManager))]
 public class DeckManager : MonoBehaviour
 {
-    [FoldoutGroup("Deck Configuration", expanded: true)]
-    [SerializeField] 
-    private ActorData _actorData;
-    [FoldoutGroup("Deck Configuration", expanded: true)]
-    [SerializeField]
-    private bool _isPlayerDeck = false;
-
-    [FoldoutGroup("Components", expanded: true)]
-    [SerializeField]
-    private Canvas _mainCanvas = null;
-    [FoldoutGroup("Components", expanded: true)]
-    [SerializeField]
-    private RectTransform _deckUi = null;
-    [FoldoutGroup("Components", expanded: true)]
-    [SerializeField]
-    private RectTransform _cardGroup = null;
-
-    [FoldoutGroup("Cards Animations", expanded: true)]
-    [SerializeField]
-    private float _startingAnchoredX = -800f;
-    [FoldoutGroup("Cards Animations", expanded: true)]
-    [SerializeField]
-    private float _anchoredOffSet = 260f;
-
+    #region Variablens and Properties
+    // Cards variables
     private List<CardData> _currentDeck = new List<CardData>();
+    public List<CardData> CurrentDeck => _currentDeck;
 
+    private List<CardData> _discardPile = new List<CardData>();
+    public List<CardData> DiscardPile => _discardPile;  
+
+    private List<CardData> _consumedPile = new List<CardData>();
+    public List<CardData> ConsumedPile => _consumedPile;
+
+    // Components
+    private ActorManager _actor = null;
+    #endregion
+
+    // ========================================================================
+
+    #region Initialization
     private void Start()
     {
-        InitializeDeck();
-    }
+        _actor = GetComponent<ActorManager>();
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            DrawCard();
-        }
+        InitializeDeck();
     }
 
     private void InitializeDeck()
     {
-        _currentDeck = new List<CardData>(_actorData.StartingCards);
+        _currentDeck = new List<CardData>(_actor.ActorData.StartingCards);
         Shuffle();
     }
+    #endregion
 
+    // ========================================================================
+
+    #region Deck management methods
+    /// <summary>
+    /// Shuffle the current deck.
+    /// </summary>
     public void Shuffle()
     {
         for (int i = 0; i < _currentDeck.Count; i++)
@@ -58,47 +49,13 @@ public class DeckManager : MonoBehaviour
             int randomIndex = Random.Range(i, _currentDeck.Count);
             (_currentDeck[i], _currentDeck[randomIndex]) = (_currentDeck[randomIndex], _currentDeck[i]);
         }
-    }
+    }    
 
-    private CardUI DrawCard()
-    {
-        if (_currentDeck.Count == 0)
-        {
-            Debug.LogWarning("Deck is empty!");
-            Shuffle();
-            return null;
-        }
-
-        CardData drawnCard = _currentDeck[0];
-        _currentDeck.RemoveAt(0);
-
-        CardUI card = ObjectPooler.SpawnFromPool("Card", _cardGroup.transform.position, Quaternion.identity).GetComponent<CardUI>();
-        card.Initialize(drawnCard);
-        card.transform.SetParent(_cardGroup, false);     
-
-        return card;
-    }
-
-    public void DrawCards(int Quantity)
-    {
-        StartCoroutine(EnumeratorDrawCards(Quantity));
-    }
-
-    private IEnumerator EnumeratorDrawCards(int quantity)
-    {
-        Vector3 pos = new Vector3(_cardGroup.anchoredPosition.x + _startingAnchoredX, 0f, 0f);
-        Vector3 deckPos = UAnchoredPositions.GetAnchoredPositionFromWorld(_deckUi, _cardGroup, _mainCanvas);
-
-        for (int i = 0; i < quantity; i++)
-        {
-            if (i > 0)
-                pos += new Vector3(_anchoredOffSet, 0f, 0f);
-
-            DrawCard().Animations.PlayDrawAnimation(deckPos, pos);
-            yield return new WaitForSeconds(0.5f);
-        }
-    }
-
+    /// <summary>
+    /// Add a new card to the Deck.
+    /// </summary>
+    /// <param name="card"></param>
+    /// <returns></returns>
     public bool AddCard(CardData card)
     {
         if (_currentDeck.Count >= 100)
@@ -111,8 +68,16 @@ public class DeckManager : MonoBehaviour
         return true;
     }
 
+    /// <summary>
+    /// Permanently removes a card from the Deck.
+    /// </summary>
+    /// <param name="card"></param>
+    /// <returns></returns>
     public bool RemoveCard(CardData card)
     {
         return _currentDeck.Remove(card);
     }
+    #endregion
+
+    // ========================================================================
 }

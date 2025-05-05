@@ -1,17 +1,11 @@
 using UnityEngine;
-using UnityEngine.UI;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 
 public class CardUIAnimations : MonoBehaviour
 {
-    [FoldoutGroup("Components", expanded: true)]
-    [SerializeField]
-    private GameObject _frontImage;
-    [FoldoutGroup("Components", expanded: true)]
-    [SerializeField]
-    private GameObject _backImage;
-
+    #region Variables and Properties
+    // Card animation settings
     [FoldoutGroup("Settings", expanded: true)]
     [SerializeField]
     private float _moveDuration = 0.6f;
@@ -19,6 +13,23 @@ public class CardUIAnimations : MonoBehaviour
     [SerializeField]
     private float _flipDuration = 0.3f;
 
+    // Components
+    [FoldoutGroup("Components", expanded: true)]
+    [SerializeField]
+    private GameObject _frontImage;
+    [FoldoutGroup("Components", expanded: true)]
+    [SerializeField]
+    private GameObject _backImage;
+    #endregion
+
+    // ========================================================================
+
+    #region Animation Methods
+    /// <summary>
+    /// Animate the card being drawn from the deck to the hand.
+    /// </summary>
+    /// <param name="deckPosition"></param>
+    /// <param name="handPosition"></param>
     public void PlayDrawAnimation(Vector3 deckPosition, Vector3 handPosition)
     {
         RectTransform rect = GetComponent<RectTransform>();
@@ -50,4 +61,8 @@ public class CardUIAnimations : MonoBehaviour
         drawSequence.Append(rect.DORotate(new Vector3(0, 0, 0), _flipDuration)
             .SetEase(Ease.InOutCubic));
     }
+    #endregion
+
+    // ========================================================================
+
 }

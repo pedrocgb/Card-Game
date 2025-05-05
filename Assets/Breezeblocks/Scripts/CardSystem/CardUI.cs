@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class CardUI : MonoBehaviour
 {
+    #region Variables and Properties
+    // Components
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
     private TextMeshProUGUI _cardNameText = null;
@@ -27,15 +29,32 @@ public class CardUI : MonoBehaviour
     [SerializeField]
     private CardUIAnimations _cardAnimations = null;
     public CardUIAnimations Animations => _cardAnimations;
+    private Button _btn = null;
 
+    // Card data
     private CardData _cardData = null;
+    public CardData CardData => _cardData;
+    #endregion
+
+    // ========================================================================
+
+    #region Initialization
+    private void Start()
+    {
+        _btn = GetComponent<Button>();
+        _btn.onClick.AddListener(OnCardClicked);
+    }
 
     public void Initialize(CardData cardData)
     {
         _cardData = cardData;
         UpdateCardUI();
     }
+    #endregion
 
+    // ========================================================================
+
+    #region UI Management Methods
     private void UpdateCardUI()
     {
         _cardNameText.text = _cardData.CardName;
@@ -45,4 +64,16 @@ public class CardUI : MonoBehaviour
         _positionIcon.sprite = _cardData.PositionIcon;
         _targetIcon.sprite = _cardData.TargetIcon;
     }
+    #endregion
+
+    // ========================================================================
+
+    #region Callbacks
+    private void OnCardClicked()
+    {
+        PlayerTurnManager.Instance.SelectCard(this);
+    }
+    #endregion
+
+    // ========================================================================
 }

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Demon
   m_EditorClassIdentifier: 
   _className: Demon
-  _baseActionsPerTurn: 1
-  _baseMaxHealth: 100
-  _initiativeBonus: 2
+  _baseActionsPerTurn: 3
+  _baseMaxHealth: 36
+  _initiativeBonus: 3
   _baseMinDamage: 1
   _baseMaxDamage: 12
   _startingCards:

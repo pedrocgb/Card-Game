@@ -15,7 +15,7 @@ MonoBehaviour:
   _className: Warrior
   _baseActionsPerTurn: 3
   _baseMaxHealth: 20
-  _initiativeBonus: 0
+  _initiativeBonus: 15
   _baseMinDamage: 1
   _baseMaxDamage: 4
   _startingCards:

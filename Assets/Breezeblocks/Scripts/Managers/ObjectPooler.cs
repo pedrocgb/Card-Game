@@ -21,7 +21,7 @@ namespace Breezeblocks.Managers
         private Dictionary<GameObject, Dictionary<System.Type, Component>> componentCache;
         #endregion
 
-        // ----------------------------------------------------------------------
+        // ========================================================================
 
         #region Static Methods
         public static GameObject SpawnFromPool(string Tag, Vector3 Position, Quaternion Rotation)
@@ -41,7 +41,7 @@ namespace Breezeblocks.Managers
         }
         #endregion
 
-        // ----------------------------------------------------------------------
+        // ========================================================================
 
         #region Unity Methods
         private void Awake()
@@ -72,7 +72,7 @@ namespace Breezeblocks.Managers
         }
         #endregion
 
-        // ----------------------------------------------------------------------
+        // ========================================================================
 
         #region Pool Methods
         private void CacheComponents(GameObject obj)
@@ -152,6 +152,6 @@ namespace Breezeblocks.Managers
         }
         #endregion
 
-        // ----------------------------------------------------------------------
+        // ========================================================================
     }
 }

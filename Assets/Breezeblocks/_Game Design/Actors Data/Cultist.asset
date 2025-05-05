@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 846fe29fb228318439d02bed391d5f77, type: 3}
+  m_Name: Cultist
+  m_EditorClassIdentifier: 
+  _className: Cultist
+  _baseActionsPerTurn: 2
+  _baseMaxHealth: 10
+  _initiativeBonus: -1
+  _baseMinDamage: 1
+  _baseMaxDamage: 10
+  _startingCards:
+  - {fileID: 11400000, guid: 69f6e7ed0b27252469e7f790ce5640a0, type: 2}
+  - {fileID: 11400000, guid: 69f6e7ed0b27252469e7f790ce5640a0, type: 2}
+  - {fileID: 11400000, guid: 69f6e7ed0b27252469e7f790ce5640a0, type: 2}
+  - {fileID: 11400000, guid: 69f6e7ed0b27252469e7f790ce5640a0, type: 2}
+  - {fileID: 11400000, guid: 69f6e7ed0b27252469e7f790ce5640a0, type: 2}
+  _baseCardBuy: 2

@@ -5,31 +5,37 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Card", menuName = "Breezeblocks/New Card", order = 1)]
 public class CardData : ScriptableObject
 {
+    // Card basic info
     [FoldoutGroup("Card Info", expanded: true)]
+    [FoldoutGroup("Card Info/Base", expanded: true)]
     [SerializeField]
     private string _cardName = string.Empty;
     public string CardName => _cardName;
-    [FoldoutGroup("Card Info", expanded: true)]
+    [FoldoutGroup("Card Info/Base", expanded: true)]
     [SerializeField]
     private string _cardDescription = string.Empty;
     public string CardDescription => _cardDescription;
-    [FoldoutGroup("Card Info", expanded: true)]
+    [FoldoutGroup("Card Info/Base", expanded: true)]
     [SerializeField]
     private Sprite _cardImage = null;
     public Sprite CardImage => _cardImage;
-    [FoldoutGroup("Card Info", expanded: true)]
+    [FoldoutGroup("Card Info/Base", expanded: true)]
     [SerializeField]
     private int _cardCost = 0;
     public int CardCost => _cardCost;
 
-    [Space(20)]
-    [FoldoutGroup("Card Info", expanded: true)]
+    // ========================================================================
+
+    // Card type
+    [FoldoutGroup("Card Info/Base", expanded: true)]
     [SerializeField]
     private UEnums.CardTypes _cardType = UEnums.CardTypes.Attack;
     public UEnums.CardTypes CardType => _cardType;
 
+    // ========================================================================
 
-   
+    // Usable Positions
+    [Space(20)]
     [FoldoutGroup("Positions", expanded: true)]
     [HideIf("_target",UEnums.Target.Self)]
     [SerializeField]
@@ -40,7 +46,9 @@ public class CardData : ScriptableObject
     private Sprite _posIcon = null;
     public Sprite PositionIcon => _posIcon;
 
+    // ========================================================================
 
+    // Targeting
     [FoldoutGroup("Targets", expanded: true)]
     [SerializeField]
     private UEnums.Target _target = UEnums.Target.Self;
@@ -59,4 +67,5 @@ public class CardData : ScriptableObject
     private Sprite _targetIcon = null;
     public Sprite TargetIcon => _targetIcon;
 
+    // ========================================================================
 }

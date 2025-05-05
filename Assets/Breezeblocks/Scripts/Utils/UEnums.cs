@@ -45,4 +45,12 @@ public class UEnums
         All = 2,
         Random = 3
     }
+
+    public enum CardRarity
+    {
+        Common = 1,
+        Uncommon = 2,
+        Rare = 3,
+        Unique = 4
+    }
 }
