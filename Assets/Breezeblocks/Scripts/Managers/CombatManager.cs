@@ -108,7 +108,7 @@ public class CombatManager : MonoBehaviour
         }
         else
         {
-            _currentCombatent.Hand.DrawCards(_currentCombatent.CardBuy);
+            _currentCombatent.Hand.DrawCards(_currentCombatent.Stats.CardBuy);
         }
     }
 

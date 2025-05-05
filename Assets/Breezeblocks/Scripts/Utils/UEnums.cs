@@ -53,4 +53,28 @@ public class UEnums
         Rare = 3,
         Unique = 4
     }
+
+    public enum CardEffects
+    {
+        Damage,
+        Heal,
+        Block,
+        Haste,
+        Slow,
+        Weakness,
+        Vulnerability,
+        Stun,
+        Regen
+    }
+
+    public enum  StatusEffects
+    {
+        Vulnerability,
+        Weakness,
+        Block,
+        Slow,
+        Stun,
+        Haste,
+        Regen
+    }
 }

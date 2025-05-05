@@ -16,6 +16,7 @@ MonoBehaviour:
   _cardDescription: Apply Vulnerability x2 this round.
   _cardImage: {fileID: 21300000, guid: f23ae5bd4cbeeca48b8e28e06120d667, type: 3}
   _cardCost: 1
+  _cardEffects: []
   _cardType: 4
   _positions: 010000000200000003000000
   _posIcon: {fileID: 21300000, guid: 1d8aa5110ebde2b4fb5b8d2efe0c61af, type: 3}

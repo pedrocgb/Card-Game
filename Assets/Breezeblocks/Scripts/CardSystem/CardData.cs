@@ -26,8 +26,16 @@ public class CardData : ScriptableObject
 
     // ========================================================================
 
+    // Card Effects
+    [FoldoutGroup("Card Info/Effects", expanded: true)]
+    [SerializeField]
+    private List<EffectBlock> _cardEffects = new List<EffectBlock>();
+    public List<EffectBlock> CardEffects => _cardEffects;
+
+    // ========================================================================
+
     // Card type
-    [FoldoutGroup("Card Info/Base", expanded: true)]
+    [FoldoutGroup("Card Info/Type", expanded: true)]
     [SerializeField]
     private UEnums.CardTypes _cardType = UEnums.CardTypes.Attack;
     public UEnums.CardTypes CardType => _cardType;
@@ -35,7 +43,6 @@ public class CardData : ScriptableObject
     // ========================================================================
 
     // Usable Positions
-    [Space(20)]
     [FoldoutGroup("Positions", expanded: true)]
     [HideIf("_target",UEnums.Target.Self)]
     [SerializeField]

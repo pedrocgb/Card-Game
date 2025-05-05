@@ -4,7 +4,11 @@ using UnityEngine;
 public class TargetingManager : MonoBehaviour
 {
     #region Variables and Properties
+    public static TargetingManager Instance;
+
     private CombatManager _combatManager = null;
+    private ActorManager _target = null;
+    public ActorManager CurrentTarget => _target;
     #endregion
 
     // ========================================================================
@@ -12,9 +16,18 @@ public class TargetingManager : MonoBehaviour
     #region Initialization
     private void Awake()
     {
+        Instance = this;
+
         _combatManager = FindAnyObjectByType<CombatManager>();
     }
     #endregion
+
+    // ========================================================================
+
+    public void SetTarget(ActorManager newTarget)
+    {
+        _target = newTarget;
+    }
 
     // ========================================================================
 

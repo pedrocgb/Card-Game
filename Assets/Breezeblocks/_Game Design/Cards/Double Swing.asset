@@ -16,6 +16,13 @@ MonoBehaviour:
   _cardDescription: Deals double base damage.
   _cardImage: {fileID: 21300000, guid: 80db627b73b93834eb837bf7ea279e6b, type: 3}
   _cardCost: 2
+  _cardEffects:
+  - EffectType: 0
+    Amount: 0
+    Duration: 0
+  - EffectType: 0
+    Amount: 0
+    Duration: 0
   _cardType: 1
   _positions: 01000000
   _posIcon: {fileID: 21300000, guid: 001ac87b5ae03b94b87880e9ee832b94, type: 3}

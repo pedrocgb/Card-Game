@@ -16,6 +16,10 @@ MonoBehaviour:
   _cardDescription: Base damage and apply Slow.
   _cardImage: {fileID: 21300000, guid: 6f7021799a155964a9ffe73e76086247, type: 3}
   _cardCost: 2
+  _cardEffects:
+  - EffectType: 0
+    Amount: 0
+    Duration: 0
   _cardType: 5
   _positions: 0100000002000000
   _posIcon: {fileID: 21300000, guid: bebec778a275e3949ba8827f6030776b, type: 3}
