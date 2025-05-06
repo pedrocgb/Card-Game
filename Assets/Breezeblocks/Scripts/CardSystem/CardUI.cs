@@ -39,7 +39,7 @@ public class CardUI : MonoBehaviour
     // ========================================================================
 
     #region Initialization
-    private void Start()
+    private void Awake()
     {
         _btn = GetComponent<Button>();
         _btn.onClick.AddListener(OnCardClicked);
@@ -59,7 +59,7 @@ public class CardUI : MonoBehaviour
     {
         _cardNameText.text = _cardData.CardName;
         _cardDescriptionText.text = _cardData.CardDescription;
-        _cardCostText.text = _cardData.CardCost.ToString();
+        _cardCostText.text = _cardData.ActionCost.ToString();
         _cardImage.sprite = _cardData.CardImage;
         _positionIcon.sprite = _cardData.PositionIcon;
         _targetIcon.sprite = _cardData.TargetIcon;
@@ -69,6 +69,14 @@ public class CardUI : MonoBehaviour
     // ========================================================================
 
     #region Callbacks
+    public void Validate(bool Playable)
+    {
+        if (Playable)
+            _btn.interactable = true;
+        else
+            _btn.interactable = false;
+    }
+
     private void OnCardClicked()
     {
         PlayerTurnManager.Instance.SelectCard(this);

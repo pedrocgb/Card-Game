@@ -39,7 +39,7 @@ public class UEnums
         Enemy = 3
     }
 
-    public enum TargetType
+    public enum TargetAmount
     {
         Single = 1,
         All = 2,

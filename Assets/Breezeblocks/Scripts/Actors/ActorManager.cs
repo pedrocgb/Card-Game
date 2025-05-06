@@ -9,10 +9,12 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     // Actor data
     [FoldoutGroup("Data", expanded: true)]
     [SerializeField]
-    private ActorData _actorData = null;
-    public ActorData ActorData => _actorData;
-    private ActorStats _myStats = null;
+    protected ActorData _actorData = null;
+    public ActorData Data => _actorData;
+    protected ActorStats _myStats = null;
     public ActorStats Stats => _myStats;
+    protected ActorUI _myUi = null;
+    public ActorUI UI => _myUi; 
 
     // Actor position
     [FoldoutGroup("Position", expanded: true)]
@@ -60,10 +62,9 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
         set { _currentInitiative = value; }
     }
 
+    // Targeter
     private bool _targetable = false;
     private UEnums.Target _currentAttacker = UEnums.Target.Self;
-
-    protected bool _isMyTurn = false;
     #endregion
 
     // ========================================================================
@@ -73,13 +74,14 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     {
         _deck = GetComponent<DeckManager>();
         _hand = GetComponent<HandManager>();
-        _myStats = GetComponent<ActorStats>();  
+        _myStats = GetComponent<ActorStats>();
+        _myUi = GetComponent<ActorUI>();
         _spriteRenderer = _actorModel.GetComponent<SpriteRenderer>();
 
         Initialize();
     }
 
-    private void Initialize()
+    protected virtual void Initialize()
     { 
         _initiativeBonus = _actorData.InitiativeBonus;
     }
@@ -127,6 +129,9 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
         _targetable = false;
         _hostilePositionEffect.SetActive(false);
         _allyPositionEffect.SetActive(false);
+
+        _hostileTargetEffect.SetActive(false);
+        _allyTargetEffect.SetActive(false);
     }
     #endregion
 

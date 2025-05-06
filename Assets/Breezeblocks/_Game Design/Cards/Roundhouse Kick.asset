@@ -15,7 +15,7 @@ MonoBehaviour:
   _cardName: Roundhouse Kick
   _cardDescription: 1d6 damage, if Vulnerable awards +1 action this turn.
   _cardImage: {fileID: 21300000, guid: b4ed3cd74dc7af84b91b60080aec5895, type: 3}
-  _cardCost: 1
+  _actionCost: 1
   _cardEffects:
   - EffectType: 0
     Amount: 0

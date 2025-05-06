@@ -31,7 +31,7 @@ public class DeckManager : MonoBehaviour
 
     private void InitializeDeck()
     {
-        _currentDeck = new List<CardData>(_actor.ActorData.StartingCards);
+        _currentDeck = new List<CardData>(_actor.Data.StartingCards);
         Shuffle();
     }
     #endregion

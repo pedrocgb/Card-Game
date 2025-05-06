@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _className: Skeleton Archer
   _baseActionsPerTurn: 1
-  _baseMaxHealth: 14
+  _baseMaxHealth: 12
   _initiativeBonus: 0
   _baseMinDamage: 1
   _baseMaxDamage: 6

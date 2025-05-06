@@ -10,12 +10,17 @@ public class ActorUI : MonoBehaviour
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
     private Canvas _worldCanvas = null;
-    [FoldoutGroup("Components", expanded: true)]
+
+    [FoldoutGroup("Components/Health", expanded: true)]
     [SerializeField]
     private Image _healthBar = null;
-    [FoldoutGroup("Components", expanded: true)]
+    [FoldoutGroup("Components/Health", expanded: true)]
     [SerializeField]
     private TextMeshProUGUI _healthText = null;
+
+    [FoldoutGroup("Components/Actions", expanded: true)]
+    [SerializeField]
+    private TextMeshProUGUI _actionsText = null;
     #endregion
 
     // ========================================================================
@@ -30,10 +35,15 @@ public class ActorUI : MonoBehaviour
     // ========================================================================
 
     #region UI Methods
-    public void UpdateUI(float healthPercentage, int currentHealth, int maxHealth)
+    public void UpdateHealthUI(float healthPercentage, int currentHealth, int maxHealth)
     {
         _healthBar.fillAmount = healthPercentage;
         _healthText.text = $"{currentHealth}/{maxHealth}";
+    }
+
+    public void UpdateActionsUI(int currentActions, int maxActions)
+    {
+        _actionsText.text = $"{currentActions}/{maxActions}";
     }
     #endregion
 

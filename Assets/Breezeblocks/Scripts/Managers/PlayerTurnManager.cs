@@ -62,6 +62,13 @@ public class PlayerTurnManager : MonoBehaviour
     public void UseCard()
     {
         CardEffectResolver.ApplyEffects(_cardData.CardEffects, _actor, TargetingManager.Instance.CurrentTarget, _cardData);
+
+        _actor.Hand.DiscardCard(_cardUI);
+        _targetingManager.ClearHightLights();
+        _targetingManager.SetTarget(null);
+        _actor.Stats.SpendAction(_cardData.ActionCost);
+
+        _actor.Hand.ValidadeHand(_actor.Stats.CurrentActions, _actor.CurrentPosition);
     }
     #endregion
 

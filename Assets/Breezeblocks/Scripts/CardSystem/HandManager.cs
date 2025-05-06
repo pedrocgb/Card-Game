@@ -8,8 +8,10 @@ using UnityEngine;
 public class HandManager : MonoBehaviour
 {
     #region Variables and Properties
+    private ActorManager _actor = null;
     private DeckManager _deckManager = null;
     private List<CardData> _currentHand = new List<CardData>();
+    private List<CardUI> _currentHandUI = new List<CardUI>();
 
     // Card animations settings
     [FoldoutGroup("Cards Animations", expanded: true)]
@@ -37,12 +39,13 @@ public class HandManager : MonoBehaviour
     private void Start()
     {
         _deckManager = GetComponent<DeckManager>();
+        _actor = GetComponent<ActorManager>();
     }
     #endregion
 
     // ========================================================================
 
-    #region Draw Cards Methods
+    #region Draw and Descart Cards Methods
     /// <summary>
     /// Draw a number of cards from the deck, add it to current hand and animate them.
     /// </summary>
@@ -71,6 +74,9 @@ public class HandManager : MonoBehaviour
         card.transform.SetParent(_cardGroup, false);
 
         _currentHand.Add(drawnCard);
+        _currentHandUI.Add(card);
+
+        ValidadeCard(_actor.Stats.CurrentActions, _actor.CurrentPosition, card);
 
         return card;
     }
@@ -90,6 +96,74 @@ public class HandManager : MonoBehaviour
             DrawCard().Animations.PlayDrawAnimation(deckPos, pos);
             yield return new WaitForSeconds(0.5f);
         }
+    }
+
+    public void DiscardCard(CardUI Card)
+    {
+        _currentHand.Remove(Card.CardData);
+        _currentHandUI.Remove(Card);
+
+        Card.gameObject.SetActive(false);
+    }
+    #endregion
+
+    // ========================================================================
+
+    #region Card Validation Methods    
+
+    public void ValidadeHand(int CurrentActions, UEnums.Positions CurrentPosition)
+    {
+        // Loop through the current hand and check if the cards are valid.
+        for (int i = 0; i < _currentHand.Count; i++)
+        {
+            CardUI cardUI = _currentHandUI[i];
+            CardData cardData = _currentHand[i];
+
+            bool hasEnoughActions = CurrentActions >= cardData.ActionCost;
+
+            bool canUseFromThisPosition = false;
+            switch (cardData.Target)
+            {
+                default:
+                case UEnums.Target.Self:
+                    canUseFromThisPosition = true;
+                    break;
+                case UEnums.Target.Ally:
+                    canUseFromThisPosition = cardData.Positions.Contains(CurrentPosition);
+                    break;
+                case UEnums.Target.Enemy:
+                    canUseFromThisPosition = cardData.Positions.Contains(CurrentPosition);
+                    break;
+            }
+
+            bool isPlayable = hasEnoughActions && canUseFromThisPosition;
+
+            cardUI.Validate(isPlayable);
+        }
+    }
+
+    public void ValidadeCard(int CurrentActions, UEnums.Positions CurrentPosition, CardUI Card)
+    {
+
+        bool hasEnoughActions = CurrentActions >= Card.CardData.ActionCost;
+        bool canUseFromThisPosition = false;
+        switch (Card.CardData.Target)
+        {
+            default:
+            case UEnums.Target.Self:
+                canUseFromThisPosition = true;
+                break;
+            case UEnums.Target.Ally:
+                canUseFromThisPosition = Card.CardData.Positions.Contains(CurrentPosition);
+                break;
+            case UEnums.Target.Enemy:
+                canUseFromThisPosition = Card.CardData.Positions.Contains(CurrentPosition);
+                break;
+        }
+
+        bool isPlayable = hasEnoughActions && canUseFromThisPosition;
+
+        Card.Validate(isPlayable);
     }
     #endregion
 

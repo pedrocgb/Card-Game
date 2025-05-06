@@ -15,15 +15,15 @@ MonoBehaviour:
   _cardName: Swing Weapon
   _cardDescription: Deals base damage.
   _cardImage: {fileID: 21300000, guid: c737438bdd36cae47b6706855d901384, type: 3}
-  _cardCost: 1
+  _actionCost: 1
   _cardEffects:
   - EffectType: 0
     Amount: 0
     Duration: 0
   _cardType: 1
-  _positions: 0100000002000000
-  _posIcon: {fileID: 21300000, guid: bebec778a275e3949ba8827f6030776b, type: 3}
+  _positions: 01000000
+  _posIcon: {fileID: 21300000, guid: 001ac87b5ae03b94b87880e9ee832b94, type: 3}
   _target: 3
   _targetType: 1
-  _targetPositions: 01000000
-  _targetIcon: {fileID: 21300000, guid: 70c5b1f1e2a0ccc4fae52aa9b14ce692, type: 3}
+  _targetPositions: 0100000002000000
+  _targetIcon: {fileID: 21300000, guid: e0d909f0d28d2fc40924e74866a9b2e4, type: 3}

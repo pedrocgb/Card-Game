@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(ActorManager))]
@@ -7,7 +6,6 @@ using UnityEngine;
 public class ActorStats : MonoBehaviour
 {
     private ActorManager _actor = null;
-    private ActorUI _ui = null;
 
     // Health stats
     private int _maxHealth = 0;
@@ -20,7 +18,8 @@ public class ActorStats : MonoBehaviour
     // Actions stats
     private int _actionsPerTurn = 0;
     private int _currentActions = 0;
-    
+    public int CurrentActions => _currentActions;
+
     // Card buy stats
     private int _cardBuy = 0;
     public int CardBuy => _cardBuy;
@@ -39,21 +38,42 @@ public class ActorStats : MonoBehaviour
     private void Start()
     {
         _actor = GetComponent<ActorManager>();
-        _ui = GetComponent<ActorUI>();
 
         Initialize();
     }
 
 
-    private void Initialize()
+    protected virtual void Initialize()
     {
-        _maxHealth = _actor.ActorData.MaxHealth;
+        _maxHealth = _actor.Data.MaxHealth;
         _currentHealth = _maxHealth;
-        _actionsPerTurn = _actor.ActorData.ActionsPerTurn;
-        _minDamage = _actor.ActorData.MinDamage;
-        _maxDamage = _actor.ActorData.MaxDamage;
+        _actionsPerTurn = _actor.Data.ActionsPerTurn;
+        _currentActions = _actionsPerTurn;
+        _minDamage = _actor.Data.MinDamage;
+        _maxDamage = _actor.Data.MaxDamage;
 
-        _ui.UpdateUI(HealthPercentage, _currentHealth, _maxHealth);
+        UpdateAllUI();
+    }
+
+    public void OnNewTurn()
+    {
+        _currentActions = _actionsPerTurn;
+    }
+
+    public void OnRoundEnd()
+    {
+        UpdateStatusEffects();
+    }
+    #endregion
+
+    // ========================================================================
+
+    #region Actions
+    public void SpendAction(int Amount)
+    {
+        _currentActions -= Amount;
+
+        _actor.UI.UpdateActionsUI(_currentActions, _actionsPerTurn);
     }
     #endregion
 
@@ -117,8 +137,7 @@ public class ActorStats : MonoBehaviour
         _currentBlock = Mathf.Max(0, _currentBlock - damage);
         _currentHealth -= damageAfterBlock;
 
-        _ui.UpdateUI(HealthPercentage, _currentHealth, _maxHealth);
-        Debug.Log("Percentage: " + HealthPercentage);
+        _actor.UI.UpdateHealthUI(HealthPercentage, _currentHealth, _maxHealth);
 
         if (_currentHealth <= 0)
         {
@@ -148,6 +167,14 @@ public class ActorStats : MonoBehaviour
     public void GainBlock(int blockAmount, int duration)
     {
         AddStatusEffect(UEnums.StatusEffects.Block, blockAmount, duration);
+    }
+
+    // ========================================================================
+
+    public void UpdateAllUI()
+    {
+        _actor.UI.UpdateHealthUI(HealthPercentage, _currentHealth, _maxHealth);
+        _actor.UI.UpdateActionsUI(_currentActions, _actionsPerTurn);
     }
 
     // ========================================================================

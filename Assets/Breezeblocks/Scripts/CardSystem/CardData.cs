@@ -21,8 +21,8 @@ public class CardData : ScriptableObject
     public Sprite CardImage => _cardImage;
     [FoldoutGroup("Card Info/Base", expanded: true)]
     [SerializeField]
-    private int _cardCost = 0;
-    public int CardCost => _cardCost;
+    private int _actionCost = 0;
+    public int ActionCost => _actionCost;
 
     // ========================================================================
 
@@ -62,8 +62,8 @@ public class CardData : ScriptableObject
     public UEnums.Target Target => _target;
     [FoldoutGroup("Targets", expanded: true)]
     [SerializeField]
-    private UEnums.TargetType _targetType = UEnums.TargetType.Single;
-    public UEnums.TargetType TargetType => _targetType;
+    private UEnums.TargetAmount _targetType = UEnums.TargetAmount.Single;
+    public UEnums.TargetAmount TargetType => _targetType;
     [FoldoutGroup("Targets", expanded: true)]
     [HideIf("_target", UEnums.Target.Self)]
     [SerializeField]

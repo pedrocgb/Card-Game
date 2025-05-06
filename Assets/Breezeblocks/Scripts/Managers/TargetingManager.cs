@@ -103,7 +103,7 @@ public class TargetingManager : MonoBehaviour
     /// <summary>
     /// Remove all highlights from all sources.
     /// </summary>
-    private void ClearHightLights()
+    public void ClearHightLights()
     {
         foreach (var e in _combatManager.EnemyActors)
         {
