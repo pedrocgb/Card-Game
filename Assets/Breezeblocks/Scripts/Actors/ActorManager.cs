@@ -180,7 +180,6 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     {
         if (!_targetable) return;
 
-        Debug.Log("Clicked on " + gameObject.name);
         TargetingManager.Instance.SetTarget(this);
         PlayerTurnManager.Instance.UseCard();
     }

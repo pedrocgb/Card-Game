@@ -63,6 +63,7 @@ public class PlayerTurnManager : MonoBehaviour
     {
         CardEffectResolver.ApplyEffects(_cardData.CardEffects, _actor, TargetingManager.Instance.CurrentTarget, _cardData);
 
+        UConsole.Log($"{_actor.name} used {_cardData.CardName} on {TargetingManager.Instance.CurrentTarget.name}");
         _actor.Hand.DiscardCard(_cardUI);
         _targetingManager.ClearHightLights();
         _targetingManager.SetTarget(null);

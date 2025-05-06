@@ -1,11 +1,14 @@
 using System.Collections.Generic;
+using Breezeblocks.Managers;
 using UnityEngine;
 
 [RequireComponent(typeof(ActorManager))]
 [RequireComponent(typeof(ActorUI))]
 public class ActorStats : MonoBehaviour
 {
+    #region Variables and Properties
     private ActorManager _actor = null;
+    private bool _isPlayerActor = false;
 
     // Health stats
     private int _maxHealth = 0;
@@ -31,6 +34,7 @@ public class ActorStats : MonoBehaviour
 
     // Status
     private List<StatusEffectInstance> _activeEffects = new List<StatusEffectInstance>();
+    #endregion
 
     // ========================================================================
 
@@ -38,6 +42,7 @@ public class ActorStats : MonoBehaviour
     private void Start()
     {
         _actor = GetComponent<ActorManager>();
+        _isPlayerActor = _actor is PlayerActor;
 
         Initialize();
     }
@@ -60,7 +65,7 @@ public class ActorStats : MonoBehaviour
         _currentActions = _actionsPerTurn;
     }
 
-    public void OnRoundEnd()
+    public void OnTurnEnd()
     {
         UpdateStatusEffects();
     }
@@ -73,7 +78,8 @@ public class ActorStats : MonoBehaviour
     {
         _currentActions -= Amount;
 
-        _actor.UI.UpdateActionsUI(_currentActions, _actionsPerTurn);
+        if (_isPlayerActor)
+            _actor.UI.UpdateActionsUI(_currentActions, _actionsPerTurn);    
     }
     #endregion
 
@@ -131,13 +137,30 @@ public class ActorStats : MonoBehaviour
     #region Damage Effects
     public void TakeDamage(int damage)
     {
-        int damageAfterBlock = damage - _currentBlock;
-        damageAfterBlock = Mathf.Max(0, damageAfterBlock);
+        // Calculate damage taken with block
+        // Remove from block than remove from health
+        int initialBlock = _currentBlock;
+        int blockedAmount = Mathf.Min(damage, _currentBlock);
+        int damageAfterBlock = Mathf.Max(0, damage - _currentBlock);
 
         _currentBlock = Mathf.Max(0, _currentBlock - damage);
         _currentHealth -= damageAfterBlock;
 
+        // Log
+        string log = $"{_actor.Data.ClassName} takes {damage} damage: " +
+            $"{blockedAmount} blocked, {damageAfterBlock} dealt. " +
+            $"Block remaining: {_currentBlock}, Health: {_currentHealth}";
+        UConsole.Log(log);  
+
+        // Update Actor healthbar
         _actor.UI.UpdateHealthUI(HealthPercentage, _currentHealth, _maxHealth);
+
+        // Play taking damage animation
+        FloatingDamage f = ObjectPooler.SpawnFromPool("Floating Damage Text", transform.position, Quaternion.identity).GetComponent<FloatingDamage>();
+        f.transform.SetParent(_actor.UI.WorldCanvas.transform);
+        f.UpdateText(damageAfterBlock.ToString(), 0.6f);
+
+
 
         if (_currentHealth <= 0)
         {
@@ -174,7 +197,8 @@ public class ActorStats : MonoBehaviour
     public void UpdateAllUI()
     {
         _actor.UI.UpdateHealthUI(HealthPercentage, _currentHealth, _maxHealth);
-        _actor.UI.UpdateActionsUI(_currentActions, _actionsPerTurn);
+        if (_isPlayerActor)
+            _actor.UI.UpdateActionsUI(_currentActions, _actionsPerTurn);
     }
 
     // ========================================================================

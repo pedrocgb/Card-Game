@@ -10,6 +10,7 @@ public class ActorUI : MonoBehaviour
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
     private Canvas _worldCanvas = null;
+    public Canvas WorldCanvas => _worldCanvas;
 
     [FoldoutGroup("Components/Health", expanded: true)]
     [SerializeField]
