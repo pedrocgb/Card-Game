@@ -77,4 +77,12 @@ public class UEnums
         Haste,
         Regen
     }
+
+    public enum StatusStackingMode
+    {
+        None = 0,
+        RefreshDurationOnly = 1,
+        StackAmountOnly = 2,
+        StackBoth = 4
+    }
 }

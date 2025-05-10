@@ -1,6 +1,9 @@
 using System.Collections.Generic;
+using System.Linq;
 using Breezeblocks.Managers;
+using Sirenix.OdinInspector;
 using UnityEngine;
+using static UEnums;
 
 [RequireComponent(typeof(ActorManager))]
 [RequireComponent(typeof(ActorUI))]
@@ -34,6 +37,7 @@ public class ActorStats : MonoBehaviour
 
     // Status
     private List<StatusEffectInstance> _activeEffects = new List<StatusEffectInstance>();
+
     #endregion
 
     // ========================================================================
@@ -63,11 +67,10 @@ public class ActorStats : MonoBehaviour
     public void OnNewTurn()
     {
         _currentActions = _actionsPerTurn;
-    }
 
-    public void OnTurnEnd()
-    {
-        UpdateStatusEffects();
+        ResolveAllEffects();
+        UpdateStatusDuration();
+        _actor.UI.UpdateStatusUI(_activeEffects);
     }
     #endregion
 
@@ -92,16 +95,45 @@ public class ActorStats : MonoBehaviour
     /// <param name="statusEffect"></param>
     /// <param name="amount"></param>
     /// <param name="duration"></param>
-    public void AddStatusEffect(UEnums.StatusEffects statusEffect, int amount, int duration)
+    public void AddStatusEffect(StatusEffects statusEffect, int amount, int duration)
     {
-        StatusEffectInstance newEffect = new StatusEffectInstance(statusEffect, amount, duration);
-        _activeEffects.Add(newEffect);
+        var stackingMode = UIconsDatabase.GetStackingMode(statusEffect);
+
+        List<StatusEffectInstance> existingEffects = _activeEffects.Where(e => e.StatusEffect == statusEffect).ToList();
+
+        if (existingEffects.Count == 0 ||
+            stackingMode == StatusStackingMode.None)
+        {
+            _activeEffects.Add(new StatusEffectInstance(statusEffect, amount, duration, stackingMode));
+        }
+
+        foreach (var e in existingEffects)
+        {
+            switch (stackingMode)
+            {
+                default:
+                case StatusStackingMode.None:
+                    // No stacking, do nothing
+                    break;
+                case StatusStackingMode.RefreshDurationOnly:
+                    e.DurationRemaining += duration;
+                    break;
+                case StatusStackingMode.StackAmountOnly:
+                    e.DurationRemaining = Mathf.Max(e.DurationRemaining, 1);
+                    e.Amount += amount; 
+                    break;
+                case StatusStackingMode.StackBoth:
+                    e.Amount += amount;
+                    e.DurationRemaining += duration;
+                    break;
+            }
+        }
     }
 
     /// <summary>
     /// Update the status effects each round.
     /// </summary>
-    private void UpdateStatusEffects()
+    private void UpdateStatusDuration()
     {
         for (int i = _activeEffects.Count - 1; i >= 0; i--)
         {
@@ -111,6 +143,11 @@ public class ActorStats : MonoBehaviour
                 _activeEffects.RemoveAt(i);
             }
         }
+    }
+
+    private void ResolveAllEffects()
+    {
+        // Resolve all effects
     }
 
     /// <summary>

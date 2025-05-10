@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(ActorManager))]
 public class DeckManager : MonoBehaviour
 {
     #region Variablens and Properties
