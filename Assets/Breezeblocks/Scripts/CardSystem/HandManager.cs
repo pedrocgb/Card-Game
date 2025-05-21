@@ -76,7 +76,7 @@ public class HandManager : MonoBehaviour
         _currentHand.Add(drawnCard);
         _currentHandUI.Add(card);
 
-        ValidadeCard(_actor.Stats.CurrentActions, _actor.CurrentPosition, card);
+        ValidadeCard(_actor.Stats.CurrentActions, _actor.Positioning.CurrentPosition, card);
 
         return card;
     }

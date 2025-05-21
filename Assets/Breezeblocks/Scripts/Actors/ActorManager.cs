@@ -14,17 +14,9 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     protected ActorStats _myStats = null;
     public ActorStats Stats => _myStats;
     protected ActorUI _myUi = null;
-    public ActorUI UI => _myUi; 
-
-    // Actor position
-    [FoldoutGroup("Position", expanded: true)]
-    [SerializeField]
-    private UEnums.Positions _currentPosition = UEnums.Positions.Front;
-    public UEnums.Positions CurrentPosition
-    {
-        get { return _currentPosition; }
-        set { _currentPosition = value; }
-    }
+    public ActorUI UI => _myUi;
+    protected ActorPosition _myPosition = null;
+    public ActorPosition Positioning => _myPosition;
 
     // Actor graphics in the scene
     [FoldoutGroup("Graphics", expanded: true)]
@@ -75,6 +67,7 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
         _deck = GetComponent<DeckManager>();
         _hand = GetComponent<HandManager>();
         _myStats = GetComponent<ActorStats>();
+        _myPosition = GetComponent<ActorPosition>();
         _myUi = GetComponent<ActorUI>();
         _spriteRenderer = _actorModel.GetComponent<SpriteRenderer>();
 
@@ -186,4 +179,5 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     #endregion
 
     // ========================================================================
+
 }

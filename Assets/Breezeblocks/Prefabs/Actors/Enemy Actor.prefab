@@ -79,6 +79,7 @@ GameObject:
   m_Component:
   - component: {fileID: 869471112480768625}
   - component: {fileID: 2967473644843886963}
+  - component: {fileID: 6624925030088808006}
   - component: {fileID: 8864545213059187994}
   - component: {fileID: 8881086439604294137}
   - component: {fileID: 3097971633382406636}
@@ -125,12 +126,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _actorData: {fileID: 11400000, guid: d6ce7eb2f2c895b45ae78aa114bea530, type: 2}
-  _currentPosition: 1
   _actorModel: {fileID: 5919497451703877235}
   _hostilePositionEffect: {fileID: 7859028877964821649}
   _allyPositionEffect: {fileID: 6189886512299003349}
   _hostileTargetEffect: {fileID: 8989086260596311642}
   _allyTargetEffect: {fileID: 1167319704296513206}
+--- !u!114 &6624925030088808006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5044934173528301063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8764511bcbce21f42a5075446d3ffc67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentPosition: 1
 --- !u!114 &8864545213059187994
 MonoBehaviour:
   m_ObjectHideFlags: 0

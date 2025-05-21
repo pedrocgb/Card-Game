@@ -17,6 +17,8 @@ public class ActorStats : MonoBehaviour
     private int _maxHealth = 0;
     private int _currentHealth = 0;
     private float HealthPercentage { get { return  (float)_currentHealth / _maxHealth; } }
+    private bool _isDead = false;
+    public bool IsDead => _isDead;
 
     // Block stats
     private int _currentBlock = 0;
@@ -208,6 +210,8 @@ public class ActorStats : MonoBehaviour
     public void Die()
     {
         Debug.Log($"{_actor.gameObject.name} has died.");
+
+        PositionsManager.RemoveActor(_actor);
     }
     #endregion
 

@@ -69,7 +69,7 @@ public class PlayerTurnManager : MonoBehaviour
         _targetingManager.SetTarget(null);
         _actor.Stats.SpendAction(_cardData.ActionCost);
 
-        _actor.Hand.ValidadeHand(_actor.Stats.CurrentActions, _actor.CurrentPosition);
+        _actor.Hand.ValidadeHand(_actor.Stats.CurrentActions, _actor.Positioning.CurrentPosition);
     }
     #endregion
 

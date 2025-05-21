@@ -27,7 +27,7 @@ public class UEnums
     public enum Positions
     {
         Front = 1,
-        MidFront =2,
+        MidFront = 2,
         MidBack = 3,
         Back = 4
     }
@@ -64,7 +64,8 @@ public class UEnums
         Weakness,
         Vulnerability,
         Stun,
-        Regen
+        Regen,
+        Movement
     }
 
     public enum  StatusEffects

@@ -55,7 +55,7 @@ public class TargetingManager : MonoBehaviour
                 case UEnums.Target.Ally:
                     foreach (var a in _combatManager.PlayerActors)
                     {
-                        bool valid = ValidPositions.Contains(a.CurrentPosition);
+                        bool valid = ValidPositions.Contains(a.Positioning.CurrentPosition);
                         if (valid)
                             a.HightLightActor(TargetAlignment);
                     }
@@ -63,7 +63,7 @@ public class TargetingManager : MonoBehaviour
                 case UEnums.Target.Enemy:
                     foreach (var e in _combatManager.EnemyActors)
                     {
-                        bool valid = ValidPositions.Contains(e.CurrentPosition);
+                        bool valid = ValidPositions.Contains(e.Positioning.CurrentPosition);
                         if (valid)
                             e.HightLightActor(TargetAlignment);
                     }
@@ -83,7 +83,7 @@ public class TargetingManager : MonoBehaviour
                 case UEnums.Target.Ally:
                     foreach (var a in _combatManager.EnemyActors)
                     {
-                        bool valid = ValidPositions.Contains(a.CurrentPosition);
+                        bool valid = ValidPositions.Contains(a.Positioning.CurrentPosition);
                         if (valid)
                             a.HightLightActor(TargetAlignment);
                     }
@@ -91,7 +91,7 @@ public class TargetingManager : MonoBehaviour
                 case UEnums.Target.Enemy:
                     foreach (var e in _combatManager.PlayerActors)
                     {
-                        bool valid = ValidPositions.Contains(e.CurrentPosition);
+                        bool valid = ValidPositions.Contains(e.Positioning.CurrentPosition);
                         if (valid)
                             e.HightLightActor(TargetAlignment);
                     }

@@ -29,6 +29,10 @@ public static class CardEffectResolver
                     break;
                 case UEnums.CardEffects.Stun:
                     break;
+
+                case UEnums.CardEffects.Movement:
+                    PositionsManager.MoveActor(Target, effect.Amount);
+                    break;
             }
         }
     }
