@@ -57,15 +57,21 @@ public class UEnums
     public enum CardEffects
     {
         Damage,
-        Heal,
-        Block,
-        Haste,
         Slow,
         Weakness,
         Vulnerability,
         Stun,
+        SelfDamage,
+
+        Heal,
+        Block,
+        Haste,
         Regen,
-        Movement
+
+        Movement,
+        Draw,
+        SelfMovement,
+
     }
 
     public enum  StatusEffects

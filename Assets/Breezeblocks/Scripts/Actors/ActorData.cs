@@ -24,17 +24,6 @@ public class ActorData : ScriptableObject
 
     // ========================================================================
 
-    [FoldoutGroup("Actor Info/Damage", expanded: true)]
-    [SerializeField]
-    private int _baseMinDamage = 1;
-    public int MinDamage => _baseMinDamage;
-    [FoldoutGroup("Actor Info/Damage", expanded: true)]
-    [SerializeField]
-    private int _baseMaxDamage = 5;
-    public int MaxDamage => _baseMaxDamage;
-
-    // ========================================================================
-
     [FoldoutGroup("Actor Info/Cards", expanded: true)]
     [SerializeField]
     private List<CardData> _startingCards = new List<CardData>();

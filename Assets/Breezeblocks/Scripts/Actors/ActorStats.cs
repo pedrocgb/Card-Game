@@ -31,11 +31,6 @@ public class ActorStats : MonoBehaviour
     // Card buy stats
     private int _cardBuy = 0;
     public int CardBuy => _cardBuy;
-    
-    // Damage stats
-    private int _minDamage = 0;
-    private int _maxDamage = 0;
-    public int Damage { get { return Random.Range(_minDamage, _maxDamage); } }
 
     // Status
     private List<StatusEffectInstance> _activeEffects = new List<StatusEffectInstance>();
@@ -60,8 +55,6 @@ public class ActorStats : MonoBehaviour
         _currentHealth = _maxHealth;
         _actionsPerTurn = _actor.Data.ActionsPerTurn;
         _currentActions = _actionsPerTurn;
-        _minDamage = _actor.Data.MinDamage;
-        _maxDamage = _actor.Data.MaxDamage;
 
         UpdateAllUI();
     }
@@ -130,6 +123,8 @@ public class ActorStats : MonoBehaviour
                     break;
             }
         }
+
+        _actor.UI.UpdateStatusUI(_activeEffects);
     }
 
     /// <summary>
@@ -211,7 +206,11 @@ public class ActorStats : MonoBehaviour
     {
         Debug.Log($"{_actor.gameObject.name} has died.");
 
+        _isDead = true;
         PositionsManager.RemoveActor(_actor);
+        CombatManager.RemoveCombatent(_actor);
+
+        gameObject.SetActive(false);
     }
     #endregion
 
@@ -228,10 +227,22 @@ public class ActorStats : MonoBehaviour
 
     // ========================================================================
 
+    #region Buff Effects
     public void GainBlock(int blockAmount, int duration)
     {
+        _currentBlock += blockAmount;
         AddStatusEffect(UEnums.StatusEffects.Block, blockAmount, duration);
     }
+    #endregion
+
+    // ========================================================================
+
+    #region Debuff Effects
+    public void ApplyWeakness(int amount, int duration)
+    {
+        AddStatusEffect(UEnums.StatusEffects.Weakness, amount, duration);
+    }
+    #endregion
 
     // ========================================================================
 

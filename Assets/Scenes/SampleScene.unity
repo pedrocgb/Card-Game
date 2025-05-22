@@ -153,10 +153,10 @@ MonoBehaviour:
     stackingMode: 2
     icon: {fileID: -4515138988766625407, guid: 7ee99f85ddd41944f96f2a7eb79a7f95, type: 3}
   - type: 1
-    stackingMode: 0
+    stackingMode: 4
     icon: {fileID: -5191297713770979293, guid: 46d01da8b36f72b4294022e8ac46ec0f, type: 3}
   - type: 2
-    stackingMode: 1
+    stackingMode: 2
     icon: {fileID: -2496828161889257060, guid: 5ede2bd7b13bd1f4aa746de012a23d7c, type: 3}
   - type: 3
     stackingMode: 2
@@ -1664,6 +1664,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Actor
       objectReference: {fileID: 0}
+    - target: {fileID: 6163624491599570395, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
+      propertyPath: _actorData
+      value: 
+      objectReference: {fileID: 11400000, guid: c81523ef8f745c14b94c6e2a4cba3dc1, type: 2}
     - target: {fileID: 6284345710817605182, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: _deckUi
       value: 
@@ -1970,19 +1974,19 @@ PrefabInstance:
     - target: {fileID: 2967473644843886963, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
       propertyPath: _actorData
       value: 
-      objectReference: {fileID: 11400000, guid: 4435014e33da3fd449db1504ea190eab, type: 2}
+      objectReference: {fileID: 11400000, guid: a5e3e54380e187c4a9b4199358e885c3, type: 2}
     - target: {fileID: 3289935725924518161, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3289935725924518161, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5000060998416578053, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 69032c13db1c77146aac52c5acafbcce, type: 3}
+      objectReference: {fileID: -1329963487, guid: cfb530ea762e9474999cab8076f77ccd, type: 3}
     - target: {fileID: 5044934173528301063, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
       propertyPath: m_Name
       value: Enemy Actor (1)
@@ -1991,6 +1995,10 @@ PrefabInstance:
       propertyPath: _currentPosition
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 9059914199689791697, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6fa6e3ea5bf07ce4b9f0b2ec03f5a3e5, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2747,23 +2755,27 @@ PrefabInstance:
     - target: {fileID: 2967473644843886963, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
       propertyPath: _actorData
       value: 
-      objectReference: {fileID: 11400000, guid: 4435014e33da3fd449db1504ea190eab, type: 2}
+      objectReference: {fileID: 11400000, guid: a5e3e54380e187c4a9b4199358e885c3, type: 2}
     - target: {fileID: 3289935725924518161, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3289935725924518161, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5000060998416578053, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 69032c13db1c77146aac52c5acafbcce, type: 3}
+      objectReference: {fileID: -1329963487, guid: cfb530ea762e9474999cab8076f77ccd, type: 3}
     - target: {fileID: 5044934173528301063, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
       propertyPath: m_Name
       value: Enemy Actor
       objectReference: {fileID: 0}
+    - target: {fileID: 9059914199689791697, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6fa6e3ea5bf07ce4b9f0b2ec03f5a3e5, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

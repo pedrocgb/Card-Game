@@ -6,6 +6,8 @@ using UnityEngine;
 public class CombatManager : MonoBehaviour
 {
     #region Variables and Properties
+    public static CombatManager Instance { get; private set; }
+
     // Combatents
     [FoldoutGroup("Combatents", expanded:true)]
     [SerializeField]
@@ -29,12 +31,28 @@ public class CombatManager : MonoBehaviour
     // ========================================================================
 
     #region Initialization
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+    }
     private void Start()
     {
         RollInitiative();
 
         _enemyActors = _combatents.OfType<EnemyActor>().ToList();
         _playerActors = _combatents.OfType<PlayerActor>().ToList();
+    }
+    #endregion
+
+    // ========================================================================
+
+    #region Static Methods
+    public static void RemoveCombatent(ActorManager Combatent)
+    {
+        if (Instance == null)
+            return;
+
+        Instance.removeCombatent(Combatent);
     }
     #endregion
 
@@ -119,6 +137,35 @@ public class CombatManager : MonoBehaviour
         _currentTurnIndex++;
 
         NewTurn();
+    }
+    #endregion
+
+    // ========================================================================
+
+    #region Combatents Management Methods
+    private void removeCombatent(ActorManager combatent)
+    {
+        // Remove the combatent from the list.
+        _combatents.Remove(combatent);
+        // If the combatent is a player, remove it from the player list.
+        if (combatent is PlayerActor)
+        {
+            _playerActors.Remove(combatent as PlayerActor);
+        }
+        else if (combatent is EnemyActor)
+        {
+            _enemyActors.Remove(combatent as EnemyActor);
+        }
+
+        //// Check if all combatents have played their turn.
+        //if (_currentTurnIndex >= _combatents.Count)
+        //{
+        //    _currentRound++;
+        //    if (_firstRound)
+        //        _firstRound = false;
+        //    StartRound();
+        //    Debug.Log($"=========== START NEW ROUND - ROUND {_currentRound} ============");
+        //}
     }
     #endregion
 

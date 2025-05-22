@@ -44,7 +44,6 @@ public class CardData : ScriptableObject
 
     // Usable Positions
     [FoldoutGroup("Positions", expanded: true)]
-    [HideIf("_target",UEnums.Target.Self)]
     [SerializeField]
     private List<UEnums.Positions> _positions = new List<UEnums.Positions>();
     public List<UEnums.Positions> Positions => _positions;

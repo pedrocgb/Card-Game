@@ -36,7 +36,7 @@ public class ActorPosition : MonoBehaviour
         _currentPosition = (UEnums.Positions)newPos;
 
         var anchor = PositionAchorSlots.GetAnchor(_parentActor, newPos);
-        AnimatePosition(anchor.position, 0.5f);
+        AnimatePosition(anchor.position, 0.75f);
     }
     #endregion
 

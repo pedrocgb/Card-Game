@@ -12,16 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 846fe29fb228318439d02bed391d5f77, type: 3}
   m_Name: Skeleton
   m_EditorClassIdentifier: 
-  _className: Skeleton Archer
-  _baseActionsPerTurn: 1
-  _baseMaxHealth: 12
-  _initiativeBonus: 0
-  _baseMinDamage: 1
-  _baseMaxDamage: 6
+  _className: Skeleton
+  _baseActionsPerTurn: 3
+  _baseMaxHealth: 10
+  _initiativeBonus: 15
   _startingCards:
-  - {fileID: 11400000, guid: 69f6e7ed0b27252469e7f790ce5640a0, type: 2}
-  - {fileID: 11400000, guid: 69f6e7ed0b27252469e7f790ce5640a0, type: 2}
-  - {fileID: 11400000, guid: 69f6e7ed0b27252469e7f790ce5640a0, type: 2}
-  - {fileID: 11400000, guid: 69f6e7ed0b27252469e7f790ce5640a0, type: 2}
-  - {fileID: 11400000, guid: 69f6e7ed0b27252469e7f790ce5640a0, type: 2}
+  - {fileID: 11400000, guid: 2b89a93301552f74b8a8261531d0c1bd, type: 2}
+  - {fileID: 11400000, guid: 53030526ac1578743a6009b6304e2587, type: 2}
+  - {fileID: 11400000, guid: 11bb86a507a7c6c4a847eef68a26263d, type: 2}
+  - {fileID: 11400000, guid: d3d80defe9f85584298775b8461da443, type: 2}
+  - {fileID: 11400000, guid: 6c45339b880db2e46809c6ad80e35e8c, type: 2}
   _baseCardBuy: 3

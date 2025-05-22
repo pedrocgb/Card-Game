@@ -8,10 +8,25 @@ public static class CardEffectResolver
         {
             switch (effect.EffectType)
             {
+                // Hostile Effects
                 default:
                 case UEnums.CardEffects.Damage:
-                    Target.Stats.TakeDamage(Source.Stats.Damage);
+                    Target.Stats.TakeDamage(effect.Amount);
                     break;
+                case UEnums.CardEffects.SelfDamage:
+                    Source.Stats.TakeDamage(effect.Amount); 
+                    break;
+                case UEnums.CardEffects.Slow:
+                    break;
+                case UEnums.CardEffects.Vulnerability:
+                    break;
+                case UEnums.CardEffects.Weakness:
+                    Target.Stats.ApplyWeakness(effect.Amount, effect.Duration);
+                    break;
+                case UEnums.CardEffects.Stun:
+                    break;
+
+                // Buff effects
                 case UEnums.CardEffects.Heal:
                     Target.Stats.Heal(effect.Amount);
                     break;
@@ -19,19 +34,14 @@ public static class CardEffectResolver
                     Target.Stats.GainBlock(effect.Amount, effect.Duration);
                     break;
                 case UEnums.CardEffects.Haste:
-
-                    break;
-                case UEnums.CardEffects.Slow:
-                    break;
-                case UEnums.CardEffects.Vulnerability:
-                    break;
-                case UEnums.CardEffects.Weakness:
-                    break;
-                case UEnums.CardEffects.Stun:
                     break;
 
+                // Other effects
                 case UEnums.CardEffects.Movement:
                     PositionsManager.MoveActor(Target, effect.Amount);
+                    break;
+                case UEnums.CardEffects.SelfMovement:
+                    PositionsManager.MoveActor(Source, effect.Amount);
                     break;
             }
         }
