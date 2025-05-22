@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a19dccf1348014ead4ded939d7251e, type: 3}
+  m_Name: Reposition
+  m_EditorClassIdentifier: 
+  _cardName: Reposition
+  _cardDescription: Move ally 1 Back
+  _cardImage: {fileID: 2089651227, guid: 08a83672c0c70724cb8105b33ad64832, type: 3}
+  _actionCost: 0
+  _cardEffects:
+  - EffectType: 200
+    Amount: 1
+    Duration: 0
+  _cardType: 32
+  _positions: 020000000300000004000000
+  _posIcon: {fileID: 21300000, guid: cf7ef3edd5ae73a4481f6402662b640a, type: 3}
+  _target: 2
+  _targetType: 1
+  _targetPositions: 01000000020000000300000004000000
+  _targetIcon: {fileID: 21300000, guid: 4a2fe08ef900a304a954bfc81bc411de, type: 3}

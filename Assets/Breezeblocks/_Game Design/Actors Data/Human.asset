@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 846fe29fb228318439d02bed391d5f77, type: 3}
+  m_Name: Human
+  m_EditorClassIdentifier: 
+  _className: Human Warrior
+  _baseActionsPerTurn: 2
+  _baseMaxHealth: 8
+  _initiativeBonus: 1
+  _startingCards:
+  - {fileID: 11400000, guid: d9734f5c5de1cea41b5ea18eb918c6de, type: 2}
+  - {fileID: 11400000, guid: d9734f5c5de1cea41b5ea18eb918c6de, type: 2}
+  - {fileID: 11400000, guid: d9734f5c5de1cea41b5ea18eb918c6de, type: 2}
+  - {fileID: 11400000, guid: 4550e57be6a257f44acaf46e014d5a5d, type: 2}
+  - {fileID: 11400000, guid: 4550e57be6a257f44acaf46e014d5a5d, type: 2}
+  - {fileID: 11400000, guid: 4550e57be6a257f44acaf46e014d5a5d, type: 2}
+  - {fileID: 11400000, guid: 84957cd889e18604a9f6d879d78c1734, type: 2}
+  - {fileID: 11400000, guid: 326600815902d4242a81a2d059bb1e22, type: 2}
+  - {fileID: 11400000, guid: 4bbe093c892406649b373b7d615ef769, type: 2}
+  - {fileID: 11400000, guid: 67ee40343abeda64fb2bb7eda8d749a1, type: 2}
+  _baseCardBuy: 3

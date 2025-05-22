@@ -23,8 +23,25 @@ public class FloatingDamage : MonoBehaviour
 
     // ========================================================================
 
-    public void UpdateText(string NewText, float Timer)
+    public void UpdateText(string NewText, float Timer, UEnums.HealthModColors DamageMod)
     {
+        switch (DamageMod)
+        {
+            default:
+            case UEnums.HealthModColors.BasicDamage:
+                _text.color = UConstants.BASIC_DAMAGE_COLOR;
+                break;
+            case UEnums.HealthModColors.BurnDamage:
+                _text.color = UConstants.BURN_DAMAGE_COLOR;
+                break;
+            case UEnums.HealthModColors.PoisonDamage:
+                _text.color = UConstants.POISON_DAMAGE_COLOR;
+                break;
+            case UEnums.HealthModColors.Heal:
+                _text.color = UConstants.HEAL_COLOR;
+                break;
+        }
+
         _text.text = NewText;
         _deactivateTimeStamp = Time.time + Timer;
     }

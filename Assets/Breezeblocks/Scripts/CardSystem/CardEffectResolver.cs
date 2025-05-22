@@ -11,17 +11,19 @@ public static class CardEffectResolver
                 // Hostile Effects
                 default:
                 case UEnums.CardEffects.Damage:
-                    Target.Stats.TakeDamage(effect.Amount);
+                    Source.Stats.DealDamage(effect.Amount, Target);
                     break;
                 case UEnums.CardEffects.SelfDamage:
-                    Source.Stats.TakeDamage(effect.Amount); 
+                    Source.Stats.DealDamage(effect.Amount, Source);
                     break;
                 case UEnums.CardEffects.Slow:
+                    Target.Stats.SufferSlow(effect.Amount, effect.Duration);
                     break;
                 case UEnums.CardEffects.Vulnerability:
+                    Target.Stats.SufferVulnerability(effect.Amount, effect.Duration);
                     break;
                 case UEnums.CardEffects.Weakness:
-                    Target.Stats.ApplyWeakness(effect.Amount, effect.Duration);
+                    Target.Stats.SufferWeakness(effect.Amount, effect.Duration);
                     break;
                 case UEnums.CardEffects.Stun:
                     break;

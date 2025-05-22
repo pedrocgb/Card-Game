@@ -149,27 +149,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entries:
-  - type: 0
-    stackingMode: 2
-    icon: {fileID: -4515138988766625407, guid: 7ee99f85ddd41944f96f2a7eb79a7f95, type: 3}
-  - type: 1
-    stackingMode: 4
-    icon: {fileID: -5191297713770979293, guid: 46d01da8b36f72b4294022e8ac46ec0f, type: 3}
   - type: 2
     stackingMode: 2
-    icon: {fileID: -2496828161889257060, guid: 5ede2bd7b13bd1f4aa746de012a23d7c, type: 3}
+    icon: {fileID: -4515138988766625407, guid: 7ee99f85ddd41944f96f2a7eb79a7f95, type: 3}
   - type: 3
+    stackingMode: 4
+    icon: {fileID: -5191297713770979293, guid: 46d01da8b36f72b4294022e8ac46ec0f, type: 3}
+  - type: 101
+    stackingMode: 2
+    icon: {fileID: -2496828161889257060, guid: 5ede2bd7b13bd1f4aa746de012a23d7c, type: 3}
+  - type: 4
     stackingMode: 2
     icon: {fileID: -1577068087157668559, guid: 0ec2bc4433b15334ea8031cec49839f6, type: 3}
-  - type: 4
+  - type: 5
     stackingMode: 0
     icon: {fileID: 5373797185328321644, guid: 800f60d732c753240b5185b24a93ef52, type: 3}
-  - type: 6
+  - type: 103
     stackingMode: 4
     icon: {fileID: -7368724519653229842, guid: 3e1d3f28c12868449be118e96729dbf7, type: 3}
-  - type: 5
+  - type: 102
     stackingMode: 4
     icon: {fileID: 6250701994635682432, guid: e271fc98832776a4b89672b907bfa286, type: 3}
+  - type: 6
+    stackingMode: 1
+    icon: {fileID: 2021654916430229660, guid: 8b3560dccf8a7f84184c75241015bbbd, type: 3}
+  - type: 7
+    stackingMode: 4
+    icon: {fileID: -6683329395495822188, guid: bb2b91bbb58350e4d8fbe6442d18b869, type: 3}
 --- !u!4 &49525629
 Transform:
   m_ObjectHideFlags: 0
@@ -1667,7 +1673,7 @@ PrefabInstance:
     - target: {fileID: 6163624491599570395, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: _actorData
       value: 
-      objectReference: {fileID: 11400000, guid: c81523ef8f745c14b94c6e2a4cba3dc1, type: 2}
+      objectReference: {fileID: 11400000, guid: c6b058f4afe1132429ddc84c10acbec9, type: 2}
     - target: {fileID: 6284345710817605182, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: _deckUi
       value: 
@@ -2889,10 +2895,10 @@ SceneRoots:
   - {fileID: 1975440103}
   - {fileID: 236431592}
   - {fileID: 706525090}
+  - {fileID: 1531704063}
   - {fileID: 180658349}
   - {fileID: 699154399}
   - {fileID: 49525629}
-  - {fileID: 1531704063}
   - {fileID: 2087364314}
   - {fileID: 916798888}
   - {fileID: 1691080492}

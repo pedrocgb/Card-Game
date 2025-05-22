@@ -35,9 +35,9 @@ public class UIconsDatabase : MonoBehaviour
     }
     #endregion
 
-        // ========================================================================
+    // ========================================================================
 
-        #region Initialization
+    #region Initialization
     private void Awake()
     {
         Instance = this;

@@ -10,23 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71a19dccf1348014ead4ded939d7251e, type: 3}
-  m_Name: Bone Kick
+  m_Name: Multiple Strikes
   m_EditorClassIdentifier: 
-  _cardName: Bone Kick
-  _cardDescription: Deals 1 Damage. Push 2
-  _cardImage: {fileID: 248139884897882334, guid: 2cf88b289a1abf34faf46a690bc875a8, type: 3}
-  _actionCost: 1
+  _cardName: Multiple Strikes
+  _cardDescription: Deals 3 damage.
+  _cardImage: {fileID: -1981188590, guid: 0ea55752e90b15b48ba4f386d7d2df20, type: 3}
+  _actionCost: 2
   _cardEffects:
   - EffectType: 0
-    Amount: 1
+    Amount: 3
     Duration: 0
-  - EffectType: 10
-    Amount: 2
-    Duration: 0
-  _cardType: 32
+  _cardType: 1
   _positions: 0100000002000000
   _posIcon: {fileID: 21300000, guid: bebec778a275e3949ba8827f6030776b, type: 3}
   _target: 3
-  _targetType: 1
-  _targetPositions: 0100000002000000
-  _targetIcon: {fileID: 21300000, guid: e0d909f0d28d2fc40924e74866a9b2e4, type: 3}
+  _targetType: 2
+  _targetPositions: 010000000200000003000000
+  _targetIcon: {fileID: 21300000, guid: 966071b4d24508a45b4bde1a681056e0, type: 3}

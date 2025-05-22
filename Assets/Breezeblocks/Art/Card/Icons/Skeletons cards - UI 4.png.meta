@@ -1,0 +1,437 @@
+fileFormatVersion: 2
+guid: 47b81f7022028d047ac3b6211d56f889
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4571853949569862557
+    second: Skeletons cards - UI 4_0
+  - first:
+      213: -2838309217808259283
+    second: Skeletons cards - UI 4_1
+  - first:
+      213: -9146778143568090206
+    second: Skeletons cards - UI 4_2
+  - first:
+      213: 9150019238133575582
+    second: Skeletons cards - UI 4_3
+  - first:
+      213: -9207200578409164501
+    second: Skeletons cards - UI 4_4
+  - first:
+      213: -590572162175164258
+    second: Skeletons cards - UI 4_5
+  - first:
+      213: 5095899465712723064
+    second: Skeletons cards - UI 4_6
+  - first:
+      213: -763214812922476675
+    second: Skeletons cards - UI 4_7
+  - first:
+      213: -4962857669706468410
+    second: Skeletons cards - UI 4_8
+  - first:
+      213: -7758958054542681800
+    second: Skeletons cards - UI 4_9
+  - first:
+      213: 1822525730275706044
+    second: Skeletons cards - UI 4_10
+  - first:
+      213: 9078970267308106420
+    second: Skeletons cards - UI 4_11
+  - first:
+      213: 2831376713427248928
+    second: Skeletons cards - UI 4_12
+  - first:
+      213: 8412686595964717632
+    second: Skeletons cards - UI 4_13
+  - first:
+      213: -8669149598046890921
+    second: Skeletons cards - UI 4_14
+  - first:
+      213: 1989863020871286428
+    second: Skeletons cards - UI 4_15
+  - first:
+      213: 5623045872024918222
+    second: Skeletons cards - UI 4_16
+  - first:
+      213: 1266002297130929333
+    second: Skeletons cards - UI 4_17
+  - first:
+      213: 3210021183649021553
+    second: Skeletons cards - UI 4_18
+  - first:
+      213: 22263615945669186
+    second: Skeletons cards - UI 4_19
+  - first:
+      213: 6885844788193189156
+    second: Skeletons cards - UI 4_20
+  - first:
+      213: -3840607823935628563
+    second: Skeletons cards - UI 4_21
+  - first:
+      213: -6639669824905591950
+    second: Skeletons cards - UI 4_22
+  - first:
+      213: 3235528937937706774
+    second: Skeletons cards - UI 4_23
+  - first:
+      213: -3061862957257942486
+    second: Skeletons cards - UI 4_24
+  - first:
+      213: -1702178749180869648
+    second: Skeletons cards - UI 4_25
+  - first:
+      213: -397645041628410041
+    second: Skeletons cards - UI 4_26
+  - first:
+      213: -8352120285674284021
+    second: Skeletons cards - UI 4_27
+  - first:
+      213: -5827236664225863743
+    second: Skeletons cards - UI 4_28
+  - first:
+      213: -95756022929237133
+    second: Skeletons cards - UI 4_29
+  - first:
+      213: -55616556088079248
+    second: Skeletons cards - UI 4_30
+  - first:
+      213: -7337409081898890618
+    second: Skeletons cards - UI 4_31
+  - first:
+      213: -1242238299565031025
+    second: Skeletons cards - UI 4_32
+  - first:
+      213: 2488498200756951503
+    second: Skeletons cards - UI 4_33
+  - first:
+      213: -2435060990765725034
+    second: Skeletons cards - UI 4_34
+  - first:
+      213: 5070181987025566299
+    second: Skeletons cards - UI 4_35
+  - first:
+      213: -962756424288313579
+    second: Skeletons cards - UI 4_36
+  - first:
+      213: 3408652696124315168
+    second: Skeletons cards - UI 4_37
+  - first:
+      213: 4027076724446224548
+    second: Skeletons cards - UI 4_38
+  - first:
+      213: 8999924795619028366
+    second: Skeletons cards - UI 4_39
+  - first:
+      213: -766419282870864874
+    second: Skeletons cards - UI 4_40
+  - first:
+      213: 3034887846813946686
+    second: Skeletons cards - UI 4_41
+  - first:
+      213: -2241998635992988878
+    second: Skeletons cards - UI 4_42
+  - first:
+      213: 1634998089893067688
+    second: Skeletons cards - UI 4_43
+  - first:
+      213: 6112736218726252783
+    second: Skeletons cards - UI 4_44
+  - first:
+      213: 3204971043175677752
+    second: Skeletons cards - UI 4_45
+  - first:
+      213: 1252694563015542769
+    second: Skeletons cards - UI 4_46
+  - first:
+      213: 5277669534515560925
+    second: Skeletons cards - UI 4_47
+  - first:
+      213: -442180523182770173
+    second: Skeletons cards - UI 4_48
+  - first:
+      213: -448165290012545751
+    second: Skeletons cards - UI 4_49
+  - first:
+      213: -3736749679322257386
+    second: Skeletons cards - UI 4_50
+  - first:
+      213: -7766064027392331707
+    second: Skeletons cards - UI 4_51
+  - first:
+      213: 6701868259243698823
+    second: Skeletons cards - UI 4_52
+  - first:
+      213: 2638076679139657729
+    second: Skeletons cards - UI 4_53
+  - first:
+      213: -5446963288528454591
+    second: Skeletons cards - UI 4_54
+  - first:
+      213: -2284212512515256856
+    second: Skeletons cards - UI 4_55
+  - first:
+      213: -6627019959415216417
+    second: Skeletons cards - UI 4_56
+  - first:
+      213: -5937201339442045481
+    second: Skeletons cards - UI 4_57
+  - first:
+      213: -8339731925637183235
+    second: Skeletons cards - UI 4_58
+  - first:
+      213: -2464002397597660208
+    second: Skeletons cards - UI 4_59
+  - first:
+      213: -435304256900292616
+    second: Skeletons cards - UI 4_60
+  - first:
+      213: 2861504981617856403
+    second: Skeletons cards - UI 4_61
+  - first:
+      213: -4691148620167382406
+    second: Skeletons cards - UI 4_62
+  - first:
+      213: 1576678920341391328
+    second: Skeletons cards - UI 4_63
+  - first:
+      213: 4379968250964691487
+    second: Skeletons cards - UI 4_64
+  - first:
+      213: 7427451232045153291
+    second: Skeletons cards - UI 4_65
+  - first:
+      213: 7959592367629008239
+    second: Skeletons cards - UI 4_66
+  - first:
+      213: 6117000803493871824
+    second: Skeletons cards - UI 4_67
+  - first:
+      213: 2592942019154879656
+    second: Skeletons cards - UI 4_68
+  - first:
+      213: 6598418215344451502
+    second: Skeletons cards - UI 4_69
+  - first:
+      213: 4514976697535192609
+    second: Skeletons cards - UI 4_70
+  - first:
+      213: -276056820521065609
+    second: Skeletons cards - UI 4_71
+  - first:
+      213: 4729706161438083988
+    second: Skeletons cards - UI 4_72
+  - first:
+      213: -2529910063532412881
+    second: Skeletons cards - UI 4_73
+  - first:
+      213: 5915828467891532027
+    second: Skeletons cards - UI 4_74
+  - first:
+      213: 7738132945302741516
+    second: Skeletons cards - UI 4_75
+  - first:
+      213: -1646437933932550315
+    second: Skeletons cards - UI 4_76
+  - first:
+      213: 3928009071318421328
+    second: Skeletons cards - UI 4_77
+  - first:
+      213: -7082272928804280130
+    second: Skeletons cards - UI 4_78
+  - first:
+      213: -1130763238403062369
+    second: Skeletons cards - UI 4_79
+  - first:
+      213: -1563524624099540025
+    second: Skeletons cards - UI 4_80
+  - first:
+      213: 5358056519981218777
+    second: Skeletons cards - UI 4_81
+  - first:
+      213: 1854207747713902196
+    second: Skeletons cards - UI 4_82
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Maim
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 39
+        width: 317
+        height: 473
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd726ca3eafb5e44692f201de82ce4d2
+      internalID: 1216484877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Unholy Power
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 115
+        width: 414
+        height: 496
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3441352c5209b93448e5ece36f39f1b3
+      internalID: -513781456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeletons cards - UI 4_2
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 565
+        width: 433
+        height: 459
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 457908f6943f99445bfb0c5be6c4a046
+      internalID: -751837566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 044a8ea16e444cf4dbfb86eb0956e9ce
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1536.0,"y":1024.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Maim: 1216484877
+      Skeletons cards - UI 4_2: -751837566
+      Unholy Power: -513781456
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
