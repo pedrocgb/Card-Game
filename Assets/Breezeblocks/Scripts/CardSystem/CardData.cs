@@ -48,6 +48,7 @@ public class CardData : ScriptableObject
     private List<UEnums.Positions> _positions = new List<UEnums.Positions>();
     public List<UEnums.Positions> Positions => _positions;
     [FoldoutGroup("Positions", expanded: true)]
+    [PreviewField(height: 100, alignment: ObjectFieldAlignment.Left)]
     [SerializeField]
     private Sprite _posIcon = null;
     public Sprite PositionIcon => _posIcon;
@@ -70,6 +71,7 @@ public class CardData : ScriptableObject
     public List<UEnums.Positions> TargetPositions => _targetPositions;
     [FoldoutGroup("Targets", expanded: true)]
     [SerializeField]
+    [PreviewField(height:100, alignment: ObjectFieldAlignment.Left)]
     private Sprite _targetIcon = null;
     public Sprite TargetIcon => _targetIcon;
 

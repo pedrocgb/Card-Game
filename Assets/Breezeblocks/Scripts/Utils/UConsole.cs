@@ -86,6 +86,8 @@ public class UConsole : MonoBehaviour
 
     private void AddLine(string Line)
     {
+        bool shouldAutoScroll = _consoleScroll.verticalNormalizedPosition <= 0.01f;
+
         _logLines.Enqueue(Line);
         if (_logLines.Count > _maxLogLines)
             _logLines.Dequeue();
@@ -93,7 +95,9 @@ public class UConsole : MonoBehaviour
         _consoleText.text = string.Join("\n", _logLines);
 
         Canvas.ForceUpdateCanvases();
-        _consoleScroll.verticalNormalizedPosition = 0f;
+
+        if (shouldAutoScroll)
+            _consoleScroll.verticalNormalizedPosition = 0f;
     }
     #endregion
 

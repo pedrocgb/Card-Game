@@ -113,24 +113,16 @@ public class CombatManager : MonoBehaviour
         Debug.Log($"Starting turn for {_currentCombatent.name} in round {_currentRound}");
 
         // If the combatent is a player, show the UI and initialize its turn.
-        if (_currentCombatent is PlayerActor)
-        {
-            
+        if (_currentCombatent is PlayerActor)            
             PlayerTurnManager.Instance.StartPlayerTurn(_currentCombatent as PlayerActor);
-        }
+        else if (_currentCombatent is EnemyActor)
+            EnemyTurnManager.Instance.StartEnemyTurn(_currentCombatent as EnemyActor);
 
-        // Draw cards for the combatent. First round has a specifica Draw Amount.
-        if (_firstRound)
-        {
-            _currentCombatent.Hand.DrawCards(5);
-        }
-        else
-        {
-            _currentCombatent.Hand.DrawCards(_currentCombatent.Stats.CardBuy);
-        }
+        // Draw cards for the combatent.
+        _currentCombatent.Hand.DrawCards(_currentCombatent.Stats.CardBuy);        
     }
 
-    private void EndTurn()
+    public void EndTurn()
     {
         Debug.Log($"Ending turn for {_currentCombatent.name}");
 

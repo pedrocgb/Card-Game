@@ -25,16 +25,16 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     private SpriteRenderer _spriteRenderer = null;
     [FoldoutGroup("Graphics/Effects", expanded: true)]
     [SerializeField]
-    private GameObject _hostilePositionEffect = null;
+    protected GameObject _hostilePositionEffect = null;
     [FoldoutGroup("Graphics/Effects", expanded: true)]
     [SerializeField]
-    private GameObject _allyPositionEffect = null;
+    protected GameObject _allyPositionEffect = null;
     [FoldoutGroup("Graphics/Effects", expanded: true)]
     [SerializeField]
-    private GameObject _hostileTargetEffect = null;
+    protected GameObject _hostileTargetEffect = null;
     [FoldoutGroup("Graphics/Effects", expanded: true)]
     [SerializeField]
-    private GameObject _allyTargetEffect = null;
+    protected GameObject _allyTargetEffect = null;
 
     // Deck and Hand managers
     private DeckManager _deck = null;
@@ -55,8 +55,8 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     }
 
     // Targeter
-    private bool _targetable = false;
-    private UEnums.Target _currentAttacker = UEnums.Target.Self;
+    protected bool _targetable = false;
+    protected UEnums.Target _currentAttacker = UEnums.Target.Self;
     #endregion
 
     // ========================================================================
@@ -83,12 +83,12 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     // ========================================================================
 
     #region Turn Methods
-    public void StartNewTurn()
+    public virtual void StartNewTurn()
     {
         
     }
 
-    public void EndTurn()
+    public virtual void EndTurn()
     {
 
     }
@@ -177,7 +177,4 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
         PlayerTurnManager.Instance.UseCard();
     }
     #endregion
-
-    // ========================================================================
-
 }

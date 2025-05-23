@@ -11,6 +11,7 @@ public class HandManager : MonoBehaviour
     private ActorManager _actor = null;
     private DeckManager _deckManager = null;
     private List<CardData> _currentHand = new List<CardData>();
+    public List<CardData> CurrentHand => _currentHand;
     private List<CardUI> _currentHandUI = new List<CardUI>();
 
     // Card animations settings
@@ -36,10 +37,10 @@ public class HandManager : MonoBehaviour
     // ========================================================================
 
     #region Initialization
-    private void Start()
+    private void Awake()
     {
-        _deckManager = GetComponent<DeckManager>();
         _actor = GetComponent<ActorManager>();
+        _deckManager = GetComponent<DeckManager>();
     }
     #endregion
 
@@ -52,10 +53,26 @@ public class HandManager : MonoBehaviour
     /// <param name="Quantity"></param>
     public void DrawCards(int Quantity)
     {
-        StartCoroutine(EnumeratorDrawCards(Quantity));
+        if (_actor is PlayerActor)
+            StartCoroutine(EnumeratorDrawCards(Quantity));
+        else
+            DrawEnemyCard(Quantity);
     }
 
-    private CardUI DrawCard()
+    private void DrawEnemyCard(int Quantity)
+    {
+        Debug.Log("Called");
+        for (int i = 0; i < Quantity; i++)
+        {
+            CardData drawnCard = _deckManager.GetTopCard();
+
+            _currentHand.Add(drawnCard);
+
+            Debug.Log("Card drawn: " + i);
+        }
+    }
+
+    private CardUI DrawPlayerCard()
     {
         // Deck is empty, force shuffle.
         if (_deckManager.CurrentDeck.Count == 0)
@@ -66,8 +83,7 @@ public class HandManager : MonoBehaviour
         }
 
         // Create a new card instance and apply to hand.
-        CardData drawnCard = _deckManager.CurrentDeck[0];
-        _deckManager.CurrentDeck.RemoveAt(0);
+        CardData drawnCard = _deckManager.GetTopCard();
 
         CardUI card = ObjectPooler.SpawnFromPool("Card", _cardGroup.transform.position, Quaternion.identity).GetComponent<CardUI>();
         card.Initialize(drawnCard);
@@ -93,7 +109,7 @@ public class HandManager : MonoBehaviour
             if (i > 0)
                 pos += new Vector3(_anchoredOffSet, 0f, 0f);
 
-            DrawCard().Animations.PlayDrawAnimation(deckPos, pos);
+            DrawPlayerCard().Animations.PlayDrawAnimation(deckPos, pos);
             yield return new WaitForSeconds(0.5f);
         }
     }
@@ -109,7 +125,7 @@ public class HandManager : MonoBehaviour
 
     // ========================================================================
 
-    #region Card Validation Methods    
+    #region Card Validation Methods - Player
 
     public void ValidadeHand(int CurrentActions, UEnums.Positions CurrentPosition)
     {

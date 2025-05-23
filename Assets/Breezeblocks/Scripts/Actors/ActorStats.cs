@@ -58,6 +58,7 @@ public class ActorStats : MonoBehaviour
         _unmodifiedActionsPerTurn = _actor.Data.ActionsPerTurn;
         _actionsPerTurn = _unmodifiedActionsPerTurn;
         _currentActions = _actionsPerTurn;
+        _cardBuy = _actor.Data.CardBuy;
 
         UpdateAllUI();
     }

@@ -17,7 +17,7 @@ MonoBehaviour:
   _cardImage: {fileID: 3172293825541232146, guid: 655e0e5bc94b6a048ad90ce380925ef8, type: 3}
   _actionCost: 1
   _cardEffects:
-  - EffectType: 7
+  - EffectType: 101
     Amount: 4
     Duration: 1
   _cardType: 2

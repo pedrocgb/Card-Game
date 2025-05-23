@@ -1,5 +1,6 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class EnemyActor : ActorManager
 {
@@ -7,4 +8,9 @@ public class EnemyActor : ActorManager
     {
         base.Initialize();
     }
+
+    public override void StartNewTurn()
+    {
+        base.StartNewTurn();
+    }   
 }

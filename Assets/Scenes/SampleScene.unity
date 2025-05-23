@@ -176,6 +176,9 @@ MonoBehaviour:
   - type: 7
     stackingMode: 4
     icon: {fileID: -6683329395495822188, guid: bb2b91bbb58350e4d8fbe6442d18b869, type: 3}
+  - type: 8
+    stackingMode: 1
+    icon: {fileID: 7746756494476628670, guid: 46b2cdd83c0c67d4b9430009346d32c9, type: 3}
 --- !u!4 &49525629
 Transform:
   m_ObjectHideFlags: 0
@@ -929,6 +932,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621708576}
   m_CullTransparentMesh: 1
+--- !u!1 &657750716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 657750718}
+  - component: {fileID: 657750717}
+  m_Layer: 0
+  m_Name: '#Enemy Turn Manager'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &657750717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657750716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9970a479ae390844d979828b543cd075, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &657750718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657750716}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &676306273
 GameObject:
   m_ObjectHideFlags: 0
@@ -1407,7 +1454,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 670.377, y: 375.486}
+  m_SizeDelta: {x: 670.37695, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &735591418
 MonoBehaviour:
@@ -1673,7 +1720,7 @@ PrefabInstance:
     - target: {fileID: 6163624491599570395, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: _actorData
       value: 
-      objectReference: {fileID: 11400000, guid: c6b058f4afe1132429ddc84c10acbec9, type: 2}
+      objectReference: {fileID: 11400000, guid: c81523ef8f745c14b94c6e2a4cba3dc1, type: 2}
     - target: {fileID: 6284345710817605182, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: _deckUi
       value: 
@@ -2272,7 +2319,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.000040335894}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1754578762
@@ -2308,10 +2355,10 @@ MonoBehaviour:
     m_Bottom: 0
   m_ChildAlignment: 0
   m_Spacing: 0
-  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
+  m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
@@ -2894,6 +2941,7 @@ SceneRoots:
   - {fileID: 906341065}
   - {fileID: 1975440103}
   - {fileID: 236431592}
+  - {fileID: 657750718}
   - {fileID: 706525090}
   - {fileID: 1531704063}
   - {fileID: 180658349}

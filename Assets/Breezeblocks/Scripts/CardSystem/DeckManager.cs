@@ -38,6 +38,15 @@ public class DeckManager : MonoBehaviour
     // ========================================================================
 
     #region Deck management methods
+    public CardData GetTopCard()
+    {
+        CardData card = _currentDeck[0];
+        _discardPile.Add(card);
+        _currentDeck.RemoveAt(0);
+
+        return card;
+    }
+
     /// <summary>
     /// Shuffle the current deck.
     /// </summary>

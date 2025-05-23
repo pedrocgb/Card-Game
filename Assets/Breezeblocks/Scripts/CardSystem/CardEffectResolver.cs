@@ -27,6 +27,9 @@ public static class CardEffectResolver
                     break;
                 case UEnums.CardEffects.Stun:
                     break;
+                case UEnums.CardEffects.Restrained:
+                    Target.Stats.SufferRestrained(effect.Amount, effect.Duration);
+                    break;
 
                 // Buff effects
                 case UEnums.CardEffects.Heal:

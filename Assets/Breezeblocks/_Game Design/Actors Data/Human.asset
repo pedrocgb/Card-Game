@@ -15,7 +15,7 @@ MonoBehaviour:
   _className: Human Warrior
   _baseActionsPerTurn: 2
   _baseMaxHealth: 8
-  _initiativeBonus: 1
+  _initiativeBonus: 5
   _startingCards:
   - {fileID: 11400000, guid: d9734f5c5de1cea41b5ea18eb918c6de, type: 2}
   - {fileID: 11400000, guid: d9734f5c5de1cea41b5ea18eb918c6de, type: 2}
@@ -27,4 +27,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 326600815902d4242a81a2d059bb1e22, type: 2}
   - {fileID: 11400000, guid: 4bbe093c892406649b373b7d615ef769, type: 2}
   - {fileID: 11400000, guid: 67ee40343abeda64fb2bb7eda8d749a1, type: 2}
-  _baseCardBuy: 3
+  _baseCardBuy: 2

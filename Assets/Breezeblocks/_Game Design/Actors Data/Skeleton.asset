@@ -15,7 +15,7 @@ MonoBehaviour:
   _className: Skeleton
   _baseActionsPerTurn: 3
   _baseMaxHealth: 10
-  _initiativeBonus: 15
+  _initiativeBonus: 0
   _startingCards:
   - {fileID: 11400000, guid: 2b89a93301552f74b8a8261531d0c1bd, type: 2}
   - {fileID: 11400000, guid: 53030526ac1578743a6009b6304e2587, type: 2}
