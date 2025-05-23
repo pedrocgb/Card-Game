@@ -1,54 +1,107 @@
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using UnityEngine.EventSystems;
 
 public static class CardEffectResolver
 {
-    public static void ApplyEffects(List<EffectBlock> Effects, ActorManager Source, ActorManager Target, CardData Card)
+    public static void ApplyEffects(List<EffectBlock> Effects, ActorManager Source, ActorManager MainTarget, CardData Card)
     {
-        foreach (var effect in Effects)
+        List<ActorManager> targets = ResolveTargets(Card, Source, MainTarget);
+        UConsole.Log(targets.Count + " targets found for " + Card.CardName);
+
+        foreach (var target in targets)
         {
-            switch (effect.EffectType)
+            foreach (var effect in Effects)
             {
-                // Hostile Effects
-                default:
-                case UEnums.CardEffects.Damage:
-                    Source.Stats.DealDamage(effect.Amount, Target);
-                    break;
-                case UEnums.CardEffects.SelfDamage:
-                    Source.Stats.DealDamage(effect.Amount, Source);
-                    break;
-                case UEnums.CardEffects.Slow:
-                    Target.Stats.SufferSlow(effect.Amount, effect.Duration);
-                    break;
-                case UEnums.CardEffects.Vulnerability:
-                    Target.Stats.SufferVulnerability(effect.Amount, effect.Duration);
-                    break;
-                case UEnums.CardEffects.Weakness:
-                    Target.Stats.SufferWeakness(effect.Amount, effect.Duration);
-                    break;
-                case UEnums.CardEffects.Stun:
-                    break;
-                case UEnums.CardEffects.Restrained:
-                    Target.Stats.SufferRestrained(effect.Amount, effect.Duration);
-                    break;
+                switch (effect.EffectType)
+                {
+                    // Hostile Effects
+                    default:
+                    case UEnums.CardEffects.Damage:
+                        Source.Stats.DealDamage(effect.Amount, target);
+                        break;
+                    case UEnums.CardEffects.SelfDamage:
+                        Source.Stats.DealDamage(effect.Amount, Source);
+                        break;
+                    case UEnums.CardEffects.Slow:
+                        target.Stats.SufferSlow(effect.Amount, effect.Duration);
+                        break;
+                    case UEnums.CardEffects.Vulnerability:
+                        target.Stats.SufferVulnerability(effect.Amount, effect.Duration);
+                        break;
+                    case UEnums.CardEffects.Weakness:
+                        target.Stats.SufferWeakness(effect.Amount, effect.Duration);
+                        break;
+                    case UEnums.CardEffects.Stun:
+                        break;
+                    case UEnums.CardEffects.Restrained:
+                        target.Stats.SufferRestrained(effect.Amount, effect.Duration);
+                        break;
 
-                // Buff effects
-                case UEnums.CardEffects.Heal:
-                    Target.Stats.Heal(effect.Amount);
-                    break;
-                case UEnums.CardEffects.Block:
-                    Target.Stats.GainBlock(effect.Amount, effect.Duration);
-                    break;
-                case UEnums.CardEffects.Haste:
-                    break;
+                    // Buff effects
+                    case UEnums.CardEffects.Heal:
+                        target.Stats.Heal(effect.Amount);
+                        break;
+                    case UEnums.CardEffects.Block:
+                        target.Stats.GainBlock(effect.Amount, effect.Duration);
+                        break;
+                    case UEnums.CardEffects.Haste:
+                        break;
 
-                // Other effects
-                case UEnums.CardEffects.Movement:
-                    PositionsManager.MoveActor(Target, effect.Amount);
-                    break;
-                case UEnums.CardEffects.SelfMovement:
-                    PositionsManager.MoveActor(Source, effect.Amount);
-                    break;
+                    // Other effects
+                    case UEnums.CardEffects.Movement:
+                        PositionsManager.MoveActor(target, effect.Amount);
+                        break;
+                    case UEnums.CardEffects.SelfMovement:
+                        PositionsManager.MoveActor(Source, effect.Amount);
+                        break;
+                }
             }
         }
+        
+    }
+
+    public static List<ActorManager> ResolveTargets(CardData Card, ActorManager Source, ActorManager Target)
+    {
+        var targets = new List<ActorManager>();
+
+
+        // Check if the card is a self-targeting card
+        // If it is, set the target to the source and end the function
+        if (Card.TargetType == UEnums.Target.Self)
+        {
+            targets.Add(Source);
+            return targets;
+        }
+
+        // Check if the card is targeting the Team of the source or the enemy team of the source.
+        List<ActorManager> potentialTargets = Card.TargetType switch
+        {
+            UEnums.Target.Ally => PositionsManager.GetTeamOf(Source),
+            UEnums.Target.Enemy => PositionsManager.GetOpposingTeamOf(Source),
+            _ => new List<ActorManager>()
+        };
+
+        UConsole.Log("Potential targets: " + potentialTargets.Count);
+
+        // Filter by position
+        potentialTargets = potentialTargets.Where(t => !t.Stats.IsDead && Card.TargetPositions.Contains(t.Positioning.CurrentPosition)).ToList();
+
+        UConsole.Log("Filtered targets: " + potentialTargets.Count);
+
+        if (Card.TargetScope == UEnums.TargetAmount.Single)
+        {
+            if (Target != null && potentialTargets.Contains(Target))
+            {
+                targets.Add(Target);
+            }
+        }
+        else
+        {
+            targets.AddRange(potentialTargets);
+        }
+
+        return targets;
     }
 }

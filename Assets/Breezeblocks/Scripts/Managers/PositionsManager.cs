@@ -60,11 +60,33 @@ public class PositionsManager : MonoBehaviour
             return Instance.getTeam<T>();
         return null;
     }
+
+    public static List<ActorManager> GetTeamOf(ActorManager Actor)
+    {
+        if (Instance == null)
+        {
+            Debug.LogError("PositionsManager instance is null");
+            return null;
+        }
+
+        return Instance.getTeamOf(Actor);
+    }
+
+    public static List<ActorManager> GetOpposingTeamOf(ActorManager Actor)
+    {
+        if (Instance == null)
+        {
+            Debug.LogError("PositionsManager instance is null");
+            return null;
+        }
+
+        return Instance.getOpposingTeamOf(Actor);
+    }
     #endregion
 
-        // ========================================================================
+    // ========================================================================
 
-        #region Local Methods
+    #region Local Methods
     private void registerActor(ActorManager newActor)
     {
         GetPartyList(newActor).Add(newActor);
@@ -121,6 +143,16 @@ public class PositionsManager : MonoBehaviour
         if (typeof(T) == typeof(PlayerActor)) return _playerParty;
         if (typeof(T) == typeof(EnemyActor)) return _enemyParty;
         return null;
+    }
+
+    private List<ActorManager> getTeamOf(ActorManager actor)
+    {
+        return actor is PlayerActor ? _playerParty : _enemyParty;
+    }
+
+    private List<ActorManager> getOpposingTeamOf(ActorManager actor)
+    {
+        return actor is PlayerActor ? _enemyParty : _playerParty;
     }
 
     // ========================================================================

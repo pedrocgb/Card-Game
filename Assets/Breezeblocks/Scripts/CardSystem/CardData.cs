@@ -58,14 +58,14 @@ public class CardData : ScriptableObject
     // Targeting
     [FoldoutGroup("Targets", expanded: true)]
     [SerializeField]
-    private UEnums.Target _target = UEnums.Target.Self;
-    public UEnums.Target Target => _target;
+    private UEnums.Target _targetType = UEnums.Target.Self;
+    public UEnums.Target TargetType => _targetType;
     [FoldoutGroup("Targets", expanded: true)]
     [SerializeField]
-    private UEnums.TargetAmount _targetType = UEnums.TargetAmount.Single;
-    public UEnums.TargetAmount TargetType => _targetType;
+    private UEnums.TargetAmount _targetScope = UEnums.TargetAmount.Single;
+    public UEnums.TargetAmount TargetScope => _targetScope;
     [FoldoutGroup("Targets", expanded: true)]
-    [HideIf("_target", UEnums.Target.Self)]
+    [HideIf("_targetType", UEnums.Target.Self)]
     [SerializeField]
     private List<UEnums.Positions> _targetPositions = new List<UEnums.Positions>();
     public List<UEnums.Positions> TargetPositions => _targetPositions;

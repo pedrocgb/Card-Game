@@ -23,7 +23,7 @@ MonoBehaviour:
   _cardType: 8
   _positions: 020000000300000004000000
   _posIcon: {fileID: 21300000, guid: cf7ef3edd5ae73a4481f6402662b640a, type: 3}
-  _target: 2
-  _targetType: 1
+  _targetType: 2
+  _targetScope: 1
   _targetPositions: 01000000020000000300000004000000
   _targetIcon: {fileID: 21300000, guid: 4a2fe08ef900a304a954bfc81bc411de, type: 3}

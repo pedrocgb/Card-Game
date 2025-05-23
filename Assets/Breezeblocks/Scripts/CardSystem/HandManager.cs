@@ -117,9 +117,17 @@ public class HandManager : MonoBehaviour
     public void DiscardCard(CardUI Card)
     {
         _currentHand.Remove(Card.CardData);
+        _deckManager.DiscardPile.Add(Card.CardData);
         _currentHandUI.Remove(Card);
 
         Card.gameObject.SetActive(false);
+    }
+
+    public void DiscardCard(CardData Card)
+    {
+        // Remove the card from the hand and add it to the discard pile.
+        _currentHand.Remove(Card);
+        _deckManager.DiscardPile.Add(Card);
     }
     #endregion
 
@@ -138,7 +146,7 @@ public class HandManager : MonoBehaviour
             bool hasEnoughActions = CurrentActions >= cardData.ActionCost;
 
             bool canUseFromThisPosition = false;
-            switch (cardData.Target)
+            switch (cardData.TargetType)
             {
                 default:
                 case UEnums.Target.Self:
@@ -163,7 +171,7 @@ public class HandManager : MonoBehaviour
 
         bool hasEnoughActions = CurrentActions >= Card.CardData.ActionCost;
         bool canUseFromThisPosition = false;
-        switch (Card.CardData.Target)
+        switch (Card.CardData.TargetType)
         {
             default:
             case UEnums.Target.Self:

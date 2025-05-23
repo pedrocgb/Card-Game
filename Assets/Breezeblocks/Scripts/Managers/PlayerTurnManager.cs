@@ -56,7 +56,7 @@ public class PlayerTurnManager : MonoBehaviour
         _cardUI = Card;
         _cardData = Card.CardData;
 
-        _targetingManager.HighLightActors(_actor, _cardData.TargetPositions, _cardData.Target);
+        _targetingManager.HighLightActors(_actor, _cardData.TargetPositions, _cardData.TargetType);
     }
 
     public void UseCard()

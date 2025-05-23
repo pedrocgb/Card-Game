@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _className: Skeleton
   _baseActionsPerTurn: 3
-  _baseMaxHealth: 10
+  _baseMaxHealth: 22
   _initiativeBonus: 0
   _startingCards:
   - {fileID: 11400000, guid: 2b89a93301552f74b8a8261531d0c1bd, type: 2}
@@ -22,4 +22,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 11bb86a507a7c6c4a847eef68a26263d, type: 2}
   - {fileID: 11400000, guid: d3d80defe9f85584298775b8461da443, type: 2}
   - {fileID: 11400000, guid: 6c45339b880db2e46809c6ad80e35e8c, type: 2}
-  _baseCardBuy: 3
+  _baseCardBuy: 5

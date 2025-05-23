@@ -125,6 +125,8 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
 
         _hostileTargetEffect.SetActive(false);
         _allyTargetEffect.SetActive(false);
+
+        UConsole.Log($"Removed highlight from {name}");
     }
     #endregion
 
@@ -177,4 +179,31 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
         PlayerTurnManager.Instance.UseCard();
     }
     #endregion
+
+    // ========================================================================
+
+    #region AI Highlight Methods
+    public void ShowTargetFeedback(UEnums.Target TargetType)
+    {
+        switch (TargetType)
+        {
+            default:
+            case UEnums.Target.Ally:
+            case UEnums.Target.Self:
+                _allyTargetEffect.SetActive(true);
+                break;
+            case UEnums.Target.Enemy:
+                _hostileTargetEffect.SetActive(true);
+                break;
+        }
+    }
+
+    public void HideTargetFeedBack()
+    {
+        _hostileTargetEffect.SetActive(false);
+        _allyTargetEffect.SetActive(false);
+    }
+    #endregion
+
+    // ========================================================================
 }

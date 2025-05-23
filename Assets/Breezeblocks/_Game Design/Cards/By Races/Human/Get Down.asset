@@ -20,13 +20,13 @@ MonoBehaviour:
   - EffectType: 101
     Amount: 5
     Duration: 0
-  - EffectType: 200
+  - EffectType: 202
     Amount: -2
     Duration: 0
   _cardType: 32
   _positions: 0100000002000000
   _posIcon: {fileID: 21300000, guid: bebec778a275e3949ba8827f6030776b, type: 3}
-  _target: 1
   _targetType: 1
+  _targetScope: 1
   _targetPositions: 
   _targetIcon: {fileID: 21300000, guid: f6599b0b12ea44f489f867479a5dc075, type: 3}
