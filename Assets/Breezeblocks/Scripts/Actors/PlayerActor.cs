@@ -7,4 +7,16 @@ public class PlayerActor : ActorManager
     {
         base.Initialize();
     }
+
+    public override void StartNewTurn()
+    {
+        base.StartNewTurn();
+        _hand.ShowHand();
+    }
+
+    public override void EndTurn()
+    {
+        base.EndTurn();
+        _hand.HideHand();
+    }
 }

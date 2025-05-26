@@ -12,6 +12,7 @@ public class CombatManager : MonoBehaviour
     [FoldoutGroup("Combatents", expanded:true)]
     [SerializeField]
     private List<ActorManager> _combatents = new List<ActorManager>();
+    private List<ActorManager> _turnOrder = new List<ActorManager>();
 
 
     // Actors
@@ -37,10 +38,10 @@ public class CombatManager : MonoBehaviour
     }
     private void Start()
     {
-        RollInitiative();
-
         _enemyActors = _combatents.OfType<EnemyActor>().ToList();
         _playerActors = _combatents.OfType<PlayerActor>().ToList();
+
+        Invoke("StartRound", 2f);
     }
     #endregion
 
@@ -59,43 +60,35 @@ public class CombatManager : MonoBehaviour
     // ========================================================================
 
     #region Combat Management Methods
-    private void RollInitiative()
-    {
-        // Roll initiative and reorder the list to fit the order.
-        foreach (ActorManager c in _combatents)
-        {
-            int roll = Random.Range(1, 11);
-            c.CurrentInitiative = roll + c.InitiativeBonus;
-
-            Debug.Log($"{c.name} rolled {roll} + {c.InitiativeBonus} = {c.CurrentInitiative}");
-        }
-
-        _combatents = _combatents.OrderByDescending(c => c.CurrentInitiative).ToList();
-
-
-        // DEBUGGING
-        // -------------------------------------------------
-        Debug.Log("Initiative Rolls:");
-        foreach (ActorManager c in _combatents)
-        {
-            Debug.Log($"{c.name}: {c.CurrentInitiative}");
-        }
-
-        Invoke(nameof(StartRound), 2f);
-        // -------------------------------------------------
-    }
-
     private void StartRound()
     {
         // Reset turn index each roud.
         _currentTurnIndex = 0;
+
+        RollInitiative();
+
+        TurnOrderUI.Instance.UpdateUI(_turnOrder);
+
         NewTurn();
+    }
+
+    private void RollInitiative()
+    {
+        _turnOrder.Clear();
+
+        foreach (var actor in _combatents.Where(a => !a.Stats.IsDead))
+        {
+            actor.RollInitiative();
+            _turnOrder.Add(actor);
+        }
+
+        _turnOrder = _turnOrder.OrderByDescending(a => a.CurrentInitiative).ToList(); 
     }
 
     private void NewTurn()
     {
         // Check if all combatents have played their turn.
-        if (_currentTurnIndex >= _combatents.Count)
+        if (_currentTurnIndex >= _turnOrder.Count)
         {
             _currentRound++;
             if (_firstRound)
@@ -108,7 +101,7 @@ public class CombatManager : MonoBehaviour
         }
 
         // Set this turn's combatent ability to ACT.
-        _currentCombatent = _combatents[_currentTurnIndex];
+        _currentCombatent = _turnOrder[_currentTurnIndex];
         _currentCombatent.StartNewTurn();
         Debug.Log($"Starting turn for {_currentCombatent.name} in round {_currentRound}");
 
@@ -127,6 +120,9 @@ public class CombatManager : MonoBehaviour
         Debug.Log($"Ending turn for {_currentCombatent.name}");
 
         _currentTurnIndex++;
+        _currentCombatent.EndTurn();
+
+        TurnOrderUI.Instance.AdvanceTurn();
 
         NewTurn();
     }
@@ -137,27 +133,7 @@ public class CombatManager : MonoBehaviour
     #region Combatents Management Methods
     private void removeCombatent(ActorManager combatent)
     {
-        // Remove the combatent from the list.
-        _combatents.Remove(combatent);
-        // If the combatent is a player, remove it from the player list.
-        if (combatent is PlayerActor)
-        {
-            _playerActors.Remove(combatent as PlayerActor);
-        }
-        else if (combatent is EnemyActor)
-        {
-            _enemyActors.Remove(combatent as EnemyActor);
-        }
-
-        //// Check if all combatents have played their turn.
-        //if (_currentTurnIndex >= _combatents.Count)
-        //{
-        //    _currentRound++;
-        //    if (_firstRound)
-        //        _firstRound = false;
-        //    StartRound();
-        //    Debug.Log($"=========== START NEW ROUND - ROUND {_currentRound} ============");
-        //}
+        _turnOrder.Remove(combatent);
     }
     #endregion
 

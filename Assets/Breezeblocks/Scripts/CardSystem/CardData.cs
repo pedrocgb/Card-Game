@@ -17,6 +17,7 @@ public class CardData : ScriptableObject
     public string CardDescription => _cardDescription;
     [FoldoutGroup("Card Info/Base", expanded: true)]
     [SerializeField]
+    [PreviewField(height: 100, alignment: ObjectFieldAlignment.Left)]
     private Sprite _cardImage = null;
     public Sprite CardImage => _cardImage;
     [FoldoutGroup("Card Info/Base", expanded: true)]

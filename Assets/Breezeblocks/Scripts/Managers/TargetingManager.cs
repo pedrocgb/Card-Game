@@ -37,20 +37,19 @@ public class TargetingManager : MonoBehaviour
     /// </summary>
     /// <param name="ValidPositions"></param>
     /// <param name="TargetAlignment"></param>
-    public void HighLightActors(ActorManager Actor, List<UEnums.Positions> ValidPositions, UEnums.Target TargetAlignment)
+    public void HighLightActors(ActorManager Source, List<UEnums.Positions> ValidPositions, UEnums.Target TargetAlignment)
     {
         // Clear all highlights before applying new ones.
         ClearHightLights();
 
-
         // If the actor using the card is PLAYER, highlight all actors (or self) based on the target alignment and positioning.
-        if (Actor is PlayerActor)
+        if (Source is PlayerActor)
         {
             switch (TargetAlignment)
             {
                 default:
                 case UEnums.Target.Self:
-                    Actor.HightLightActor(TargetAlignment);
+                    Source.HightLightActor(TargetAlignment);
                     break;
                 case UEnums.Target.Ally:
                     foreach (var a in _combatManager.PlayerActors)
@@ -72,13 +71,13 @@ public class TargetingManager : MonoBehaviour
         }
 
         // If the actor using the card is PLAYER, highlight all actors (or self) based on the target alignment and positioning.
-        else if (Actor is EnemyActor)
+        else if (Source is EnemyActor)
         {
             switch (TargetAlignment)
             {
                 default:
                 case UEnums.Target.Self:
-                    Actor.HightLightActor(TargetAlignment);
+                    Source.HightLightActor(TargetAlignment);
                     break;
                 case UEnums.Target.Ally:
                     foreach (var a in _combatManager.EnemyActors)
@@ -94,6 +93,65 @@ public class TargetingManager : MonoBehaviour
                         bool valid = ValidPositions.Contains(e.Positioning.CurrentPosition);
                         if (valid)
                             e.HightLightActor(TargetAlignment);
+                    }
+                    break;
+            }
+        }
+    }
+
+    public void HighTargetActors(ActorManager Source, List<UEnums.Positions> ValidPositions, UEnums.Target TargetAlignment)
+    {
+        // If the actor using the card is PLAYER, highlight all actors (or self) based on the target alignment and positioning.
+        if (Source is PlayerActor)
+        {
+            switch (TargetAlignment)
+            {
+                default:
+                case UEnums.Target.Self:
+                    Source.HighTargetActor();
+                    break;
+                case UEnums.Target.Ally:
+                    foreach (var a in _combatManager.PlayerActors)
+                    {
+                        bool valid = ValidPositions.Contains(a.Positioning.CurrentPosition);
+                        if (valid)
+                            a.HighTargetActor();
+                    }
+                    break;
+                case UEnums.Target.Enemy:
+                    foreach (var e in _combatManager.EnemyActors)
+                    {
+                        bool valid = ValidPositions.Contains(e.Positioning.CurrentPosition);
+                        if (valid)
+                            e.HighTargetActor();
+                    }
+                    break;
+            }
+        }
+
+        // If the actor using the card is PLAYER, highlight all actors (or self) based on the target alignment and positioning.
+        else if (Source is EnemyActor)
+        {
+            switch (TargetAlignment)
+            {
+                default:
+                case UEnums.Target.Self:
+                    Source.HighTargetActor();
+                    break;
+                case UEnums.Target.Ally:
+                    foreach (var a in _combatManager.EnemyActors)
+                    {
+                        bool valid = ValidPositions.Contains(a.Positioning.CurrentPosition);
+                        if (valid)
+                            a.HighTargetActor();
+                    }
+                    break;
+                case UEnums.Target.Enemy:
+                    foreach (var e in _combatManager.PlayerActors)
+                    {
+                        bool valid = ValidPositions.Contains(e.Positioning.CurrentPosition);
+                        if (valid)
+                            e.HighTargetActor();
                     }
                     break;
             }

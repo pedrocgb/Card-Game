@@ -74,8 +74,6 @@ public class ActorUI : MonoBehaviour
             totals[effect.StatusEffect] = (newAmount, newDuration);
         }
 
-        Debug.LogWarning($"Total effects: {totals.Count}");
-
         // Update or create icons
         foreach (var pair in totals)
         {

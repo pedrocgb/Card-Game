@@ -1,0 +1,341 @@
+fileFormatVersion: 2
+guid: 5a360552dad24ae4db8afc57c072fff6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1625877307606691478
+    second: Archer card icons 1_0
+  - first:
+      213: 145122842727834926
+    second: Archer card icons 1_1
+  - first:
+      213: 1133805686034056242
+    second: Archer card icons 1_2
+  - first:
+      213: -2566221883848965530
+    second: Archer card icons 1_3
+  - first:
+      213: -5473427690014145600
+    second: Archer card icons 1_4
+  - first:
+      213: 4940622790965414552
+    second: Archer card icons 1_5
+  - first:
+      213: 9038994594480325233
+    second: Archer card icons 1_6
+  - first:
+      213: -8826730983005613064
+    second: Archer card icons 1_7
+  - first:
+      213: -14302154254656976
+    second: Archer card icons 1_8
+  - first:
+      213: 6809902535027979444
+    second: Archer card icons 1_9
+  - first:
+      213: 1797190627187080469
+    second: Archer card icons 1_10
+  - first:
+      213: 5498596761670984368
+    second: Archer card icons 1_11
+  - first:
+      213: 5441386344887910594
+    second: Archer card icons 1_12
+  - first:
+      213: -807845515842978412
+    second: Archer card icons 1_13
+  - first:
+      213: -4822865893732694241
+    second: Archer card icons 1_14
+  - first:
+      213: -5777830920028253409
+    second: Archer card icons 1_15
+  - first:
+      213: -7451240447474258712
+    second: Archer card icons 1_16
+  - first:
+      213: -6775931972179614709
+    second: Archer card icons 1_17
+  - first:
+      213: -5047242323587377286
+    second: Archer card icons 1_18
+  - first:
+      213: 1591328497398264367
+    second: Archer card icons 1_19
+  - first:
+      213: 954370870269985104
+    second: Archer card icons 1_20
+  - first:
+      213: 620034400226471524
+    second: Archer card icons 1_21
+  - first:
+      213: 9007949897085441392
+    second: Archer card icons 1_22
+  - first:
+      213: -1295265265161535088
+    second: Archer card icons 1_23
+  - first:
+      213: -1399530674830377268
+    second: Archer card icons 1_24
+  - first:
+      213: 964761365483355888
+    second: Archer card icons 1_25
+  - first:
+      213: 1379780376610316947
+    second: Archer card icons 1_26
+  - first:
+      213: 4882228906527078808
+    second: Archer card icons 1_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Archer card icons 1_0
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 28
+        width: 299
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4628efb2fc5061f408ff2be66bb3949c
+      internalID: 656738213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer card icons 1_1
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 335
+        width: 315
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3093450985792224da24a5f808637eab
+      internalID: 198728134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer card icons 1_2
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 34
+        width: 334
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab8f331048a1bbf4882d1c906030ba44
+      internalID: 378740088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer card icons 1_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 649
+        width: 298
+        height: 339
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bec75d00ddc231e4498dae360f46756b
+      internalID: -1140960778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer card icons 1_4
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 633
+        width: 325
+        height: 331
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 043808ebaf0c7b44e81b9d19c6ef8df7
+      internalID: 1911079840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archer card icons 1_5
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 635
+        width: 364
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7194c246f30267d4d82a77b01937e3d8
+      internalID: -791211164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 80a0108ea4ec7a2458709460c32079bb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1536.0,"y":1024.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Archer card icons 1_0: 656738213
+      Archer card icons 1_1: 198728134
+      Archer card icons 1_2: 378740088
+      Archer card icons 1_3: -1140960778
+      Archer card icons 1_4: 1911079840
+      Archer card icons 1_5: -791211164
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

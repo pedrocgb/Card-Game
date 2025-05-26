@@ -48,6 +48,12 @@ public static class CardEffectResolver
                         break;
                     case UEnums.CardEffects.Haste:
                         break;
+                    case UEnums.CardEffects.Toughness:
+                        target.Stats.GainToughness(effect.Amount, effect.Duration);
+                        break;
+                    case UEnums.CardEffects.Draw:
+                        Source.Hand.DrawCards(effect.Amount);
+                        break;
 
                     // Other effects
                     case UEnums.CardEffects.Movement:
@@ -64,6 +70,7 @@ public static class CardEffectResolver
 
     public static List<ActorManager> ResolveTargets(CardData Card, ActorManager Source, ActorManager Target)
     {
+        UConsole.Log($"[AI] Resolving targets for {Card.CardName} (Type: {Card.TargetType}, Scope: {Card.TargetScope})");
         var targets = new List<ActorManager>();
 
 
@@ -89,6 +96,8 @@ public static class CardEffectResolver
         potentialTargets = potentialTargets.Where(t => !t.Stats.IsDead && Card.TargetPositions.Contains(t.Positioning.CurrentPosition)).ToList();
 
         UConsole.Log("Filtered targets: " + potentialTargets.Count);
+
+        UConsole.Log($"[AI] Found {potentialTargets.Count} valid targets for {Card.CardName}");
 
         if (Card.TargetScope == UEnums.TargetAmount.Single)
         {

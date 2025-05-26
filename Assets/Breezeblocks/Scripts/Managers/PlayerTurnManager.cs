@@ -38,6 +38,7 @@ public class PlayerTurnManager : MonoBehaviour
     public void StartPlayerTurn(PlayerActor Player)
     {
         _actor = Player;
+
         _cardUI = null;
 
     }
@@ -57,6 +58,10 @@ public class PlayerTurnManager : MonoBehaviour
         _cardData = Card.CardData;
 
         _targetingManager.HighLightActors(_actor, _cardData.TargetPositions, _cardData.TargetType);
+        if (_cardData.TargetScope == UEnums.TargetAmount.All)
+        {
+            _targetingManager.HighTargetActors(_actor, _cardData.TargetPositions, _cardData.TargetType);
+        }
     }
 
     public void UseCard()

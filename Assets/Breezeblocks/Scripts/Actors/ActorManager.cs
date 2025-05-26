@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -40,22 +41,19 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     private DeckManager _deck = null;
     public DeckManager Deck => _deck;
 
-    private HandManager _hand = null;
+    protected HandManager _hand = null;
     public HandManager Hand => _hand;
 
     // Actor stats
-
+    private string _actorName = string.Empty;
     private int _initiativeBonus = 0;
     public int InitiativeBonus { get { return _initiativeBonus; } }
     private int _currentInitiative = 0;
-    public int CurrentInitiative
-    {
-        get { return _currentInitiative; }
-        set { _currentInitiative = value; }
-    }
+    public int CurrentInitiative => _currentInitiative;
 
     // Targeter
     protected bool _targetable = false;
+    private bool _highTarget = false;
     protected UEnums.Target _currentAttacker = UEnums.Target.Self;
     #endregion
 
@@ -75,7 +73,10 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     }
 
     protected virtual void Initialize()
-    { 
+    {
+        _actorName = UConstants.LIST_OF_NAMES[Random.Range(0, UConstants.LIST_OF_NAMES.Count)];
+        gameObject.name = _actorName;
+
         _initiativeBonus = _actorData.InitiativeBonus;
     }
     #endregion
@@ -83,14 +84,22 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     // ========================================================================
 
     #region Turn Methods
+    public void RollInitiative()
+    {
+        int init = Random.Range(1, 9) + _initiativeBonus;
+        _currentInitiative = init;
+        UConsole.Log($"{name} rolled {init} + {_initiativeBonus} = {init + _initiativeBonus}");
+    }
+
     public virtual void StartNewTurn()
     {
-        
+
+        _myStats.OnNewTurn();
     }
 
     public virtual void EndTurn()
     {
-
+        _myStats.OnEndTurn();
     }
     #endregion
 
@@ -117,16 +126,36 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
         _targetable = true;
     }
 
+
+    public void HighTargetActor()
+    {
+        _highTarget = true;
+
+        switch (_currentAttacker)
+        {
+            default:
+            case UEnums.Target.Self:
+                _allyTargetEffect.SetActive(true);
+                break;
+            case UEnums.Target.Ally:
+                _allyTargetEffect.SetActive(true);
+                break;
+            case UEnums.Target.Enemy:
+                _hostileTargetEffect.SetActive(true);
+                break;
+        }
+    }
+
     public void RemoveHighLight()
     {
         _targetable = false;
+        _highTarget = false;
+
         _hostilePositionEffect.SetActive(false);
         _allyPositionEffect.SetActive(false);
 
         _hostileTargetEffect.SetActive(false);
         _allyTargetEffect.SetActive(false);
-
-        UConsole.Log($"Removed highlight from {name}");
     }
     #endregion
 
@@ -135,7 +164,7 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     #region Pointer Handler Methods
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (!_targetable) return;
+        if (!_targetable || _highTarget) return;
 
         switch (_currentAttacker)
         {
@@ -154,7 +183,7 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (!_targetable) return;
+        if (!_targetable || _highTarget) return;
 
         switch (_currentAttacker)
         {

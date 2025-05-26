@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CardUI : MonoBehaviour
+public class CardUI : MonoBehaviour, IPooledObjects
 {
     #region Variables and Properties
     // Components
@@ -50,6 +50,11 @@ public class CardUI : MonoBehaviour
         _cardData = cardData;
         UpdateCardUI();
     }
+
+    public void OnSpawn()
+    {
+      
+    }
     #endregion
 
     // ========================================================================
@@ -80,7 +85,7 @@ public class CardUI : MonoBehaviour
     private void OnCardClicked()
     {
         PlayerTurnManager.Instance.SelectCard(this);
-    }
+    }   
     #endregion
 
     // ========================================================================

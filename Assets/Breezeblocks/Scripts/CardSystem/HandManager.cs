@@ -3,6 +3,7 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(DeckManager))] 
 public class HandManager : MonoBehaviour
@@ -10,6 +11,7 @@ public class HandManager : MonoBehaviour
     #region Variables and Properties
     private ActorManager _actor = null;
     private DeckManager _deckManager = null;
+
     private List<CardData> _currentHand = new List<CardData>();
     public List<CardData> CurrentHand => _currentHand;
     private List<CardUI> _currentHandUI = new List<CardUI>();
@@ -32,6 +34,10 @@ public class HandManager : MonoBehaviour
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
     private Canvas _mainCanvas = null;
+
+    private Vector3 _visiblePosition = new Vector3(-140f, 0f, 0f);
+    private Vector3 _hiddenPosition = new Vector3(-5000f, 0f, 0f);
+
     #endregion
 
     // ========================================================================
@@ -46,7 +52,7 @@ public class HandManager : MonoBehaviour
 
     // ========================================================================
 
-    #region Draw and Descart Cards Methods
+    #region Draw and Descard Cards Methods
     /// <summary>
     /// Draw a number of cards from the deck, add it to current hand and animate them.
     /// </summary>
@@ -56,64 +62,35 @@ public class HandManager : MonoBehaviour
         if (_actor is PlayerActor)
             StartCoroutine(EnumeratorDrawCards(Quantity));
         else
-            DrawEnemyCard(Quantity);
+            DrawCardLogic(Quantity);
     }
 
-    private void DrawEnemyCard(int Quantity)
+    private void DrawCardLogic(int Quantity)
     {
-        Debug.Log("Called");
         for (int i = 0; i < Quantity; i++)
         {
+            if (_currentHand.Count >= _actor.Data.MaxHandSize)
+            {
+                Debug.LogWarning("Hand is full!");
+                break;
+            }
+
+
+            if (_deckManager.CurrentDeck.Count == 0)
+            {
+                Debug.LogWarning("Deck is empty!");
+                _deckManager.ReshuffleDiscardIntoDeck();
+            }
+
             CardData drawnCard = _deckManager.GetTopCard();
-
             _currentHand.Add(drawnCard);
-
-            Debug.Log("Card drawn: " + i);
         }
     }
 
-    private CardUI DrawPlayerCard()
-    {
-        // Deck is empty, force shuffle.
-        if (_deckManager.CurrentDeck.Count == 0)
-        {
-            Debug.LogWarning("Deck is empty!");
-            _deckManager.Shuffle();
-            return null;
-        }
-
-        // Create a new card instance and apply to hand.
-        CardData drawnCard = _deckManager.GetTopCard();
-
-        CardUI card = ObjectPooler.SpawnFromPool("Card", _cardGroup.transform.position, Quaternion.identity).GetComponent<CardUI>();
-        card.Initialize(drawnCard);
-        card.transform.SetParent(_cardGroup, false);
-
-        _currentHand.Add(drawnCard);
-        _currentHandUI.Add(card);
-
-        ValidadeCard(_actor.Stats.CurrentActions, _actor.Positioning.CurrentPosition, card);
-
-        return card;
-    }
-
-    private IEnumerator EnumeratorDrawCards(int quantity)
-    {
-        // Get the desired position for the card to spawn and where the deck is located.
-        Vector3 pos = new Vector3(_cardGroup.anchoredPosition.x + _startingAnchoredX, 0f, 0f);
-        Vector3 deckPos = UAnchoredPositions.GetAnchoredPositionFromWorld(_deckUi, _cardGroup, _mainCanvas);
-
-        // Loop through the number of cards to draw, waiting for the animation to finish before drawing the next one.
-        for (int i = 0; i < quantity; i++)
-        {
-            if (i > 0)
-                pos += new Vector3(_anchoredOffSet, 0f, 0f);
-
-            DrawPlayerCard().Animations.PlayDrawAnimation(deckPos, pos);
-            yield return new WaitForSeconds(0.5f);
-        }
-    }
-
+    /// <summary>
+    /// Discard Card. UI method, for player actors only.
+    /// </summary>
+    /// <param name="Card"></param>
     public void DiscardCard(CardUI Card)
     {
         _currentHand.Remove(Card.CardData);
@@ -123,12 +100,106 @@ public class HandManager : MonoBehaviour
         Card.gameObject.SetActive(false);
     }
 
+    /// <summary>
+    /// Discard Card. Basic method, no UI.
+    /// </summary>
+    /// <param name="Card"></param>
     public void DiscardCard(CardData Card)
     {
-        // Remove the card from the hand and add it to the discard pile.
         _currentHand.Remove(Card);
         _deckManager.DiscardPile.Add(Card);
     }
+    #endregion
+
+    // ========================================================================
+
+    #region Player Card Draw Methods
+    public void ShowHand()
+    {
+        _cardGroup.anchoredPosition = _visiblePosition;
+
+    }
+
+    public void HideHand()
+    {
+        _cardGroup.anchoredPosition = _hiddenPosition;
+    }
+
+    private CardUI DrawPlayerCard()
+    {
+        if (_currentHand.Count >= _actor.Data.MaxHandSize)
+        {
+            Debug.LogWarning("Hand is full!");
+            return null;
+        }
+
+        // Draw card logic
+        if (_deckManager.CurrentDeck.Count == 0)
+        {
+            Debug.LogWarning("Deck is empty!");
+            _deckManager.ReshuffleDiscardIntoDeck();
+        }
+
+        CardData drawnCard = _deckManager.GetTopCard();
+        _currentHand.Add(drawnCard);
+
+        // Create a new card instance UI
+        CardUI card = ObjectPooler.SpawnFromPool("Card", _cardGroup.transform.position, Quaternion.identity).GetComponent<CardUI>();
+        card.Initialize(drawnCard);
+        card.transform.SetParent(_cardGroup, false);
+
+        _currentHandUI.Add(card);
+
+        // Validate if cards are playable, unplayable cards are greyout;
+        ValidadeCard(_actor.Stats.CurrentActions, _actor.Positioning.CurrentPosition, card);
+
+        return card;
+    }
+
+    /// <summary>
+    /// Draw Cards UI animation method.
+    /// </summary>
+    /// <param name="quantity"></param>
+    /// <returns></returns>
+    private IEnumerator EnumeratorDrawCards(int quantity)
+    {
+        Vector3 deckPos = UAnchoredPositions.GetAnchoredPositionFromWorld(_deckUi, _cardGroup, _mainCanvas);
+
+        for (int i = 0; i < quantity; i++)
+        {
+            CardUI ui = DrawPlayerCard();
+            if (ui == null)
+                yield break;
+
+            // Temporarily place it at deck position
+            RectTransform rt = ui.GetComponent<RectTransform>();
+            rt.anchoredPosition = deckPos;
+
+            // Recalculate all card positions
+            UpdateCardPositions();
+
+            // Animate only the newly drawn card to its new anchored position
+            Vector3 targetPos = rt.anchoredPosition;
+            rt.anchoredPosition = deckPos;
+
+            ui.Animations.PlayDrawAnimation(deckPos, targetPos);
+
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+    private void UpdateCardPositions()
+    {
+        Vector3 pos = new Vector3(_cardGroup.anchoredPosition.x + _startingAnchoredX, 0f, 0f);
+
+        for (int i = 0; i < _currentHandUI.Count; i++)
+        {
+            RectTransform rt = _currentHandUI[i].GetComponent<RectTransform>();
+            rt.anchoredPosition = pos;
+
+            pos += new Vector3(_anchoredOffSet, 0f, 0f);
+        }
+    }
+
     #endregion
 
     // ========================================================================

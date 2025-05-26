@@ -70,13 +70,13 @@ public class ActorStats : MonoBehaviour
 
         _currentActions = _actionsPerTurn;
 
+
         ResolveStartTurnEffects();
         _actor.UI.UpdateStatusUI(_activeEffects);
     }
 
     public void OnEndTurn()
     {
-
         ResolveEndTurnEffects();
         _actor.UI.UpdateStatusUI(_activeEffects);
     }
@@ -163,9 +163,12 @@ public class ActorStats : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Resolve the end turn effects. Effects that will lose 1 durability as soon as the turn ends.
+    /// </summary>
     private void ResolveEndTurnEffects()
     {
-        foreach (StatusEffectInstance effect in _activeEffects)
+        foreach (StatusEffectInstance effect in _activeEffects.ToList())
         {
             switch (effect.StatusEffect)
             {
@@ -189,13 +192,19 @@ public class ActorStats : MonoBehaviour
                 case StatusEffects.Haste:
                     UpdateStatusDuration(effect);
                     break;
+                case StatusEffects.Toughness:
+                    UpdateStatusDuration(effect);
+                    break;
             }
         }
     }
 
+    /// <summary>
+    /// Resolver start turn effects, effects that will resolve and lose 1 durability as soon as the turn starts.
+    /// </summary>
     private void ResolveStartTurnEffects()
     {
-        foreach (StatusEffectInstance effect in _activeEffects)
+        foreach (StatusEffectInstance effect in _activeEffects.ToList())
         {
             switch (effect.StatusEffect)
             {
@@ -268,24 +277,32 @@ public class ActorStats : MonoBehaviour
         Target.Stats.TakeDamage(damageAfterWeakness);
 
         // Log
-        string log = $"{_actor.Data.ClassName} deals {damageAfterWeakness} damage to {Target.Data.ClassName}. " +
+        string log = $"{_actor.Data.ActorName} deals {damageAfterWeakness} damage to {Target.Data.ActorName}. " +
             $"Weakness: {initialWeakness}, Damage dealt: {damageAfterWeakness}";
         UConsole.Log(log);
     }
 
     public void TakeDamage(int damage)
     {
+        // Calculate extra damage taken from vulnerability
+        if (GetTotalEffectAmount(StatusEffects.Vulnerability) > 0)
+        {
+            damage = Mathf.Max(0, damage + GetTotalEffectAmount(StatusEffects.Vulnerability));
+        }
+
         // Calculate damage taken with block
         // Remove from block than remove from health
         int initialBlock = GetTotalEffectAmount(StatusEffects.Block);
         int blockedAmount = Mathf.Min(damage, initialBlock);
         int damageAfterBlock = Mathf.Max(0, damage - initialBlock);
+        SubtractBlock(blockedAmount);
 
         initialBlock = Mathf.Max(0, initialBlock - damage);
         _currentHealth -= damageAfterBlock;
 
+
         // Log
-        string log = $"{_actor.Data.ClassName} takes {damage} damage: " +
+        string log = $"{_actor.Data.ActorName} takes {damage} damage: " +
             $"{blockedAmount} blocked, {damageAfterBlock} dealt. " +
             $"Block remaining: {initialBlock}, Health: {_currentHealth}";
         UConsole.Log(log);  
@@ -310,11 +327,14 @@ public class ActorStats : MonoBehaviour
             burnDamage = Mathf.Max(0, burnDamage);
             _currentHealth -= burnDamage;
 
+            // Update Actor healthbar
+            _actor.UI.UpdateHealthUI(HealthPercentage, _currentHealth, _maxHealth);
+
             // Play taking damage animations
             FloatingTextAnimation(burnDamage.ToString(), HealthModColors.BurnDamage);
 
             // Log
-            string log = $"{_actor.Data.ClassName} takes {burnDamage} burning damage: " +
+            string log = $"{_actor.Data.ActorName} takes {burnDamage} burning damage: " +
               $"Health: {_currentHealth}";
             UConsole.Log(log);
 
@@ -337,7 +357,7 @@ public class ActorStats : MonoBehaviour
             FloatingTextAnimation(poisonDamage.ToString(), HealthModColors.PoisonDamage);
 
             // Log
-            string log = $"{_actor.Data.ClassName} takes {poisonDamage} poison damage: " +
+            string log = $"{_actor.Data.ActorName} takes {poisonDamage} poison damage: " +
               $"Health: {_currentHealth}";
 
             if (_currentHealth <= 0)
@@ -364,7 +384,7 @@ public class ActorStats : MonoBehaviour
             FloatingTextAnimation(bleedDamage.ToString(), HealthModColors.BasicDamage);
 
             // Log
-            string log = $"{_actor.Data.ClassName} takes {bleedDamage} poison damage: " +
+            string log = $"{_actor.Data.ActorName} takes {bleedDamage} poison damage: " +
               $"Health: {_currentHealth}";
 
             if (_currentHealth <= 0)
@@ -379,6 +399,7 @@ public class ActorStats : MonoBehaviour
         _isDead = true;
         PositionsManager.RemoveActor(_actor);
         CombatManager.RemoveCombatent(_actor);
+        TurnOrderUI.Instance.RemoveActorFromTurn(_actor);
 
         gameObject.SetActive(false);
     }
@@ -416,12 +437,35 @@ public class ActorStats : MonoBehaviour
     #region Buff Effects
     public void GainBlock(int blockAmount, int duration)
     {
-        AddStatusEffect(UEnums.StatusEffects.Block, blockAmount, duration);
+        AddStatusEffect(StatusEffects.Block, blockAmount, duration);
+    }
+    private void SubtractBlock(int amount)
+    {
+        int remaining = amount;
+
+        foreach (var effect in _activeEffects.Where(e => e.StatusEffect == StatusEffects.Block).ToList())
+        {
+            if (remaining <= 0) break;
+
+            int subtract = Mathf.Min(effect.Amount, remaining);
+            effect.Amount -= subtract;
+            remaining -= subtract;
+
+            if (effect.Amount <= 0)
+                _activeEffects.Remove(effect);
+        }
+
+        _actor.UI.UpdateStatusUI(_activeEffects);
     }
 
     public void GainRegen(int amount, int duration)
     {
-        AddStatusEffect(UEnums.StatusEffects.Regen, amount, duration);
+        AddStatusEffect(StatusEffects.Regen, amount, duration);
+    }
+
+    public void GainToughness(int amount, int duration)
+    {
+        AddStatusEffect(StatusEffects.Toughness, amount, duration);
     }
     #endregion
 
@@ -477,6 +521,7 @@ public class ActorStats : MonoBehaviour
 
     // ========================================================================
 
+    #region UI and Effects
     public void UpdateAllUI()
     {
         _actor.UI.UpdateHealthUI(HealthPercentage, _currentHealth, _maxHealth);
@@ -491,6 +536,7 @@ public class ActorStats : MonoBehaviour
         f.transform.SetParent(_actor.UI.WorldCanvas.transform);
         f.UpdateText(Text, 0.6f, DamageMod);
     }
+    #endregion
 
     // ========================================================================
 }

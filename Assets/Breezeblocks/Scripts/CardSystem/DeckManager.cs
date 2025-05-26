@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class DeckManager : MonoBehaviour
 {
@@ -30,8 +31,24 @@ public class DeckManager : MonoBehaviour
 
     private void InitializeDeck()
     {
-        _currentDeck = new List<CardData>(_actor.Data.StartingCards);
-        Shuffle();
+        if (_actor.Data.HasSpecialization)
+        {
+            List<CardData> finalDeck = new List<CardData>(_actor.Data.StartingCards);
+
+            List<CardData> randomSpecialized = _actor.Data.ActorSpecialization.SpecializationCards
+                .OrderBy(_ => Random.value)
+                .Take(_actor.Data.SpecializedCardsQuantity)
+                .ToList();
+
+            finalDeck.AddRange(randomSpecialized);
+            _currentDeck = finalDeck;
+        }
+        else
+        {
+            _currentDeck = new List<CardData>(_actor.Data.StartingCards);
+        }
+
+        ShuffleDeck();
     }
     #endregion
 
@@ -41,16 +58,15 @@ public class DeckManager : MonoBehaviour
     public CardData GetTopCard()
     {
         CardData card = _currentDeck[0];
-        _discardPile.Add(card);
         _currentDeck.RemoveAt(0);
 
         return card;
     }
 
     /// <summary>
-    /// Shuffle the current deck.
+    /// Shuffle current deck.
     /// </summary>
-    public void Shuffle()
+    public void ShuffleDeck()
     {
         for (int i = 0; i < _currentDeck.Count; i++)
         {
@@ -84,6 +100,18 @@ public class DeckManager : MonoBehaviour
     public bool RemoveCard(CardData card)
     {
         return _currentDeck.Remove(card);
+    }
+
+    /// <summary>
+    /// Reshuffle the discard pile into the draw pile.
+    /// </summary>
+    public void ReshuffleDiscardIntoDeck()
+    {
+        if (_discardPile.Count == 0) return;
+        
+        _currentDeck.AddRange(_discardPile);
+        _discardPile.Clear();
+        ShuffleDeck();
     }
     #endregion
 

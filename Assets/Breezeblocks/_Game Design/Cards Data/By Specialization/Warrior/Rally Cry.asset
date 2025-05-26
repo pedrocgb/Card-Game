@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a19dccf1348014ead4ded939d7251e, type: 3}
+  m_Name: Rally Cry
+  m_EditorClassIdentifier: 
+  _cardName: Rally Cry
+  _cardDescription: Apply 1x Toughness to all allies.
+  _cardImage: {fileID: -1157745474, guid: 974fd4d62621aff44a47d580012b1df2, type: 3}
+  _actionCost: 1
+  _cardEffects:
+  - EffectType: 107
+    Amount: 1
+    Duration: 1
+  _cardType: 2
+  _positions: 0200000003000000
+  _posIcon: {fileID: 21300000, guid: a41fbd9e715c4024aa12bf787fe67f45, type: 3}
+  _targetType: 2
+  _targetScope: 2
+  _targetPositions: 01000000020000000300000004000000
+  _targetIcon: {fileID: 21300000, guid: 4a2fe08ef900a304a954bfc81bc411de, type: 3}
