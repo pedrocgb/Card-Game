@@ -4,10 +4,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UConsole : MonoBehaviour
+public class Console : MonoBehaviour
 {
     #region Variables and Properties
-    public static UConsole Instance = null;
+    public static Console Instance = null;
 
     [FoldoutGroup("Settings", expanded: true)]
     [SerializeField]
@@ -22,6 +22,10 @@ public class UConsole : MonoBehaviour
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
     private TextMeshProUGUI _consoleText = null;
+
+    [FoldoutGroup("Components/Commands", expanded: true)]
+    [SerializeField]
+    private TMP_InputField _inputField = null;
 
     private Queue<string> _logLines = new Queue<string>();
     #endregion
@@ -100,6 +104,15 @@ public class UConsole : MonoBehaviour
             _consoleScroll.verticalNormalizedPosition = 0f;
     }
     #endregion
+
+    // ========================================================================
+
+    public void OnSubmitCommand()
+    {
+        string input = _inputField.text;
+        CommandProcessor.ExecuteCommand(input);
+        _inputField.text = string.Empty;
+    }
 
     // ========================================================================
 }

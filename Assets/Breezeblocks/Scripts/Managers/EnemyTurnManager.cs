@@ -67,7 +67,7 @@ public class EnemyTurnManager : MonoBehaviour
             // Check if the card is playable
             if (!UCardValidator.IsCardPlayable(card, enemy, PositionsManager.GetTeam<PlayerActor>()))
             {
-                UConsole.Log($"[AI] Skipping card {card.CardName} (not playable)");
+                Console.Log($"[AI] Skipping card {card.CardName} (not playable)");
                 continue;
             }
 
@@ -105,7 +105,7 @@ public class EnemyTurnManager : MonoBehaviour
             CardEffectResolver.ApplyEffects(selectedCard.CardEffects, enemy, chosenTarget, selectedCard);
             chosenTarget.HideTargetFeedBack();
 
-            UConsole.Log($"Enemy {enemy.name} played {selectedCard.CardName} on {chosenTarget.name}");
+            Console.Log($"Enemy {enemy.name} played {selectedCard.CardName} on {chosenTarget.name}");
         }
         else
         {
@@ -119,7 +119,7 @@ public class EnemyTurnManager : MonoBehaviour
             foreach (var t in validTargets)
                 t.HideTargetFeedBack();
 
-            UConsole.Log($"Enemy {enemy.name} played {selectedCard.CardName} on all valid targets");
+            Console.Log($"Enemy {enemy.name} played {selectedCard.CardName} on all valid targets");
         }
 
         TargetingManager.Instance.ClearHightLights();

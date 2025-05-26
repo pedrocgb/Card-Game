@@ -46,6 +46,7 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
 
     // Actor stats
     private string _actorName = string.Empty;
+    public string ActorName => _actorName;
     private int _initiativeBonus = 0;
     public int InitiativeBonus { get { return _initiativeBonus; } }
     private int _currentInitiative = 0;
@@ -88,7 +89,7 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     {
         int init = Random.Range(1, 9) + _initiativeBonus;
         _currentInitiative = init;
-        UConsole.Log($"{name} rolled {init} + {_initiativeBonus} = {init + _initiativeBonus}");
+        Console.Log($"{name} rolled {init} + {_initiativeBonus} = {init + _initiativeBonus}");
     }
 
     public virtual void StartNewTurn()

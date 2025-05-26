@@ -18,5 +18,6 @@ public class PlayerActor : ActorManager
     {
         base.EndTurn();
         _hand.HideHand();
+        _hand.DiscardHand(IsPlayer: true);
     }
 }

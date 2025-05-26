@@ -17,8 +17,11 @@ public class CombatManager : MonoBehaviour
 
     // Actors
     private ActorManager _currentCombatent = null;
+    public ActorManager CurrentCombatent => _currentCombatent;
+
     private List<PlayerActor> _playerActors = new List<PlayerActor>();
     public List<PlayerActor> PlayerActors => _playerActors;
+
     private List<EnemyActor> _enemyActors = new List<EnemyActor>();
     public List<EnemyActor> EnemyActors => _enemyActors;
 

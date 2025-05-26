@@ -8,7 +8,7 @@ public static class CardEffectResolver
     public static void ApplyEffects(List<EffectBlock> Effects, ActorManager Source, ActorManager MainTarget, CardData Card)
     {
         List<ActorManager> targets = ResolveTargets(Card, Source, MainTarget);
-        UConsole.Log(targets.Count + " targets found for " + Card.CardName);
+        Console.Log(targets.Count + " targets found for " + Card.CardName);
 
         foreach (var target in targets)
         {
@@ -70,7 +70,7 @@ public static class CardEffectResolver
 
     public static List<ActorManager> ResolveTargets(CardData Card, ActorManager Source, ActorManager Target)
     {
-        UConsole.Log($"[AI] Resolving targets for {Card.CardName} (Type: {Card.TargetType}, Scope: {Card.TargetScope})");
+        Console.Log($"[AI] Resolving targets for {Card.CardName} (Type: {Card.TargetType}, Scope: {Card.TargetScope})");
         var targets = new List<ActorManager>();
 
 
@@ -90,14 +90,14 @@ public static class CardEffectResolver
             _ => new List<ActorManager>()
         };
 
-        UConsole.Log("Potential targets: " + potentialTargets.Count);
+        Console.Log("Potential targets: " + potentialTargets.Count);
 
         // Filter by position
         potentialTargets = potentialTargets.Where(t => !t.Stats.IsDead && Card.TargetPositions.Contains(t.Positioning.CurrentPosition)).ToList();
 
-        UConsole.Log("Filtered targets: " + potentialTargets.Count);
+        Console.Log("Filtered targets: " + potentialTargets.Count);
 
-        UConsole.Log($"[AI] Found {potentialTargets.Count} valid targets for {Card.CardName}");
+        Console.Log($"[AI] Found {potentialTargets.Count} valid targets for {Card.CardName}");
 
         if (Card.TargetScope == UEnums.TargetAmount.Single)
         {

@@ -52,7 +52,7 @@ public class HandManager : MonoBehaviour
 
     // ========================================================================
 
-    #region Draw and Descard Cards Methods
+    #region Draw and Descard Cards For Enemies / AI
     /// <summary>
     /// Draw a number of cards from the deck, add it to current hand and animate them.
     /// </summary>
@@ -88,19 +88,6 @@ public class HandManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Discard Card. UI method, for player actors only.
-    /// </summary>
-    /// <param name="Card"></param>
-    public void DiscardCard(CardUI Card)
-    {
-        _currentHand.Remove(Card.CardData);
-        _deckManager.DiscardPile.Add(Card.CardData);
-        _currentHandUI.Remove(Card);
-
-        Card.gameObject.SetActive(false);
-    }
-
-    /// <summary>
     /// Discard Card. Basic method, no UI.
     /// </summary>
     /// <param name="Card"></param>
@@ -119,12 +106,10 @@ public class HandManager : MonoBehaviour
         _cardGroup.anchoredPosition = _visiblePosition;
 
     }
-
     public void HideHand()
     {
         _cardGroup.anchoredPosition = _hiddenPosition;
     }
-
     private CardUI DrawPlayerCard()
     {
         if (_currentHand.Count >= _actor.Data.MaxHandSize)
@@ -155,7 +140,6 @@ public class HandManager : MonoBehaviour
 
         return card;
     }
-
     /// <summary>
     /// Draw Cards UI animation method.
     /// </summary>
@@ -200,12 +184,46 @@ public class HandManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Discard Card. UI method, for player actors only.
+    /// </summary>
+    /// <param name="Card"></param>
+    public void DiscardCard(CardUI Card)
+    {
+        _currentHand.Remove(Card.CardData);
+        _deckManager.DiscardPile.Add(Card.CardData);
+        _currentHandUI.Remove(Card);
+
+        Card.gameObject.SetActive(false);
+    }
+    public void DiscardHand(bool IsPlayer)
+    {
+        if (IsPlayer)
+        {
+            // Discard all cards in the hand
+            foreach (CardUI cardUI in _currentHandUI)
+            {
+                _deckManager.DiscardPile.Add(cardUI.CardData);
+                cardUI.gameObject.SetActive(false);
+            }
+            _currentHand.Clear();
+            _currentHandUI.Clear();
+            // Reset card positions
+            UpdateCardPositions();
+        }
+        else
+        {
+            // For AI or non-player actors, just clear the hand without UI
+            _currentHand.Clear();
+            _currentHandUI.Clear();
+            _deckManager.DiscardPile.Clear();
+        }
+    }
     #endregion
 
     // ========================================================================
 
     #region Card Validation Methods - Player
-
     public void ValidadeHand(int CurrentActions, UEnums.Positions CurrentPosition)
     {
         // Loop through the current hand and check if the cards are valid.

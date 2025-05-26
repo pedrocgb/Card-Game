@@ -279,7 +279,7 @@ public class ActorStats : MonoBehaviour
         // Log
         string log = $"{_actor.Data.ActorName} deals {damageAfterWeakness} damage to {Target.Data.ActorName}. " +
             $"Weakness: {initialWeakness}, Damage dealt: {damageAfterWeakness}";
-        UConsole.Log(log);
+        Console.Log(log);
     }
 
     public void TakeDamage(int damage)
@@ -305,7 +305,7 @@ public class ActorStats : MonoBehaviour
         string log = $"{_actor.Data.ActorName} takes {damage} damage: " +
             $"{blockedAmount} blocked, {damageAfterBlock} dealt. " +
             $"Block remaining: {initialBlock}, Health: {_currentHealth}";
-        UConsole.Log(log);  
+        Console.Log(log);  
 
         // Update Actor healthbar
         _actor.UI.UpdateHealthUI(HealthPercentage, _currentHealth, _maxHealth);
@@ -336,7 +336,7 @@ public class ActorStats : MonoBehaviour
             // Log
             string log = $"{_actor.Data.ActorName} takes {burnDamage} burning damage: " +
               $"Health: {_currentHealth}";
-            UConsole.Log(log);
+            Console.Log(log);
 
             if (_currentHealth <= 0 )
             {

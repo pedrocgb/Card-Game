@@ -27,5 +27,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a952836b3e4f19543a14d735bf69f882, type: 2}
   - {fileID: 11400000, guid: 11bb86a507a7c6c4a847eef68a26263d, type: 2}
   - {fileID: 11400000, guid: 11bb86a507a7c6c4a847eef68a26263d, type: 2}
-  _baseCardBuy: 3
-  _maxHandSize: 6
+  _baseCardBuy: 5
+  _maxHandSize: 8
