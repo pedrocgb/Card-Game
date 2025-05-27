@@ -14,6 +14,10 @@ public class ActorData : ScriptableObject
     [PreviewField(height: 100, alignment: ObjectFieldAlignment.Left)]
     private Sprite _portrait = null;
     public Sprite Portrait => _portrait;
+    [FoldoutGroup("Actor Info", expanded: true)]
+    [SerializeField]
+    private RuntimeAnimatorController _actorAnimatorParameter = null;
+    public RuntimeAnimatorController ActorAnimatorParameter => _actorAnimatorParameter;
 
     // ========================================================================
 
@@ -36,8 +40,8 @@ public class ActorData : ScriptableObject
     [FoldoutGroup("Actor Info/Specialization", expanded: true)]
     [SerializeField]
     [ShowIf("_hasSpecialization")]
-    private int _specializedCardsQuantity = 0;
-    public int SpecializedCardsQuantity => _specializedCardsQuantity;
+    private List<CardData> _startingSpecializedCards = new List<CardData>();
+    public List<CardData> StartingSpecializedCards => _startingSpecializedCards;
 
     // ========================================================================
 

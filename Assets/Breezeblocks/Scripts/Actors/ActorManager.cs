@@ -23,7 +23,9 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     [FoldoutGroup("Graphics", expanded: true)]
     [SerializeField]
     private GameObject _actorModel = null;
-    private SpriteRenderer _spriteRenderer = null;
+    [FoldoutGroup("Graphics", expanded: true)]
+    [SerializeField]
+    private Animator _actorAnimator = null;
     [FoldoutGroup("Graphics/Effects", expanded: true)]
     [SerializeField]
     protected GameObject _hostilePositionEffect = null;
@@ -36,6 +38,7 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     [FoldoutGroup("Graphics/Effects", expanded: true)]
     [SerializeField]
     protected GameObject _allyTargetEffect = null;
+    private SpriteRenderer _spriteRenderer = null;
 
     // Deck and Hand managers
     private DeckManager _deck = null;
@@ -69,6 +72,7 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
         _myPosition = GetComponent<ActorPosition>();
         _myUi = GetComponent<ActorUI>();
         _spriteRenderer = _actorModel.GetComponent<SpriteRenderer>();
+        _actorAnimator = _actorModel.GetComponent<Animator>();
 
         Initialize();
     }
@@ -77,6 +81,7 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     {
         _actorName = UConstants.LIST_OF_NAMES[Random.Range(0, UConstants.LIST_OF_NAMES.Count)];
         gameObject.name = _actorName;
+        _actorAnimator.runtimeAnimatorController = _actorData.ActorAnimatorParameter;
 
         _initiativeBonus = _actorData.InitiativeBonus;
     }

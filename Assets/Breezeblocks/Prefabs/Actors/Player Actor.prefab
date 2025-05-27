@@ -125,8 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd30f335153c774e9ab5aec52db712c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actorData: {fileID: 11400000, guid: 0f68ae7d6ac08904288709c6fc1ea32e, type: 2}
+  _actorData: {fileID: 11400000, guid: 1bb3c3ccd7ff0e246bf66de3cf2ac7fd, type: 2}
   _actorModel: {fileID: 5919497451703877235}
+  _actorAnimator: {fileID: 9059914199689791697}
   _hostilePositionEffect: {fileID: 7859028877964821649}
   _allyPositionEffect: {fileID: 6189886512299003349}
   _hostileTargetEffect: {fileID: 8989086260596311642}

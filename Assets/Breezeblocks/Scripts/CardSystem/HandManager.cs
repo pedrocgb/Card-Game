@@ -52,7 +52,7 @@ public class HandManager : MonoBehaviour
 
     // ========================================================================
 
-    #region Draw and Descard Cards For Enemies / AI
+    #region Enemy Draw Methods
     /// <summary>
     /// Draw a number of cards from the deck, add it to current hand and animate them.
     /// </summary>

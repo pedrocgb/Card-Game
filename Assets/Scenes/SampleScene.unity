@@ -1881,7 +1881,11 @@ PrefabInstance:
     - target: {fileID: 6163624491599570395, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: _actorData
       value: 
-      objectReference: {fileID: 11400000, guid: c81523ef8f745c14b94c6e2a4cba3dc1, type: 2}
+      objectReference: {fileID: 11400000, guid: 1bb3c3ccd7ff0e246bf66de3cf2ac7fd, type: 2}
+    - target: {fileID: 6163624491599570395, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
+      propertyPath: _actorAnimator
+      value: 
+      objectReference: {fileID: 1125238372}
     - target: {fileID: 6284345710817605182, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: _deckUi
       value: 
@@ -1905,7 +1909,7 @@ PrefabInstance:
     - target: {fileID: 9059914199689791697, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: b7edf3c3eeb9f4a4589a1bc00fc253c1, type: 2}
+      objectReference: {fileID: 9100000, guid: 8a04a4a6cde5d3a478349ea1a336716a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1927,6 +1931,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd30f335153c774e9ab5aec52db712c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1125238372 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9059914199689791697, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
+  m_PrefabInstance: {fileID: 1125238369}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1136778150
 GameObject:
   m_ObjectHideFlags: 0

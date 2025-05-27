@@ -125,8 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be9f0da43550a14e9036ee68fb1e42a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actorData: {fileID: 11400000, guid: d6ce7eb2f2c895b45ae78aa114bea530, type: 2}
+  _actorData: {fileID: 11400000, guid: a5e3e54380e187c4a9b4199358e885c3, type: 2}
   _actorModel: {fileID: 5919497451703877235}
+  _actorAnimator: {fileID: 9059914199689791697}
   _hostilePositionEffect: {fileID: 7859028877964821649}
   _allyPositionEffect: {fileID: 6189886512299003349}
   _hostileTargetEffect: {fileID: 8989086260596311642}
@@ -325,7 +326,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2059036364, guid: 81910ab358b30924a8fd0783895ee449, type: 3}
+  m_Sprite: {fileID: -1329963487, guid: cfb530ea762e9474999cab8076f77ccd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -449,6 +450,10 @@ PrefabInstance:
     - target: {fileID: 2000140331153205797, guid: 1ee2c348f11976d41985c19dbde45506, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421915712807088343, guid: 1ee2c348f11976d41985c19dbde45506, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

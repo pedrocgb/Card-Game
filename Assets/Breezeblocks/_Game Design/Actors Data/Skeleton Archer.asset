@@ -13,12 +13,19 @@ MonoBehaviour:
   m_Name: Skeleton Archer
   m_EditorClassIdentifier: 
   _actorName: 
-  _portrait: {fileID: -6910697209631215935, guid: 651ca3c0117de6542a0efda0abad0080, type: 3}
+  _portrait: {fileID: 6236052873149751763, guid: 95d6058acbf05a7469740a5415b40e5b, type: 3}
+  _actorAnimatorParameter: {fileID: 9100000, guid: b27c01da9de88d6499f734dc277d98ba, type: 2}
   _actorRace: {fileID: 11400000, guid: f61478be1e5d7ec4099b6e479261ba0f, type: 2}
   _hasSpecialization: 1
   _actorSpecialization: {fileID: 11400000, guid: c17b1af7cf73ed849872b5ac40bb72de, type: 2}
-  _specializedCardsQuantity: 5
-  _baseMaxHealth: 14
+  _startingSpecializedCards:
+  - {fileID: 11400000, guid: dda1c37bc4c4f234e917e8f9a781f4ce, type: 2}
+  - {fileID: 11400000, guid: 7b1c0cac563edc84dad233776c3a3a62, type: 2}
+  - {fileID: 11400000, guid: 27d5476286247ba40ace362c5e655ba5, type: 2}
+  - {fileID: 11400000, guid: 63a185a5952cacd4793c053dc69f01cc, type: 2}
+  - {fileID: 11400000, guid: 63a185a5952cacd4793c053dc69f01cc, type: 2}
+  - {fileID: 11400000, guid: 63a185a5952cacd4793c053dc69f01cc, type: 2}
+  _baseMaxHealth: 18
   _baseActionsPerTurn: 3
   _initiativeBonus: 3
   _startingCards:

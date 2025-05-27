@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1660071e04986942ab314589068ca79, type: 3}
+  m_Name: '[SPEC] Warrior'
+  m_EditorClassIdentifier: 
+  _specializationName: Warrior
+  _specializationDescription: Warriors are frontline fighters specialized in melee
+    combat and defense.
+  _specializationCards:
+  - {fileID: 11400000, guid: a9e8c688f219d6f4096c5ccf0575f503, type: 2}
+  - {fileID: 11400000, guid: 7366bb92b50feb646893f3ec1a534b81, type: 2}
+  - {fileID: 11400000, guid: 379940461e911c843939b1fc48a38ac8, type: 2}
+  - {fileID: 11400000, guid: 3d6aea872362f9740be0ed60884f9808, type: 2}
+  - {fileID: 11400000, guid: 8fe81f25298ea314a9f025fca357258e, type: 2}
+  - {fileID: 11400000, guid: 95e0cf23098a14044923fd0aa4837650, type: 2}

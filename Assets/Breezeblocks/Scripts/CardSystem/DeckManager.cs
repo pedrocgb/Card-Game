@@ -33,15 +33,8 @@ public class DeckManager : MonoBehaviour
     {
         if (_actor.Data.HasSpecialization)
         {
-            List<CardData> finalDeck = new List<CardData>(_actor.Data.StartingCards);
-
-            List<CardData> randomSpecialized = _actor.Data.ActorSpecialization.SpecializationCards
-                .OrderBy(_ => Random.value)
-                .Take(_actor.Data.SpecializedCardsQuantity)
-                .ToList();
-
-            finalDeck.AddRange(randomSpecialized);
-            _currentDeck = finalDeck;
+            _currentDeck = new List<CardData>(_actor.Data.StartingCards);
+            _currentDeck.AddRange(_actor.Data.StartingSpecializedCards);
         }
         else
         {
