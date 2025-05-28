@@ -40,6 +40,9 @@ public class FloatingDamage : MonoBehaviour
             case UEnums.HealthModColors.Heal:
                 _text.color = UConstants.HEAL_COLOR;
                 break;
+            case UEnums.HealthModColors.Dodge:
+                _text.color = UConstants.DODGE_COLOR;
+                break;
         }
 
         _text.text = NewText;

@@ -51,6 +51,9 @@ public static class CardEffectResolver
                     case UEnums.CardEffects.Toughness:
                         target.Stats.GainToughness(effect.Amount, effect.Duration);
                         break;
+                    case UEnums.CardEffects.Dodge:
+                        target.Stats.GainDodge(effect.Amount, effect.Duration);
+                        break;
                     case UEnums.CardEffects.Draw:
                         Source.Hand.DrawCards(effect.Amount);
                         break;

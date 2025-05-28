@@ -19,7 +19,7 @@ MonoBehaviour:
   _hasSpecialization: 0
   _actorSpecialization: {fileID: 0}
   _startingSpecializedCards: []
-  _baseMaxHealth: 15
+  _baseMaxHealth: 10
   _baseActionsPerTurn: 2
   _initiativeBonus: 1
   _startingCards:

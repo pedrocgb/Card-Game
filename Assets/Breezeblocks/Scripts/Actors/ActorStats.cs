@@ -73,6 +73,8 @@ public class ActorStats : MonoBehaviour
 
         ResolveStartTurnEffects();
         _actor.UI.UpdateStatusUI(_activeEffects);
+        if (_isPlayerActor)
+            _actor.UI.UpdateActionsUI(_currentActions, _unmodifiedActionsPerTurn);
     }
 
     public void OnEndTurn()
@@ -269,21 +271,35 @@ public class ActorStats : MonoBehaviour
     public void DealDamage(int Damage, ActorManager Target)
     {
         // Calculate damage dealt with weakness
-        // Remove from health
         int initialWeakness = GetTotalEffectAmount(StatusEffects.Weakness);
         int damageAfterWeakness = Mathf.Max(0, Damage - initialWeakness);
 
+        // Calculate damage dealth with bonus damage from Toughness
+        int initialToughness = GetTotalEffectAmount(StatusEffects.Toughness);
+
+        int finalDamage = Mathf.Max(0, damageAfterWeakness + initialToughness);
+
         // Deal damage
-        Target.Stats.TakeDamage(damageAfterWeakness);
+        Target.Stats.TakeDamage(finalDamage);
 
         // Log
-        string log = $"{_actor.Data.ActorName} deals {damageAfterWeakness} damage to {Target.Data.ActorName}. " +
-            $"Weakness: {initialWeakness}, Damage dealt: {damageAfterWeakness}";
+        string log = $"{_actor.Data.ActorName} deals {finalDamage} damage to {Target.Data.ActorName}. " +
+            $"Weakness: {initialWeakness}, Toughness: {initialToughness}, Damage dealt: {finalDamage}";
         Console.Log(log);
     }
 
     public void TakeDamage(int damage)
     {
+        // Dodge check
+        if (GetTotalEffectAmount(StatusEffects.Dodge) > 0)
+        {
+            // If the actor has a dodge effect, they dodge the attack
+            UpdateStatusDuration(_activeEffects.First(e => e.StatusEffect == StatusEffects.Dodge));
+            FloatingTextAnimation("DODGE!", HealthModColors.Dodge);
+            Console.Log($"{_actor.Data.ActorName} dodges the attack!");
+            return;
+        }
+
         // Calculate extra damage taken from vulnerability
         if (GetTotalEffectAmount(StatusEffects.Vulnerability) > 0)
         {
@@ -466,6 +482,11 @@ public class ActorStats : MonoBehaviour
     public void GainToughness(int amount, int duration)
     {
         AddStatusEffect(StatusEffects.Toughness, amount, duration);
+    }
+
+    public void GainDodge(int amount, int duration)
+    {
+        AddStatusEffect(StatusEffects.Dodge, amount, duration);
     }
     #endregion
 

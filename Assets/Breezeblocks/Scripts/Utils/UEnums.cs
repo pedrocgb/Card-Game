@@ -119,6 +119,7 @@ public class UEnums
         BasicDamage = 0,
         BurnDamage = 1,
         PoisonDamage = 2,
-        Heal = 3
+        Heal = 3,
+        Dodge = 4
     }
 }

@@ -10,6 +10,7 @@ public static class UConstants
     public static Color BURN_DAMAGE_COLOR = Color.orange;
     public static Color POISON_DAMAGE_COLOR = Color.green;
     public static Color HEAL_COLOR = Color.cyan;
+    public static Color DODGE_COLOR = Color.azure;
 
     public static List<string> LIST_OF_NAMES = new List<string>
     {

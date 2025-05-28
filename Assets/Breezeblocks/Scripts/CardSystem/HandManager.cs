@@ -1,5 +1,6 @@
 using Breezeblocks.Managers;
 using Sirenix.OdinInspector;
+using Sirenix.Utilities;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -78,8 +79,9 @@ public class HandManager : MonoBehaviour
 
             if (_deckManager.CurrentDeck.Count == 0)
             {
-                Debug.LogWarning("Deck is empty!");
+                Debug.LogWarning("Deck is empty! Reshuffling discard");
                 _deckManager.ReshuffleDiscardIntoDeck();
+                continue;
             }
 
             CardData drawnCard = _deckManager.GetTopCard();
@@ -136,7 +138,7 @@ public class HandManager : MonoBehaviour
         _currentHandUI.Add(card);
 
         // Validate if cards are playable, unplayable cards are greyout;
-        ValidadeCard(_actor.Stats.CurrentActions, _actor.Positioning.CurrentPosition, card);
+        ValidateCard(card, _actor);
 
         return card;
     }
@@ -214,9 +216,12 @@ public class HandManager : MonoBehaviour
         else
         {
             // For AI or non-player actors, just clear the hand without UI
+            foreach (CardData card in _currentHand)
+            {
+                _deckManager.DiscardPile.Add(card);
+            }
             _currentHand.Clear();
             _currentHandUI.Clear();
-            _deckManager.DiscardPile.Clear();
         }
     }
     #endregion
@@ -224,59 +229,24 @@ public class HandManager : MonoBehaviour
     // ========================================================================
 
     #region Card Validation Methods - Player
-    public void ValidadeHand(int CurrentActions, UEnums.Positions CurrentPosition)
+    public bool ValidateCard(CardUI Card, ActorManager Source)
     {
-        // Loop through the current hand and check if the cards are valid.
-        for (int i = 0; i < _currentHand.Count; i++)
-        {
-            CardUI cardUI = _currentHandUI[i];
-            CardData cardData = _currentHand[i];
+        bool validate = UCardValidator.IsCardPlayable(Card.CardData, Source, UCardValidator.GetAllValidTargets(Card.CardData, Source));
+        Card.Validate(validate);
 
-            bool hasEnoughActions = CurrentActions >= cardData.ActionCost;
-
-            bool canUseFromThisPosition = false;
-            switch (cardData.TargetType)
-            {
-                default:
-                case UEnums.Target.Self:
-                    canUseFromThisPosition = true;
-                    break;
-                case UEnums.Target.Ally:
-                    canUseFromThisPosition = cardData.Positions.Contains(CurrentPosition);
-                    break;
-                case UEnums.Target.Enemy:
-                    canUseFromThisPosition = cardData.Positions.Contains(CurrentPosition);
-                    break;
-            }
-
-            bool isPlayable = hasEnoughActions && canUseFromThisPosition;
-
-            cardUI.Validate(isPlayable);
-        }
+        return validate;
     }
 
-    public void ValidadeCard(int CurrentActions, UEnums.Positions CurrentPosition, CardUI Card)
+    public void ValidateHand()
     {
+        if (_currentHandUI.Count <= 0)
+            return;
 
-        bool hasEnoughActions = CurrentActions >= Card.CardData.ActionCost;
-        bool canUseFromThisPosition = false;
-        switch (Card.CardData.TargetType)
+        // Loop through the current hand and check if the cards are valid.
+        for (int i = 0; i < _currentHandUI.Count; i++)
         {
-            default:
-            case UEnums.Target.Self:
-                canUseFromThisPosition = true;
-                break;
-            case UEnums.Target.Ally:
-                canUseFromThisPosition = Card.CardData.Positions.Contains(CurrentPosition);
-                break;
-            case UEnums.Target.Enemy:
-                canUseFromThisPosition = Card.CardData.Positions.Contains(CurrentPosition);
-                break;
+            ValidateCard(_currentHandUI[i], _actor);
         }
-
-        bool isPlayable = hasEnoughActions && canUseFromThisPosition;
-
-        Card.Validate(isPlayable);
     }
     #endregion
 

@@ -642,6 +642,7 @@ GameObject:
   - component: {fileID: 7766743823151071389}
   - component: {fileID: 1765875268502948180}
   - component: {fileID: 1263122543876660144}
+  - component: {fileID: 87765128763132055}
   m_Layer: 5
   m_Name: Card UI
   m_TagString: Untagged
@@ -701,10 +702,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7396239916a128f44aa2b189d942ea19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _frontImage: {fileID: 757567573695890698}
-  _backImage: {fileID: 5313196292683330052}
   _moveDuration: 0.6
   _flipDuration: 0.3
+  _frontImage: {fileID: 757567573695890698}
+  _backImage: {fileID: 5313196292683330052}
 --- !u!114 &1765875268502948180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -757,6 +758,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5903213188334675933}
   m_CullTransparentMesh: 1
+--- !u!225 &87765128763132055
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5903213188334675933}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &6810717630144542740
 GameObject:
   m_ObjectHideFlags: 0

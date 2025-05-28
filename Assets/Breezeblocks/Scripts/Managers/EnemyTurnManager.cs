@@ -7,6 +7,8 @@ public class EnemyTurnManager : MonoBehaviour
 {
     public static EnemyTurnManager Instance;
     private bool _cardPlayed = false;
+    private bool _isEnemyTurn = false;
+    public static bool IsEnemyTurn => Instance._isEnemyTurn;
 
     // ========================================================================
 
@@ -27,6 +29,7 @@ public class EnemyTurnManager : MonoBehaviour
     /// <returns></returns>
     private IEnumerator EnemyTurnCoroutine(EnemyActor enemy)
     {
+        _isEnemyTurn = true;
         yield return new WaitForSeconds(1f); // small delay before acting
 
         enemy.StartNewTurn(); // draws cards, restores mana
@@ -46,6 +49,7 @@ public class EnemyTurnManager : MonoBehaviour
 
         TargetingManager.Instance.ClearHightLights();
         CombatManager.Instance.EndTurn();
+        _isEnemyTurn = false;
     }
     #endregion
 
@@ -71,7 +75,7 @@ public class EnemyTurnManager : MonoBehaviour
                 continue;
             }
 
-            var possibleTargets = GetAllValidTargets(card, enemy);
+            var possibleTargets = UCardValidator.GetAllValidTargets(card, enemy);
             if (card.TargetScope == UEnums.TargetAmount.All ||
                 possibleTargets.Count > 0)
             {
@@ -89,7 +93,7 @@ public class EnemyTurnManager : MonoBehaviour
         // Choose random card to play
         CardData selectedCard = playableCards[Random.Range(0, playableCards.Count)];
         // Get all valid targets
-        List<ActorManager> validTargets = GetAllValidTargets(selectedCard, enemy);
+        List<ActorManager> validTargets = UCardValidator.GetAllValidTargets(selectedCard, enemy);
         // Highlight valid targets
         TargetingManager.Instance.HighLightActors(enemy, selectedCard.TargetPositions, selectedCard.TargetType);
 
@@ -101,6 +105,10 @@ public class EnemyTurnManager : MonoBehaviour
             chosenTarget.ShowTargetFeedback(selectedCard.TargetType);
 
             yield return new WaitForSeconds(0.5f);
+
+            CardPreviewUI.ShowEnemyCard(enemy, selectedCard);
+
+            yield return new WaitForSeconds(0.5f); // simulate casting time
 
             CardEffectResolver.ApplyEffects(selectedCard.CardEffects, enemy, chosenTarget, selectedCard);
             chosenTarget.HideTargetFeedBack();
@@ -114,6 +122,10 @@ public class EnemyTurnManager : MonoBehaviour
 
             yield return new WaitForSeconds(0.5f);
 
+            CardPreviewUI.ShowEnemyCard(enemy, selectedCard);
+
+            yield return new WaitForSeconds(0.5f); // simulate casting time
+
             CardEffectResolver.ApplyEffects(selectedCard.CardEffects, enemy, null, selectedCard);
 
             foreach (var t in validTargets)
@@ -126,31 +138,6 @@ public class EnemyTurnManager : MonoBehaviour
         enemy.Stats.SpendAction(selectedCard.ActionCost);
         enemy.Hand.DiscardCard(selectedCard);
         _cardPlayed = true;
-    }
-
-    /// <summary>
-    /// Get all valid targets for a card based on its target type, positions and the source actor.
-    /// </summary>
-    /// <param name="card"></param>
-    /// <param name="source"></param>
-    /// <returns></returns>
-    private List<ActorManager> GetAllValidTargets(CardData card, ActorManager source)
-    {
-        if (card.TargetType == UEnums.Target.Self)
-        {
-            return new List<ActorManager> { source };
-        }
-
-        var team = card.TargetType switch
-        {
-            UEnums.Target.Ally => PositionsManager.GetTeamOf(source),
-            UEnums.Target.Enemy => PositionsManager.GetOpposingTeamOf(source),
-            _ => new List<ActorManager>()
-        };
-
-        return team
-            .Where(t => !t.Stats.IsDead && card.TargetPositions.Contains(t.Positioning.CurrentPosition))
-            .ToList();
     }
     #endregion
 

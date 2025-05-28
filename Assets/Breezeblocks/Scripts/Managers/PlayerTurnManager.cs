@@ -66,15 +66,20 @@ public class PlayerTurnManager : MonoBehaviour
 
     public void UseCard()
     {
-        CardEffectResolver.ApplyEffects(_cardData.CardEffects, _actor, TargetingManager.Instance.CurrentTarget, _cardData);
+        if (_actor.Hand.ValidateCard(_cardUI, _actor))
+        {
+            Console.Log($"{_actor.name} used {_cardData.CardName} on {TargetingManager.Instance.CurrentTarget.name}");
 
-        Console.Log($"{_actor.name} used {_cardData.CardName} on {TargetingManager.Instance.CurrentTarget.name}");
-        _actor.Hand.DiscardCard(_cardUI);
-        _targetingManager.ClearHightLights();
-        _targetingManager.SetTarget(null);
-        _actor.Stats.SpendAction(_cardData.ActionCost);
+            _actor.Stats.SpendAction(_cardData.ActionCost);
+            CardEffectResolver.ApplyEffects(_cardData.CardEffects, _actor, TargetingManager.Instance.CurrentTarget, _cardData);
 
-        _actor.Hand.ValidadeHand(_actor.Stats.CurrentActions, _actor.Positioning.CurrentPosition);
+            _actor.Hand.DiscardCard(_cardUI);
+            _targetingManager.ClearHightLights();
+            _targetingManager.SetTarget(null);
+
+            _actor.Hand.ValidateHand();
+        }
+
     }
     #endregion
 

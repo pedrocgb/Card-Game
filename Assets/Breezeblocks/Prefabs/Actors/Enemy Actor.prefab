@@ -132,6 +132,8 @@ MonoBehaviour:
   _allyPositionEffect: {fileID: 6189886512299003349}
   _hostileTargetEffect: {fileID: 8989086260596311642}
   _allyTargetEffect: {fileID: 1167319704296513206}
+  _outlineColor: {r: 0.9676024, g: 1, b: 0, a: 1}
+  _outlineWidth: 2
 --- !u!114 &6624925030088808006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,7 +307,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 79d4b400b164b1044afa8c1394a4e25b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

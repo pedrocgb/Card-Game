@@ -103,12 +103,12 @@ TextureImporter:
       name: Tex_h_miner_male_0
       rect:
         serializedVersion: 2
-        x: 340
-        y: 79
-        width: 1783
-        height: 2669
+        x: 790
+        y: 2082
+        width: 604
+        height: 666
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 17674072dca136841af68153850248f3
     internalID: 0
     vertices: []
     indices: 

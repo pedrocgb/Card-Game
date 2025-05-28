@@ -3,6 +3,7 @@ using UnityEngine;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using Breezeblocks.Managers;
+using TMPro;
 
 public class TurnOrderUI : MonoBehaviour
 {
@@ -29,6 +30,9 @@ public class TurnOrderUI : MonoBehaviour
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
     private Transform _turnOrderContainer; // Parent for icon layout
+    [FoldoutGroup("Components", expanded: true)]
+    [SerializeField]
+    private TextMeshProUGUI _actorNameText = null;
     #endregion
 
     // ========================================================================

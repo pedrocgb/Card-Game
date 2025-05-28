@@ -38,6 +38,13 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     [FoldoutGroup("Graphics/Effects", expanded: true)]
     [SerializeField]
     protected GameObject _allyTargetEffect = null;
+    [FoldoutGroup("Graphics/Effects/Turn", expanded: true)]
+    [SerializeField]
+    private Color _outlineColor = Color.white;
+    [FoldoutGroup("Graphics/Effects/Turn", expanded: true)]
+    [SerializeField]
+    private float _outlineWidth = 2f;
+    private MaterialPropertyBlock _materialBlock = null;
     private SpriteRenderer _spriteRenderer = null;
 
     // Deck and Hand managers
@@ -68,11 +75,17 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     {
         _deck = GetComponent<DeckManager>();
         _hand = GetComponent<HandManager>();
+
         _myStats = GetComponent<ActorStats>();
         _myPosition = GetComponent<ActorPosition>();
+
         _myUi = GetComponent<ActorUI>();
+
         _spriteRenderer = _actorModel.GetComponent<SpriteRenderer>();
         _actorAnimator = _actorModel.GetComponent<Animator>();
+
+        _materialBlock = new MaterialPropertyBlock();
+        _spriteRenderer.GetPropertyBlock(_materialBlock);
 
         Initialize();
     }
@@ -99,12 +112,13 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
 
     public virtual void StartNewTurn()
     {
-
+        TurnOutlineEffect(true);
         _myStats.OnNewTurn();
     }
 
     public virtual void EndTurn()
     {
+        TurnOutlineEffect(false);
         _myStats.OnEndTurn();
     }
     #endregion
@@ -131,8 +145,6 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
         _currentAttacker = TargetFaction;
         _targetable = true;
     }
-
-
     public void HighTargetActor()
     {
         _highTarget = true;
@@ -151,7 +163,6 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
                 break;
         }
     }
-
     public void RemoveHighLight()
     {
         _targetable = false;
@@ -163,6 +174,14 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
         _hostileTargetEffect.SetActive(false);
         _allyTargetEffect.SetActive(false);
     }
+
+    private void TurnOutlineEffect(bool on)
+    {
+        _spriteRenderer.GetPropertyBlock(_materialBlock);
+        _materialBlock.SetFloat("_OutlineThickness", on ? _outlineWidth : 0f);
+        _materialBlock.SetColor("_OutlineColor", on ? _outlineColor : Color.white);
+        _spriteRenderer.SetPropertyBlock(_materialBlock);
+    }
     #endregion
 
     // ========================================================================
@@ -170,6 +189,8 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     #region Pointer Handler Methods
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (EnemyTurnManager.IsEnemyTurn) return; // Prevent interaction during enemy turn
+
         if (!_targetable || _highTarget) return;
 
         switch (_currentAttacker)
@@ -189,6 +210,8 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        if (EnemyTurnManager.IsEnemyTurn) return; // Prevent interaction during enemy turn
+
         if (!_targetable || _highTarget) return;
 
         switch (_currentAttacker)
@@ -208,6 +231,8 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (EnemyTurnManager.IsEnemyTurn) return; // Prevent interaction during enemy turn
+
         if (!_targetable) return;
 
         TargetingManager.Instance.SetTarget(this);

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public static class UCardValidator
@@ -16,7 +17,7 @@ public static class UCardValidator
             return false;
 
         // 3. Target check
-        List<ActorManager> potentialTargets = PositionsManager.GetTeam<PlayerActor>();
+        List<ActorManager> potentialTargets = GetAllValidTargets(card, actor);
 
         foreach (var t in potentialTargets)
         {
@@ -28,5 +29,24 @@ public static class UCardValidator
         }
 
         return validTargets.Count > 0;
+    }
+
+    public static List<ActorManager> GetAllValidTargets(CardData card, ActorManager source)
+    {
+        if (card.TargetType == UEnums.Target.Self)
+        {
+            return new List<ActorManager> { source };
+        }
+
+        var team = card.TargetType switch
+        {
+            UEnums.Target.Ally => PositionsManager.GetTeamOf(source),
+            UEnums.Target.Enemy => PositionsManager.GetOpposingTeamOf(source),
+            _ => new List<ActorManager>()
+        };
+
+        return team
+            .Where(t => !t.Stats.IsDead && card.TargetPositions.Contains(t.Positioning.CurrentPosition))
+            .ToList();
     }
 }
