@@ -689,6 +689,7 @@ MonoBehaviour:
   _cardCostText: {fileID: 8334316488907190736}
   _positionIcon: {fileID: 84478077145812421}
   _targetIcon: {fileID: 6186576904365304308}
+  _canvasGroup: {fileID: 87765128763132055}
   _cardAnimations: {fileID: 7766743823151071389}
 --- !u!114 &7766743823151071389
 MonoBehaviour:

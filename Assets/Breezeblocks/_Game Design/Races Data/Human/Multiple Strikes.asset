@@ -24,6 +24,6 @@ MonoBehaviour:
   _positions: 0100000002000000
   _posIcon: {fileID: 21300000, guid: bebec778a275e3949ba8827f6030776b, type: 3}
   _targetType: 3
-  _targetScope: 1
+  _targetScope: 2
   _targetPositions: 020000000300000004000000
   _targetIcon: {fileID: 21300000, guid: 966071b4d24508a45b4bde1a681056e0, type: 3}

@@ -37,10 +37,17 @@ public class PlayerTurnManager : MonoBehaviour
     #region Start Turn Methods
     public void StartPlayerTurn(PlayerActor Player)
     {
-        _actor = Player;
+        if (Player.Stats.IsStunned)
+        {
+            CombatManager.Instance.EndTurn();
+            Console.Log($"Player {Player.name} is stunned! Skipping turn.");
+            return;
+        }
 
+        _actor = Player;
         _cardUI = null;
 
+        _actor.StartNewTurn();
     }
     #endregion
 

@@ -34,6 +34,7 @@ public static class CardEffectResolver
                         target.Stats.SufferWeakness(effect.Amount, effect.Duration);
                         break;
                     case UEnums.CardEffects.Stun:
+                        target.Stats.SufferStun(effect.Duration);
                         break;
                     case UEnums.CardEffects.Restrained:
                         target.Stats.SufferRestrained(effect.Amount, effect.Duration);

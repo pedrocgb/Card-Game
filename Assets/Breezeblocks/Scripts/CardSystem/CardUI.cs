@@ -27,6 +27,9 @@ public class CardUI : MonoBehaviour, IPooledObjects
     private Image _targetIcon = null;
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
+    private CanvasGroup _canvasGroup = null;
+    [FoldoutGroup("Components", expanded: true)]
+    [SerializeField]
     private CardUIAnimations _cardAnimations = null;
     public CardUIAnimations Animations => _cardAnimations;
     private Button _btn = null;
@@ -68,6 +71,7 @@ public class CardUI : MonoBehaviour, IPooledObjects
         _cardImage.sprite = _cardData.CardImage;
         _positionIcon.sprite = _cardData.PositionIcon;
         _targetIcon.sprite = _cardData.TargetIcon;
+        _canvasGroup.alpha = 1f;
     }
     #endregion
 

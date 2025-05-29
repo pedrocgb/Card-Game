@@ -1,3 +1,4 @@
+using Rewired;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,9 +31,17 @@ public class EnemyTurnManager : MonoBehaviour
     private IEnumerator EnemyTurnCoroutine(EnemyActor enemy)
     {
         _isEnemyTurn = true;
+        enemy.StartNewTurn(); // draws cards, restores mana
+
         yield return new WaitForSeconds(1f); // small delay before acting
 
-        enemy.StartNewTurn(); // draws cards, restores mana
+        if (enemy.Stats.IsStunned)
+        {
+            CombatManager.Instance.EndTurn();
+            Console.Log($"Enemy {enemy.name} is stunned! Skipping turn.");
+            _isEnemyTurn = false;
+            yield break;
+        }
 
         while (true)
         {

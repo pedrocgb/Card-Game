@@ -9,8 +9,6 @@ public class CombatManager : MonoBehaviour
     public static CombatManager Instance { get; private set; }
 
     // Combatents
-    [FoldoutGroup("Combatents", expanded:true)]
-    [SerializeField]
     private List<ActorManager> _combatents = new List<ActorManager>();
     private List<ActorManager> _turnOrder = new List<ActorManager>();
 
@@ -38,6 +36,9 @@ public class CombatManager : MonoBehaviour
     private void Awake()
     {
         if (Instance == null) Instance = this;
+
+        var allActors = FindObjectsByType<ActorManager>(FindObjectsSortMode.None);
+        _combatents = new List<ActorManager>(allActors);
     }
     private void Start()
     {
@@ -105,17 +106,14 @@ public class CombatManager : MonoBehaviour
 
         // Set this turn's combatent ability to ACT.
         _currentCombatent = _turnOrder[_currentTurnIndex];
-        _currentCombatent.StartNewTurn();
+
         Debug.Log($"Starting turn for {_currentCombatent.name} in round {_currentRound}");
 
         // If the combatent is a player, show the UI and initialize its turn.
         if (_currentCombatent is PlayerActor)            
             PlayerTurnManager.Instance.StartPlayerTurn(_currentCombatent as PlayerActor);
         else if (_currentCombatent is EnemyActor)
-            EnemyTurnManager.Instance.StartEnemyTurn(_currentCombatent as EnemyActor);
-
-        // Draw cards for the combatent.
-        _currentCombatent.Hand.DrawCards(_currentCombatent.Stats.CardBuy);        
+            EnemyTurnManager.Instance.StartEnemyTurn(_currentCombatent as EnemyActor);     
     }
 
     public void EndTurn()

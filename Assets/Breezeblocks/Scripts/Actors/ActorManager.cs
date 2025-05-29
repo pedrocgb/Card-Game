@@ -113,12 +113,15 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     public virtual void StartNewTurn()
     {
         TurnOutlineEffect(true);
-        _myStats.OnNewTurn();
+        _hand.DrawCards(_actorData.CardBuy);
+
+        _myStats.OnNewTurn();        
     }
 
     public virtual void EndTurn()
     {
         TurnOutlineEffect(false);
+
         _myStats.OnEndTurn();
     }
     #endregion

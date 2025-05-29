@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Dreadful Glare
   m_EditorClassIdentifier: 
   _cardName: Dreadful Glare
-  _cardDescription: Apply 2x Vulnerability and Push 1
+  _cardDescription: Apply 2x Weakness and Push 1
   _cardImage: {fileID: -7150752056011216386, guid: 35e77c32f7f83fc40a7f13cd9784728e, type: 3}
   _actionCost: 1
   _cardEffects:
-  - EffectType: 2
-    Amount: 2
-    Duration: 1
   - EffectType: 200
     Amount: -1
     Duration: 0
-  _cardType: 1
+  - EffectType: 3
+    Amount: 2
+    Duration: 1
+  _cardType: 4
   _positions: 0100000002000000
   _posIcon: {fileID: 21300000, guid: bebec778a275e3949ba8827f6030776b, type: 3}
   _targetType: 3

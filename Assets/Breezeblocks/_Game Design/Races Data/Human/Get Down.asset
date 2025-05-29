@@ -19,9 +19,9 @@ MonoBehaviour:
   _cardEffects:
   - EffectType: 101
     Amount: 5
-    Duration: 0
+    Duration: 1
   - EffectType: 202
-    Amount: -2
+    Amount: 2
     Duration: 0
   _cardType: 32
   _positions: 0100000002000000

@@ -23,6 +23,7 @@ public class ActorStats : MonoBehaviour
 
     // Debuffs stats
     private bool _isStunned = false;
+    public bool IsStunned => _isStunned;
 
     // Actions stats
     private int _unmodifiedActionsPerTurn = 0;
@@ -65,11 +66,7 @@ public class ActorStats : MonoBehaviour
 
     public void OnNewTurn()
     {
-        if (_isStunned)
-            OnEndTurn();
-
         _currentActions = _actionsPerTurn;
-
 
         ResolveStartTurnEffects();
         _actor.UI.UpdateStatusUI(_activeEffects);
@@ -111,8 +108,7 @@ public class ActorStats : MonoBehaviour
 
         List<StatusEffectInstance> existingEffects = _activeEffects.Where(e => e.StatusEffect == statusEffect).ToList();
 
-        if (existingEffects.Count == 0 ||
-            stackingMode == StatusStackingMode.None)
+        if (existingEffects.Count == 0)
         {
             _activeEffects.Add(new StatusEffectInstance(statusEffect, amount, duration, stackingMode));
         }
@@ -293,8 +289,11 @@ public class ActorStats : MonoBehaviour
         // Dodge check
         if (GetTotalEffectAmount(StatusEffects.Dodge) > 0)
         {
-            // If the actor has a dodge effect, they dodge the attack
-            UpdateStatusDuration(_activeEffects.First(e => e.StatusEffect == StatusEffects.Dodge));
+            var dodge = _activeEffects.FirstOrDefault(e => e.StatusEffect == StatusEffects.Dodge);
+            if (dodge != null)
+                UpdateStatusDuration(dodge);
+            _actor.UI.UpdateStatusUI(_activeEffects);
+
             FloatingTextAnimation("DODGE!", HealthModColors.Dodge);
             Console.Log($"{_actor.Data.ActorName} dodges the attack!");
             return;
@@ -431,6 +430,8 @@ public class ActorStats : MonoBehaviour
         FloatingTextAnimation(healAmount.ToString(), HealthModColors.Heal);
         if (_currentHealth > _maxHealth)
             _currentHealth = _maxHealth;
+
+        UpdateAllUI();
     }
 
     private void RegenHealing()

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -6,11 +7,14 @@ public class PositionsManager : MonoBehaviour
 {
     public static PositionsManager Instance { get; private set; }
 
-    [FoldoutGroup("Party Composition", expanded: true)]
+    [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
+    private Transform _playerPartyContainer = null;
+    [FoldoutGroup("Components", expanded: true)]
+    [SerializeField]
+    private Transform _enemyPartyContainer = null;
+
     private List<ActorManager> _playerParty = new();
-     [FoldoutGroup("Party Composition", expanded: true)]
-    [SerializeField]
     private List<ActorManager> _enemyParty = new();
 
     // ========================================================================
@@ -22,6 +26,24 @@ public class PositionsManager : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+
+        _playerParty.Clear();
+        _enemyParty.Clear();
+
+        // Iterate children in hierarchy order:
+        foreach (Transform child in _playerPartyContainer)
+        {
+            var pa = child.GetComponent<PlayerActor>();
+            if (pa != null && pa.gameObject.activeInHierarchy) 
+                _playerParty.Add(pa);
+        }
+
+        foreach (Transform child in _enemyPartyContainer)
+        {
+            var ea = child.GetComponent<EnemyActor>();
+            if (ea != null && ea.gameObject.activeInHierarchy) 
+                _enemyParty.Add(ea);
+        }
     }
     #endregion
 
