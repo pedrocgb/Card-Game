@@ -1,10 +1,9 @@
 using Breezeblocks.Managers;
 using Sirenix.OdinInspector;
-using Sirenix.Utilities;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 
 [RequireComponent(typeof(DeckManager))] 
 public class HandManager : MonoBehaviour
@@ -13,8 +12,8 @@ public class HandManager : MonoBehaviour
     private ActorManager _actor = null;
     private DeckManager _deckManager = null;
 
-    private List<CardData> _currentHand = new List<CardData>();
-    public List<CardData> CurrentHand => _currentHand;
+    private List<CardInstance> _currentHand = new List<CardInstance>();
+    public List<CardInstance> CurrentHand => _currentHand;
     private List<CardUI> _currentHandUI = new List<CardUI>();
 
     // Card animations settings
@@ -84,8 +83,7 @@ public class HandManager : MonoBehaviour
                 continue;
             }
 
-            CardData drawnCard = _deckManager.GetTopCard();
-            _currentHand.Add(drawnCard);
+            _currentHand.Add(_deckManager.GetTopCard());
         }
     }
 
@@ -93,7 +91,7 @@ public class HandManager : MonoBehaviour
     /// Discard Card. Basic method, no UI.
     /// </summary>
     /// <param name="Card"></param>
-    public void DiscardCard(CardData Card)
+    public void DiscardCard(CardInstance Card)
     {
         _currentHand.Remove(Card);
         _deckManager.DiscardPile.Add(Card);
@@ -106,7 +104,6 @@ public class HandManager : MonoBehaviour
     public void ShowHand()
     {
         _cardGroup.anchoredPosition = _visiblePosition;
-
     }
     public void HideHand()
     {
@@ -127,7 +124,7 @@ public class HandManager : MonoBehaviour
             _deckManager.ReshuffleDiscardIntoDeck();
         }
 
-        CardData drawnCard = _deckManager.GetTopCard();
+        CardInstance drawnCard = _deckManager.GetTopCard();
         _currentHand.Add(drawnCard);
 
         // Create a new card instance UI
@@ -192,8 +189,8 @@ public class HandManager : MonoBehaviour
     /// <param name="Card"></param>
     public void DiscardCard(CardUI Card)
     {
-        _currentHand.Remove(Card.CardData);
-        _deckManager.DiscardPile.Add(Card.CardData);
+        _currentHand.Remove(Card.CardInstance);
+        _deckManager.DiscardPile.Add(Card.CardInstance);
         _currentHandUI.Remove(Card);
 
         Card.gameObject.SetActive(false);
@@ -205,7 +202,7 @@ public class HandManager : MonoBehaviour
             // Discard all cards in the hand
             foreach (CardUI cardUI in _currentHandUI)
             {
-                _deckManager.DiscardPile.Add(cardUI.CardData);
+                _deckManager.DiscardPile.Add(cardUI.CardInstance);
                 cardUI.gameObject.SetActive(false);
             }
             _currentHand.Clear();
@@ -216,7 +213,7 @@ public class HandManager : MonoBehaviour
         else
         {
             // For AI or non-player actors, just clear the hand without UI
-            foreach (CardData card in _currentHand)
+            foreach (CardInstance card in _currentHand)
             {
                 _deckManager.DiscardPile.Add(card);
             }
@@ -231,7 +228,7 @@ public class HandManager : MonoBehaviour
     #region Card Validation Methods - Player
     public bool ValidateCard(CardUI Card, ActorManager Source)
     {
-        bool validate = UCardValidator.IsCardPlayable(Card.CardData, Source, UCardValidator.GetAllValidTargets(Card.CardData, Source));
+        bool validate = UCardValidator.IsCardPlayable(Card.CardInstance, Source, UCardValidator.GetAllValidTargets(Card.CardInstance, Source));
         Card.Validate(validate);
 
         return validate;
@@ -247,6 +244,53 @@ public class HandManager : MonoBehaviour
         {
             ValidateCard(_currentHandUI[i], _actor);
         }
+    }
+    #endregion
+
+    // ========================================================================
+
+    #region Effects Methods
+    public void LockRandomCards(int amount)
+    {
+        var unlockedCards = _currentHand
+            .Where(c => !c.IsLocked)
+            .ToList();
+
+        if (unlockedCards.Count == 0) return;
+
+        for (int i = 0; i <unlockedCards.Count; i++)
+        {
+            int j = Random.Range(i, unlockedCards.Count);
+            (unlockedCards[i], unlockedCards[j]) = (unlockedCards[j], unlockedCards[i]);
+        }
+
+        int toLock = Mathf.Min(amount, unlockedCards.Count);
+        for (int k = 0; k < toLock; k++)
+        {
+            var instance = unlockedCards[k];
+            instance.LockCard(true);
+
+            var ui = _currentHandUI
+                .FirstOrDefault(c => c.CardInstance == instance);
+            if (ui != null)
+                ui.EnableCardLockEffect(true);
+        }
+    }
+
+    public void UnlockAllCards()
+    {
+        foreach (var card in _currentHand)
+        {
+            card.LockCard(false);
+        }
+
+        if (_currentHandUI.Count > 0)
+        {
+            foreach (var ui in _currentHandUI)
+            {
+                ui.EnableCardLockEffect(false);
+            }
+        } 
     }
     #endregion
 

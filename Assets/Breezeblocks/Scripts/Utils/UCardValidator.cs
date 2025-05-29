@@ -4,8 +4,14 @@ using UnityEngine;
 
 public static class UCardValidator
 {
-    public static bool IsCardPlayable(CardData card, ActorManager actor, List<ActorManager> validTargets)
+    public static bool IsCardPlayable(CardInstance card, ActorManager actor, List<ActorManager> validTargets)
     {
+        if (card.IsLocked)
+        {
+            Console.Log($"[CardValidator] Card {card.CardName} is locked and cannot be played.");
+            return false;
+        }
+
         validTargets = new List<ActorManager>();
 
         // 1. Mana check
@@ -13,7 +19,7 @@ public static class UCardValidator
             return false;
 
         // 2. Position check
-        if (!card.Positions.Contains(actor.Positioning.CurrentPosition))
+        if (!card.UsablePositions.Contains(actor.Positioning.CurrentPosition))
             return false;
 
         // 3. Target check
@@ -24,14 +30,14 @@ public static class UCardValidator
             if (t.Stats.IsDead)
                 continue;
 
-            if (card.Positions.Contains(actor.Positioning.CurrentPosition))
+            if (card.UsablePositions.Contains(actor.Positioning.CurrentPosition))
                 validTargets.Add(actor);
         }
 
         return validTargets.Count > 0;
     }
 
-    public static List<ActorManager> GetAllValidTargets(CardData card, ActorManager source)
+    public static List<ActorManager> GetAllValidTargets(CardInstance card, ActorManager source)
     {
         if (card.TargetType == UEnums.Target.Self)
         {

@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public static class CardEffectResolver
 {
-    public static void ApplyEffects(List<EffectBlock> Effects, ActorManager Source, ActorManager MainTarget, CardData Card)
+    public static void ApplyEffects(List<EffectBlock> Effects, ActorManager Source, ActorManager MainTarget, CardInstance Card)
     {
         List<ActorManager> targets = ResolveTargets(Card, Source, MainTarget);
         Console.Log(targets.Count + " targets found for " + Card.CardName);
@@ -39,6 +39,9 @@ public static class CardEffectResolver
                     case UEnums.CardEffects.Restrained:
                         target.Stats.SufferRestrained(effect.Amount, effect.Duration);
                         break;
+                    case UEnums.CardEffects.Lock:
+                        target.Stats.SufferLockDebuff(effect.Amount, effect.Duration);
+                        break;
 
                     // Buff effects
                     case UEnums.CardEffects.Heal:
@@ -58,6 +61,9 @@ public static class CardEffectResolver
                     case UEnums.CardEffects.Draw:
                         Source.Hand.DrawCards(effect.Amount);
                         break;
+                    case UEnums.CardEffects.Riposte:
+                        Source.Stats.GainRiposte(effect.Amount, effect.Duration);
+                        break;
 
                     // Other effects
                     case UEnums.CardEffects.Movement:
@@ -72,7 +78,7 @@ public static class CardEffectResolver
         
     }
 
-    public static List<ActorManager> ResolveTargets(CardData Card, ActorManager Source, ActorManager Target)
+    public static List<ActorManager> ResolveTargets(CardInstance Card, ActorManager Source, ActorManager Target)
     {
         Console.Log($"[AI] Resolving targets for {Card.CardName} (Type: {Card.TargetType}, Scope: {Card.TargetScope})");
         var targets = new List<ActorManager>();
@@ -100,15 +106,12 @@ public static class CardEffectResolver
         potentialTargets = potentialTargets.Where(t => !t.Stats.IsDead && Card.TargetPositions.Contains(t.Positioning.CurrentPosition)).ToList();
 
         Console.Log("Filtered targets: " + potentialTargets.Count);
-
         Console.Log($"[AI] Found {potentialTargets.Count} valid targets for {Card.CardName}");
 
         if (Card.TargetScope == UEnums.TargetAmount.Single)
         {
             if (Target != null && potentialTargets.Contains(Target))
-            {
                 targets.Add(Target);
-            }
         }
         else
         {

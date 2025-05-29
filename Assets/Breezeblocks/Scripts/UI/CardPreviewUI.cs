@@ -39,7 +39,7 @@ public class CardPreviewUI : MonoBehaviour
     // ========================================================================
 
     #region Static Methods
-    public static void ShowEnemyCard(EnemyActor enemy, CardData cardData)
+    public static void ShowEnemyCard(EnemyActor enemy, CardInstance cardData)
     {
         if (Instance == null)
         {
@@ -55,7 +55,7 @@ public class CardPreviewUI : MonoBehaviour
     /// <summary>
     /// Spawns a CardUI at the enemy's screen position, flips it face-up, holds, then fades out.
     /// </summary>
-    private IEnumerator showEnemyCard(EnemyActor enemy, CardData cardData)
+    private IEnumerator showEnemyCard(EnemyActor enemy, CardInstance cardData)
     {
         // 1) Spawn & initialize
         GameObject go = ObjectPooler.SpawnFromPool("Card", Vector3.zero, Quaternion.identity);

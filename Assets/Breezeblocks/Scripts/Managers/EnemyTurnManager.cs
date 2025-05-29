@@ -6,10 +6,12 @@ using UnityEngine;
 
 public class EnemyTurnManager : MonoBehaviour
 {
+    #region Variables and Properties
     public static EnemyTurnManager Instance;
     private bool _cardPlayed = false;
     private bool _isEnemyTurn = false;
     public static bool IsEnemyTurn => Instance._isEnemyTurn;
+    #endregion
 
     // ========================================================================
 
@@ -72,7 +74,7 @@ public class EnemyTurnManager : MonoBehaviour
     /// <returns></returns>
     private IEnumerator TryPlayCard(EnemyActor enemy)
     {
-        List<CardData> playableCards = new List<CardData>();
+        List<CardInstance> playableCards = new List<CardInstance>();
 
         // Loop through all cards in the enemy's hand
         foreach (var card in enemy.Hand.CurrentHand)
@@ -100,7 +102,7 @@ public class EnemyTurnManager : MonoBehaviour
         }
 
         // Choose random card to play
-        CardData selectedCard = playableCards[Random.Range(0, playableCards.Count)];
+        CardInstance selectedCard = playableCards[Random.Range(0, playableCards.Count)];
         // Get all valid targets
         List<ActorManager> validTargets = UCardValidator.GetAllValidTargets(selectedCard, enemy);
         // Highlight valid targets

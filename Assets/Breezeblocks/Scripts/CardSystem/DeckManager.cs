@@ -6,14 +6,14 @@ public class DeckManager : MonoBehaviour
 {
     #region Variablens and Properties
     // Cards variables
-    private List<CardData> _currentDeck = new List<CardData>();
-    public List<CardData> CurrentDeck => _currentDeck;
+    private List<CardInstance> _currentDeck = new List<CardInstance>();
+    public List<CardInstance> CurrentDeck => _currentDeck;
 
-    private List<CardData> _discardPile = new List<CardData>();
-    public List<CardData> DiscardPile => _discardPile;  
+    private List<CardInstance> _discardPile = new List<CardInstance>();
+    public List<CardInstance> DiscardPile => _discardPile;  
 
-    private List<CardData> _consumedPile = new List<CardData>();
-    public List<CardData> ConsumedPile => _consumedPile;
+    private List<CardInstance> _consumedPile = new List<CardInstance>();
+    public List<CardInstance> ConsumedPile => _consumedPile;
 
     // Components
     private ActorManager _actor = null;
@@ -31,14 +31,21 @@ public class DeckManager : MonoBehaviour
 
     private void InitializeDeck()
     {
+        // Create cards instances and add to deck.
+        foreach (var c in _actor.Data.StartingCards)
+        {
+            CardInstance card = new CardInstance(c);
+            _currentDeck.Add(card);
+        }
+
+        // If the actor has a specialization, add specialized cards to the deck.
         if (_actor.Data.HasSpecialization)
         {
-            _currentDeck = new List<CardData>(_actor.Data.StartingCards);
-            _currentDeck.AddRange(_actor.Data.StartingSpecializedCards);
-        }
-        else
-        {
-            _currentDeck = new List<CardData>(_actor.Data.StartingCards);
+            foreach (var sc in _actor.Data.StartingSpecializedCards)
+            {
+                CardInstance card = new CardInstance(sc);
+                _currentDeck.Add(card);
+            }
         }
 
         ShuffleDeck();
@@ -48,9 +55,9 @@ public class DeckManager : MonoBehaviour
     // ========================================================================
 
     #region Deck management methods
-    public CardData GetTopCard()
+    public CardInstance GetTopCard()
     {
-        CardData card = _currentDeck[0];
+        CardInstance card = _currentDeck[0];
         _currentDeck.RemoveAt(0);
 
         return card;
@@ -73,7 +80,7 @@ public class DeckManager : MonoBehaviour
     /// </summary>
     /// <param name="card"></param>
     /// <returns></returns>
-    public bool AddCard(CardData card)
+    public bool AddCard(CardInstance card)
     {
         if (_currentDeck.Count >= 100)
         {
@@ -90,7 +97,7 @@ public class DeckManager : MonoBehaviour
     /// </summary>
     /// <param name="card"></param>
     /// <returns></returns>
-    public bool RemoveCard(CardData card)
+    public bool RemoveCard(CardInstance card)
     {
         return _currentDeck.Remove(card);
     }

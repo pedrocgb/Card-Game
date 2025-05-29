@@ -152,6 +152,12 @@ public class ActorStats : MonoBehaviour
             }
         }
     }
+
+    /// <summary>
+    /// Removes 1 (equivalent) turn duration from a status effect. 
+    /// When the duration reaches 0 the status is removed.
+    /// </summary>
+    /// <param name="Effect"></param>
     private void UpdateStatusDuration(StatusEffectInstance Effect)
     {
         Effect.DurationRemaining--;
@@ -186,6 +192,10 @@ public class ActorStats : MonoBehaviour
                 case StatusEffects.Blind:
                     UpdateStatusDuration(effect);
                     break;
+                case StatusEffects.Lock:
+                    UpdateStatusDuration(effect);
+                    _actor.Hand.UnlockAllCards();
+                    break;
 
                 case StatusEffects.Haste:
                     UpdateStatusDuration(effect);
@@ -208,6 +218,9 @@ public class ActorStats : MonoBehaviour
             {
                 case StatusEffects.Vulnerability:
                     UpdateStatusDuration(effect);
+                    break;
+                case StatusEffects.Lock:
+                    _actor.Hand.LockRandomCards(effect.Amount);
                     break;
 
 
@@ -236,6 +249,9 @@ public class ActorStats : MonoBehaviour
                     UpdateStatusDuration(effect);
                     break;
                 case StatusEffects.Hide:
+                    UpdateStatusDuration(effect);
+                    break;
+                case StatusEffects.Riposte:
                     UpdateStatusDuration(effect);
                     break;
             }
@@ -276,7 +292,7 @@ public class ActorStats : MonoBehaviour
         int finalDamage = Mathf.Max(0, damageAfterWeakness + initialToughness);
 
         // Deal damage
-        Target.Stats.TakeDamage(finalDamage);
+        Target.Stats.TakeDamage(finalDamage, _actor);
 
         // Log
         string log = $"{_actor.Data.ActorName} deals {finalDamage} damage to {Target.Data.ActorName}. " +
@@ -284,7 +300,7 @@ public class ActorStats : MonoBehaviour
         Console.Log(log);
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, ActorManager source)
     {
         // Dodge check
         if (GetTotalEffectAmount(StatusEffects.Dodge) > 0)
@@ -315,6 +331,18 @@ public class ActorStats : MonoBehaviour
         initialBlock = Mathf.Max(0, initialBlock - damage);
         _currentHealth -= damageAfterBlock;
 
+        // Update Actor healthbar
+        _actor.UI.UpdateHealthUI(HealthPercentage, _currentHealth, _maxHealth);
+
+        // Play taking damage animations
+        FloatingTextAnimation(damageAfterBlock.ToString(), HealthModColors.BasicDamage);
+
+        // Resolve Riposte
+        if (GetTotalEffectAmount(StatusEffects.Riposte) > 0)
+        {
+            source.Stats.TakeDamage(GetTotalEffectAmount(StatusEffects.Riposte), _actor);
+            Console.Log($"{_actor.Data.ActorName} ripostes {source.Data.ActorName} for {GetTotalEffectAmount(StatusEffects.Riposte)} damage!");
+        }
 
         // Log
         string log = $"{_actor.Data.ActorName} takes {damage} damage: " +
@@ -322,18 +350,16 @@ public class ActorStats : MonoBehaviour
             $"Block remaining: {initialBlock}, Health: {_currentHealth}";
         Console.Log(log);  
 
-        // Update Actor healthbar
-        _actor.UI.UpdateHealthUI(HealthPercentage, _currentHealth, _maxHealth);
-
-        // Play taking damage animations
-        FloatingTextAnimation(damageAfterBlock.ToString(), HealthModColors.BasicDamage);
-
         if (_currentHealth <= 0)
         {
             Die();
         }
     }
 
+    /// <summary>
+    /// Take burn damage at the start of the turn.
+    /// Burn damage is multiplied by a fixed value definied in UConstants.BURN_MULTIPLIER.
+    /// </summary>
     private void TakeBurnDamage()
     {
         int burnDamage = GetTotalEffectAmount(StatusEffects.Burn) * UConstants.BURN_MULTIPLIER;
@@ -360,6 +386,10 @@ public class ActorStats : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Take poison damage at the start of the turn.
+    /// Poison damage is cumulative.
+    /// </summary>
     private void TakePoisonDamage()
     {
         int poisonDamage = GetTotalEffectAmount(StatusEffects.Poison);
@@ -382,6 +412,11 @@ public class ActorStats : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Takes bleed damage at the end of the turn.
+    /// Bleed damage is fixed at 1 point of damage. But if the actor is moved in any way, it will take 1 * UConstants.BLEED_MULTIPLIER damage instead.
+    /// </summary>
+    /// <param name="MoveDamage"></param>
     private void TakeBleedDamage(bool MoveDamage)
     {
         int bleedDamage = GetTotalEffectAmount(StatusEffects.Bleed);
@@ -489,6 +524,11 @@ public class ActorStats : MonoBehaviour
     {
         AddStatusEffect(StatusEffects.Dodge, amount, duration);
     }
+
+    public void GainRiposte(int amount, int duration)
+    {
+        AddStatusEffect(StatusEffects.Riposte, amount, duration);
+    }
     #endregion
 
     // ========================================================================
@@ -538,6 +578,11 @@ public class ActorStats : MonoBehaviour
     public void SufferBleed(int amount, int duration)
     {
         AddStatusEffect(StatusEffects.Bleed, amount, duration);
+    }
+
+    public void SufferLockDebuff(int amount, int duration)
+    {
+        AddStatusEffect(StatusEffects.Lock, amount, duration);
     }
     #endregion
 

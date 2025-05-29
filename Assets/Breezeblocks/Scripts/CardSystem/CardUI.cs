@@ -34,9 +34,13 @@ public class CardUI : MonoBehaviour, IPooledObjects
     public CardUIAnimations Animations => _cardAnimations;
     private Button _btn = null;
 
+    [FoldoutGroup("Effects", expanded: true)]
+    [SerializeField]
+    private GameObject _cardLockEffect = null;
+
     // Card data
-    private CardData _cardData = null;
-    public CardData CardData => _cardData;
+    private CardInstance _cardInstance = null;
+    public CardInstance CardInstance => _cardInstance;
     #endregion
 
     // ========================================================================
@@ -48,9 +52,9 @@ public class CardUI : MonoBehaviour, IPooledObjects
         _btn.onClick.AddListener(OnCardClicked);
     }
 
-    public void Initialize(CardData cardData)
+    public void Initialize(CardInstance cardData)
     {
-        _cardData = cardData;
+        _cardInstance = cardData;
         UpdateCardUI();
     }
 
@@ -65,13 +69,21 @@ public class CardUI : MonoBehaviour, IPooledObjects
     #region UI Management Methods
     private void UpdateCardUI()
     {
-        _cardNameText.text = _cardData.CardName;
-        _cardDescriptionText.text = _cardData.CardDescription;
-        _cardCostText.text = _cardData.ActionCost.ToString();
-        _cardImage.sprite = _cardData.CardImage;
-        _positionIcon.sprite = _cardData.PositionIcon;
-        _targetIcon.sprite = _cardData.TargetIcon;
+        _cardNameText.text = _cardInstance.CardName;
+        _cardDescriptionText.text = _cardInstance.CardDescription;
+        _cardCostText.text = _cardInstance.ActionCost.ToString();
+        _cardImage.sprite = _cardInstance.CardImage;
+        _positionIcon.sprite = _cardInstance.PositionIcon;
+        _targetIcon.sprite = _cardInstance.TargetIcon;
         _canvasGroup.alpha = 1f;
+
+        _cardLockEffect.SetActive(false);
+    }
+
+    public void EnableCardLockEffect(bool enable)
+    {
+        _cardLockEffect.SetActive(enable);
+        _btn.interactable = !enable;
     }
     #endregion
 

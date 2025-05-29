@@ -67,6 +67,7 @@ public class UEnums
         Restrained = 8,
         Blind = 9,
         Bleed = 10,
+        Lock = 11,
 
         Heal = 100,
         Block = 101,
@@ -76,6 +77,7 @@ public class UEnums
         Hide = 105,
         Foucus = 106,
         Toughness = 107,
+        Riposte = 108,
 
         Movement = 200,
         Draw = 201,
@@ -95,6 +97,7 @@ public class UEnums
         Restrained = 8,
         Blind = 9,
         Bleed = 10,
+        Lock = 11,
 
         // Buffs
         Block = 101,
@@ -104,6 +107,7 @@ public class UEnums
         Hide = 105,
         Foucus = 106,
         Toughness = 107,
+        Riposte = 108
     }
 
     public enum StatusStackingMode

@@ -16,7 +16,7 @@ public class PlayerTurnManager : MonoBehaviour
     private TargetingManager _targetingManager = null;
 
     // Cards
-    private CardData _cardData = null;  
+    private CardInstance _card = null;  
     private CardUI _cardUI = null;
 
     // Player Actor
@@ -62,12 +62,12 @@ public class PlayerTurnManager : MonoBehaviour
     {
         // Get card Data
         _cardUI = Card;
-        _cardData = Card.CardData;
+        _card = Card.CardInstance;
 
-        _targetingManager.HighLightActors(_actor, _cardData.TargetPositions, _cardData.TargetType);
-        if (_cardData.TargetScope == UEnums.TargetAmount.All)
+        _targetingManager.HighLightActors(_actor, _card.TargetPositions, _card.TargetType);
+        if (_card.TargetScope == UEnums.TargetAmount.All)
         {
-            _targetingManager.HighTargetActors(_actor, _cardData.TargetPositions, _cardData.TargetType);
+            _targetingManager.HighTargetActors(_actor, _card.TargetPositions, _card.TargetType);
         }
     }
 
@@ -75,10 +75,10 @@ public class PlayerTurnManager : MonoBehaviour
     {
         if (_actor.Hand.ValidateCard(_cardUI, _actor))
         {
-            Console.Log($"{_actor.name} used {_cardData.CardName} on {TargetingManager.Instance.CurrentTarget.name}");
+            Console.Log($"{_actor.name} used {_card.CardName} on {TargetingManager.Instance.CurrentTarget.name}");
 
-            _actor.Stats.SpendAction(_cardData.ActionCost);
-            CardEffectResolver.ApplyEffects(_cardData.CardEffects, _actor, TargetingManager.Instance.CurrentTarget, _cardData);
+            _actor.Stats.SpendAction(_card.ActionCost);
+            CardEffectResolver.ApplyEffects(_card.CardEffects, _actor, TargetingManager.Instance.CurrentTarget, _card);
 
             _actor.Hand.DiscardCard(_cardUI);
             _targetingManager.ClearHightLights();

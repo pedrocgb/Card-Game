@@ -129,6 +129,12 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     // ========================================================================
 
     #region Animations and Effects Methods
+    public void EnableAsTargetable(UEnums.Target attacker)
+    {
+        _targetable = true;
+        _currentAttacker = attacker;
+    }
+
     public void HightLightActor(UEnums.Target TargetFaction)
     {
         switch (TargetFaction)
@@ -178,7 +184,7 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
         _allyTargetEffect.SetActive(false);
     }
 
-    private void TurnOutlineEffect(bool on)
+    protected void TurnOutlineEffect(bool on)
     {
         _spriteRenderer.GetPropertyBlock(_materialBlock);
         _materialBlock.SetFloat("_OutlineThickness", on ? _outlineWidth : 0f);
