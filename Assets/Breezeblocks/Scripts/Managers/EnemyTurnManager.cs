@@ -10,7 +10,6 @@ public class EnemyTurnManager : MonoBehaviour
     public static EnemyTurnManager Instance;
     private bool _cardPlayed = false;
     private bool _isEnemyTurn = false;
-    public static bool IsEnemyTurn => Instance._isEnemyTurn;
     #endregion
 
     // ========================================================================

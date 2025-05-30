@@ -643,6 +643,7 @@ GameObject:
   - component: {fileID: 1765875268502948180}
   - component: {fileID: 1263122543876660144}
   - component: {fileID: 87765128763132055}
+  - component: {fileID: 868585972125987247}
   m_Layer: 5
   m_Name: Card UI
   m_TagString: Untagged
@@ -773,6 +774,21 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &868585972125987247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5903213188334675933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5caf59b73e7839d419bf8cdaba703781, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hoverMoveY: 60
+  _hoverScale: 1.2
+  _tweenDuration: 0.2
 --- !u!1 &6056931834042578566
 GameObject:
   m_ObjectHideFlags: 0

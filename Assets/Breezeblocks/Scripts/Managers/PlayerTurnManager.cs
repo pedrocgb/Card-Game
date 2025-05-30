@@ -85,6 +85,7 @@ public class PlayerTurnManager : MonoBehaviour
             _targetingManager.SetTarget(null);
 
             _actor.Hand.ValidateHand();
+            _actor.Hand.RebuildHandLayout();
         }
 
     }

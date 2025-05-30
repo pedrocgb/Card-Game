@@ -10,12 +10,13 @@ public class PlayerActor : ActorManager
 
     public override void StartNewTurn()
     {
+        IsMyTurn = true;
         TurnOutlineEffect(true);
 
         _hand.ShowHand();
-        _hand.DrawCards(_actorData.CardBuy);
-
         _myStats.OnNewTurn();
+
+        _hand.DrawCards(_actorData.CardBuy);
     }
 
     public override void EndTurn()

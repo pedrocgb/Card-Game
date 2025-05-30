@@ -16,8 +16,8 @@ MonoBehaviour:
   _portrait: {fileID: 6255626776881019847, guid: 57b4c0397dcd0764e8a29920d42ec03b, type: 3}
   _actorAnimatorParameter: {fileID: 9100000, guid: 41bec3ce55a0e6748a8dcaa2a8737a11, type: 2}
   _actorRace: {fileID: 11400000, guid: 3543198674c43ee439d9691da59007a3, type: 2}
-  _hasSpecialization: 0
-  _actorSpecialization: {fileID: 0}
+  _hasSpecialization: 1
+  _actorSpecialization: {fileID: 11400000, guid: b1cc6aae8fe661d4092d7fad67691cb3, type: 2}
   _startingSpecializedCards: []
   _baseMaxHealth: 8
   _baseActionsPerTurn: 3
@@ -30,6 +30,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d9734f5c5de1cea41b5ea18eb918c6de, type: 2}
   - {fileID: 11400000, guid: d9734f5c5de1cea41b5ea18eb918c6de, type: 2}
   - {fileID: 11400000, guid: d9734f5c5de1cea41b5ea18eb918c6de, type: 2}
-  - {fileID: 11400000, guid: dcbcd69fcf9b3c54097d44a05475954f, type: 2}
+  - {fileID: 11400000, guid: 09421929c708c69418565e751b2c1b86, type: 2}
   _baseCardBuy: 2
   _maxHandSize: 6

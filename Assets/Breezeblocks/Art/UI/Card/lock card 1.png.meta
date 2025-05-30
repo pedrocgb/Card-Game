@@ -584,7 +584,26 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lock card 1_0: -8198856713780194764
+      lock card 1_1: 7413840721803056689
+      lock card 1_10: -8364537366683288560
+      lock card 1_11: -7286181764840574093
+      lock card 1_12: -7593269631077366889
+      lock card 1_13: -7121856502793382822
+      lock card 1_14: -9052545044434518194
+      lock card 1_15: -6688897575813544295
+      lock card 1_16: 344339369730874194
+      lock card 1_17: 3432418399709759350
+      lock card 1_18: -1820016803569338914
+      lock card 1_2: -470285725325090037
+      lock card 1_3: -6788400240158641337
+      lock card 1_4: -4811038929578278206
+      lock card 1_5: -3135016457738891325
+      lock card 1_6: 5459495511353452880
+      lock card 1_7: -1402123548470747746
+      lock card 1_8: 3470879340998507657
+      lock card 1_9: 2136554521265335688
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

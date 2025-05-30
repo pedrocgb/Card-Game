@@ -1,4 +1,5 @@
-using Breezeblocks.Managers;
+﻿using Breezeblocks.Managers;
+using DG.Tweening;
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
@@ -60,7 +61,7 @@ public class HandManager : MonoBehaviour
     public void DrawCards(int Quantity)
     {
         if (_actor is PlayerActor)
-            StartCoroutine(EnumeratorDrawCards(Quantity));
+            StartCoroutine(DrawCardAnimation(Quantity));
         else
             DrawCardLogic(Quantity);
     }
@@ -144,42 +145,78 @@ public class HandManager : MonoBehaviour
     /// </summary>
     /// <param name="quantity"></param>
     /// <returns></returns>
-    private IEnumerator EnumeratorDrawCards(int quantity)
+    private IEnumerator DrawCardAnimation(int quantity)
     {
-        Vector3 deckPos = UAnchoredPositions.GetAnchoredPositionFromWorld(_deckUi, _cardGroup, _mainCanvas);
-
+        // 1) First spawn & layout all cards immediately, collect them
+        var drawnUIs = new List<CardUI>();
         for (int i = 0; i < quantity; i++)
         {
             CardUI ui = DrawPlayerCard();
-            if (ui == null)
-                yield break;
+            if (ui == null) yield break;
 
-            // Temporarily place it at deck position
-            RectTransform rt = ui.GetComponent<RectTransform>();
-            rt.anchoredPosition = deckPos;
+            // assign slot index and rebuild positions
+            int slot = _currentHandUI.IndexOf(ui);
+            ui.SlotIndex = slot;
+            RebuildHandLayout();
 
-            // Recalculate all card positions
-            UpdateCardPositions();
+            // disable hover until animation done
+            ui.HoverHandler.EnableHover(false);
+            ui.HoverHandler.CaptureOriginalTransform();
 
-            // Animate only the newly drawn card to its new anchored position
-            Vector3 targetPos = rt.anchoredPosition;
-            rt.anchoredPosition = deckPos;
-
-            ui.Animations.PlayDrawAnimation(deckPos, targetPos);
-
-            yield return new WaitForSeconds(0.5f);
+            drawnUIs.Add(ui);
         }
-    }
-    private void UpdateCardPositions()
-    {
-        Vector3 pos = new Vector3(_cardGroup.anchoredPosition.x + _startingAnchoredX, 0f, 0f);
 
+        // 2) Build one master sequence to stagger each fade+pop
+        var seq = DOTween.Sequence();
+
+        for (int i = 0; i < drawnUIs.Count; i++)
+        {
+            var ui = drawnUIs[i];
+            // ensure start state
+            ui.CanvasGroup.alpha = 0f;
+            ui.transform.localScale = Vector3.one * 0.9f;
+
+            // stagger
+            seq.AppendInterval(UConstants.CARD_DRAW_FADE_STAGGER);
+
+            // fade in
+            seq.Append(ui.CanvasGroup
+                .DOFade(1f, UConstants.CARD_DRAW_FADE_DURATION)
+                .SetEase(Ease.Linear));
+            // scale up
+            seq.Join(ui.transform
+                .DOScale(1f, UConstants.CARD_DRAW_FADE_DURATION)
+                .SetEase(Ease.OutBack));
+
+            // once this card’s tween is done, recapture and enable hover
+            int copy = i;
+            seq.AppendCallback(() =>
+            {
+                var finishedUi = drawnUIs[copy];
+                finishedUi.HoverHandler.CaptureOriginalTransform();
+                finishedUi.HoverHandler.EnableHover(true);
+            });
+        }
+
+        seq.Play();
+        yield return seq.WaitForCompletion();
+    }
+
+    public void RebuildHandLayout()
+    {
         for (int i = 0; i < _currentHandUI.Count; i++)
         {
-            RectTransform rt = _currentHandUI[i].GetComponent<RectTransform>();
-            rt.anchoredPosition = pos;
+            var rt = _currentHandUI[i].GetComponent<RectTransform>();
+            float x = _startingAnchoredX + i * _anchoredOffSet;
+            rt.anchoredPosition = new Vector2(x, 0f);
 
-            pos += new Vector3(_anchoredOffSet, 0f, 0f);
+            // reset sibling so the z-order always matches
+            rt.SetSiblingIndex(i);
+
+            // and let the hover handler know its new “home” spot
+            _currentHandUI[i]
+              .GetComponent<CardHoverHandler>()
+              ?.CaptureOriginalTransform();
         }
     }
 
@@ -189,12 +226,39 @@ public class HandManager : MonoBehaviour
     /// <param name="Card"></param>
     public void DiscardCard(CardUI Card)
     {
+        // compute discard slot in UI space
+        Vector2 discardPos = UAnchoredPositions
+            .WorldToCanvasPosition(_mainCanvas, transform.position);
+
+        RectTransform rt = Card.GetComponent<RectTransform>();
+
+        // detach from hand so it doesn't get re‐positioned by your layout
+        rt.SetParent(_mainCanvas.transform, true);
+
+        // play the fly+fade
+        Sequence seq = DOTween.Sequence();
+        seq.Append(rt
+            .DOAnchorPos(discardPos, 0.4f)
+            .SetEase(Ease.InCubic));
+        seq.Join(rt
+            .DOSizeDelta(new Vector2(50, 50), 0.4f)
+            .SetEase(Ease.InBack));
+        seq.Join(Card.CanvasGroup.DOFade(0f, 0.4f));
+        seq.OnComplete(() => {
+            Card.gameObject.SetActive(false);
+        });
+
+        // remove from your lists immediately
         _currentHand.Remove(Card.CardInstance);
         _deckManager.DiscardPile.Add(Card.CardInstance);
         _currentHandUI.Remove(Card);
-
-        Card.gameObject.SetActive(false);
     }
+    #endregion
+
+    /// <summary>
+    /// Discard entire hand.
+    /// </summary>
+    /// <param name="IsPlayer"></param>
     public void DiscardHand(bool IsPlayer)
     {
         if (IsPlayer)
@@ -207,8 +271,6 @@ public class HandManager : MonoBehaviour
             }
             _currentHand.Clear();
             _currentHandUI.Clear();
-            // Reset card positions
-            UpdateCardPositions();
         }
         else
         {
@@ -221,7 +283,7 @@ public class HandManager : MonoBehaviour
             _currentHandUI.Clear();
         }
     }
-    #endregion
+
 
     // ========================================================================
 

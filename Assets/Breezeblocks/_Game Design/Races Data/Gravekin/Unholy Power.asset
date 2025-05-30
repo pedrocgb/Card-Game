@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Unholy Power
   m_EditorClassIdentifier: 
   _cardName: Unholy Power
-  _cardDescription: Gain 2x Toughness
+  _cardDescription: Draw 1 card
   _cardImage: {fileID: 7261172073314608222, guid: 81c2dd102e2f1724687bf44d24a341c2, type: 3}
-  _actionCost: 1
+  _actionCost: 0
   _cardEffects:
-  - EffectType: 107
-    Amount: 3
-    Duration: 1
+  - EffectType: 201
+    Amount: 2
+    Duration: 0
   _cardType: 2
   _positions: 01000000020000000300000004000000
   _posIcon: {fileID: 21300000, guid: 82ad41af0fecd294c8aa2ad5394e66aa, type: 3}

@@ -14,8 +14,8 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     public ActorData Data => _actorData;
     protected ActorStats _myStats = null;
     public ActorStats Stats => _myStats;
-    protected ActorUI _myUi = null;
-    public ActorUI UI => _myUi;
+    protected ActorWorldUI _myUi = null;
+    public ActorWorldUI UI => _myUi;
     protected ActorPosition _myPosition = null;
     public ActorPosition Positioning => _myPosition;
 
@@ -61,6 +61,7 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     public int InitiativeBonus { get { return _initiativeBonus; } }
     private int _currentInitiative = 0;
     public int CurrentInitiative => _currentInitiative;
+    public bool IsMyTurn { get; protected set; } = false;
 
     // Targeter
     protected bool _targetable = false;
@@ -79,7 +80,7 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
         _myStats = GetComponent<ActorStats>();
         _myPosition = GetComponent<ActorPosition>();
 
-        _myUi = GetComponent<ActorUI>();
+        _myUi = GetComponent<ActorWorldUI>();
 
         _spriteRenderer = _actorModel.GetComponent<SpriteRenderer>();
         _actorAnimator = _actorModel.GetComponent<Animator>();
@@ -112,15 +113,18 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
 
     public virtual void StartNewTurn()
     {
+        IsMyTurn = true;
         TurnOutlineEffect(true);
-        _hand.DrawCards(_actorData.CardBuy);
-
         _myStats.OnNewTurn();        
+
+        _hand.DrawCards(_actorData.CardBuy);
     }
 
     public virtual void EndTurn()
     {
+        IsMyTurn = false;
         TurnOutlineEffect(false);
+        TargetingManager.Instance.ClearHightLights();
 
         _myStats.OnEndTurn();
     }
@@ -129,12 +133,6 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     // ========================================================================
 
     #region Animations and Effects Methods
-    public void EnableAsTargetable(UEnums.Target attacker)
-    {
-        _targetable = true;
-        _currentAttacker = attacker;
-    }
-
     public void HightLightActor(UEnums.Target TargetFaction)
     {
         switch (TargetFaction)
@@ -198,7 +196,7 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     #region Pointer Handler Methods
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (EnemyTurnManager.IsEnemyTurn) return; // Prevent interaction during enemy turn
+        if (!CombatManager.Instance.IsPlayerTurn) return; // Prevent interaction during enemy turn
 
         if (!_targetable || _highTarget) return;
 
@@ -219,7 +217,7 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (EnemyTurnManager.IsEnemyTurn) return; // Prevent interaction during enemy turn
+        if (!CombatManager.Instance.IsPlayerTurn) return; // Prevent interaction during enemy turn
 
         if (!_targetable || _highTarget) return;
 
@@ -240,7 +238,7 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (EnemyTurnManager.IsEnemyTurn) return; // Prevent interaction during enemy turn
+        if (!CombatManager.Instance.IsPlayerTurn) return; // Prevent interaction during enemy turn
 
         if (!_targetable) return;
 

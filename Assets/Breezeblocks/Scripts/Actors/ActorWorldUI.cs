@@ -4,11 +4,14 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UEnums;
 
 [RequireComponent(typeof(ActorManager))]
-public class ActorUI : MonoBehaviour
+public class ActorWorldUI : MonoBehaviour
 {
     #region Variables and Properties
+    private ActorManager _actor = null;
+
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
     private Canvas _worldCanvas = null;
@@ -20,10 +23,6 @@ public class ActorUI : MonoBehaviour
     [FoldoutGroup("Components/Health", expanded: true)]
     [SerializeField]
     private TextMeshProUGUI _healthText = null;
-
-    [FoldoutGroup("Components/Actions", expanded: true)]
-    [SerializeField]
-    private TextMeshProUGUI _actionsText = null;
 
     // Status Icons
     [FoldoutGroup("Components/Status", expanded: true)]
@@ -37,6 +36,11 @@ public class ActorUI : MonoBehaviour
     // ========================================================================
 
     #region Initialization
+    private void Awake()
+    {
+        _actor = GetComponent<ActorManager>();  
+    }
+
     private void Start()
     {
         _worldCanvas.worldCamera = Camera.main;
@@ -46,15 +50,23 @@ public class ActorUI : MonoBehaviour
     // ========================================================================
 
     #region UI Methods
-    public void UpdateHealthUI(float healthPercentage, int currentHealth, int maxHealth)
+    public void UpdateHealthUI()
     {
-        _healthBar.fillAmount = healthPercentage;
-        _healthText.text = $"{currentHealth}/{maxHealth}";
+        _healthBar.fillAmount = _actor.Stats.HealthPercentage;
+        _healthText.text = $"{_actor.Stats.CurrentHealth}/{_actor.Stats.MaxHealth}";
+
+        if (_actor.IsMyTurn)
+        {
+            ActorsUI.UpdateUserInterface(_actor.Stats.CurrentHealth, _actor.Stats.MaxHealth, _actor.Stats.HealthPercentage);
+        }
     }
 
-    public void UpdateActionsUI(int currentActions, int maxActions)
+    public void UpdateActionsUI()
     {
-        _actionsText.text = $"{currentActions}/{maxActions}";
+        if (_actor.IsMyTurn)
+        {
+            ActorsUI.UpdateUserInterface(_actor.Stats.CurrentActions, _actor.Stats.ActionsPerTurn);
+        }
     }
 
     public void UpdateStatusUI(List<StatusEffectInstance> ActiveEffect)
@@ -102,6 +114,13 @@ public class ActorUI : MonoBehaviour
         foreach (var key in toRemove)
             _activeUI.Remove(key);
 
+    }
+
+    public void FloatingTextAnimation(string Text, HealthModColors DamageMod)
+    {
+        FloatingDamage f = ObjectPooler.SpawnFromPool("Floating Damage Text", transform.position, Quaternion.identity).GetComponent<FloatingDamage>();
+        //f.transform.SetParent(_actor.UI.WorldCanvas.transform);
+        f.UpdateText(Text, 0.6f, DamageMod);
     }
     #endregion
 

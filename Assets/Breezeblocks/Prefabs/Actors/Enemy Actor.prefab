@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 2967473644843886963}
   - component: {fileID: 6624925030088808006}
   - component: {fileID: 8864545213059187994}
-  - component: {fileID: 8881086439604294137}
   - component: {fileID: 3097971633382406636}
   - component: {fileID: 8935140890322494112}
   - component: {fileID: 1511259363529817430}
+  - component: {fileID: 6992938243690370685}
   m_Layer: 0
   m_Name: Enemy Actor
   m_TagString: Untagged
@@ -90,23 +90,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b584c9dc974d449b2e3c2dc90eb0cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8881086439604294137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5044934173528301063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2856c62b72295c347b2973cfb0ee7b91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _worldCanvas: {fileID: 5645247230792205840}
-  _healthBar: {fileID: 7713873620548858398}
-  _healthText: {fileID: 2273861012249546362}
-  _actionsText: {fileID: 0}
-  _statusPanel: {fileID: 1924747663876292800}
 --- !u!114 &3097971633382406636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +165,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.5, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &6992938243690370685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5044934173528301063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b28684e42a700eb4bb3ae3f1029eb03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _worldCanvas: {fileID: 5645247230792205840}
+  _healthBar: {fileID: 7713873620548858398}
+  _healthText: {fileID: 2273861012249546362}
+  _statusPanel: {fileID: 1924747663876292800}
 --- !u!1 &5919497451703877235
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +256,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -553150239
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: -1329963487, guid: cfb530ea762e9474999cab8076f77ccd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -389,11 +388,28 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3475079044096848227, guid: 1ee2c348f11976d41985c19dbde45506, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475079044096848227, guid: 1ee2c348f11976d41985c19dbde45506, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475079044096848227, guid: 1ee2c348f11976d41985c19dbde45506, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.5999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475079044096848227, guid: 1ee2c348f11976d41985c19dbde45506, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.29999995
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266580288350156723, guid: 1ee2c348f11976d41985c19dbde45506, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2102148029
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3540318049583823888, guid: 1ee2c348f11976d41985c19dbde45506, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ee2c348f11976d41985c19dbde45506, type: 3}

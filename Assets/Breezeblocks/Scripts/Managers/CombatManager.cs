@@ -23,6 +23,17 @@ public class CombatManager : MonoBehaviour
     private List<EnemyActor> _enemyActors = new List<EnemyActor>();
     public List<EnemyActor> EnemyActors => _enemyActors;
 
+    public bool IsPlayerTurn
+    {
+        get
+        {
+            if (_currentCombatent is PlayerActor)
+                return true;
+            else
+                return false;
+        }
+    }
+
 
     // Turn and round
     private int _currentRound = 1;

@@ -28,11 +28,15 @@ public class CardUI : MonoBehaviour, IPooledObjects
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
     private CanvasGroup _canvasGroup = null;
+    public CanvasGroup CanvasGroup => _canvasGroup;
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
     private CardUIAnimations _cardAnimations = null;
     public CardUIAnimations Animations => _cardAnimations;
+
     private Button _btn = null;
+    private CardHoverHandler _hover = null;
+    public CardHoverHandler HoverHandler => _hover;
 
     [FoldoutGroup("Effects", expanded: true)]
     [SerializeField]
@@ -41,6 +45,7 @@ public class CardUI : MonoBehaviour, IPooledObjects
     // Card data
     private CardInstance _cardInstance = null;
     public CardInstance CardInstance => _cardInstance;
+    public int SlotIndex { get; set; }
     #endregion
 
     // ========================================================================
@@ -49,6 +54,7 @@ public class CardUI : MonoBehaviour, IPooledObjects
     private void Awake()
     {
         _btn = GetComponent<Button>();
+        _hover = GetComponent<CardHoverHandler>();
         _btn.onClick.AddListener(OnCardClicked);
     }
 
@@ -60,7 +66,7 @@ public class CardUI : MonoBehaviour, IPooledObjects
 
     public void OnSpawn()
     {
-      
+
     }
     #endregion
 
@@ -101,7 +107,7 @@ public class CardUI : MonoBehaviour, IPooledObjects
     private void OnCardClicked()
     {
         PlayerTurnManager.Instance.SelectCard(this);
-    }   
+    }
     #endregion
 
     // ========================================================================

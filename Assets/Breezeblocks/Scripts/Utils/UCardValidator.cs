@@ -16,11 +16,17 @@ public static class UCardValidator
 
         // 1. Mana check
         if (actor.Stats.CurrentActions < card.ActionCost)
+        {
+            Console.Log($"[CardValidator] Actor {actor.ActorName} does not have enough actions to play {card.CardName}. Required: {card.ActionCost}, Available: {actor.Stats.CurrentActions}");
             return false;
+        }
 
         // 2. Position check
         if (!card.UsablePositions.Contains(actor.Positioning.CurrentPosition))
+        {
+            Console.Log($"[CardValidator] Actor {actor.ActorName} is not in a valid position to play {card.CardName}. Required: {string.Join(", ", card.UsablePositions)}, Current: {actor.Positioning.CurrentPosition}");
             return false;
+        }
 
         // 3. Target check
         List<ActorManager> potentialTargets = GetAllValidTargets(card, actor);
