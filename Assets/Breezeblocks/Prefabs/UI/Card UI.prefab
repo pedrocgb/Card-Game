@@ -640,10 +640,10 @@ GameObject:
   - component: {fileID: 4924761035926408567}
   - component: {fileID: 7251373975504762224}
   - component: {fileID: 7766743823151071389}
+  - component: {fileID: 868585972125987247}
   - component: {fileID: 1765875268502948180}
   - component: {fileID: 1263122543876660144}
   - component: {fileID: 87765128763132055}
-  - component: {fileID: 868585972125987247}
   m_Layer: 5
   m_Name: Card UI
   m_TagString: Untagged
@@ -685,7 +685,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8eee973afd7af744aa84406826545d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _selectScale: 1.2
+  _deselectScale: 1
   _cardNameText: {fileID: 7020264845270796747}
+  _cardBackBg: {fileID: 2758510427412233178}
   _cardImage: {fileID: 3288190422895971339}
   _cardDescriptionText: {fileID: 7520321385919279966}
   _cardCostText: {fileID: 8334316488907190736}
@@ -693,6 +696,8 @@ MonoBehaviour:
   _targetIcon: {fileID: 6186576904365304308}
   _canvasGroup: {fileID: 87765128763132055}
   _cardAnimations: {fileID: 7766743823151071389}
+  _defaultMaterial: {fileID: 0}
+  _selectedMaterial: {fileID: 2100000, guid: 44e8fb3549df0b64bbe2c5bda414743e, type: 2}
   _cardLockEffect: {fileID: 6056931834042578566}
 --- !u!114 &7766743823151071389
 MonoBehaviour:
@@ -710,6 +715,22 @@ MonoBehaviour:
   _flipDuration: 0.3
   _frontImage: {fileID: 757567573695890698}
   _backImage: {fileID: 5313196292683330052}
+--- !u!114 &868585972125987247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5903213188334675933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5caf59b73e7839d419bf8cdaba703781, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ui: {fileID: 7251373975504762224}
+  _hoverMoveY: 60
+  _hoverScale: 1.2
+  _tweenDuration: 0.2
 --- !u!114 &1765875268502948180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,21 +795,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &868585972125987247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5903213188334675933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5caf59b73e7839d419bf8cdaba703781, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hoverMoveY: 60
-  _hoverScale: 1.2
-  _tweenDuration: 0.2
 --- !u!1 &6056931834042578566
 GameObject:
   m_ObjectHideFlags: 0

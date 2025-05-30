@@ -16,14 +16,7 @@ public class HandManager : MonoBehaviour
     private List<CardInstance> _currentHand = new List<CardInstance>();
     public List<CardInstance> CurrentHand => _currentHand;
     private List<CardUI> _currentHandUI = new List<CardUI>();
-
-    // Card animations settings
-    [FoldoutGroup("Cards Animations", expanded: true)]
-    [SerializeField]
-    private float _startingAnchoredX = -800f;
-    [FoldoutGroup("Cards Animations", expanded: true)]
-    [SerializeField]
-    private float _anchoredOffSet = 260f;
+    public List<CardUI> CurrentHandUI => _currentHandUI;
 
     // Components
     [FoldoutGroup("Components", expanded: true)]
@@ -85,6 +78,10 @@ public class HandManager : MonoBehaviour
             }
 
             _currentHand.Add(_deckManager.GetTopCard());
+
+            // Update Actor UI
+            if (_actor.IsMyTurn)
+                ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count);
         }
     }
 
@@ -96,6 +93,9 @@ public class HandManager : MonoBehaviour
     {
         _currentHand.Remove(Card);
         _deckManager.DiscardPile.Add(Card);
+
+        if (_actor.IsMyTurn)
+            ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count);
     }
     #endregion
 
@@ -137,6 +137,10 @@ public class HandManager : MonoBehaviour
 
         // Validate if cards are playable, unplayable cards are greyout;
         ValidateCard(card, _actor);
+
+        // Update Actor UI
+        if (_actor.IsMyTurn)
+            ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count);
 
         return card;
     }
@@ -207,7 +211,7 @@ public class HandManager : MonoBehaviour
         for (int i = 0; i < _currentHandUI.Count; i++)
         {
             var rt = _currentHandUI[i].GetComponent<RectTransform>();
-            float x = _startingAnchoredX + i * _anchoredOffSet;
+            float x = UConstants.CARD_DRAW_START_ANCHORED_X + i * UConstants.CARD_DRAW_ANCHORED_OFFSET;
             rt.anchoredPosition = new Vector2(x, 0f);
 
             // reset sibling so the z-order always matches
@@ -251,7 +255,9 @@ public class HandManager : MonoBehaviour
         // remove from your lists immediately
         _currentHand.Remove(Card.CardInstance);
         _deckManager.DiscardPile.Add(Card.CardInstance);
-        _currentHandUI.Remove(Card);
+
+        if (_actor.IsMyTurn)
+            ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count);
     }
     #endregion
 
@@ -282,6 +288,10 @@ public class HandManager : MonoBehaviour
             _currentHand.Clear();
             _currentHandUI.Clear();
         }
+
+        // Update actor Deck and Discard Pile UI
+        if (_actor.IsMyTurn)
+            ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count);
     }
 
 

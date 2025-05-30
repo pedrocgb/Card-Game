@@ -57,15 +57,7 @@ public class ActorWorldUI : MonoBehaviour
 
         if (_actor.IsMyTurn)
         {
-            ActorsUI.UpdateUserInterface(_actor.Stats.CurrentHealth, _actor.Stats.MaxHealth, _actor.Stats.HealthPercentage);
-        }
-    }
-
-    public void UpdateActionsUI()
-    {
-        if (_actor.IsMyTurn)
-        {
-            ActorsUI.UpdateUserInterface(_actor.Stats.CurrentActions, _actor.Stats.ActionsPerTurn);
+            ActorsUI.UpdateHealthInterface(_actor.Stats.CurrentHealth, _actor.Stats.MaxHealth, _actor.Stats.HealthPercentage);
         }
     }
 

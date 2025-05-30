@@ -69,7 +69,10 @@ public class ActorStats : MonoBehaviour
         _cardBuy = _actor.Data.CardBuy;
 
         _ui.UpdateHealthUI();
-        _ui.UpdateActionsUI();
+        if (_actor.IsMyTurn)
+        {
+            ActorsUI.UpdateActionsInterface(_actor.Stats.CurrentActions, _actor.Stats.ActionsPerTurn);
+        }
     }
 
     public void OnNewTurn()
@@ -80,7 +83,7 @@ public class ActorStats : MonoBehaviour
         _actor.UI.UpdateStatusUI(_activeEffects);
         ActorsUI.UpdateUserInterface(_actor.ActorName, _actor.Data.ActorRace.RaceName, _actor.Data.ActorSpecialization.SpecializationName, 
             _currentHealth, _maxHealth, _currentActions, _actionsPerTurn, HealthPercentage,
-            _actor.Data.Portrait);
+            _actor.Data.Portrait, _actor.Deck.CurrentDeck.Count, _actor.Deck.DiscardPile.Count);
     }
 
     public void OnEndTurn()
@@ -98,7 +101,7 @@ public class ActorStats : MonoBehaviour
         _currentActions -= Amount;
 
         if (_actor.IsMyTurn)
-            ActorsUI.UpdateUserInterface(_currentActions, _unmodifiedActionsPerTurn);
+            ActorsUI.UpdateActionsInterface(_currentActions, _actionsPerTurn);
     }
     #endregion
 

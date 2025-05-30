@@ -9,6 +9,9 @@ public class CardHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointerExi
     #region Variables and Properties
     private static CardHoverHandler _currentHovered;
 
+    [FoldoutGroup("Components", expanded: true)]
+    [SerializeField]
+    private CardUI _ui = null;
     private RectTransform _rect;
     private Vector2 _originalAnchoredPos;
     private Vector3 _originalScale;
@@ -32,6 +35,7 @@ public class CardHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointerExi
     private void Awake()
     {
         _rect = GetComponent<RectTransform>();
+        _ui = GetComponent<CardUI>();
         _originalAnchoredPos = _rect.anchoredPosition;
         _originalScale = transform.localScale;
     }
@@ -49,7 +53,8 @@ public class CardHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointerExi
     {
         // If not player's turn, ignore hover events
         if (!CombatManager.Instance.IsPlayerTurn ||
-            !_hoverEnabled)
+            !_hoverEnabled ||
+            !_ui.IsInteractable)
             return;
 
         // Only allow one card hovered at a time
@@ -77,7 +82,8 @@ public class CardHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public void OnPointerExit(PointerEventData eventData)
     {
         if (!CombatManager.Instance.IsPlayerTurn ||
-            !_hoverEnabled)
+            !_hoverEnabled ||
+            !_ui.IsInteractable)
             return;
 
         if (_currentHovered == this)

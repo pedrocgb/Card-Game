@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
@@ -6,10 +7,21 @@ using UnityEngine.UI;
 public class CardUI : MonoBehaviour, IPooledObjects
 {
     #region Variables and Properties
+    [FoldoutGroup("Animation Settings", expanded: true)]
+    [SerializeField]
+    private float _selectScale = 1.2f;
+    [FoldoutGroup("Animation Settings", expanded: true)]
+    [SerializeField]
+    private float _deselectScale = 1f;
+
+
     // Components
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
     private TextMeshProUGUI _cardNameText = null;
+    [FoldoutGroup("Components", expanded: true)]
+    [SerializeField]
+    private Image _cardBackBg = null;
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
     private Image _cardImage = null;
@@ -34,6 +46,13 @@ public class CardUI : MonoBehaviour, IPooledObjects
     private CardUIAnimations _cardAnimations = null;
     public CardUIAnimations Animations => _cardAnimations;
 
+    [FoldoutGroup("Components/Materials", expanded: true)]
+    [SerializeField]
+    private Material _defaultMaterial = null;
+    [FoldoutGroup("Components/Materials", expanded: true)]
+    [SerializeField]
+    private Material _selectedMaterial = null;
+
     private Button _btn = null;
     private CardHoverHandler _hover = null;
     public CardHoverHandler HoverHandler => _hover;
@@ -46,6 +65,7 @@ public class CardUI : MonoBehaviour, IPooledObjects
     private CardInstance _cardInstance = null;
     public CardInstance CardInstance => _cardInstance;
     public int SlotIndex { get; set; }
+    public bool IsInteractable { get; private set; }
     #endregion
 
     // ========================================================================
@@ -55,12 +75,16 @@ public class CardUI : MonoBehaviour, IPooledObjects
     {
         _btn = GetComponent<Button>();
         _hover = GetComponent<CardHoverHandler>();
-        _btn.onClick.AddListener(OnCardClicked);
+        _btn.onClick.AddListener(() => PlayerTurnManager.Instance.OnCardClicked(this));
     }
 
     public void Initialize(CardInstance cardData)
     {
         _cardInstance = cardData;
+        _cardImage.material = _defaultMaterial;
+        transform.localScale = Vector3.one * _deselectScale;
+        IsInteractable = true;
+
         UpdateCardUI();
     }
 
@@ -104,9 +128,27 @@ public class CardUI : MonoBehaviour, IPooledObjects
             _btn.interactable = false;
     }
 
-    private void OnCardClicked()
+    public void SetInteractable(bool on)
     {
-        PlayerTurnManager.Instance.SelectCard(this);
+        IsInteractable = on;
+    }
+
+    public void OnSelection()
+    {
+        _cardBackBg.material = _selectedMaterial;
+
+        _cardBackBg.transform.DOKill();
+        _cardBackBg.transform.DOScale(_selectScale, 0.25f).SetEase(Ease.OutBack);
+        _hover.enabled = false;
+    }
+
+    public void OnDeselection()
+    {
+        _cardBackBg.material = _defaultMaterial;
+
+        _cardBackBg.transform.DOKill();
+        _cardBackBg.transform.DOScale(_deselectScale, 0.25f).SetEase(Ease.OutBack);
+        _hover.enabled = true;
     }
     #endregion
 

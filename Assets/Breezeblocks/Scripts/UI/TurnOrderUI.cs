@@ -25,7 +25,17 @@ public class TurnOrderUI : MonoBehaviour
     private Vector2 _expandedSize = new Vector2(100f, 100f);
     [FoldoutGroup("Settings", expanded: true)]
     [SerializeField] 
-    private float _spacing = 10f; // Optional: horizontal spacing between icons
+    private float _spacing = 10f;
+    [FoldoutGroup("Settings", expanded: true)]
+    [SerializeField]
+    private float _startAnchoredX = 50f;
+
+    [FoldoutGroup("Settings/Name Animation", expanded: true)]
+    [SerializeField]
+    private float _nameFade = 0.4f;
+    [FoldoutGroup("Settings/Name Animation", expanded: true)]
+    [SerializeField]
+    private float _letterDelay = 0.05f;
 
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
@@ -33,11 +43,16 @@ public class TurnOrderUI : MonoBehaviour
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
     private TextMeshProUGUI _actorNameText = null;
+    private CanvasGroup _actorNameCanvasGroup = null;
     #endregion
 
     // ========================================================================
 
-    private void Awake() => Instance = this;
+    private void Awake()
+    {
+        Instance = this;
+        _actorNameCanvasGroup = _actorNameText.GetComponent<CanvasGroup>();
+    }
 
     // ========================================================================
 
@@ -48,7 +63,7 @@ public class TurnOrderUI : MonoBehaviour
             icon.gameObject.SetActive(false);
         _iconList.Clear();
 
-        float startX = 0f;
+        float startX = _startAnchoredX;
 
         foreach (var actor in turnOrder)
         {
@@ -68,6 +83,7 @@ public class TurnOrderUI : MonoBehaviour
         if (_iconList.Count > 0)
         {
             _iconList[0].Expand(_expandedSize);
+            AnimateName(_iconList[0].LinkedActor.ActorName);    
         }
     }
 
@@ -79,7 +95,7 @@ public class TurnOrderUI : MonoBehaviour
         _iconList.RemoveAt(0);
         finished.FadeOutAndDestroy();
 
-        float startX = 0f;
+        float startX = _startAnchoredX;
 
         for (int i = 0; i < _iconList.Count; i++)
         {
@@ -90,6 +106,15 @@ public class TurnOrderUI : MonoBehaviour
             rt.DOAnchorPos(new Vector2(startX, 0), _slideDuration).SetEase(Ease.OutCubic);
 
             startX += targetSize.x + _spacing;
+        }
+
+        if (_iconList.Count > 0)
+        {
+            AnimateName(_iconList[0].LinkedActor.ActorName);
+        }
+        else
+        {
+            AnimateName("");
         }
     }
 
@@ -118,8 +143,27 @@ public class TurnOrderUI : MonoBehaviour
 
             startX += targetSize.x + _spacing;
         }
+
+        AnimateName(_iconList[0].LinkedActor.ActorName);
     }
     #endregion
 
     // ========================================================================
+
+    private void AnimateName(string newName)
+    {
+        // fade out, then type and fade back in
+        _actorNameCanvasGroup.DOKill();
+        _actorNameCanvasGroup.DOFade(0, _nameFade).OnComplete(() =>
+        {
+            _actorNameText.text = "";
+            _actorNameCanvasGroup.alpha = 1;
+            // typewriter effect
+            DOTween.To(() => 0, i =>
+            {
+                int length = Mathf.Clamp(i, 0, newName.Length);
+                _actorNameText.text = newName.Substring(0, length);
+            }, newName.Length, newName.Length * _letterDelay);
+        });
+    }
 }

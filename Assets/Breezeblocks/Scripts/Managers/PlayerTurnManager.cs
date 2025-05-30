@@ -16,8 +16,8 @@ public class PlayerTurnManager : MonoBehaviour
     private TargetingManager _targetingManager = null;
 
     // Cards
+    private CardUI _selectedCard = null;
     private CardInstance _card = null;  
-    private CardUI _cardUI = null;
 
     // Player Actor
     private PlayerActor _actor = null;
@@ -45,7 +45,7 @@ public class PlayerTurnManager : MonoBehaviour
         }
 
         _actor = Player;
-        _cardUI = null;
+        DeselectCard();
 
         _actor.StartNewTurn();
     }
@@ -54,33 +54,16 @@ public class PlayerTurnManager : MonoBehaviour
     // ========================================================================
 
     #region Card Management Methods
-    /// <summary>
-    /// Select a card to use for the current turn.
-    /// </summary>
-    /// <param name="Card"></param>
-    public void SelectCard(CardUI Card)
-    {
-        // Get card Data
-        _cardUI = Card;
-        _card = Card.CardInstance;
-
-        _targetingManager.HighLightActors(_actor, _card.TargetPositions, _card.TargetType);
-        if (_card.TargetScope == UEnums.TargetAmount.All)
-        {
-            _targetingManager.HighTargetActors(_actor, _card.TargetPositions, _card.TargetType);
-        }
-    }
-
     public void UseCard()
     {
-        if (_actor.Hand.ValidateCard(_cardUI, _actor))
+        if (_actor.Hand.ValidateCard(_selectedCard, _actor))
         {
             Console.Log($"{_actor.name} used {_card.CardName} on {TargetingManager.Instance.CurrentTarget.name}");
 
             _actor.Stats.SpendAction(_card.ActionCost);
             CardEffectResolver.ApplyEffects(_card.CardEffects, _actor, TargetingManager.Instance.CurrentTarget, _card);
 
-            _actor.Hand.DiscardCard(_cardUI);
+            _actor.Hand.DiscardCard(_selectedCard);
             _targetingManager.ClearHightLights();
             _targetingManager.SetTarget(null);
 
@@ -88,6 +71,58 @@ public class PlayerTurnManager : MonoBehaviour
             _actor.Hand.RebuildHandLayout();
         }
 
+        // Deselect cards when card is played
+        DeselectCard();
+    }
+
+    public void OnCardClicked(CardUI Card)
+    {
+        // If the card is already selected, deselect it
+        if (_selectedCard == Card)
+        {
+            DeselectCard();
+            return;
+        }
+
+        // Deselect previous card
+        if (_selectedCard != null)
+            DeselectCard();
+
+        // Select new card
+        _selectedCard = Card;
+        _card = Card.CardInstance;
+        Card.OnSelection();
+
+        // Disable all cards
+        foreach (var ui in _actor.Hand.CurrentHandUI)
+        {
+            if (ui != Card)
+                ui.SetInteractable(false);
+        }
+
+        // Targeting system
+        _targetingManager.HighLightActors(_actor, _card.TargetPositions, _card.TargetType);
+        if (_card.TargetScope == UEnums.TargetAmount.All)
+        {
+            _targetingManager.HighTargetActors(_actor, _card.TargetPositions, _card.TargetType);
+        }
+    }
+
+    private void DeselectCard()
+    {
+        if (_selectedCard == null) return; // If there are no cards selected, return
+
+        _selectedCard.OnDeselection();
+        _selectedCard = null;
+
+        foreach (var ui in _actor.Hand.CurrentHandUI)
+        {
+            ui.SetInteractable(true);
+            ui.HoverHandler.enabled = true;
+        }
+
+        _targetingManager.ClearHightLights();
+        _targetingManager.SetTarget(null);
     }
     #endregion
 
