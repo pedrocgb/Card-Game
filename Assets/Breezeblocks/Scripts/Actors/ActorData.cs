@@ -25,6 +25,10 @@ public class ActorData : ScriptableObject
     [SerializeField]
     private RacesData _actorRace = null;
     public RacesData ActorRace => _actorRace;
+    [FoldoutGroup("Actor Info/Race", expanded: true)]
+    [SerializeField]
+    private List<CardData> _startingCards = new List<CardData>();
+    public List<CardData> StartingCards => _startingCards;
 
     // ========================================================================
 
@@ -61,10 +65,6 @@ public class ActorData : ScriptableObject
 
     // ========================================================================
 
-    [FoldoutGroup("Actor Info/Cards", expanded: true)]
-    [SerializeField]
-    private List<CardData> _startingCards = new List<CardData>();
-    public List<CardData> StartingCards => _startingCards;
     [FoldoutGroup("Actor Info/Cards", expanded: true)]
     [SerializeField]
     private int _baseCardBuy = 2;

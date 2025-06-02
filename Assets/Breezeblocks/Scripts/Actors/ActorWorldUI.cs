@@ -107,13 +107,6 @@ public class ActorWorldUI : MonoBehaviour
             _activeUI.Remove(key);
 
     }
-
-    public void FloatingTextAnimation(string Text, HealthModColors DamageMod)
-    {
-        FloatingDamage f = ObjectPooler.SpawnFromPool("Floating Damage Text", transform.position, Quaternion.identity).GetComponent<FloatingDamage>();
-        //f.transform.SetParent(_actor.UI.WorldCanvas.transform);
-        f.UpdateText(Text, 0.6f, DamageMod);
-    }
     #endregion
 
     // ========================================================================

@@ -45,6 +45,8 @@ public class CardUI : MonoBehaviour, IPooledObjects
     [SerializeField]
     private CardUIAnimations _cardAnimations = null;
     public CardUIAnimations Animations => _cardAnimations;
+    private RectTransform _rectTransform = null;
+    public RectTransform MyRectTransform => _rectTransform;
 
     [FoldoutGroup("Components/Materials", expanded: true)]
     [SerializeField]
@@ -75,6 +77,7 @@ public class CardUI : MonoBehaviour, IPooledObjects
     {
         _btn = GetComponent<Button>();
         _hover = GetComponent<CardHoverHandler>();
+        _rectTransform = GetComponent<RectTransform>();
         _btn.onClick.AddListener(() => PlayerTurnManager.Instance.OnCardClicked(this));
     }
 

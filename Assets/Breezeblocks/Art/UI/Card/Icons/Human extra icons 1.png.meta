@@ -1,0 +1,479 @@
+fileFormatVersion: 2
+guid: da9ee10c1eb816441987213dd0509f48
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4617433329877696043
+    second: Human extra icons 1_0
+  - first:
+      213: 8136750119394762839
+    second: Human extra icons 1_1
+  - first:
+      213: 7221507932415388421
+    second: Human extra icons 1_2
+  - first:
+      213: 1053576586899655679
+    second: Human extra icons 1_3
+  - first:
+      213: 4144053169907322375
+    second: Human extra icons 1_4
+  - first:
+      213: -4573005686866366220
+    second: Human extra icons 1_5
+  - first:
+      213: 7893845806414913072
+    second: Human extra icons 1_6
+  - first:
+      213: 4499382438044626731
+    second: Human extra icons 1_7
+  - first:
+      213: -3002625001600102274
+    second: Human extra icons 1_8
+  - first:
+      213: -144567788667223156
+    second: Human extra icons 1_9
+  - first:
+      213: -4578916382470683219
+    second: Human extra icons 1_10
+  - first:
+      213: 5362466393637461118
+    second: Human extra icons 1_11
+  - first:
+      213: -5830997498111291085
+    second: Human extra icons 1_12
+  - first:
+      213: 5005051843134373271
+    second: Human extra icons 1_13
+  - first:
+      213: 5365557471254854063
+    second: Human extra icons 1_14
+  - first:
+      213: -7362074984326527337
+    second: Human extra icons 1_15
+  - first:
+      213: 3840702408799974999
+    second: Human extra icons 1_16
+  - first:
+      213: 8576175981097261636
+    second: Human extra icons 1_17
+  - first:
+      213: -965590463888427225
+    second: Human extra icons 1_18
+  - first:
+      213: 4997184650629161019
+    second: Human extra icons 1_19
+  - first:
+      213: -7353434179940712963
+    second: Human extra icons 1_20
+  - first:
+      213: 7975368409909093689
+    second: Human extra icons 1_21
+  - first:
+      213: 4400397038212804132
+    second: Human extra icons 1_22
+  - first:
+      213: 1813118962212535606
+    second: Human extra icons 1_23
+  - first:
+      213: -4591816189750062492
+    second: Human extra icons 1_24
+  - first:
+      213: -4942900085884052337
+    second: Human extra icons 1_25
+  - first:
+      213: 4853279381103668088
+    second: Human extra icons 1_26
+  - first:
+      213: -7977727014769658209
+    second: Human extra icons 1_27
+  - first:
+      213: -7025314995498504461
+    second: Human extra icons 1_28
+  - first:
+      213: 1840096787572111011
+    second: Human extra icons 1_29
+  - first:
+      213: -8589524706125501817
+    second: Human extra icons 1_30
+  - first:
+      213: 1702169466434998043
+    second: Human extra icons 1_31
+  - first:
+      213: 8954256644944933816
+    second: Human extra icons 1_32
+  - first:
+      213: 3240073766084788607
+    second: Human extra icons 1_33
+  - first:
+      213: 8802885510763819200
+    second: Human extra icons 1_34
+  - first:
+      213: -1566094682081898142
+    second: Human extra icons 1_35
+  - first:
+      213: 6364353019337294245
+    second: Human extra icons 1_36
+  - first:
+      213: 7664392000958295732
+    second: Human extra icons 1_37
+  - first:
+      213: 3730905869265265163
+    second: Human extra icons 1_38
+  - first:
+      213: 951107043670614038
+    second: Human extra icons 1_39
+  - first:
+      213: 6509915282079033882
+    second: Human extra icons 1_40
+  - first:
+      213: -2015494363360649784
+    second: Human extra icons 1_41
+  - first:
+      213: -2915815238184442772
+    second: Human extra icons 1_42
+  - first:
+      213: -4930100716407499377
+    second: Human extra icons 1_43
+  - first:
+      213: -44345864348790310
+    second: Human extra icons 1_44
+  - first:
+      213: 7342723299573140361
+    second: Human extra icons 1_45
+  - first:
+      213: -3738961569805484353
+    second: Human extra icons 1_46
+  - first:
+      213: -4565965975736721618
+    second: Human extra icons 1_47
+  - first:
+      213: -930200303936872252
+    second: Human extra icons 1_48
+  - first:
+      213: -8508357940335986251
+    second: Human extra icons 1_49
+  - first:
+      213: -4123569836299872284
+    second: Human extra icons 1_50
+  - first:
+      213: 4020038817229848068
+    second: Human extra icons 1_51
+  - first:
+      213: -9129917730249248975
+    second: Human extra icons 1_52
+  - first:
+      213: 4750739746489430044
+    second: Human extra icons 1_53
+  - first:
+      213: -7174630160700343096
+    second: Human extra icons 1_54
+  - first:
+      213: 3051237126363675356
+    second: Human extra icons 1_55
+  - first:
+      213: 2973211747332718467
+    second: Human extra icons 1_56
+  - first:
+      213: 8600437125984601363
+    second: Human extra icons 1_57
+  - first:
+      213: -2308851921333750881
+    second: Human extra icons 1_58
+  - first:
+      213: -2947002261562257576
+    second: Human extra icons 1_59
+  - first:
+      213: -2587234911984324109
+    second: Human extra icons 1_60
+  - first:
+      213: -2340929512429075613
+    second: Human extra icons 1_61
+  - first:
+      213: 5286008235345130729
+    second: Human extra icons 1_62
+  - first:
+      213: -7712762835309682856
+    second: Human extra icons 1_63
+  - first:
+      213: -8823698191150209694
+    second: Human extra icons 1_64
+  - first:
+      213: -5467627831545530305
+    second: Human extra icons 1_65
+  - first:
+      213: -6530422140266012986
+    second: Human extra icons 1_66
+  - first:
+      213: 5496892003447397055
+    second: Human extra icons 1_67
+  - first:
+      213: -1850429660503768638
+    second: Human extra icons 1_68
+  - first:
+      213: -2043647117007310957
+    second: Human extra icons 1_69
+  - first:
+      213: -6957786702750342466
+    second: Human extra icons 1_70
+  - first:
+      213: 4191045577923644116
+    second: Human extra icons 1_71
+  - first:
+      213: -148968324935988151
+    second: Human extra icons 1_72
+  - first:
+      213: 14275261625353688
+    second: Human extra icons 1_73
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Staggering attack
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 479
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2c282b1e926a5d448b2716938dc69ff
+      internalID: 2037038911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Reckless attack
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38ab03766b36e8848bcf9ef26c24348b
+      internalID: -752128921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scout
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d6c730569dfa7e42a1fa1128be9e76f
+      internalID: -814445967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leg kick
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 503a6427fa955694fb6796a0f410e675
+      internalID: -822147110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Confuse
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 48
+        width: 467
+        height: 447
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10e2996b384cc264b8aec37270073eee
+      internalID: 1474198686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Iron will
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d31c498765b07f46a2ab1386a3aa17f
+      internalID: 1314018031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 2b75cf3661bb9864ca6f9c315543c8b4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":2.0},"gridSpriteSize":{"x":512.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Confuse: 1474198686
+      Iron will: 1314018031
+      Leg kick: -822147110
+      Reckless attack: -752128921
+      Scout: -814445967
+      Staggering attack: 2037038911
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

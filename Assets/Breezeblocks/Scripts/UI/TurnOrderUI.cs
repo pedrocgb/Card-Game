@@ -131,7 +131,7 @@ public class TurnOrderUI : MonoBehaviour
 
     private void RebuildUI()
     {
-        float startX = 0f;
+        float startX = _startAnchoredX;
 
         for (int i = 0; i < _iconList.Count; i++)
         {

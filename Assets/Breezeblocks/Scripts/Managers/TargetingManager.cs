@@ -38,7 +38,7 @@ public class TargetingManager : MonoBehaviour
     /// </summary>
     /// <param name="ValidPositions"></param>
     /// <param name="TargetAlignment"></param>
-    public void HighLightActors(ActorManager Source, List<UEnums.Positions> ValidPositions, UEnums.Target TargetAlignment)
+    public void HighLightActors(ActorManager Source, List<UEnums.Positions> ValidPositions, UEnums.Target TargetAlignment, bool CanTargetSelf)
     {
         // Clear all highlights before applying new ones.
         ClearHightLights();
@@ -56,6 +56,9 @@ public class TargetingManager : MonoBehaviour
                     foreach (var a in _combatManager.PlayerActors)
                     {
                         bool valid = ValidPositions.Contains(a.Positioning.CurrentPosition);
+                        if (a == Source && !CanTargetSelf)
+                            valid = false;
+
                         if (valid)
                             a.HightLightActor(TargetAlignment);
                     }
@@ -84,6 +87,9 @@ public class TargetingManager : MonoBehaviour
                     foreach (var a in _combatManager.EnemyActors)
                     {
                         bool valid = ValidPositions.Contains(a.Positioning.CurrentPosition);
+                        if (a == Source && !CanTargetSelf)
+                            valid = false;
+
                         if (valid)
                             a.HightLightActor(TargetAlignment);
                     }
@@ -100,7 +106,7 @@ public class TargetingManager : MonoBehaviour
         }
     }
 
-    public void HighTargetActors(ActorManager Source, List<UEnums.Positions> ValidPositions, UEnums.Target TargetAlignment)
+    public void HighTargetActors(ActorManager Source, List<UEnums.Positions> ValidPositions, UEnums.Target TargetAlignment, bool CanTargetSelf)
     {
         // If the actor using the card is PLAYER, highlight all actors (or self) based on the target alignment and positioning.
         if (Source is PlayerActor)
@@ -115,6 +121,9 @@ public class TargetingManager : MonoBehaviour
                     foreach (var a in _combatManager.PlayerActors)
                     {
                         bool valid = ValidPositions.Contains(a.Positioning.CurrentPosition);
+                        if (a == Source && !CanTargetSelf)
+                            valid = false;
+
                         if (valid)
                             a.HighTargetActor();
                     }
@@ -143,6 +152,9 @@ public class TargetingManager : MonoBehaviour
                     foreach (var a in _combatManager.EnemyActors)
                     {
                         bool valid = ValidPositions.Contains(a.Positioning.CurrentPosition);
+                        if (a == Source && !CanTargetSelf)
+                            valid = false;
+
                         if (valid)
                             a.HighTargetActor();
                     }

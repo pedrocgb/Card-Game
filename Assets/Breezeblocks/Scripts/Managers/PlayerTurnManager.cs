@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerTurnManager : MonoBehaviour
@@ -56,6 +57,11 @@ public class PlayerTurnManager : MonoBehaviour
     #region Card Management Methods
     public void UseCard()
     {
+        StartCoroutine(UseCardCoroutine());
+    }
+
+    private IEnumerator UseCardCoroutine()
+    {
         if (_actor.Hand.ValidateCard(_selectedCard, _actor))
         {
             Console.Log($"{_actor.name} used {_card.CardName} on {TargetingManager.Instance.CurrentTarget.name}");
@@ -68,10 +74,12 @@ public class PlayerTurnManager : MonoBehaviour
             _targetingManager.SetTarget(null);
 
             _actor.Hand.ValidateHand();
-            _actor.Hand.RebuildHandLayout();
         }
 
+        yield return new WaitForSeconds(0.5f);
+
         // Deselect cards when card is played
+        _actor.Hand.RebuildHandLayout();
         DeselectCard();
     }
 
@@ -84,9 +92,9 @@ public class PlayerTurnManager : MonoBehaviour
             return;
         }
 
-        // Deselect previous card
+        // Prevents other cards from being selected, player must deselect the current selected card manually.
         if (_selectedCard != null)
-            DeselectCard();
+            return;
 
         // Select new card
         _selectedCard = Card;
@@ -101,10 +109,10 @@ public class PlayerTurnManager : MonoBehaviour
         }
 
         // Targeting system
-        _targetingManager.HighLightActors(_actor, _card.TargetPositions, _card.TargetType);
+        _targetingManager.HighLightActors(_actor, _card.TargetPositions, _card.TargetType, _card.CanTargetSelf);
         if (_card.TargetScope == UEnums.TargetAmount.All)
         {
-            _targetingManager.HighTargetActors(_actor, _card.TargetPositions, _card.TargetType);
+            _targetingManager.HighTargetActors(_actor, _card.TargetPositions, _card.TargetType, _card.CanTargetSelf);
         }
     }
 

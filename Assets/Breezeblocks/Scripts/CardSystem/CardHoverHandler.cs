@@ -16,7 +16,6 @@ public class CardHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointerExi
     private Vector2 _originalAnchoredPos;
     private Vector3 _originalScale;
     private int _originalSiblingIndex;
-    private bool _hoverEnabled = false;
 
     [FoldoutGroup("Animation Settings", expanded: true)]
     [SerializeField] 
@@ -46,14 +45,13 @@ public class CardHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointerExi
     #region Interface Methods
     public void EnableHover(bool enable)
     {
-        _hoverEnabled = enable;
+        _ui.SetInteractable(enable);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         // If not player's turn, ignore hover events
-        if (!CombatManager.Instance.IsPlayerTurn ||
-            !_hoverEnabled ||
+        if (!CombatManager.Instance.IsPlayerTurn ||           
             !_ui.IsInteractable)
             return;
 
@@ -82,7 +80,6 @@ public class CardHoverHandler : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public void OnPointerExit(PointerEventData eventData)
     {
         if (!CombatManager.Instance.IsPlayerTurn ||
-            !_hoverEnabled ||
             !_ui.IsInteractable)
             return;
 

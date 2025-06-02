@@ -28,6 +28,7 @@ public class CardInstance
     public TargetAmount TargetScope { get; set; }
     public List<Positions> TargetPositions { get; set; }
     public Sprite TargetIcon { get; set; }
+    public bool CanTargetSelf { get; private set; }
 
     // Card Status
     public bool IsLocked { get; private set; } = false;
@@ -54,6 +55,7 @@ public class CardInstance
         TargetScope = data.TargetScope;
         TargetPositions = new List<Positions>(data.TargetPositions);
         TargetIcon = data.TargetIcon;
+        CanTargetSelf = data.CanTargetSelf;
     }
 
     // ========================================================================

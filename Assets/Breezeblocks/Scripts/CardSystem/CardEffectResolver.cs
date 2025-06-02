@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using UnityEngine.EventSystems;
+using static Unity.VisualScripting.Member;
 
 public static class CardEffectResolver
 {
@@ -110,11 +111,19 @@ public static class CardEffectResolver
 
         if (Card.TargetScope == UEnums.TargetAmount.Single)
         {
+            if (Card.TargetType == UEnums.Target.Ally && !Card.CanTargetSelf)
+            {
+                potentialTargets = potentialTargets.Where(t => t != Source).ToList();
+            }
+
             if (Target != null && potentialTargets.Contains(Target))
                 targets.Add(Target);
         }
         else
         {
+            if (Card.TargetType == UEnums.Target.Ally && !Card.CanTargetSelf)
+                potentialTargets = potentialTargets.Where(t => t != Source).ToList();
+
             targets.AddRange(potentialTargets);
         }
 

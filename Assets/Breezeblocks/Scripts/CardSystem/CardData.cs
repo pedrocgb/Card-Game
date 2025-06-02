@@ -71,6 +71,11 @@ public class CardData : ScriptableObject
     private List<UEnums.Positions> _targetPositions = new List<UEnums.Positions>();
     public List<UEnums.Positions> TargetPositions => _targetPositions;
     [FoldoutGroup("Targets", expanded: true)]
+    [ShowIf("_targetType", UEnums.Target.Ally)]
+    [SerializeField]
+    private bool _canTargetSelf = false;
+    public bool CanTargetSelf => _canTargetSelf;
+    [FoldoutGroup("Targets", expanded: true)]
     [SerializeField]
     [PreviewField(height:100, alignment: ObjectFieldAlignment.Left)]
     private Sprite _targetIcon = null;

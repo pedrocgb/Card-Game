@@ -1,0 +1,403 @@
+fileFormatVersion: 2
+guid: a4ff08aeba8cb7e4ca771c8026bde284
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8563961654059073992
+    second: Interrogation mark Node_0
+  - first:
+      213: -1443201302995732755
+    second: Interrogation mark Node_1
+  - first:
+      213: -8308375388068557537
+    second: Interrogation mark Node_2
+  - first:
+      213: 1283213410566131908
+    second: Interrogation mark Node_3
+  - first:
+      213: -9087759528048659636
+    second: Interrogation mark Node_4
+  - first:
+      213: -7374768301165724558
+    second: Interrogation mark Node_5
+  - first:
+      213: -2373022682408020885
+    second: Interrogation mark Node_6
+  - first:
+      213: 1200935182741377179
+    second: Interrogation mark Node_7
+  - first:
+      213: -6086232418993164626
+    second: Interrogation mark Node_8
+  - first:
+      213: -6403529340819019736
+    second: Interrogation mark Node_9
+  - first:
+      213: -7723147843420068482
+    second: Interrogation mark Node_10
+  - first:
+      213: 1071900486816447604
+    second: Interrogation mark Node_11
+  - first:
+      213: -3485028526907238969
+    second: Interrogation mark Node_12
+  - first:
+      213: 1372505317249163051
+    second: Interrogation mark Node_13
+  - first:
+      213: 4988122809580332493
+    second: Interrogation mark Node_14
+  - first:
+      213: -5427925244714590862
+    second: Interrogation mark Node_15
+  - first:
+      213: -5831692017794569326
+    second: Interrogation mark Node_16
+  - first:
+      213: -1304995907886201710
+    second: Interrogation mark Node_17
+  - first:
+      213: 1461183403421959476
+    second: Interrogation mark Node_18
+  - first:
+      213: 3533868848842065136
+    second: Interrogation mark Node_19
+  - first:
+      213: 5411345096965201309
+    second: Interrogation mark Node_20
+  - first:
+      213: -3872144421306855566
+    second: Interrogation mark Node_21
+  - first:
+      213: -7564449976297328888
+    second: Interrogation mark Node_22
+  - first:
+      213: 6734040665097045107
+    second: Interrogation mark Node_23
+  - first:
+      213: 7713851231235237914
+    second: Interrogation mark Node_24
+  - first:
+      213: -7732070146149522458
+    second: Interrogation mark Node_25
+  - first:
+      213: 2670223233549830918
+    second: Interrogation mark Node_26
+  - first:
+      213: 6693844720135162278
+    second: Interrogation mark Node_27
+  - first:
+      213: -2160073721582127316
+    second: Interrogation mark Node_28
+  - first:
+      213: -9207254223201425006
+    second: Interrogation mark Node_29
+  - first:
+      213: -7991523997488333442
+    second: Interrogation mark Node_30
+  - first:
+      213: 2651630035554087039
+    second: Interrogation mark Node_31
+  - first:
+      213: 8736335941835136882
+    second: Interrogation mark Node_32
+  - first:
+      213: -6063600301410014528
+    second: Interrogation mark Node_33
+  - first:
+      213: -7534475795916310343
+    second: Interrogation mark Node_34
+  - first:
+      213: -6449831985665805811
+    second: Interrogation mark Node_35
+  - first:
+      213: -5319354562029790872
+    second: Interrogation mark Node_36
+  - first:
+      213: 8370118107716357622
+    second: Interrogation mark Node_37
+  - first:
+      213: 5713890068162064553
+    second: Interrogation mark Node_38
+  - first:
+      213: 8038330528329098027
+    second: Interrogation mark Node_39
+  - first:
+      213: -4180335440395744407
+    second: Interrogation mark Node_40
+  - first:
+      213: 3939614289747037880
+    second: Interrogation mark Node_41
+  - first:
+      213: 5930512211072370895
+    second: Interrogation mark Node_42
+  - first:
+      213: 6173950512399431192
+    second: Interrogation mark Node_43
+  - first:
+      213: -4952204868565763318
+    second: Interrogation mark Node_44
+  - first:
+      213: -6365781562087094326
+    second: Interrogation mark Node_45
+  - first:
+      213: 790256983266076232
+    second: Interrogation mark Node_46
+  - first:
+      213: -1730991870063481962
+    second: Interrogation mark Node_47
+  - first:
+      213: 6936481600367985029
+    second: Interrogation mark Node_48
+  - first:
+      213: -2114233649728068206
+    second: Interrogation mark Node_49
+  - first:
+      213: 7137008529656273592
+    second: Interrogation mark Node_50
+  - first:
+      213: 3553671299122775829
+    second: Interrogation mark Node_51
+  - first:
+      213: 3579484902120007599
+    second: Interrogation mark Node_52
+  - first:
+      213: -4702148644589320434
+    second: Interrogation mark Node_53
+  - first:
+      213: -6736090948163022972
+    second: Interrogation mark Node_54
+  - first:
+      213: -3036528097147440126
+    second: Interrogation mark Node_55
+  - first:
+      213: -1438719244155216689
+    second: Interrogation mark Node_56
+  - first:
+      213: -7811348953934394535
+    second: Interrogation mark Node_57
+  - first:
+      213: 8798600474875767953
+    second: Interrogation mark Node_58
+  - first:
+      213: 5261955590759871161
+    second: Interrogation mark Node_59
+  - first:
+      213: -4115428397182956335
+    second: Interrogation mark Node_60
+  - first:
+      213: 739983545740957857
+    second: Interrogation mark Node_61
+  - first:
+      213: -8021639076379477156
+    second: Interrogation mark Node_62
+  - first:
+      213: 6084105838626947073
+    second: Interrogation mark Node_63
+  - first:
+      213: -8068915791712464732
+    second: Interrogation mark Node_64
+  - first:
+      213: 2493090136941210577
+    second: Interrogation mark Node_65
+  - first:
+      213: -5962730703425167369
+    second: Interrogation mark Node_66
+  - first:
+      213: -2287251694807778624
+    second: Interrogation mark Node_67
+  - first:
+      213: -6017444997903814909
+    second: Interrogation mark Node_68
+  - first:
+      213: -2192915178083921245
+    second: Interrogation mark Node_69
+  - first:
+      213: 3897371946085994889
+    second: Interrogation mark Node_70
+  - first:
+      213: -1930756978804126846
+    second: Interrogation mark Node_71
+  - first:
+      213: -997203359000370059
+    second: Interrogation mark Node_72
+  - first:
+      213: -6214444561892885695
+    second: Interrogation mark Node_73
+  - first:
+      213: -1333259943330841406
+    second: Interrogation mark Node_74
+  - first:
+      213: 3670681639373589708
+    second: Interrogation mark Node_75
+  - first:
+      213: 414640364947395670
+    second: Interrogation mark Node_76
+  - first:
+      213: -4144745172435588779
+    second: Interrogation mark Node_77
+  - first:
+      213: 1284644843330379215
+    second: Interrogation mark Node_78
+  - first:
+      213: -902730109970498402
+    second: Interrogation mark Node_79
+  - first:
+      213: -7570179293668302790
+    second: Interrogation mark Node_80
+  - first:
+      213: -7021944024695547928
+    second: Interrogation mark Node_81
+  - first:
+      213: 8432284040789362188
+    second: Interrogation mark Node_82
+  - first:
+      213: -3115332628246276642
+    second: Interrogation mark Node_83
+  - first:
+      213: -9144571547899357592
+    second: Interrogation mark Node_84
+  - first:
+      213: -5923672560443129953
+    second: Interrogation mark Node_85
+  - first:
+      213: 7907911723148656858
+    second: Interrogation mark Node_86
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Interrogation mark Node_0
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 112
+        width: 861
+        height: 804
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83efdbbdf32b62980800000000000000
+      internalID: -8563961654059073992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1536.0,"y":1024.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Interrogation mark Node_0: -8563961654059073992
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

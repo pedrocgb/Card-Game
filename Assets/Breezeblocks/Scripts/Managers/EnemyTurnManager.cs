@@ -105,7 +105,7 @@ public class EnemyTurnManager : MonoBehaviour
         // Get all valid targets
         List<ActorManager> validTargets = UCardValidator.GetAllValidTargets(selectedCard, enemy);
         // Highlight valid targets
-        TargetingManager.Instance.HighLightActors(enemy, selectedCard.TargetPositions, selectedCard.TargetType);
+        TargetingManager.Instance.HighLightActors(enemy, selectedCard.TargetPositions, selectedCard.TargetType, selectedCard.CanTargetSelf);
 
         yield return new WaitForSeconds(0.4f); // simulate thinking time
 

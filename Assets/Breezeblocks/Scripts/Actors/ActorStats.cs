@@ -77,7 +77,7 @@ public class ActorStats : MonoBehaviour
 
     public void OnNewTurn()
     {
-        _currentActions = _actionsPerTurn;
+        CalculateActions();
 
         ResolveStartTurnEffects();
         _actor.UI.UpdateStatusUI(_activeEffects);
@@ -207,6 +207,7 @@ public class ActorStats : MonoBehaviour
                 case StatusEffects.Lock:
                     UpdateStatusDuration(effect);
                     _actor.Hand.UnlockAllCards();
+                    Console.Log($"{_actor.Data.ActorName} resolving locked cards: unlocking cards.");
                     break;
 
                 case StatusEffects.Haste:
@@ -232,6 +233,7 @@ public class ActorStats : MonoBehaviour
                     UpdateStatusDuration(effect);
                     break;
                 case StatusEffects.Lock:
+                    Console.Log($"{_actor.Data.ActorName} locking cards.");
                     _actor.Hand.LockRandomCards(effect.Amount);
                     break;
 
@@ -322,7 +324,7 @@ public class ActorStats : MonoBehaviour
                 UpdateStatusDuration(dodge);
             _actor.UI.UpdateStatusUI(_activeEffects);
 
-            _ui.FloatingTextAnimation("DODGE!", HealthModColors.Dodge);
+            FloatingTextManager.SpawnText(transform.position, "DODGE!", HealthModColors.Dodge);
             Console.Log($"{_actor.Data.ActorName} dodges the attack!");
             return;
         }
@@ -347,7 +349,7 @@ public class ActorStats : MonoBehaviour
         _actor.UI.UpdateHealthUI();
 
         // Play taking damage animations
-        _ui.FloatingTextAnimation(damageAfterBlock.ToString(), HealthModColors.BasicDamage);
+        FloatingTextManager.SpawnText(transform.position, damageAfterBlock.ToString(), HealthModColors.BasicDamage);
 
         // Resolve Riposte
         if (GetTotalEffectAmount(StatusEffects.Riposte) > 0)
@@ -384,7 +386,7 @@ public class ActorStats : MonoBehaviour
             _actor.UI.UpdateHealthUI();
 
             // Play taking damage animations
-            _ui.FloatingTextAnimation(burnDamage.ToString(), HealthModColors.BurnDamage);
+            FloatingTextManager.SpawnText(transform.position, burnDamage.ToString(), HealthModColors.BurnDamage);
 
             // Log
             string log = $"{_actor.Data.ActorName} takes {burnDamage} burning damage: " +
@@ -411,7 +413,7 @@ public class ActorStats : MonoBehaviour
             _currentHealth -= poisonDamage;
 
             // Play taking damage animations
-            _ui.FloatingTextAnimation(poisonDamage.ToString(), HealthModColors.PoisonDamage);
+            FloatingTextManager.SpawnText(transform.position, poisonDamage.ToString(), HealthModColors.PoisonDamage);
 
             // Log
             string log = $"{_actor.Data.ActorName} takes {poisonDamage} poison damage: " +
@@ -443,7 +445,7 @@ public class ActorStats : MonoBehaviour
             _currentHealth -= bleedDamage;
 
             // Play taking damage animations
-            _ui.FloatingTextAnimation(bleedDamage.ToString(), HealthModColors.BasicDamage);
+            FloatingTextManager.SpawnText(transform.position, bleedDamage.ToString(), HealthModColors.BasicDamage);
 
             // Log
             string log = $"{_actor.Data.ActorName} takes {bleedDamage} poison damage: " +
@@ -474,7 +476,7 @@ public class ActorStats : MonoBehaviour
     {
         _currentHealth += healAmount;
         // Play taking damage animations
-        _ui.FloatingTextAnimation(healAmount.ToString(), HealthModColors.Heal);
+        FloatingTextManager.SpawnText(transform.position, healAmount.ToString(), HealthModColors.Heal);
         if (_currentHealth > _maxHealth)
             _currentHealth = _maxHealth;
 
@@ -489,7 +491,7 @@ public class ActorStats : MonoBehaviour
             regenAmount = Mathf.Max(0, regenAmount);
             _currentHealth += regenAmount;
             // Play taking damage animations
-            _ui.FloatingTextAnimation(regenAmount.ToString(), HealthModColors.Heal);
+            FloatingTextManager.SpawnText(transform.position, regenAmount.ToString(), HealthModColors.Heal);
             if (_currentHealth > _maxHealth)
                 _currentHealth = _maxHealth;
 
@@ -498,6 +500,16 @@ public class ActorStats : MonoBehaviour
         _ui.UpdateHealthUI();
     }
     #endregion
+
+    // ========================================================================
+
+    private void CalculateActions()
+    {
+        _currentActions = _actionsPerTurn;
+
+        _currentActions += GetTotalEffectAmount(StatusEffects.Haste);
+        _currentActions -= GetTotalEffectAmount(StatusEffects.Slow);
+    }
 
     // ========================================================================
 
@@ -599,12 +611,6 @@ public class ActorStats : MonoBehaviour
     {
         AddStatusEffect(StatusEffects.Lock, amount, duration);
     }
-    #endregion
-
-    // ========================================================================
-
-    #region UI and Effects
-
     #endregion
 
     // ========================================================================

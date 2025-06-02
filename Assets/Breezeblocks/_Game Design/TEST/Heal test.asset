@@ -26,4 +26,5 @@ MonoBehaviour:
   _targetType: 2
   _targetScope: 1
   _targetPositions: 01000000020000000300000004000000
+  _canTargetSelf: 0
   _targetIcon: {fileID: 0}

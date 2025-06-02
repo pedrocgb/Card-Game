@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Throw Rock
   m_EditorClassIdentifier: 
   _cardName: Throw Rock
-  _cardDescription: Deal 2 Damage
+  _cardDescription: Deals 2 Damage.
   _cardImage: {fileID: -753498927, guid: 0ea55752e90b15b48ba4f386d7d2df20, type: 3}
   _actionCost: 1
   _cardEffects:
@@ -21,9 +21,10 @@ MonoBehaviour:
     Amount: 2
     Duration: 0
   _cardType: 1
-  _positions: 0300000004000000
-  _posIcon: {fileID: 21300000, guid: 4db289aacf9b64c45b1ab4259ccc9e28, type: 3}
+  _positions: 020000000300000004000000
+  _posIcon: {fileID: 21300000, guid: 1d8aa5110ebde2b4fb5b8d2efe0c61af, type: 3}
   _targetType: 3
   _targetScope: 1
   _targetPositions: 01000000020000000300000004000000
+  _canTargetSelf: 0
   _targetIcon: {fileID: 21300000, guid: ad456bd8d3660bc46a2dc57f713a3450, type: 3}

@@ -16,20 +16,23 @@ MonoBehaviour:
   _portrait: {fileID: 6255626776881019847, guid: 57b4c0397dcd0764e8a29920d42ec03b, type: 3}
   _actorAnimatorParameter: {fileID: 9100000, guid: 41bec3ce55a0e6748a8dcaa2a8737a11, type: 2}
   _actorRace: {fileID: 11400000, guid: 3543198674c43ee439d9691da59007a3, type: 2}
+  _startingCards:
+  - {fileID: 11400000, guid: 5ebaab0113bab6441a42633c3eeb45e3, type: 2}
+  - {fileID: 11400000, guid: 5ebaab0113bab6441a42633c3eeb45e3, type: 2}
+  - {fileID: 11400000, guid: 5ebaab0113bab6441a42633c3eeb45e3, type: 2}
+  - {fileID: 11400000, guid: 3395dcc65ebfe12488c6728a7f2b6694, type: 2}
+  - {fileID: 11400000, guid: 3395dcc65ebfe12488c6728a7f2b6694, type: 2}
+  - {fileID: 11400000, guid: ac06da26b44518444bc66b7aa2505509, type: 2}
+  - {fileID: 11400000, guid: 0d422a1cd5eb1d547b20315a80b3bd5a, type: 2}
+  - {fileID: 11400000, guid: 558cdebbd3201d347bc41166e0ff432d, type: 2}
+  - {fileID: 11400000, guid: 96dc80b2f64e44946a12596b2806808d, type: 2}
+  - {fileID: 11400000, guid: 96dc80b2f64e44946a12596b2806808d, type: 2}
+  - {fileID: 11400000, guid: abcfbf1dc2dcb954d84c9dd46988bc79, type: 2}
   _hasSpecialization: 1
   _actorSpecialization: {fileID: 11400000, guid: b1cc6aae8fe661d4092d7fad67691cb3, type: 2}
   _startingSpecializedCards: []
   _baseMaxHealth: 8
   _baseActionsPerTurn: 3
-  _initiativeBonus: 3
-  _startingCards:
-  - {fileID: 11400000, guid: 4550e57be6a257f44acaf46e014d5a5d, type: 2}
-  - {fileID: 11400000, guid: 4550e57be6a257f44acaf46e014d5a5d, type: 2}
-  - {fileID: 11400000, guid: 97bfa98c514b6794da6893eef4d8f420, type: 2}
-  - {fileID: 11400000, guid: 84957cd889e18604a9f6d879d78c1734, type: 2}
-  - {fileID: 11400000, guid: d9734f5c5de1cea41b5ea18eb918c6de, type: 2}
-  - {fileID: 11400000, guid: d9734f5c5de1cea41b5ea18eb918c6de, type: 2}
-  - {fileID: 11400000, guid: d9734f5c5de1cea41b5ea18eb918c6de, type: 2}
-  - {fileID: 11400000, guid: 09421929c708c69418565e751b2c1b86, type: 2}
-  _baseCardBuy: 2
-  _maxHandSize: 6
+  _initiativeBonus: 1
+  _baseCardBuy: 4
+  _maxHandSize: 8

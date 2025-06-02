@@ -126,4 +126,15 @@ public class UEnums
         Heal = 3,
         Dodge = 4
     }
+
+    public enum MapNodeType
+    {
+        Combat,
+        Shop,
+        Treasure,
+        Elite,
+        Boss,
+        Corruption
+        // You can add more types here (e.g. Treasure, Event, Merchant, etc.)
+    }
 }

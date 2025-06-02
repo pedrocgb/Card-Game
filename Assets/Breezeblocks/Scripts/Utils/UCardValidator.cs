@@ -6,6 +6,7 @@ public static class UCardValidator
 {
     public static bool IsCardPlayable(CardInstance card, ActorManager actor, List<ActorManager> validTargets)
     {
+        // Lock check
         if (card.IsLocked)
         {
             Console.Log($"[CardValidator] Card {card.CardName} is locked and cannot be played.");
@@ -14,7 +15,7 @@ public static class UCardValidator
 
         validTargets = new List<ActorManager>();
 
-        // 1. Mana check
+        // 1. Action check
         if (actor.Stats.CurrentActions < card.ActionCost)
         {
             Console.Log($"[CardValidator] Actor {actor.ActorName} does not have enough actions to play {card.CardName}. Required: {card.ActionCost}, Available: {actor.Stats.CurrentActions}");

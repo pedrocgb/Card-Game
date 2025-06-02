@@ -24,7 +24,8 @@ public class HandManager : MonoBehaviour
     private RectTransform _deckUi = null;
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
-    private RectTransform _cardGroup = null;
+    private CanvasGroup _cardGroup = null;
+    private RectTransform _cardGroupRect = null;
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
     private Canvas _mainCanvas = null;
@@ -41,6 +42,8 @@ public class HandManager : MonoBehaviour
     {
         _actor = GetComponent<ActorManager>();
         _deckManager = GetComponent<DeckManager>();
+        if (_cardGroup != null)
+            _cardGroupRect = _cardGroup.GetComponent<RectTransform>();
     }
     #endregion
 
@@ -104,11 +107,11 @@ public class HandManager : MonoBehaviour
     #region Player Card Draw Methods
     public void ShowHand()
     {
-        _cardGroup.anchoredPosition = _visiblePosition;
+        _cardGroupRect.anchoredPosition = _visiblePosition;
     }
     public void HideHand()
     {
-        _cardGroup.anchoredPosition = _hiddenPosition;
+        _cardGroupRect.anchoredPosition = _hiddenPosition;
     }
     private CardUI DrawPlayerCard()
     {
@@ -129,9 +132,9 @@ public class HandManager : MonoBehaviour
         _currentHand.Add(drawnCard);
 
         // Create a new card instance UI
-        CardUI card = ObjectPooler.SpawnFromPool("Card", _cardGroup.transform.position, Quaternion.identity).GetComponent<CardUI>();
+        CardUI card = ObjectPooler.SpawnFromPool("Card", _cardGroupRect.position, Quaternion.identity).GetComponent<CardUI>();
         card.Initialize(drawnCard);
-        card.transform.SetParent(_cardGroup, false);
+        card.transform.SetParent(_cardGroupRect, false);
 
         _currentHandUI.Add(card);
 
@@ -151,6 +154,11 @@ public class HandManager : MonoBehaviour
     /// <returns></returns>
     private IEnumerator DrawCardAnimation(int quantity)
     {
+        foreach (var cardUI in _currentHandUI)
+        {
+            cardUI.HoverHandler.EnableHover(false);
+        }
+
         // 1) First spawn & layout all cards immediately, collect them
         var drawnUIs = new List<CardUI>();
         for (int i = 0; i < quantity; i++)
@@ -161,7 +169,7 @@ public class HandManager : MonoBehaviour
             // assign slot index and rebuild positions
             int slot = _currentHandUI.IndexOf(ui);
             ui.SlotIndex = slot;
-            RebuildHandLayout();
+          
 
             // disable hover until animation done
             ui.HoverHandler.EnableHover(false);
@@ -191,36 +199,52 @@ public class HandManager : MonoBehaviour
             seq.Join(ui.transform
                 .DOScale(1f, UConstants.CARD_DRAW_FADE_DURATION)
                 .SetEase(Ease.OutBack));
-
-            // once this card’s tween is done, recapture and enable hover
-            int copy = i;
-            seq.AppendCallback(() =>
-            {
-                var finishedUi = drawnUIs[copy];
-                finishedUi.HoverHandler.CaptureOriginalTransform();
-                finishedUi.HoverHandler.EnableHover(true);
-            });
         }
 
+        seq.OnComplete(() =>
+        {
+            // Re‐enable hover on every drawn card
+            foreach (var ui in drawnUIs)
+            {
+                ui.HoverHandler.EnableHover(true);
+                ui.HoverHandler.CaptureOriginalTransform();
+            }
+        });
+
         seq.Play();
+        RebuildHandLayout();
         yield return seq.WaitForCompletion();
     }
-
     public void RebuildHandLayout()
     {
+        _cardGroup.blocksRaycasts = false;
+        Canvas.ForceUpdateCanvases();
+
+        foreach (var cardUI in _currentHandUI)
+        {
+            cardUI.HoverHandler.EnableHover(false);
+        }
+
+
         for (int i = 0; i < _currentHandUI.Count; i++)
         {
-            var rt = _currentHandUI[i].GetComponent<RectTransform>();
-            float x = UConstants.CARD_DRAW_START_ANCHORED_X + i * UConstants.CARD_DRAW_ANCHORED_OFFSET;
-            rt.anchoredPosition = new Vector2(x, 0f);
+            var cardUI = _currentHandUI[i];
+            var rt = cardUI.MyRectTransform;
 
-            // reset sibling so the z-order always matches
+            float targetX = UConstants.CARD_DRAW_START_ANCHORED_X
+                          + i * UConstants.CARD_DRAW_ANCHORED_OFFSET;
+            Vector2 targetPos = new Vector2(targetX, 0f);
+
+            rt.DOKill();
+            rt.DOAnchorPos(targetPos, 0.25f).SetEase(Ease.OutCubic)
+              .OnComplete(() =>
+              {
+                  // Re‐enable hover only after this card finishes sliding
+                  _cardGroup.blocksRaycasts = true;
+                  cardUI.HoverHandler.CaptureOriginalTransform();
+              });
+
             rt.SetSiblingIndex(i);
-
-            // and let the hover handler know its new “home” spot
-            _currentHandUI[i]
-              .GetComponent<CardHoverHandler>()
-              ?.CaptureOriginalTransform();
         }
     }
 
@@ -230,34 +254,49 @@ public class HandManager : MonoBehaviour
     /// <param name="Card"></param>
     public void DiscardCard(CardUI Card)
     {
-        // compute discard slot in UI space
+        // 1) Compute where the discard pile is in canvas-space (unchanged)
         Vector2 discardPos = UAnchoredPositions
             .WorldToCanvasPosition(_mainCanvas, transform.position);
 
-        RectTransform rt = Card.GetComponent<RectTransform>();
-
-        // detach from hand so it doesn't get re‐positioned by your layout
-        rt.SetParent(_mainCanvas.transform, true);
-
-        // play the fly+fade
+        // 2) Start a DOTween sequence to move/scale/fade the card away
         Sequence seq = DOTween.Sequence();
-        seq.Append(rt
+
+        // (a) Move the card to the discard location
+        seq.Append(Card.MyRectTransform
             .DOAnchorPos(discardPos, 0.4f)
-            .SetEase(Ease.InCubic));
-        seq.Join(rt
+            .SetEase(Ease.InCubic)
+        );
+
+        // (b) Shrink + fade out at the same time
+        seq.Join(Card.MyRectTransform
             .DOSizeDelta(new Vector2(50, 50), 0.4f)
-            .SetEase(Ease.InBack));
-        seq.Join(Card.CanvasGroup.DOFade(0f, 0.4f));
+            .SetEase(Ease.InBack)
+        );
+        seq.Join(Card.CanvasGroup
+            .DOFade(0f, 0.4f)
+        );
+
+        // 3) When the animation is done, deactivate the GameObject,
+        //    **remove it from _currentHandUI**, and rebuild the layout.
         seq.OnComplete(() => {
             Card.gameObject.SetActive(false);
+
+            // ---- NEW: remove the CardUI from the UI list BEFORE relayout ----
+            _currentHandUI.Remove(Card);
+
+            // Now animate the remaining cards into their new slots
+            RebuildHandLayout();
         });
 
-        // remove from your lists immediately
+        // 4) Meanwhile, update your “model” list immediately:
         _currentHand.Remove(Card.CardInstance);
         _deckManager.DiscardPile.Add(Card.CardInstance);
 
         if (_actor.IsMyTurn)
-            ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count);
+            ActorsUI.UpdateCardsInterface(
+                _deckManager.CurrentDeck.Count,
+                _deckManager.DiscardPile.Count
+            );
     }
     #endregion
 
@@ -322,15 +361,23 @@ public class HandManager : MonoBehaviour
     // ========================================================================
 
     #region Effects Methods
-    public void LockRandomCards(int amount)
+    private IEnumerator LockRandomCardsCoroutine(int amount)
     {
+        yield return new WaitForSeconds(0.5f); // to allow any previous animations to finish
+
         var unlockedCards = _currentHand
             .Where(c => !c.IsLocked)
             .ToList();
 
-        if (unlockedCards.Count == 0) return;
+        Console.Log($"Locking {amount} random cards from {unlockedCards.Count} unlocked cards.");
 
-        for (int i = 0; i <unlockedCards.Count; i++)
+        if (unlockedCards.Count == 0)
+        {
+            Console.Log("No unlocked cards to lock.");
+            yield break;
+        }
+
+        for (int i = 0; i < unlockedCards.Count; i++)
         {
             int j = Random.Range(i, unlockedCards.Count);
             (unlockedCards[i], unlockedCards[j]) = (unlockedCards[j], unlockedCards[i]);
@@ -339,14 +386,23 @@ public class HandManager : MonoBehaviour
         int toLock = Mathf.Min(amount, unlockedCards.Count);
         for (int k = 0; k < toLock; k++)
         {
+            Console.Log($"Locking card: {unlockedCards[k].CardName}");
             var instance = unlockedCards[k];
             instance.LockCard(true);
 
             var ui = _currentHandUI
                 .FirstOrDefault(c => c.CardInstance == instance);
             if (ui != null)
+            {
+                Console.Log($"Enabling lock effect for card UI: {ui.CardInstance.CardName}");
                 ui.EnableCardLockEffect(true);
+            }
         }
+    }
+
+    public void LockRandomCards(int amount)
+    {
+        StartCoroutine(LockRandomCardsCoroutine(amount));   
     }
 
     public void UnlockAllCards()

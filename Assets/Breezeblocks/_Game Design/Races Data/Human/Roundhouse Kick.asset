@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Roundhouse Kick
   m_EditorClassIdentifier: 
   _cardName: Roundhouse Kick
-  _cardDescription: Deals 8 damage and move 1 Back
+  _cardDescription: Deals 8 Damage. Move 1 Back.
   _cardImage: {fileID: -569898587, guid: 0ea55752e90b15b48ba4f386d7d2df20, type: 3}
-  _actionCost: 3
+  _actionCost: 2
   _cardEffects:
   - EffectType: 0
     Amount: 8
@@ -29,4 +29,5 @@ MonoBehaviour:
   _targetType: 3
   _targetScope: 1
   _targetPositions: 04000000
+  _canTargetSelf: 0
   _targetIcon: {fileID: 21300000, guid: daa6f10df81e8134bb2d5cc939407a4a, type: 3}
