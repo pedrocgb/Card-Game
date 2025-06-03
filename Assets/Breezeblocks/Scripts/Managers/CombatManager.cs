@@ -56,7 +56,7 @@ public class CombatManager : MonoBehaviour
         _enemyActors = _combatents.OfType<EnemyActor>().ToList();
         _playerActors = _combatents.OfType<PlayerActor>().ToList();
 
-        Invoke("StartRound", 2f);
+       // Invoke("StartRound", 2f);
     }
     #endregion
 

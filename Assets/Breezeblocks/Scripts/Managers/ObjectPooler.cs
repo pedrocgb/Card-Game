@@ -49,10 +49,6 @@ namespace Breezeblocks.Managers
             Instance = this;
             poolDictionary = new Dictionary<string, List<GameObject>>();
             componentCache = new Dictionary<GameObject, Dictionary<System.Type, Component>>();
-        }
-
-        private void Start()
-        {
             foreach (Pool pool in pools)
             {
                 List<GameObject> objectPool = new List<GameObject>();

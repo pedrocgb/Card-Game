@@ -5,11 +5,21 @@ using static UEnums;
 
 /// <summary>
 /// Generates a Slay-the-Spire-style branching map of MapNode objects,
-/// with optional forced node counts/types per floor that override random generation.
+/// with optional forced node counts/types per floor and repeatable seed support.
 /// </summary>
 public class MapGenerator : MonoBehaviour
 {
     #region Variables and Properties
+
+    [FoldoutGroup("Seed Settings", expanded: true)]
+    [SerializeField]
+    [InfoBox("If true, uses the provided Seed to initialize the RNG. Otherwise, a random seed is generated and logged.", InfoMessageType.None)]
+    private bool _useCustomSeed = false;
+
+    [FoldoutGroup("Seed Settings", expanded: true)]
+    [SerializeField]
+    [InfoBox("Integer seed for repeatable map generation. Only used if Use Custom Seed is checked.", InfoMessageType.None)]
+    private int _seed = 0;
 
     [FoldoutGroup("Map Dimensions", expanded: true)]
     [SerializeField]
@@ -118,8 +128,22 @@ public class MapGenerator : MonoBehaviour
     /// <summary>
     /// Call this to rebuild the map at runtime (e.g. on Start or via inspector button).
     /// </summary>
+    [ContextMenu("Generate Map")]
     public void GenerateMap()
     {
+        // Initialize RNG based on seed settings
+        if (_useCustomSeed)
+        {
+            Random.InitState(_seed);
+            Debug.Log($"[MapGenerator] Using custom seed: {_seed}");
+        }
+        else
+        {
+            _seed = Random.Range(int.MinValue, int.MaxValue);
+            Random.InitState(_seed);
+            Debug.Log($"[MapGenerator] Generated random seed: {_seed}");
+        }
+
         // 1) Initialize data structures.
         _floors = new List<List<MapNode>>();
 
@@ -154,7 +178,7 @@ public class MapGenerator : MonoBehaviour
                 // Create exactly totalForced nodes, distributing types as specified
                 foreach (var req in floorForces)
                 {
-                    int placeCount = req.count;
+                    int placeCount = Mathf.Min(req.count, totalForced - thisFloor.Count);
                     for (int i = 0; i < placeCount; i++)
                     {
                         var node = new MapNode(
@@ -230,7 +254,7 @@ public class MapGenerator : MonoBehaviour
         // 6) Connect nodes between floors (0→1, 1→2, …).
         ConnectFloors();
 
-        Debug.Log($"Map generation complete. Total floors: {_totalFloors}");
+        Debug.Log($"Map generation complete. Total floors: {_totalFloors}. Seed used: {_seed}");
     }
 
     /// <summary>
