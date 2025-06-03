@@ -1,92 +1,223 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 using static UEnums;
 
 /// <summary>
-/// Generates a Slay-the-Spire-style branching map of MapNode objects.
+/// Generates a Slay-the-Spire-style branching map of MapNode objects,
+/// with optional forced node counts/types per floor that override random generation.
 /// </summary>
 public class MapGenerator : MonoBehaviour
 {
-    [Header("Map Dimensions")]
-    [Tooltip("Total number of floors (rows) including start (floor 0) and boss (floorCount - 1).")]
-    public int floors = 7;
+    #region Variables and Properties
 
-    [Tooltip("Minimum number of nodes per floor (excluding start and boss floors).")]
-    public int minNodesPerFloor = 1;
+    [FoldoutGroup("Map Dimensions", expanded: true)]
+    [SerializeField]
+    [InfoBox("Total number of floors (rows) including start (floor 0) and boss (floorCount - 1).", InfoMessageType.None)]
+    private int _totalFloors = 7;
 
-    [Tooltip("Maximum number of nodes per floor (excluding start and boss floors).")]
-    public int maxNodesPerFloor = 4;
+    [FoldoutGroup("Map Dimensions", expanded: true)]
+    [SerializeField]
+    [InfoBox("Minimum number of nodes per floor (excluding start and boss floors).", InfoMessageType.None)]
+    public int _minNodesPerFloor = 1;
 
-    [Header("Layout Spacing")]
-    [Tooltip("Horizontal spacing between nodes in the same floor (units).")]
-    public float horizontalSpacing = 3f;
+    [FoldoutGroup("Map Dimensions", expanded: true)]
+    [SerializeField]
+    [InfoBox("Maximum number of nodes per floor (excluding start and boss floors).", InfoMessageType.None)]
+    public int _maxNodesPerFloor = 4;
 
-    [Tooltip("Vertical spacing between floors (units).")]
-    public float verticalSpacing = 2.5f;
+    [FoldoutGroup("Layout", expanded: true)]
+    [SerializeField]
+    [InfoBox("Horizontal spacing between nodes in the same floor (units).", InfoMessageType.None)]
+    public float _horizontalSpacing = 3f;
 
-    [Header("Node Type Weights")]
-    [Tooltip("Weight for creating a Combat node.")]
+    [FoldoutGroup("Layout", expanded: true)]
+    [SerializeField]
+    [InfoBox("Vertical spacing between floors (units).", InfoMessageType.None)]
+    public float _verticalSpacing = 2.5f;
+
+    [FoldoutGroup("Node Weights", expanded: true)]
+    [SerializeField]
+    [InfoBox("Weight for creating a Combat node.", InfoMessageType.None)]
     public float weightCombat = 1f;
 
-    [Tooltip("Weight for creating a Shop node.")]
+    [FoldoutGroup("Node Weights", expanded: true)]
+    [SerializeField]
+    [InfoBox("Weight for creating a Shop node.", InfoMessageType.None)]
     public float weightShop = 0.1f;
 
-    [Tooltip("Weight for creating an Elite node.")]
+    [FoldoutGroup("Node Weights", expanded: true)]
+    [SerializeField]
+    [InfoBox("Weight for creating an Elite node.", InfoMessageType.None)]
     public float weightElite = 0.1f;
 
-    [Tooltip("Weight for creating a Treasure/Event node. (Optional—you can reuse existing enum or add more.)")]
+    [FoldoutGroup("Node Weights", expanded: true)]
+    [SerializeField]
+    [InfoBox("Weight for creating a Treasure/Event node.", InfoMessageType.None)]
     public float weightTreasure = 0.3f;
 
-    [Tooltip("Weight for creating a Shop node.")]
-    public float weighCorruption = 0.1f;
+    [FoldoutGroup("Node Weights", expanded: true)]
+    [SerializeField]
+    [InfoBox("Weight for creating a Corruption node.", InfoMessageType.None)]
+    public float weightCorruption = 0.1f;
 
-    [Tooltip("Weight for forcing Boss on final floor (should be highest or 1.0).")]
+    [FoldoutGroup("Node Weights", expanded: true)]
+    [SerializeField]
+    [InfoBox("Weight for forcing Boss on final floor (should be highest or 1.0).", InfoMessageType.None)]
     public float weightBoss = 1f;
+
+    [FoldoutGroup("Per-Floor Type Limits", expanded: true)]
+    [SerializeField]
+    [InfoBox("Maximum number of Treasure nodes allowed per floor.", InfoMessageType.None)]
+    public int _maxTreasurePerFloor = 1;
+
+    [FoldoutGroup("Per-Floor Type Limits", expanded: true)]
+    [SerializeField]
+    [InfoBox("Maximum number of Shop nodes allowed per floor.", InfoMessageType.None)]
+    public int _maxShopPerFloor = 1;
+
+    [FoldoutGroup("Per-Floor Type Limits", expanded: true)]
+    [SerializeField]
+    [InfoBox("Maximum number of Elite nodes allowed per floor.", InfoMessageType.None)]
+    public int _maxElitePerFloor = 1;
+
+    [FoldoutGroup("Per-Floor Type Limits", expanded: true)]
+    [SerializeField]
+    [InfoBox("Maximum number of Corruption nodes allowed per floor.", InfoMessageType.None)]
+    public int _maxCorruptionPerFloor = 1;
+
+    [FoldoutGroup("Forced Requirements", expanded: true)]
+    [SerializeField]
+    [InfoBox("Specify floor-specific forced counts of given node types.\n" +
+             "When a floor has any ForcedRequirement entries, that floor will contain EXACTLY those forced nodes,\n" +
+             "ignoring random counts, weights, and per-floor caps.", InfoMessageType.None)]
+    private List<ForcedRequirement> _forcedRequirements = new List<ForcedRequirement>();
+
+    [System.Serializable]
+    public class ForcedRequirement
+    {
+        [Tooltip("Floor index on which to force nodes.")]
+        public int floorIndex;
+
+        [Tooltip("Type of node to force on that floor.")]
+        public MapNodeType nodeType;
+
+        [Tooltip("Number of that node type to force.")]
+        public int count;
+    }
 
     // The entire map stored floor by floor
     private List<List<MapNode>> _floors;
 
+    #endregion
+
+    // ========================================================================
+
+    #region Map Generation Methods
+
     /// <summary>
     /// Call this to rebuild the map at runtime (e.g. on Start or via inspector button).
     /// </summary>
-    [ContextMenu("Generate Map")]
     public void GenerateMap()
     {
         // 1) Initialize data structures.
         _floors = new List<List<MapNode>>();
 
-        // 2) Floor 0: always a single START node at (0, 0).
+        // 2) Floor 0: always a single START node at (0,0).
         var floor0 = new List<MapNode>();
         var startNode = new MapNode(
             floorIndex: 0,
             position: new Vector2(0, 0),
-            type: MapNodeType.Combat // You can treat floor 0 as a 'safe combat' or 'start' type if desired.
+            type: MapNodeType.Combat // Treat as start/floor-0 node
         );
         floor0.Add(startNode);
         _floors.Add(floor0);
 
-        // 3) Build floors 1..(floors-2) with randomized node counts and types.
-        for (int f = 1; f < floors - 1; f++)
+        // 3) Build floors 1..(_totalFloors-2) with either forced requirements or randomized nodes.
+        for (int f = 1; f < _totalFloors - 1; f++)
         {
-            int countThisFloor = Random.Range(minNodesPerFloor, maxNodesPerFloor + 1);
-            var thisFloor = new List<MapNode>();
-
-            // For each node in this floor, pick a random type according to weights.
-            for (int i = 0; i < countThisFloor; i++)
+            // Gather forced entries for this floor
+            var floorForces = _forcedRequirements.FindAll(r => r.floorIndex == f);
+            if (floorForces.Count > 0)
             {
-                MapNodeType chosenType = PickNodeType(randomForBoss: false);
-                // Position will be set later after we know how many nodes are in this floor.
-                var node = new MapNode(floorIndex: f, position: Vector2.zero, type: chosenType);
-                thisFloor.Add(node);
+                // If any forced requirement exists, override random generation.
+                // Sum total forced count
+                int totalForced = 0;
+                foreach (var req in floorForces)
+                {
+                    totalForced += req.count;
+                }
+                // Ensure at least 1 node if someone forced 0 for all types
+                totalForced = Mathf.Max(totalForced, 1);
+
+                var thisFloor = new List<MapNode>();
+                // Create exactly totalForced nodes, distributing types as specified
+                foreach (var req in floorForces)
+                {
+                    int placeCount = req.count;
+                    for (int i = 0; i < placeCount; i++)
+                    {
+                        var node = new MapNode(
+                            floorIndex: f,
+                            position: Vector2.zero, // assigned later
+                            type: req.nodeType
+                        );
+                        thisFloor.Add(node);
+                    }
+                }
+                // If sum of req.count is less than totalForced due to rounding, fill rest as Combat
+                while (thisFloor.Count < totalForced)
+                {
+                    var node = new MapNode(
+                        floorIndex: f,
+                        position: Vector2.zero,
+                        type: MapNodeType.Combat
+                    );
+                    thisFloor.Add(node);
+                }
+
+                _floors.Add(thisFloor);
+                continue;
             }
 
-            _floors.Add(thisFloor);
+            // No forced requirement on this floor; generate normally
+            int countThisFloor = Random.Range(_minNodesPerFloor, _maxNodesPerFloor + 1);
+            var thisFloorNormal = new List<MapNode>();
+
+            // Track per-floor counts for limiting
+            int treasureCount = 0;
+            int shopCount = 0;
+            int eliteCount = 0;
+            int corruptionCount = 0;
+
+            for (int i = 0; i < countThisFloor; i++)
+            {
+                MapNodeType chosenType = PickNodeTypeWithLimits(
+                    treasureCount, shopCount, eliteCount, corruptionCount);
+
+                switch (chosenType)
+                {
+                    case MapNodeType.Treasure: treasureCount++; break;
+                    case MapNodeType.Shop: shopCount++; break;
+                    case MapNodeType.Elite: eliteCount++; break;
+                    case MapNodeType.Corruption: corruptionCount++; break;
+                }
+
+                var node = new MapNode(
+                    floorIndex: f,
+                    position: Vector2.zero,
+                    type: chosenType
+                );
+                thisFloorNormal.Add(node);
+            }
+
+            _floors.Add(thisFloorNormal);
         }
 
         // 4) Final floor: exactly one BOSS node.
         var lastFloor = new List<MapNode>();
         var bossNode = new MapNode(
-            floorIndex: floors - 1,
+            floorIndex: _totalFloors - 1,
             position: Vector2.zero,
             type: MapNodeType.Boss
         );
@@ -99,44 +230,53 @@ public class MapGenerator : MonoBehaviour
         // 6) Connect nodes between floors (0→1, 1→2, …).
         ConnectFloors();
 
-        // (Optional) 7) At this point, _floors holds all nodes and their forward connections.
-        // You can now instantiate prefabs at each node.Position or draw gizmos to visualize.
-        Debug.Log("Map generation complete. Total floors: " + floors);
+        Debug.Log($"Map generation complete. Total floors: {_totalFloors}");
     }
 
     /// <summary>
-    /// Chooses a NodeType at random based on the weights.
-    /// If randomForBoss == true, returns Boss type forcibly.
+    /// Chooses a NodeType at random based on weights and per-floor limits.
     /// </summary>
-    private MapNodeType PickNodeType(bool randomForBoss)
+    private MapNodeType PickNodeTypeWithLimits(
+        int treasureCount,
+        int shopCount,
+        int eliteCount,
+        int corruptionCount)
     {
-        if (randomForBoss)
-            return MapNodeType.Boss;
+        var types = new List<MapNodeType>();
+        var weights = new List<float>();
 
-        // Build an array of types and their cumulative weights.
-        // Note: We include extra types whenever you expand the enum.
-        var types = new List<MapNodeType>
+        // Combat always allowed
+        types.Add(MapNodeType.Combat);
+        weights.Add(weightCombat);
+
+        // Shop if below limit
+        if (shopCount < _maxShopPerFloor)
         {
-            MapNodeType.Combat,
-            MapNodeType.Treasure,
-            MapNodeType.Elite,
-            //MapNodeType.Shop,
-            //MapNodeType.Corruption
-            // If you add Treasure or Event to the enum, include it here:
-            // MapNode.NodeType.Treasure,
-            // etc.
-        };
+            types.Add(MapNodeType.Shop);
+            weights.Add(weightShop);
+        }
 
-        var weights = new List<float>
+        // Elite if below limit
+        if (eliteCount < _maxElitePerFloor)
         {
-            weightCombat,
-            weightTreasure,
-            weightElite,
-            //weighCorruption,
-            //weightShop,
-        };
+            types.Add(MapNodeType.Elite);
+            weights.Add(weightElite);
+        }
 
-        // Compute total weight.
+        // Treasure if below limit
+        if (treasureCount < _maxTreasurePerFloor)
+        {
+            types.Add(MapNodeType.Treasure);
+            weights.Add(weightTreasure);
+        }
+
+        // Corruption if below limit
+        if (corruptionCount < _maxCorruptionPerFloor)
+        {
+            types.Add(MapNodeType.Corruption);
+            weights.Add(weightCorruption);
+        }
+
         float total = 0f;
         foreach (var w in weights) total += w;
 
@@ -146,19 +286,16 @@ public class MapGenerator : MonoBehaviour
         {
             cumulative += weights[i];
             if (r <= cumulative)
-            {
                 return types[i];
-            }
         }
 
-        // Fallback:
-        return MapNodeType.Combat;
+        return types[0];
     }
 
     /// <summary>
     /// Computes and assigns a 2D position for each node, stacking floors vertically.
-    /// Floors are spaced by verticalSpacing. Within each floor, nodes are centered horizontally
-    /// and spaced by horizontalSpacing.
+    /// Floors are spaced by _verticalSpacing. Within each floor, nodes are horizontally centered
+    /// and spaced by _horizontalSpacing.
     /// </summary>
     private void AssignNodePositions()
     {
@@ -166,14 +303,13 @@ public class MapGenerator : MonoBehaviour
         {
             var thisFloor = _floors[f];
             int count = thisFloor.Count;
-            float totalWidth = (count - 1) * horizontalSpacing;
-            // Start X so that the floor is horizontally centered at X=0.
+            float totalWidth = (count - 1) * _horizontalSpacing;
             float startX = -totalWidth / 2f;
 
             for (int i = 0; i < count; i++)
             {
-                float x = startX + i * horizontalSpacing;
-                float y = -f * verticalSpacing;
+                float x = startX + i * _horizontalSpacing;
+                float y = -f * _verticalSpacing;
                 thisFloor[i].Position = new Vector2(x, y);
             }
         }
@@ -190,11 +326,8 @@ public class MapGenerator : MonoBehaviour
             var currentFloor = _floors[f];
             var nextFloor = _floors[f + 1];
 
-            // 1) Ensure each node in currentFloor connects to at least one in nextFloor.
-            // We’ll keep track of which nextFloor nodes have already been “hit”.
+            // 1) Ensure each currentFloor node connects to at least one nextFloor node
             var nextUnconnected = new HashSet<MapNode>(nextFloor);
-
-            // Shuffle nextFloor list for randomness
             var shuffledNext = new List<MapNode>(nextFloor);
             for (int i = 0; i < shuffledNext.Count; i++)
             {
@@ -204,15 +337,12 @@ public class MapGenerator : MonoBehaviour
                 shuffledNext[j] = temp;
             }
 
-            // First ensure every currentFloor node has at least one outgoing
             foreach (var curr in currentFloor)
             {
-                // Randomly pick one unconnected next node if any remain; otherwise pick a random next
                 MapNode target;
                 if (nextUnconnected.Count > 0)
                 {
                     int idx = Random.Range(0, nextUnconnected.Count);
-                    // Grab that element by iterating
                     var enumerator = nextUnconnected.GetEnumerator();
                     for (int k = 0; k <= idx; k++) enumerator.MoveNext();
                     target = enumerator.Current;
@@ -220,25 +350,20 @@ public class MapGenerator : MonoBehaviour
                 }
                 else
                 {
-                    // All next nodes already have at least one incoming; just pick randomly
                     target = shuffledNext[Random.Range(0, shuffledNext.Count)];
                 }
-
                 curr.ConnectTo(target);
             }
 
-            // 2) Ensure each nextFloor node has at least one incoming:
-            // If any nextFloor node is still in nextUnconnected, forcibly connect it from a random
-            // node in currentFloor.
+            // 2) Ensure every nextFloor node has incoming
             foreach (var orphan in nextUnconnected)
             {
                 var randomPrev = currentFloor[Random.Range(0, currentFloor.Count)];
                 randomPrev.ConnectTo(orphan);
             }
 
-            // 3) Add extra random edges for branching:
-            // For every pair (curr, next), roll a small chance to connect even if already connected.
-            float extraEdgeChance = 0.3f; // You can expose this as a public field if you want to tweak.
+            // 3) Add extra random edges for branching
+            float extraEdgeChance = 0.3f;
             for (int i = 0; i < currentFloor.Count; i++)
             {
                 for (int j = 0; j < nextFloor.Count; j++)
@@ -262,6 +387,10 @@ public class MapGenerator : MonoBehaviour
         return _floors;
     }
 
+    #endregion
+
+    // ========================================================================
+
     /// <summary>
     /// (Optional) Draw gizmos in editor to visualize the generated map.
     /// </summary>
@@ -270,12 +399,10 @@ public class MapGenerator : MonoBehaviour
 #if UNITY_EDITOR
         if (_floors == null) return;
 
-        // Draw nodes as circles and connections as lines.
         foreach (var floorList in _floors)
         {
             foreach (var node in floorList)
             {
-                // Node color by type:
                 switch (node.Type)
                 {
                     case MapNodeType.Combat:
@@ -290,18 +417,22 @@ public class MapGenerator : MonoBehaviour
                     case MapNodeType.Elite:
                         UnityEditor.Handles.color = Color.magenta;
                         break;
+                    case MapNodeType.Corruption:
+                        UnityEditor.Handles.color = Color.blue;
+                        break;
                     case MapNodeType.Boss:
                         UnityEditor.Handles.color = Color.yellow;
                         break;
-                    // Add more colors if you add types.
                     default:
                         UnityEditor.Handles.color = Color.white;
                         break;
                 }
 
-                UnityEditor.Handles.DrawSolidDisc(new Vector3(node.Position.x, node.Position.y, 0f), Vector3.forward, 0.2f);
+                UnityEditor.Handles.DrawSolidDisc(
+                    new Vector3(node.Position.x, node.Position.y, 0f),
+                    Vector3.forward,
+                    0.2f);
 
-                // Draw connections:
                 foreach (var conn in node.Connections)
                 {
                     Gizmos.color = Color.white;

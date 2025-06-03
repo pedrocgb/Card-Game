@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 using static UEnums;
+using Sirenix.OdinInspector;
 
 /// <summary>
 /// Visual representation of a single MapNode.  
@@ -14,26 +15,37 @@ using static UEnums;
 /// </summary>
 public class NodeView : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    [Header("Node Image (assign a UI Image with a sprite)")]
-    public Image nodeImage;
+    #region Variables and Properties
+    private Image _nodeImage;
 
-    [Header("Sprites for Each Node Type")]
-    public Sprite spriteCombat;
-    public Sprite spriteShop;
-    public Sprite spriteRest;
-    public Sprite spriteElite;
-    public Sprite spriteTreasure;
-    public Sprite spriteBoss;
+    [FoldoutGroup("Node Sprites", expanded: true)]
+    [SerializeField]
+    private Sprite _spriteCombat;
+    [FoldoutGroup("Node Sprites", expanded: true)]
+    [SerializeField]
+    private Sprite _spriteShop;
+    [FoldoutGroup("Node Sprites", expanded: true)]
+    [SerializeField]
+    private Sprite _spriteElite;
+    [FoldoutGroup("Node Sprites", expanded: true)]
+    [SerializeField]
+    private Sprite _spriteTreasure;
+    [FoldoutGroup("Node Sprites", expanded: true)]
+    [SerializeField]
+    private Sprite _spriteBoss;
 
-    [Header("Hidden State Sprite")]
-    [Tooltip("Sprite used when this node is 'out of vision' and must be hidden.")]
-    public Sprite hiddenSprite;
+    [FoldoutGroup("Node Sprites/Hidden", expanded: true)]
+    [SerializeField]
+    [InfoBox("Sprite used when this node is 'out of vision' and must be hidden.", InfoMessageType.None)]
+    public Sprite _hiddenSprite;
 
-    [Header("Hover Settings")]
-    [Tooltip("Scale factor when hovered.")]
-    public float hoverScale = 1.2f;
-    [Tooltip("Duration (seconds) to tween in/out of hover.")]
-    public float hoverDuration = 0.15f;
+    [FoldoutGroup("Hover Settings", expanded: true)]
+    [SerializeField]
+    public float _hoverScale = 1.2f;
+    [FoldoutGroup("Hover Settings", expanded: true)]
+    [SerializeField]
+    [InfoBox("Duration (seconds) to tween in/out of hover.", InfoMessageType.None)]
+    public float _hoverDuration = 0.15f;
 
     private RectTransform _rectTransform;
     private Vector3 _originalScale;
@@ -49,9 +61,14 @@ public class NodeView : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
 
     // Callback invoked when the node is clicked
     private Action<MapNode> _onClickCallback;
+    #endregion
 
+    // ========================================================================
+
+    #region Initialization
     private void Awake()
     {
+        _nodeImage = GetComponent<Image>();
         _rectTransform = GetComponent<RectTransform>();
         _originalScale = _rectTransform.localScale;
     }
@@ -71,19 +88,19 @@ public class NodeView : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
         switch (_mapNode.Type)
         {
             case MapNodeType.Combat:
-                nodeImage.sprite = spriteCombat;
+                _nodeImage.sprite = _spriteCombat;
                 break;
             case MapNodeType.Shop:
-                nodeImage.sprite = spriteShop;
+                _nodeImage.sprite = _spriteShop;
                 break;
             case MapNodeType.Elite:
-                nodeImage.sprite = spriteElite;
+                _nodeImage.sprite = _spriteElite;
                 break;
             case MapNodeType.Treasure:
-                nodeImage.sprite = spriteTreasure;
+                _nodeImage.sprite = _spriteTreasure;
                 break;
             case MapNodeType.Boss:
-                nodeImage.sprite = spriteBoss;
+                _nodeImage.sprite = _spriteBoss;
                 break;
             default:
                 // Leave it as whatever default is on the prefab
@@ -91,8 +108,8 @@ public class NodeView : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
         }
 
         // 2) Start fully opaque and raycast‐enabled (will be overridden by SetInteractable/SetHidden)
-        nodeImage.color = _enabledColor;
-        nodeImage.raycastTarget = true;
+        _nodeImage.color = _enabledColor;
+        _nodeImage.raycastTarget = true;
 
         // 3) Pop‐in animation: scale from 0→original
         _rectTransform.localScale = Vector3.zero;
@@ -101,7 +118,11 @@ public class NodeView : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
             .SetEase(Ease.OutBack)
             .SetUpdate(true);
     }
+    #endregion
 
+    // ========================================================================
+
+    #region Nodes Methods
     /// <summary>
     /// Toggles whether this node is clickable/hoverable.  
     /// When locked, we dim the sprite and disable its raycast target.
@@ -110,8 +131,8 @@ public class NodeView : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
     {
         if (!_initialized || _isHidden) return;
 
-        nodeImage.raycastTarget = enabled;
-        nodeImage.color = enabled ? _enabledColor : _lockedColor;
+        _nodeImage.raycastTarget = enabled;
+        _nodeImage.color = enabled ? _enabledColor : _lockedColor;
     }
 
     /// <summary>
@@ -129,11 +150,11 @@ public class NodeView : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
         if (hidden)
         {
             // 1) Show the ‘hidden’ placeholder sprite
-            nodeImage.sprite = hiddenSprite;
+            _nodeImage.sprite = _hiddenSprite;
             // 2) Disable all interaction
-            nodeImage.raycastTarget = false;
+            _nodeImage.raycastTarget = false;
             // 3) Ensure full alpha so the hidden sprite is fully visible
-            nodeImage.color = _enabledColor;
+            _nodeImage.color = _enabledColor;
         }
         else
         {
@@ -141,19 +162,19 @@ public class NodeView : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
             switch (_mapNode.Type)
             {
                 case MapNodeType.Combat:
-                    nodeImage.sprite = spriteCombat;
+                    _nodeImage.sprite = _spriteCombat;
                     break;
                 case MapNodeType.Shop:
-                    nodeImage.sprite = spriteShop;
+                    _nodeImage.sprite = _spriteShop;
                     break;
                 case MapNodeType.Elite:
-                    nodeImage.sprite = spriteElite;
+                    _nodeImage.sprite = _spriteElite;
                     break;
                 case MapNodeType.Treasure:
-                    nodeImage.sprite = spriteTreasure;
+                    _nodeImage.sprite = _spriteTreasure;
                     break;
                 case MapNodeType.Boss:
-                    nodeImage.sprite = spriteBoss;
+                    _nodeImage.sprite = _spriteBoss;
                     break;
                 default:
                     // Leave it as whatever default is on the prefab
@@ -164,32 +185,6 @@ public class NodeView : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
             // So we do not change raycastTarget or color here—UpdateVisibilityAndInteractability
             // in MapVisualizer will call SetInteractable(...) if this node is within vision.
         }
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        if (!_initialized || _isHidden) return;
-        _onClickCallback?.Invoke(_mapNode);
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        if (!_initialized || _isHidden) return;
-        // Hover tween: scale up
-        _rectTransform
-            .DOScale(_originalScale * hoverScale, hoverDuration)
-            .SetEase(Ease.OutCubic)
-            .SetUpdate(true);
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        if (!_initialized || _isHidden) return;
-        // Hover‐out tween: scale back to normal
-        _rectTransform
-            .DOScale(_originalScale, hoverDuration)
-            .SetEase(Ease.OutCubic)
-            .SetUpdate(true);
     }
 
     /// <summary>
@@ -203,8 +198,41 @@ public class NodeView : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
         _onClickCallback = null;
         _isHidden = false;
         _rectTransform.localScale = _originalScale;
-        nodeImage.color = _enabledColor;
-        nodeImage.raycastTarget = false;
+        _nodeImage.color = _enabledColor;
+        _nodeImage.raycastTarget = false;
         gameObject.SetActive(false);
     }
+    #endregion
+
+    // ========================================================================
+
+    #region Hover Methods
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (!_initialized || _isHidden) return;
+        _onClickCallback?.Invoke(_mapNode);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (!_initialized || _isHidden) return;
+        // Hover tween: scale up
+        _rectTransform
+            .DOScale(_originalScale * _hoverScale, _hoverDuration)
+            .SetEase(Ease.OutCubic)
+            .SetUpdate(true);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (!_initialized || _isHidden) return;
+        // Hover‐out tween: scale back to normal
+        _rectTransform
+            .DOScale(_originalScale, _hoverDuration)
+            .SetEase(Ease.OutCubic)
+            .SetUpdate(true);
+    }
+    #endregion
+
+    // ========================================================================
 }
