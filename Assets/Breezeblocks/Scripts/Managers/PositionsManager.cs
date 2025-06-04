@@ -104,6 +104,16 @@ public class PositionsManager : MonoBehaviour
 
         return Instance.getOpposingTeamOf(Actor);
     }
+
+    public static void UpdatePositions()
+    {
+        if (Instance == null)
+        {
+            Debug.LogError("PositionsManager instance is null");
+            return;
+        }
+        Instance.updatePositions();
+    }
     #endregion
 
     // ========================================================================
@@ -143,6 +153,27 @@ public class PositionsManager : MonoBehaviour
         SortAndApplyPositions(list);
         return true;
     }
+
+    private void updatePositions()
+    {
+        _playerParty.Clear();
+        _enemyParty.Clear();
+
+        // Iterate children in hierarchy order:
+        foreach (Transform child in _playerPartyContainer)
+        {
+            var pa = child.GetComponent<PlayerActor>();
+            if (pa != null && pa.gameObject.activeInHierarchy)
+                _playerParty.Add(pa);
+        }
+
+        foreach (Transform child in _enemyPartyContainer)
+        {
+            var ea = child.GetComponent<EnemyActor>();
+            if (ea != null && ea.gameObject.activeInHierarchy)
+                _enemyParty.Add(ea);
+        }
+    }
     #endregion
 
     // ========================================================================
@@ -176,6 +207,8 @@ public class PositionsManager : MonoBehaviour
     {
         return actor is PlayerActor ? _enemyParty : _playerParty;
     }
+
+    
 
     // ========================================================================
 }

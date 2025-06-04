@@ -3,9 +3,12 @@ using UnityEngine.EventSystems;
 
 public class PlayerActor : ActorManager
 {
-    protected override void Initialize()
+    protected override void Awake()
     {
-        base.Initialize();
+        base.Awake();
+
+        Initialize();
+        _myStats.Initialize();
     }
 
     public override void StartNewTurn()

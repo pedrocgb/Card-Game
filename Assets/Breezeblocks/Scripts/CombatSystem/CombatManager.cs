@@ -39,6 +39,12 @@ public class CombatManager : MonoBehaviour
     private int _currentRound = 1;
     private int _currentTurnIndex = 0;
     private bool _firstRound = true;
+
+    [FoldoutGroup("Components", expanded: true)]
+    [SerializeField]
+    [InfoBox("All enemies actors in the world should be assigned to this list in the editor, the system will feed them and activate/deactivate" +
+        "them on demmand based on the map nodes.", InfoMessageType.Warning)]
+    private List<GameObject> _persistentEnemiesObjects = new List<GameObject>();
     #endregion
 
     // ========================================================================
@@ -63,6 +69,20 @@ public class CombatManager : MonoBehaviour
     // ========================================================================
 
     #region Static Methods
+    public static void StartRound()
+    {
+        if (Instance == null)
+            return;
+        Instance.startRound();
+    }
+
+    public static void CreateCombatent(List<ActorData> NewEnemyParty)
+    {
+        if (Instance == null)
+            return;
+        Instance.createCombatent(NewEnemyParty);
+    }
+
     public static void RemoveCombatent(ActorManager Combatent)
     {
         if (Instance == null)
@@ -70,23 +90,18 @@ public class CombatManager : MonoBehaviour
 
         Instance.removeCombatent(Combatent);
     }
+
+    public static void EndCombat()
+    {
+        if (Instance == null)
+            return;
+        Instance.endCombat();
+    }
     #endregion
 
     // ========================================================================
 
     #region Combat Management Methods
-    private void StartRound()
-    {
-        // Reset turn index each roud.
-        _currentTurnIndex = 0;
-
-        RollInitiative();
-
-        TurnOrderUI.Instance.UpdateUI(_turnOrder);
-
-        NewTurn();
-    }
-
     private void RollInitiative()
     {
         _turnOrder.Clear();
@@ -109,7 +124,7 @@ public class CombatManager : MonoBehaviour
             if (_firstRound)
                 _firstRound = false;
 
-            StartRound();
+            startRound();
             Debug.Log($"=========== START NEW ROUND - ROUND {_currentRound} ============");
 
             return;
@@ -138,14 +153,64 @@ public class CombatManager : MonoBehaviour
 
         NewTurn();
     }
+
+    private void UpdateCombatents()
+    {
+        var allActors = FindObjectsByType<ActorManager>(FindObjectsSortMode.None);
+        _combatents = new List<ActorManager>(allActors);
+
+        _enemyActors = _combatents.OfType<EnemyActor>().ToList();
+        _playerActors = _combatents.OfType<PlayerActor>().ToList();
+    }
     #endregion
 
     // ========================================================================
 
     #region Combatents Management Methods
+    private void startRound()
+    {
+        // Reset turn index each roud.
+        _currentTurnIndex = 0;
+
+        RollInitiative();
+
+        TurnOrderUI.Instance.UpdateUI(_turnOrder);
+
+        NewTurn();
+    }
+    private void createCombatent(List<ActorData> newEnemyParty)
+    {
+        for (int i = 0; i < _persistentEnemiesObjects.Count; i++)
+        {
+            if (i < newEnemyParty.Count)
+            {
+                _persistentEnemiesObjects[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                _persistentEnemiesObjects[i].gameObject.SetActive(false);
+            }
+        }
+
+        UpdateCombatents();
+        for (int i = 0; i < newEnemyParty.Count; i++)
+        {
+            _enemyActors[i].InitializeEnemy(newEnemyParty[i], i + 1);
+        }
+    }
     private void removeCombatent(ActorManager combatent)
     {
         _turnOrder.Remove(combatent);
+    }
+
+    private void endCombat()
+    {
+        foreach (var actor in _combatents)
+        {
+            actor.Hand.DiscardHand(actor is PlayerActor);
+            actor.Deck.ReshuffleDiscardIntoDeck();
+            actor.Stats.UpdateAllStatusDuration();
+        }
     }
     #endregion
 

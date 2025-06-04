@@ -1,12 +1,16 @@
-using Sirenix.OdinInspector;
-using UnityEngine;
-using UnityEngine.EventSystems;
+using static UEnums;
 
 public class EnemyActor : ActorManager
 {
-    protected override void Initialize()
+    public void InitializeEnemy(ActorData NewData, int NewPosition)
     {
-        base.Initialize();
+        // Set the actor data and initialize the actor manager
+        _actorData = NewData;
+        Initialize();
+        _myStats.Initialize();
+
+        // Initialize position
+        _myPosition.SetCombatPosition(NewPosition);
     }
 
     public override void StartNewTurn()

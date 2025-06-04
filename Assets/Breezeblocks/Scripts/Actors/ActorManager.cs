@@ -72,7 +72,7 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     // ========================================================================
 
     #region Initialization
-    private void Awake()
+    protected virtual void Awake()
     {
         _deck = GetComponent<DeckManager>();
         _hand = GetComponent<HandManager>();
@@ -87,11 +87,9 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
 
         _materialBlock = new MaterialPropertyBlock();
         _spriteRenderer.GetPropertyBlock(_materialBlock);
-
-        Initialize();
     }
 
-    protected virtual void Initialize()
+    public virtual void Initialize()
     {
         _actorName = UConstants.LIST_OF_NAMES[Random.Range(0, UConstants.LIST_OF_NAMES.Count)];
         gameObject.name = _actorName;

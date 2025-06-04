@@ -106,7 +106,6 @@ public class MapVisualizer : MonoBehaviour
     ///  4. Initially unlock only the start node (floor 0) and set it as _lastCompletedNode.
     ///  5. Apply vision, interactability, and highlighting logic.
     /// </summary>
-    [ContextMenu("Visualize Map")]
     public void VisualizeMap()
     {
         // 1) Release all previously active nodes + lines
@@ -257,6 +256,9 @@ public class MapVisualizer : MonoBehaviour
 
         // 2) Record this as the “current” node
         _currentNode = node;
+
+        CombatManager.CreateCombatent(node.EnemiesData);
+        GameManager.StartEvent(UEnums.MapNodeType.Combat);
     }
 
     /// <summary>
@@ -296,6 +298,9 @@ public class MapVisualizer : MonoBehaviour
         UpdateVisibilityAndInteractability();
         UpdateLineHighlighting();
 
+
+        // 7) Notify GameManager that the battle is complete
+        GameManager.EndEvent(UEnums.MapNodeType.Combat);
         Debug.Log("[MapVisualizer] Node completed! Vision shifted; next nodes unlocked.");
     }
 

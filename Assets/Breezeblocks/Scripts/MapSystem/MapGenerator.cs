@@ -119,7 +119,15 @@ public class MapGenerator : MonoBehaviour
     // The entire map stored floor by floor
     private List<List<MapNode>> _floors;
 
+    private CombatGenerator _combatGenerator;
     #endregion
+
+    // ========================================================================
+
+    private void Awake()
+    {
+        _combatGenerator = FindAnyObjectByType<CombatGenerator>();
+    }
 
     // ========================================================================
 
@@ -254,7 +262,8 @@ public class MapGenerator : MonoBehaviour
         // 6) Connect nodes between floors (0→1, 1→2, …).
         ConnectFloors();
 
-        Debug.Log($"Map generation complete. Total floors: {_totalFloors}. Seed used: {_seed}");
+        // 7) Generate combat events
+        _combatGenerator.GenerateCombats();
     }
 
     /// <summary>

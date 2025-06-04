@@ -55,11 +55,9 @@ public class ActorStats : MonoBehaviour
     private void Start()
     {        
         _isPlayerActor = _actor is PlayerActor;
-
-        Initialize();
     }
 
-    protected virtual void Initialize()
+    public void Initialize()
     {
         _maxHealth = _actor.Data.MaxHealth;
         _currentHealth = _maxHealth;
@@ -67,6 +65,7 @@ public class ActorStats : MonoBehaviour
         _actionsPerTurn = _unmodifiedActionsPerTurn;
         _currentActions = _actionsPerTurn;
         _cardBuy = _actor.Data.CardBuy;
+        _isDead = false;
 
         _ui.UpdateHealthUI();
         if (_actor.IsMyTurn)
@@ -153,7 +152,7 @@ public class ActorStats : MonoBehaviour
     /// <summary>
     /// Update the status effects each round.
     /// </summary>
-    private void UpdateAllStatusDuration()
+    public void UpdateAllStatusDuration()
     {
         for (int i = _activeEffects.Count - 1; i >= 0; i--)
         {
@@ -612,6 +611,7 @@ public class ActorStats : MonoBehaviour
         AddStatusEffect(StatusEffects.Lock, amount, duration);
     }
     #endregion
+
 
     // ========================================================================
 }

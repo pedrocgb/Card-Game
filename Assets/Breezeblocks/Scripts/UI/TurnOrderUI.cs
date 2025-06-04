@@ -129,6 +129,17 @@ public class TurnOrderUI : MonoBehaviour
         }
     }
 
+    public void ClearTurnOrder()
+    {
+        foreach (var icon in _iconList)
+        {
+            icon.FadeOutAndDestroy();
+        }
+        _iconList.Clear();
+        _actorNameText.text = "";
+        _actorNameCanvasGroup.alpha = 0;
+    }
+
     private void RebuildUI()
     {
         float startX = _startAnchoredX;

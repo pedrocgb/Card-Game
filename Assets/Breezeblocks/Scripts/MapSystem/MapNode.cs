@@ -28,11 +28,18 @@ public class MapNode
     /// </summary>
     public List<MapNode> Connections { get; private set; }
 
+    /// <summary>
+    /// Enemy party in this map node.
+    /// </summary>
+    public List<ActorData> EnemiesData { get; set; } = new List<ActorData>();
+
     public MapNode(int floorIndex, Vector2 position, MapNodeType type)
     {
         FloorIndex = floorIndex;
         Position = position;
         Type = type;
+
+        EnemiesData = new List<ActorData>();
         Connections = new List<MapNode>();
     }
 
@@ -46,4 +53,6 @@ public class MapNode
             Connections.Add(other);
         }
     }
+
+
 }
