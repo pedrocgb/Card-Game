@@ -31,6 +31,15 @@ public class EnemyTurnManager : MonoBehaviour
     /// <returns></returns>
     private IEnumerator EnemyTurnCoroutine(EnemyActor enemy)
     {
+        if (enemy.Stats.IsDead)
+        {
+            Console.Log($"[AI] Enemy {enemy.name} is dead, cannot start turn.");
+            CombatManager.Instance.EndTurn();
+            yield break;
+        }
+
+        yield return new WaitForSeconds(0.5f); // small delay before starting turn
+
         _isEnemyTurn = true;
         enemy.StartNewTurn(); // draws cards, restores mana
 
@@ -73,6 +82,12 @@ public class EnemyTurnManager : MonoBehaviour
     /// <returns></returns>
     private IEnumerator TryPlayCard(EnemyActor enemy)
     {
+        if (enemy.Stats.IsDead)
+        {
+            Console.Log($"[AI] Enemy {enemy.name} is dead, cannot play cards.");
+            yield break;
+        }
+
         List<CardInstance> playableCards = new List<CardInstance>();
 
         // Loop through all cards in the enemy's hand

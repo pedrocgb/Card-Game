@@ -59,13 +59,13 @@ public class ActorStats : MonoBehaviour
 
     public void Initialize()
     {
+        _isDead = false;
         _maxHealth = _actor.Data.MaxHealth;
         _currentHealth = _maxHealth;
         _unmodifiedActionsPerTurn = _actor.Data.ActionsPerTurn;
         _actionsPerTurn = _unmodifiedActionsPerTurn;
         _currentActions = _actionsPerTurn;
         _cardBuy = _actor.Data.CardBuy;
-        _isDead = false;
 
         _ui.UpdateHealthUI();
         if (_actor.IsMyTurn)
@@ -162,6 +162,18 @@ public class ActorStats : MonoBehaviour
                 _activeEffects.RemoveAt(i);
             }
         }
+    }
+
+    public void RemoveAllStatusEffects()
+    {
+        for (int i = 0; i < _activeEffects.Count; i++)
+        {
+            _activeEffects[i].DurationRemaining = 0;
+            _activeEffects[i].Amount = 0;
+            _activeEffects.RemoveAt(i);
+        }
+
+        _actor.UI.UpdateStatusUI(_activeEffects);
     }
 
     /// <summary>

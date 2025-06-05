@@ -48,7 +48,7 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     private SpriteRenderer _spriteRenderer = null;
 
     // Deck and Hand managers
-    private DeckManager _deck = null;
+    protected DeckManager _deck = null;
     public DeckManager Deck => _deck;
 
     protected HandManager _hand = null;
@@ -180,7 +180,7 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
         _allyTargetEffect.SetActive(false);
     }
 
-    protected void TurnOutlineEffect(bool on)
+    public void TurnOutlineEffect(bool on)
     {
         _spriteRenderer.GetPropertyBlock(_materialBlock);
         _materialBlock.SetFloat("_OutlineThickness", on ? _outlineWidth : 0f);

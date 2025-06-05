@@ -7,6 +7,8 @@ public class EnemyActor : ActorManager
         // Set the actor data and initialize the actor manager
         _actorData = NewData;
         Initialize();
+        _deck.InitializeDeck();
+        _myStats.RemoveAllStatusEffects();
         _myStats.Initialize();
 
         // Initialize position

@@ -22,15 +22,21 @@ public class DeckManager : MonoBehaviour
     // ========================================================================
 
     #region Initialization
-    private void Start()
+    private void Awake()
     {
         _actor = GetComponent<ActorManager>();
-
+    }
+    private void Start()
+    {
         InitializeDeck();
     }
 
-    private void InitializeDeck()
+    public void InitializeDeck()
     {
+        _currentDeck.Clear();
+        _discardPile.Clear();
+        _consumedPile.Clear();
+
         // Create cards instances and add to deck.
         foreach (var c in _actor.Data.StartingCards)
         {

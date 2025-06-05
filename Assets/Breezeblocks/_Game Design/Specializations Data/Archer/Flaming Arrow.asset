@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71a19dccf1348014ead4ded939d7251e, type: 3}
-  m_Name: Power Shot
+  m_Name: Flaming Arrow
   m_EditorClassIdentifier: 
-  _cardName: Power Shot
-  _cardDescription: Deals 6 Damage
-  _cardImage: {fileID: -9000534475281282462, guid: 8d9ae6617f46a534c87cbc96e6693d0c, type: 3}
+  _cardName: Flaming Arrow
+  _cardDescription: Deals 1 Damage. Apply 3x Burn.
+  _cardImage: {fileID: 1957187899, guid: 3d75b524956dad146a772e86ce8f9252, type: 3}
   _actionCost: 2
   _cardEffects:
   - EffectType: 0
-    Amount: 7
-    Duration: 0
-  - EffectType: 200
     Amount: 1
     Duration: 0
-  _cardType: 1
-  _positions: 04000000
-  _posIcon: {fileID: 21300000, guid: eb7c053bec99a1f4b8012220165491f3, type: 3}
+  - EffectType: 6
+    Amount: 1
+    Duration: 3
+  _cardType: 4
+  _positions: 020000000300000004000000
+  _posIcon: {fileID: 21300000, guid: cf7ef3edd5ae73a4481f6402662b640a, type: 3}
   _targetType: 3
   _targetScope: 1
-  _targetPositions: 010000000200000003000000
+  _targetPositions: 0200000003000000
   _canTargetSelf: 0
-  _targetIcon: {fileID: 21300000, guid: 966071b4d24508a45b4bde1a681056e0, type: 3}
+  _targetIcon: {fileID: 21300000, guid: dd4bbd13063068b4580bb40807f8e675, type: 3}

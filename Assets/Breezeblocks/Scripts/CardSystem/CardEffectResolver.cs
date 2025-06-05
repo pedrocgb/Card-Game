@@ -43,6 +43,9 @@ public static class CardEffectResolver
                     case UEnums.CardEffects.Lock:
                         target.Stats.SufferLockDebuff(effect.Amount, effect.Duration);
                         break;
+                    case UEnums.CardEffects.Burn:
+                        target.Stats.SufferBurn(effect.Amount, effect.Duration);
+                        break;
 
                     // Buff effects
                     case UEnums.CardEffects.Heal:

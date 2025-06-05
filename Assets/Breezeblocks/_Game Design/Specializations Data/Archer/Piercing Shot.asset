@@ -13,17 +13,18 @@ MonoBehaviour:
   m_Name: Piercing Shot
   m_EditorClassIdentifier: 
   _cardName: Piercing Shot
-  _cardDescription: Deals 4 Damage. Ignores blocks.
+  _cardDescription: Deals 3 Damage to ALL targets.
   _cardImage: {fileID: -7935393282397795651, guid: 8d9ae6617f46a534c87cbc96e6693d0c, type: 3}
   _actionCost: 2
   _cardEffects:
   - EffectType: 0
-    Amount: 4
+    Amount: 3
     Duration: 0
   _cardType: 1
   _positions: 0300000004000000
   _posIcon: {fileID: 21300000, guid: 4db289aacf9b64c45b1ab4259ccc9e28, type: 3}
   _targetType: 3
-  _targetScope: 1
-  _targetPositions: 020000000300000004000000
-  _targetIcon: {fileID: 21300000, guid: 4c14905e0c7f48146826c5d411c1c761, type: 3}
+  _targetScope: 2
+  _targetPositions: 010000000200000003000000
+  _canTargetSelf: 0
+  _targetIcon: {fileID: 21300000, guid: ba95ef5af5e06454282806370fc9b131, type: 3}

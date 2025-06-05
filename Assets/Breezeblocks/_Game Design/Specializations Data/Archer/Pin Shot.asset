@@ -13,20 +13,21 @@ MonoBehaviour:
   m_Name: Pin Shot
   m_EditorClassIdentifier: 
   _cardName: Pin Shot
-  _cardDescription: Deals 2 Damage. Apply 2x Restrained.
+  _cardDescription: Apply 1x Restrained and Slow.
   _cardImage: {fileID: 198728134, guid: 5a360552dad24ae4db8afc57c072fff6, type: 3}
   _actionCost: 1
   _cardEffects:
-  - EffectType: 0
-    Amount: 2
-    Duration: 0
   - EffectType: 8
     Amount: 1
-    Duration: 2
+    Duration: 1
+  - EffectType: 4
+    Amount: 1
+    Duration: 1
   _cardType: 4
   _positions: 0300000004000000
   _posIcon: {fileID: 21300000, guid: 4db289aacf9b64c45b1ab4259ccc9e28, type: 3}
   _targetType: 3
   _targetScope: 1
-  _targetPositions: 01000000020000000300000004000000
-  _targetIcon: {fileID: 21300000, guid: ad456bd8d3660bc46a2dc57f713a3450, type: 3}
+  _targetPositions: 020000000300000004000000
+  _canTargetSelf: 0
+  _targetIcon: {fileID: 21300000, guid: 4c14905e0c7f48146826c5d411c1c761, type: 3}

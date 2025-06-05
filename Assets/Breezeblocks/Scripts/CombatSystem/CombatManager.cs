@@ -209,7 +209,9 @@ public class CombatManager : MonoBehaviour
         {
             actor.Hand.DiscardHand(actor is PlayerActor);
             actor.Deck.ReshuffleDiscardIntoDeck();
-            actor.Stats.UpdateAllStatusDuration();
+            actor.Stats.RemoveAllStatusEffects();
+            actor.RemoveHighLight();
+            actor.TurnOutlineEffect(false);
         }
     }
     #endregion

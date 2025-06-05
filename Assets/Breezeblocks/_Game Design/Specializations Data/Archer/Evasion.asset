@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71a19dccf1348014ead4ded939d7251e, type: 3}
-  m_Name: Dodge
+  m_Name: Evasion
   m_EditorClassIdentifier: 
-  _cardName: Dodge
+  _cardName: Evasion
   _cardDescription: Gain 1x Dodge
   _cardImage: {fileID: -6009022535894784331, guid: 8d9ae6617f46a534c87cbc96e6693d0c, type: 3}
   _actionCost: 1
@@ -21,9 +21,10 @@ MonoBehaviour:
     Amount: 1
     Duration: 1
   _cardType: 2
-  _positions: 020000000300000004000000
-  _posIcon: {fileID: 21300000, guid: cf7ef3edd5ae73a4481f6402662b640a, type: 3}
+  _positions: 01000000020000000300000004000000
+  _posIcon: {fileID: 21300000, guid: 82ad41af0fecd294c8aa2ad5394e66aa, type: 3}
   _targetType: 1
   _targetScope: 1
   _targetPositions: 
-  _targetIcon: {fileID: 21300000, guid: 8b0a4952af5813c479f1ee766304fdc1, type: 3}
+  _canTargetSelf: 0
+  _targetIcon: {fileID: 21300000, guid: 4a2fe08ef900a304a954bfc81bc411de, type: 3}
