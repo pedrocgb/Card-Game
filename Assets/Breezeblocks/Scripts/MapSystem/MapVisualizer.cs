@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using Breezeblocks.Managers;
+using static UEnums;
 
 [RequireComponent(typeof(MapGenerator))]
 public class MapVisualizer : MonoBehaviour
@@ -23,44 +24,38 @@ public class MapVisualizer : MonoBehaviour
     [InfoBox("Key for Line prefab in the pool (UI Image with pivot 0.5,0.5) used to draw connections.", InfoMessageType.None)]
     private string _linePrefab;
 
+    [FoldoutGroup("Components", expanded: true)]
+    [SerializeField]
+    [InfoBox("UI Button which, when clicked, will start the event on the selected node.", InfoMessageType.None)]
+    private Button _startButton;
+
     [FoldoutGroup("Layout", expanded: true)]
     [SerializeField]
-    [InfoBox("Multiply every MapNode.Position by this before placing in the UI.", InfoMessageType.None)]
-    public float positionMultiplier = 100f;
-
-    [FoldoutGroup("Line Settings", expanded: true)]
-    [SerializeField]
-    [InfoBox("Thickness of each connection line, in UI units.", InfoMessageType.None)]
-    public float lineThickness = 8f;
-
-    [FoldoutGroup("Line Settings", expanded: true)]
-    [SerializeField]
-    [InfoBox("Duration (seconds) for line fade‐in animation.", InfoMessageType.None)]
-    public float lineFadeDuration = 0.5f;
-
-    [FoldoutGroup("Line Settings", expanded: true)]
-    [SerializeField]
-    [InfoBox("Default color of all lines (non‐highlighted).", InfoMessageType.None)]
-    public Color defaultLineColor = Color.white;
-
-    [FoldoutGroup("Line Settings", expanded: true)]
-    [SerializeField]
-    [InfoBox("Color for highlighting lines whose child node is the direct next of the last completed node.", InfoMessageType.None)]
-    public Color highlightLineColor = Color.yellow;
+    [InfoBox("Multiplier applied to raw node.Position values to compute UI coordinates.", InfoMessageType.None)]
+    public Vector2 _positionMultiplier = new Vector2(100f, 100f);
 
     [FoldoutGroup("Vision", expanded: true)]
     [SerializeField]
     [InfoBox("How many floors ahead (from the completed/starting floor) are visible.", InfoMessageType.None)]
     [Range(0, 10)]
-    public int vision = 2;
+    public int _vision = 2;
 
-    private MapGenerator _mapGen;
+    // The node that was last completed (or start node at initialization).
+    private MapNode _lastCompletedNode = null;
+    // The floor index of the last‐completed node (or 0 at start).
+    private int _currentFloorIndex = 0;
 
-    // Active instances so we can deactivate them
+    // Currently selected node for revealing/hiding its connections.
+    private MapNode _selectedNode = null;
+    // The node whose event is about to start.
+    private MapNode _currentNode = null;
+
+    // Tracks every active NodeView GameObject so we can deactivate them.
     private readonly List<GameObject> _activeNodes = new List<GameObject>();
+    // Tracks every active Line GameObject so we can deactivate them.
     private readonly List<GameObject> _activeLines = new List<GameObject>();
 
-    // We record each connection line with its parent/child nodes
+    // We record each connection line with its parent/child nodes.
     private struct ConnectionLine
     {
         public MapNode parent;
@@ -69,26 +64,43 @@ public class MapVisualizer : MonoBehaviour
     }
     private readonly List<ConnectionLine> _allConnectionLines = new List<ConnectionLine>();
 
-    // Map each MapNode to its NodeView so we can toggle interactability & visibility
+    // Map each MapNode to its NodeView so we can toggle interactability & visibility.
     private readonly Dictionary<MapNode, NodeView> _nodeViewMap = new Dictionary<MapNode, NodeView>();
-
     // Which nodes are currently “unlocked” (clickable).
     private readonly HashSet<MapNode> _unlockedNodes = new HashSet<MapNode>();
 
-    // The node whose battle was most recently entered (clicked).
-    private MapNode _currentNode = null;
+    // Keeps track of every connection (parent→child) the player has traversed.
+    private readonly HashSet<(MapNode parent, MapNode child)> _usedConnections =
+        new HashSet<(MapNode, MapNode)>();
 
-    // The node that was last completed (or start node at initialization).
-    private MapNode _lastCompletedNode = null;
+    [FoldoutGroup("Line Settings", expanded: true)]
+    [SerializeField]
+    [InfoBox("Thickness of each connection line, in UI units.", InfoMessageType.None)]
+    public float _lineThickness = 8f;
 
-    // The floor index of the last‐completed node (or 0 at start).
-    private int _currentFloorIndex = 0;
+    [FoldoutGroup("Line Settings", expanded: true)]
+    [SerializeField]
+    [InfoBox("Duration (seconds) for line fade‐in animation.", InfoMessageType.None)]
+    public float _lineFadeDuration = 0.5f;
 
-    // ========================================================================
+    [FoldoutGroup("Line Settings", expanded: true)]
+    [SerializeField]
+    [InfoBox("Default color of all lines (non‐highlighted).", InfoMessageType.None)]
+    public Color _defaultLineColor = Color.white;
+
+    [FoldoutGroup("Line Settings", expanded: true)]
+    [SerializeField]
+    [InfoBox("Color for highlighting lines whose child node is directly next of the last completed node.", InfoMessageType.None)]
+    public Color _highlightLineColor = Color.yellow;
+
+    private MapGenerator _mapGen;
 
     private void Awake()
     {
         _mapGen = GetComponent<MapGenerator>();
+        // Disable the Start button initially (no node is selected).
+        if (_startButton != null)
+            _startButton.interactable = false;
     }
 
     private void Start()
@@ -97,14 +109,16 @@ public class MapVisualizer : MonoBehaviour
         VisualizeMap();
     }
 
+
     /// <summary>
-    /// Call this after MapGenerator.GenerateMap() has run.
-    /// It will:
-    ///  1. Release any previously drawn nodes & lines.
-    ///  2. Instantiate and position all NodeViews & Lines (via pooler).
-    ///  3. Initialize _currentFloorIndex = 0 (start floor).
-    ///  4. Initially unlock only the start node (floor 0) and set it as _lastCompletedNode.
-    ///  5. Apply vision, interactability, and highlighting logic.
+    /// Called by MapGenerator after generating all MapNode objects.
+    /// This method:
+    ///   1) Deactivates any previously spawned node/line GameObjects
+    ///   2) Spawns new NodeViews for every MapNode
+    ///   3) Spawns a line UI Image between each parent→child pair (animated)
+    ///   4) Initially hides all connections except those from the Start node
+    ///   5) Unlocks only the Start node, sets it as _lastCompletedNode
+    ///   6) Applies vision, interactability, and highlighting logic
     /// </summary>
     public void VisualizeMap()
     {
@@ -113,28 +127,32 @@ public class MapVisualizer : MonoBehaviour
             nodeGO.SetActive(false);
         _activeNodes.Clear();
 
-        foreach (var cl in _allConnectionLines)
-            cl.lineGO.SetActive(false);
+        foreach (var lineGO in _activeLines)
+            lineGO.SetActive(false);
+        _activeLines.Clear();
         _allConnectionLines.Clear();
 
         _nodeViewMap.Clear();
         _unlockedNodes.Clear();
         _currentNode = null;
         _lastCompletedNode = null;
-        _currentFloorIndex = 0; // start at floor 0
+        _currentFloorIndex = 0;
+        _selectedNode = null;
+        _usedConnections.Clear();
 
-        // 2) Fetch generated floors from MapGenerator
-        List<List<MapNode>> floors = _mapGen.GetFloors();
+        // Disable Start button until a node is selected
+        if (_startButton != null)
+            _startButton.interactable = false;
+
+        // 2) Let MapGenerator build floors[] (List<List<MapNode>>) & return it to us:
+        List<List<MapNode>> floors = _mapGen.GenerateMap();
         if (floors == null || floors.Count == 0)
-        {
-            Debug.LogWarning("[MapVisualizer] No floors found. Did you call GenerateMap()?");
             return;
-        }
 
         // 3) Spawn & initialize NodeViews for every MapNode
-        foreach (var floorList in floors)
+        for (int f = 0; f < floors.Count; f++)
         {
-            foreach (var mapNode in floorList)
+            foreach (var mapNode in floors[f])
             {
                 GameObject nodeGO = ObjectPooler.SpawnFromPool(_nodePrefab, Vector3.zero, Quaternion.identity);
                 _activeNodes.Add(nodeGO);
@@ -142,28 +160,37 @@ public class MapVisualizer : MonoBehaviour
                 // Position it in UI:
                 var rt = nodeGO.GetComponent<RectTransform>();
                 rt.SetParent(_mapContainer, false);
-                Vector2 uiPos = mapNode.Position * positionMultiplier;
+                Vector2 uiPos = mapNode.Position * _positionMultiplier;
                 rt.anchoredPosition = uiPos;
 
-                // Initialize NodeView:
+                // Initialize NodeView (pass our click‐callback):
                 var nv = nodeGO.GetComponent<NodeView>();
                 nv.Initialize(mapNode, OnNodeClicked);
 
                 // Ensure this node is drawn on top of lines:
                 nodeGO.transform.SetAsLastSibling();
 
-                // Save the mapping so we can enable/disable later:
+                // Save mapping so we can toggle later:
                 _nodeViewMap[mapNode] = nv;
             }
         }
 
-        // 4) Draw all connection lines BETWEEN floors:
+        // 4) Draw all connection lines BETWEEN floors (animated):
         DrawAllConnections(floors);
 
         // 5) Initially, only the Start node (floor 0, index 0) is “unlocked.”
         var startNode = floors[0][0];
         _unlockedNodes.Add(startNode);
         _lastCompletedNode = startNode;
+
+        // Hide every connection except those whose parent == startNode
+        foreach (var cl in _allConnectionLines)
+        {
+            if (cl.parent == startNode)
+                cl.lineGO.SetActive(true);
+            else
+                cl.lineGO.SetActive(false);
+        }
 
         // 6) Apply vision, interactability, and highlighting logic
         UpdateVisibilityAndInteractability();
@@ -172,8 +199,8 @@ public class MapVisualizer : MonoBehaviour
 
     /// <summary>
     /// Loops through every MapNode & its children, spawns a line UI Image
-    /// between each pair, then fades it in. Also forces it behind nodes.
-    /// Records each line in _allConnectionLines for later highlighting.
+    /// between each pair (animated via DOTween), then forces it behind nodes.
+    /// Records each line in _allConnectionLines for later toggling.
     /// </summary>
     private void DrawAllConnections(List<List<MapNode>> floors)
     {
@@ -181,11 +208,11 @@ public class MapVisualizer : MonoBehaviour
         {
             foreach (var parent in floors[f])
             {
-                Vector2 start = parent.Position * positionMultiplier;
+                Vector2 start = parent.Position * _positionMultiplier;
                 foreach (var child in parent.Connections)
                 {
-                    Vector2 end = child.Position * positionMultiplier;
-                    GameObject lineGO = SpawnLineBetween(start, end);
+                    Vector2 end = child.Position * _positionMultiplier;
+                    GameObject lineGO = SpawnAnimatedLine(start, end);
                     _allConnectionLines.Add(new ConnectionLine
                     {
                         parent = parent,
@@ -198,116 +225,70 @@ public class MapVisualizer : MonoBehaviour
     }
 
     /// <summary>
-    /// Creates (or reuses) a UI‐Image line between two scaled UI points,
-    /// stretches/rotates it, and fades it in. Also ensures it’s behind nodes.
-    /// Returns the lineGO for later highlighting.
+    /// Spawns a single line UI Image (via pool) between two UI‐space points.
+    /// Animates its scale and fade using DOTween for a smooth reveal.
+    /// Returns the new GameObject so that calling code can track it.
     /// </summary>
-    private GameObject SpawnLineBetween(Vector2 start, Vector2 end)
+    private GameObject SpawnAnimatedLine(Vector2 start, Vector2 end)
     {
         GameObject lineGO = ObjectPooler.SpawnFromPool(_linePrefab, Vector3.zero, Quaternion.identity);
+        // Track the line so we can clean up later
         _activeLines.Add(lineGO);
+
+        // Ensure it's active before animating
+        lineGO.SetActive(true);
 
         var rt = lineGO.GetComponent<RectTransform>();
         rt.SetParent(_mapContainer, false);
+
+        // Compute rotation & full length:
+        float dx = end.x - start.x;
+        float dy = end.y - start.y;
+        float length = Vector2.Distance(start, end);
+        float angle = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;
+
+        // Place line at midpoint:
+        rt.anchoredPosition = (start + end) / 2f;
+        rt.localRotation = Quaternion.Euler(0f, 0f, angle);
+
+        // Set full size but start with zero scale on X:
+        rt.sizeDelta = new Vector2(length, _lineThickness);
+        lineGO.transform.localScale = new Vector3(0f, 1f, 1f);
+
+        // Setup initial color (invisible):
         var img = lineGO.GetComponent<Image>();
-
-        Vector2 delta = end - start;
-        float length = delta.magnitude;
-        float angle = Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg;
-
-        Vector2 mid = (start + end) * 0.5f;
-        rt.anchoredPosition = mid;
-        rt.sizeDelta = new Vector2(length, lineThickness);
-        rt.localEulerAngles = new Vector3(0f, 0f, angle);
-
-        lineGO.transform.SetAsFirstSibling();
-
         if (img != null)
         {
-            // Start invisible at defaultLineColor
-            Color c = defaultLineColor;
+            Color c = _defaultLineColor;
             c.a = 0f;
             img.color = c;
-            img
-              .DOFade(defaultLineColor.a, lineFadeDuration)
-              .SetEase(Ease.InOutSine)
-              .SetUpdate(true);
+        }
+
+        // Force line behind everything else:
+        lineGO.transform.SetAsFirstSibling();
+
+        // Animate: scale X from 0 → 1, fade alpha 0 → defaultAlpha
+        if (img != null)
+        {
+            float targetAlpha = _defaultLineColor.a;
+            Sequence seq = DOTween.Sequence();
+            seq.Append(lineGO.transform.DOScaleX(1f, _lineFadeDuration).SetEase(Ease.OutQuad))
+               .Join(img.DOFade(targetAlpha, _lineFadeDuration).SetEase(Ease.InOutSine))
+               .SetUpdate(true);
+        }
+        else
+        {
+            // If no Image present, just scale without fading:
+            lineGO.transform.DOScaleX(1f, _lineFadeDuration).SetEase(Ease.OutQuad).SetUpdate(true);
         }
 
         return lineGO;
     }
 
     /// <summary>
-    /// Called whenever a node is clicked.
-    /// If it is unlocked, we mark it as the current node “in battle”
-    /// (disabling all interactions). For testing, we hint pressing 'C' to complete.
-    /// </summary>
-    private void OnNodeClicked(MapNode node)
-    {
-        if (!_unlockedNodes.Contains(node))
-            return;
-
-        Debug.Log($"[MapVisualizer] Node clicked → enter battle at Floor {node.FloorIndex}, Type {node.Type}");
-        Debug.Log("[MapVisualizer] (DEBUG) Press 'C' to complete this node immediately.");
-
-        // 1) Disable all interactions
-        foreach (var nv in _nodeViewMap.Values)
-            nv.SetInteractable(false);
-
-        // 2) Record this as the “current” node
-        _currentNode = node;
-
-        CombatManager.CreateCombatent(node.EnemiesData);
-        GameManager.StartEvent(UEnums.MapNodeType.Combat);
-    }
-
-    /// <summary>
-    /// Call this once the player has WON the battle at _currentNode_.
-    /// We then:
-    ///   • Update _currentFloorIndex = floorIndexOfCompletedNode  
-    ///   • Set _lastCompletedNode = _currentNode  
-    ///   • Clear out all old unlocked nodes  
-    ///   • Unlock only the direct children of the completed node  
-    ///   • Re-apply vision logic (revealing floors up to _currentFloorIndex + vision)  
-    ///   • Re-highlight only lines from _lastCompletedNode to its children
-    /// </summary>
-    public void CompleteBattle()
-    {
-        if (_currentNode == null)
-            return;
-
-        // 1) Update currentFloorIndex to this node's floor
-        _currentFloorIndex = _currentNode.FloorIndex;
-
-        // 2) Mark this as last completed
-        _lastCompletedNode = _currentNode;
-
-        // 3) Clear all previously unlocked nodes
-        _unlockedNodes.Clear();
-
-        // 4) Only unlock the direct children of the completed node
-        foreach (var child in _currentNode.Connections)
-        {
-            _unlockedNodes.Add(child);
-        }
-
-        // 5) Clear currentNode so we don’t re-complete it
-        _currentNode = null;
-
-        // 6) Update visibility, interactability, and line highlighting
-        UpdateVisibilityAndInteractability();
-        UpdateLineHighlighting();
-
-
-        // 7) Notify GameManager that the battle is complete
-        GameManager.EndEvent(UEnums.MapNodeType.Combat);
-        Debug.Log("[MapVisualizer] Node completed! Vision shifted; next nodes unlocked.");
-    }
-
-    /// <summary>
     /// Updates every NodeView:
-    ///   • If node.FloorIndex > (_currentFloorIndex + vision), hide it under “fog.”  
-    ///   • Else (within vision): reveal it; then SetInteractable(true) if unlocked, else false.  
+    ///   • If node.FloorIndex > (_currentFloorIndex + _vision), hide under “fog”
+    ///   • Else (within vision): reveal; then SetInteractable(true) if unlocked, else false
     /// </summary>
     private void UpdateVisibilityAndInteractability()
     {
@@ -318,16 +299,15 @@ public class MapVisualizer : MonoBehaviour
 
             int nodeFloor = node.FloorIndex;
 
-            if (nodeFloor > _currentFloorIndex + vision)
+            if (nodeFloor > _currentFloorIndex + _vision)
             {
-                // 1) Too far ahead—hide under “fog”
+                // Too far ahead — hide under “fog”
                 view.SetHidden(true);
             }
             else
             {
-                // 2) Within vision—unhide and set interactable if unlocked
+                // Within vision — unhide and set interactable if unlocked
                 view.SetHidden(false);
-
                 bool isUnlocked = _unlockedNodes.Contains(node);
                 view.SetInteractable(isUnlocked);
             }
@@ -335,9 +315,10 @@ public class MapVisualizer : MonoBehaviour
     }
 
     /// <summary>
-    /// Loops through every recorded ConnectionLine:
-    ///   • If connection.parent == _lastCompletedNode → highlight that line  
-    ///   • Else → revert to default color  
+    /// Recolors & reveals connection lines based on:
+    ///   • Any previously used (parent→child) pair → stay black & visible forever
+    ///   • Outgoing from the current _lastCompletedNode → highlight & ensure visible
+    ///   • All others → default color (visibility is managed elsewhere)
     /// </summary>
     private void UpdateLineHighlighting()
     {
@@ -346,27 +327,196 @@ public class MapVisualizer : MonoBehaviour
             var img = cl.lineGO.GetComponent<Image>();
             if (img == null) continue;
 
-            if (_lastCompletedNode != null && cl.parent == _lastCompletedNode)
+            // 1) If this connection was traversed in the past, it stays black & visible forever:
+            if (_usedConnections.Contains((cl.parent, cl.child)))
             {
-                img.color = highlightLineColor;
+                img.color = Color.black;
+                cl.lineGO.SetActive(true);
             }
+            // 2) Else if it's an outgoing from the most recently completed node, highlight it:
+            else if (_lastCompletedNode != null && cl.parent == _lastCompletedNode)
+            {
+                img.color = _highlightLineColor;
+                cl.lineGO.SetActive(true);
+            }
+            // 3) Otherwise, revert color to default (but do NOT force-hide here)
             else
             {
-                img.color = defaultLineColor;
+                img.color = _defaultLineColor;
+                // Visibility left as-is (Reveal/Hide methods control it)
             }
         }
+    }
+
+    /// <summary>
+    /// Reveals connection lines from the given node.
+    /// </summary>
+    private void RevealConnections(MapNode node)
+    {
+        foreach (var cl in _allConnectionLines)
+        {
+            if (cl.parent == node)
+                cl.lineGO.SetActive(true);
+        }
+    }
+
+    /// <summary>
+    /// Hides connection lines from the given node,
+    /// except if they are marked as “used” (i.e. part of the path taken).
+    /// </summary>
+    private void HideConnections(MapNode node)
+    {
+        foreach (var cl in _allConnectionLines)
+        {
+            if (cl.parent == node)
+            {
+                // If this connection has already been traversed in the past, keep it visible:
+                if (_usedConnections.Contains((cl.parent, cl.child)))
+                    continue;
+
+                cl.lineGO.SetActive(false);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Called whenever a node is clicked.
+    /// Toggles selection and reveals/hides its own connections.
+    /// Also enables/disables the _startButton accordingly.
+    /// </summary>
+    private void OnNodeClicked(MapNode node)
+    {
+        if (!_unlockedNodes.Contains(node))
+            return;
+
+        // If clicking the already‐selected node, deselect and hide its connections:
+        if (_selectedNode == node)
+        {
+            HideConnections(node);
+            _selectedNode = null;
+        }
+        else
+        {
+            // Deselect previous if any:
+            if (_selectedNode != null)
+                HideConnections(_selectedNode);
+
+            // Select new node and reveal its connections:
+            _selectedNode = node;
+            RevealConnections(node);
+        }
+
+        // Enable or disable Start Button based on whether we have a selected node:
+        if (_startButton != null)
+            _startButton.interactable = (_selectedNode != null);
+    }
+
+    /// <summary>
+    /// Called when the Start‐Event button is clicked, or when Enter is pressed.
+    /// Records the chosen path (parent→child), blacks out that line permanently,
+    /// hides all sibling lines from the parent, then starts the event.
+    /// </summary>
+    public void StartEventOnSelected()
+    {
+        if (_selectedNode == null || _lastCompletedNode == null)
+            return;
+
+        // 1) Record the chosen connection: (parent = lastCompletedNode → child = selectedNode)
+        var chosenPair = (_lastCompletedNode, _selectedNode);
+        _usedConnections.Add(chosenPair);
+
+        // 2) Immediately turn that chosen line black & ensure it's visible:
+        foreach (var cl in _allConnectionLines)
+        {
+            if (cl.parent == chosenPair.Item1)
+            {
+                if (cl.child == chosenPair.Item2)
+                {
+                    var img = cl.lineGO.GetComponent<Image>();
+                    if (img != null)
+                        img.color = Color.black;
+                    cl.lineGO.SetActive(true);
+                }
+                else
+                {
+                    // Hide all other outgoing lines from the parent (siblings):
+                    cl.lineGO.SetActive(false);
+                }
+            }
+        }
+
+        // 3) Now set this node as current, so completion logic can use it:
+        _currentNode = _selectedNode;
+
+        // 4) Reset selection & disable the Start button:
+        _selectedNode = null;
+        if (_startButton != null)
+            _startButton.interactable = false;
+
+        // 5) Begin the event using GameManager (same as original behavior):
+        GameManager.StartEvent(MapNodeType.Combat);
     }
 
     /// <summary>
     /// In PlayMode, pressing 'C' will complete the currently selected node
     /// (for testing purposes), automatically unlocking its children, shifting
     /// the vision window forward, and re-highlighting the relevant lines.
+    ///
+    /// Pressing 'Return' (Enter) will do the same as clicking the Start button.
     /// </summary>
     private void Update()
     {
+        // 'C' for completing the battle at _currentNode_:
         if (Input.GetKeyDown(KeyCode.C) && _currentNode != null)
         {
             CompleteBattle();
         }
+
+        // 'Enter' to start the selected node's event:
+        if (Input.GetKeyDown(KeyCode.Return) && _selectedNode != null)
+        {
+            StartEventOnSelected();
+        }
+    }
+
+    /// <summary>
+    /// Call this once the player has WON the battle at _currentNode_.
+    /// We then:
+    ///   • Update _currentFloorIndex = floor index of completed node
+    ///   • Set _lastCompletedNode = _currentNode
+    ///   • Clear out all old unlocked nodes
+    ///   • Unlock only the direct children of the completed node
+    ///   • Re-apply vision logic (revealing floors up to _currentFloorIndex + _vision)
+    ///   • Re-highlight lines based on all used connections + new lastCompletedNode
+    ///   • Notify GameManager that battle ended
+    /// </summary>
+    public void CompleteBattle()
+    {
+        if (_currentNode == null)
+            return;
+
+        // 1) Update floor index and lastCompletedNode:
+        int completedFloor = _currentNode.FloorIndex;
+        _currentFloorIndex = completedFloor;
+        _lastCompletedNode = _currentNode;
+
+        // 2) Clear out old unlocked nodes:
+        _unlockedNodes.Clear();
+
+        // 3) Unlock only direct children of the completed node:
+        foreach (var child in _currentNode.Connections)
+            _unlockedNodes.Add(child);
+
+        // 4) Clear _currentNode so we don’t re-complete it:
+        _currentNode = null;
+
+        // 5) Update visibility, interactability:
+        UpdateVisibilityAndInteractability();
+
+        // 6) Re-highlight lines: black for every usedConnection; highlight only outgoing from new lastCompletedNode
+        UpdateLineHighlighting();
+
+        // 7) Notify GameManager that the battle is complete:
+        GameManager.EndEvent(MapNodeType.Combat);
     }
 }

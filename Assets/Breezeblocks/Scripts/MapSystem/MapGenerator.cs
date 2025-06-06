@@ -137,7 +137,7 @@ public class MapGenerator : MonoBehaviour
     /// Call this to rebuild the map at runtime (e.g. on Start or via inspector button).
     /// </summary>
     [ContextMenu("Generate Map")]
-    public void GenerateMap()
+    public List<List<MapNode>> GenerateMap()
     {
         // Initialize RNG based on seed settings
         if (_useCustomSeed)
@@ -264,6 +264,8 @@ public class MapGenerator : MonoBehaviour
 
         // 7) Generate combat events
         _combatGenerator.GenerateCombats();
+
+        return _floors;
     }
 
     /// <summary>
