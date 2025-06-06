@@ -110,6 +110,7 @@ public class CombatManager : MonoBehaviour
         {
             actor.RollInitiative();
             _turnOrder.Add(actor);
+            actor.UI.UpdateTurnMarker(true);
         }
 
         _turnOrder = _turnOrder.OrderByDescending(a => a.CurrentInitiative).ToList(); 

@@ -134,7 +134,9 @@ public class UEnums
         Treasure,
         Elite,
         Boss,
-        Corruption
-        // You can add more types here (e.g. Treasure, Event, Merchant, etc.)
+        Corruption,
+        Event,
+        General
+        
     }
 }

@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+
+        _mapUi.SetActive(true);
     }
     #endregion
 

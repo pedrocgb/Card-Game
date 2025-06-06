@@ -18,6 +18,10 @@ public class NodeView : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
     #region Variables and Properties
     private Image _nodeImage;
 
+    [FoldoutGroup("Selection", expanded: true)]
+    [SerializeField]
+    private Image _selectedImage = null;
+
     [FoldoutGroup("Node Sprites", expanded: true)]
     [SerializeField]
     private Sprite _spriteCombat;
@@ -33,6 +37,12 @@ public class NodeView : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
     [FoldoutGroup("Node Sprites", expanded: true)]
     [SerializeField]
     private Sprite _spriteBoss;
+    [FoldoutGroup("Node Sprites", expanded: true)]
+    [SerializeField]
+    private Sprite _spriteGeneral;
+    [FoldoutGroup("Node Sprites", expanded: true)]
+    [SerializeField]
+    private Sprite _spriteEvent;
 
     [FoldoutGroup("Node Sprites/Hidden", expanded: true)]
     [SerializeField]
@@ -58,6 +68,7 @@ public class NodeView : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
 
     // The MapNode data this NodeView represents
     private MapNode _mapNode;
+    public MapNode Node => _mapNode;
 
     // Callback invoked when the node is clicked
     private Action<MapNode> _onClickCallback;
@@ -71,6 +82,16 @@ public class NodeView : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
         _nodeImage = GetComponent<Image>();
         _rectTransform = GetComponent<RectTransform>();
         _originalScale = _rectTransform.localScale;
+
+        if (_selectedImage != null)
+        {
+            _selectedImage.gameObject.SetActive(false);
+            _selectedImage.type = Image.Type.Filled;
+            _selectedImage.fillMethod = Image.FillMethod.Radial360;
+            _selectedImage.fillClockwise = true;
+            _selectedImage.fillAmount = 0f; // Start with no fill
+            _selectedImage.fillOrigin = (int)Image.Origin360.Top; // Start from the top
+        }
     }
 
     /// <summary>
@@ -98,6 +119,12 @@ public class NodeView : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
                 break;
             case MapNodeType.Treasure:
                 _nodeImage.sprite = _spriteTreasure;
+                break;
+            case MapNodeType.General:
+                _nodeImage.sprite = _spriteGeneral;
+                break;
+            case MapNodeType.Event:
+                _nodeImage.sprite = _spriteEvent;
                 break;
             case MapNodeType.Boss:
                 _nodeImage.sprite = _spriteBoss;
@@ -173,6 +200,12 @@ public class NodeView : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
                 case MapNodeType.Treasure:
                     _nodeImage.sprite = _spriteTreasure;
                     break;
+                case MapNodeType.General:
+                    _nodeImage.sprite = _spriteGeneral;
+                    break;
+                case MapNodeType.Event:
+                    _nodeImage.sprite = _spriteEvent;
+                    break;
                 case MapNodeType.Boss:
                     _nodeImage.sprite = _spriteBoss;
                     break;
@@ -201,6 +234,30 @@ public class NodeView : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
         _nodeImage.color = _enabledColor;
         _nodeImage.raycastTarget = false;
         gameObject.SetActive(false);
+    }
+
+    /// <summary>
+    /// Call to fade-in the radial sprite selection from 0 to 1
+    /// </summary>
+    public void ShowSelection()
+    {
+        if (_selectedImage == null) return;
+
+        _selectedImage.gameObject.SetActive(true);
+        _selectedImage.fillAmount = 0f;
+        _selectedImage.DOFillAmount(1f, 0.3f)
+            .SetEase(Ease.InOutSine)
+            .SetUpdate(true);
+    }
+
+    public void HideSelection()
+    {
+        if (_selectedImage == null) return;
+
+        _selectedImage.DOFillAmount(0f,0.3f)
+            .SetEase(Ease.InOutSine)
+            .SetUpdate(true)
+            .OnComplete(() => _selectedImage.gameObject.SetActive(false));
     }
     #endregion
 

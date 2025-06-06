@@ -1,4 +1,5 @@
 using Breezeblocks.Managers;
+using DG.Tweening;
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
 using TMPro;
@@ -24,10 +25,15 @@ public class ActorWorldUI : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _healthText = null;
 
-    // Status Icons
     [FoldoutGroup("Components/Status", expanded: true)]
     [SerializeField]
     private Transform _statusPanel = null;
+
+    [FoldoutGroup("Components/Health", expanded: true)]
+    [SerializeField]
+    private Image _turnMarkerIcon = null;
+    private CanvasGroup _turnMarkerCanvasGroup = null;
+    private RectTransform _turnMarkerRectTrasnform = null;
 
     private string _statusPrefab = "Status Icon";
     private Dictionary<UEnums.StatusEffects, StatusIcon> _activeUI = new();
@@ -39,6 +45,8 @@ public class ActorWorldUI : MonoBehaviour
     private void Awake()
     {
         _actor = GetComponent<ActorManager>();  
+        _turnMarkerCanvasGroup = _turnMarkerIcon.GetComponent<CanvasGroup>();
+        _turnMarkerRectTrasnform = _turnMarkerIcon.GetComponent<RectTransform>();
     }
 
     private void Start()
@@ -106,6 +114,26 @@ public class ActorWorldUI : MonoBehaviour
         foreach (var key in toRemove)
             _activeUI.Remove(key);
 
+    }
+
+    public void UpdateTurnMarker(bool Show)
+    {
+        if (Show)
+        {
+            _turnMarkerIcon.gameObject.SetActive(true);
+            _turnMarkerRectTrasnform.localScale = Vector3.zero;
+            _turnMarkerCanvasGroup.alpha = 1f;
+
+            _turnMarkerRectTrasnform.DOScale(new Vector3(1.2f,1.2f,1f), 0.5f).SetEase(Ease.OutBack);
+        }
+        else
+        {
+            Sequence s = DOTween.Sequence();
+
+            s.Append(_turnMarkerRectTrasnform.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InBack));
+            s.Join(_turnMarkerCanvasGroup.DOFade(0f, 0.5f));
+            s.OnComplete(() => _turnMarkerIcon.gameObject.SetActive(false));
+        }
     }
     #endregion
 

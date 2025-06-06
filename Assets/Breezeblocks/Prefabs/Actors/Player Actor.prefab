@@ -114,8 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32c00c5373622b74db582237c7526c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startingAnchoredX: -800
-  _anchoredOffSet: 260
   _deckUi: {fileID: 0}
   _cardGroup: {fileID: 0}
   _mainCanvas: {fileID: 0}
@@ -181,6 +179,7 @@ MonoBehaviour:
   _healthBar: {fileID: 7713873620548858398}
   _healthText: {fileID: 2273861012249546362}
   _statusPanel: {fileID: 1924747663876292800}
+  _turnMarkerIcon: {fileID: 1656423597047091197}
 --- !u!1 &5919497451703877235
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +416,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ee2c348f11976d41985c19dbde45506, type: 3}
+--- !u!114 &1656423597047091197 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4355871768989597278, guid: 1ee2c348f11976d41985c19dbde45506, type: 3}
+  m_PrefabInstance: {fileID: 3066922999024710051}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1924747663876292800 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3475079044096848227, guid: 1ee2c348f11976d41985c19dbde45506, type: 3}

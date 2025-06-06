@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: dc38ed2c5003a8f4493006c451d1513b
+guid: a5e2fa7feae2fe54b9cfe44f878c08e0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1042994452888598960
-    second: Badge_07_02_0
+      213: -8031537252695106256
+    second: black-hole-bolas_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,13 +46,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 82, y: 189, z: 67, w: 77}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Battle Node_0
+      name: black-hole-bolas_0
       rect:
         serializedVersion: 2
-        x: 97
-        y: 194
-        width: 1287
-        height: 1170
+        x: 17
+        y: 31
+        width: 478
+        height: 463
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b57b7af30bc4fb2489710c8c5968989d
-      internalID: -473546838
+      spriteID: 03d9acceb6f3a8090800000000000000
+      internalID: -8031537252695106256
       vertices: []
       indices: 
       edges: []
@@ -126,18 +126,16 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1451.0,"y":1451.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Battle Node_0: -473546838
+      black-hole-bolas_0: -8031537252695106256
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

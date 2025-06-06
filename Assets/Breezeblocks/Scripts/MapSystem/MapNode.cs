@@ -5,6 +5,7 @@ using static UEnums;
 /// <summary>
 /// Represents a single node on the roguelike map (e.g. combat, shop, rest, boss).
 /// </summary>
+[System.Serializable]
 public class MapNode
 {
 

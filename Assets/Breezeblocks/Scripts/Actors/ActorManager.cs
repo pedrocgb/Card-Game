@@ -113,7 +113,8 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     {
         IsMyTurn = true;
         TurnOutlineEffect(true);
-        _myStats.OnNewTurn();        
+        _myStats.OnNewTurn();
+        _myUi.UpdateTurnMarker(false);
 
         _hand.DrawCards(_actorData.CardBuy);
     }

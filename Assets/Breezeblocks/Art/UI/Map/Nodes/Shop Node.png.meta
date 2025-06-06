@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3a7d195a5603f6e4fb2e0de3cb9250fb
+guid: 25f3691080f05d84a973d9349a19a2cd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3705688356904929645
-    second: Badge_03_02_0
+      213: -3554284739610303338
+    second: shiny-purse_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Badge_03_02_0
+      name: shiny-purse_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1151
-        height: 1152
+        x: 17
+        y: 7
+        width: 484
+        height: 488
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 396716ea210c29cc0800000000000000
-      internalID: -3705688356904929645
+      spriteID: 694afe85cd4acaec0800000000000000
+      internalID: -3554284739610303338
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Badge_03_02_0: -3705688356904929645
+      shiny-purse_0: -3554284739610303338
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

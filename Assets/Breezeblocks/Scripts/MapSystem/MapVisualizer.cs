@@ -9,6 +9,10 @@ using static UEnums;
 [RequireComponent(typeof(MapGenerator))]
 public class MapVisualizer : MonoBehaviour
 {
+    [FoldoutGroup("Settings", expanded: true)]
+    [SerializeField]
+    private bool _startNodeIntiallySelected = true;
+
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
     [InfoBox("RectTransform under your Canvas that holds all node + line UI elements.", InfoMessageType.None)]
@@ -94,10 +98,12 @@ public class MapVisualizer : MonoBehaviour
     public Color _highlightLineColor = Color.yellow;
 
     private MapGenerator _mapGen;
+    private CombatGenerator _combatGen;
 
     private void Awake()
     {
         _mapGen = GetComponent<MapGenerator>();
+        _combatGen = FindAnyObjectByType<CombatGenerator>();
         // Disable the Start button initially (no node is selected).
         if (_startButton != null)
             _startButton.interactable = false;
@@ -106,6 +112,7 @@ public class MapVisualizer : MonoBehaviour
     private void Start()
     {
         _mapGen.GenerateMap();
+        _combatGen.GenerateCombats();
         VisualizeMap();
     }
 
@@ -183,13 +190,31 @@ public class MapVisualizer : MonoBehaviour
         _unlockedNodes.Add(startNode);
         _lastCompletedNode = startNode;
 
-        // Hide every connection except those whose parent == startNode
-        foreach (var cl in _allConnectionLines)
+        if (_startNodeIntiallySelected)
         {
-            if (cl.parent == startNode)
-                cl.lineGO.SetActive(true);
-            else
-                cl.lineGO.SetActive(false);
+            _selectedNode = startNode;
+
+            foreach (var cl in _allConnectionLines)
+            {
+                if (cl.parent == startNode)
+                    cl.lineGO.SetActive(true);
+                else
+                    cl.lineGO.SetActive(false);
+            }
+
+            if (_startButton != null)
+                _startButton.interactable = true;
+        }
+        else
+        {
+            // Hide every connection except those whose parent == startNode
+            foreach (var cl in _allConnectionLines)
+            {
+                if (cl.parent == startNode)
+                    cl.lineGO.SetActive(true);
+                else
+                    cl.lineGO.SetActive(false);
+            }
         }
 
         // 6) Apply vision, interactability, and highlighting logic
@@ -411,6 +436,11 @@ public class MapVisualizer : MonoBehaviour
             _startButton.interactable = (_selectedNode != null);
     }
 
+    private void SelectNode(MapNode node)
+    {
+        _selectedNode = node;
+    }
+
     /// <summary>
     /// Called when the Start‐Event button is clicked, or when Enter is pressed.
     /// Records the chosen path (parent→child), blacks out that line permanently,
@@ -454,6 +484,7 @@ public class MapVisualizer : MonoBehaviour
             _startButton.interactable = false;
 
         // 5) Begin the event using GameManager (same as original behavior):
+        CombatManager.CreateCombatent(_currentNode.EnemiesData);
         GameManager.StartEvent(MapNodeType.Combat);
     }
 

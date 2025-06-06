@@ -18,6 +18,7 @@ public class PlayerActor : ActorManager
 
         _hand.ShowHand();
         _myStats.OnNewTurn();
+        _myUi.UpdateTurnMarker(false);
 
         _hand.DrawCards(_actorData.CardBuy);
     }

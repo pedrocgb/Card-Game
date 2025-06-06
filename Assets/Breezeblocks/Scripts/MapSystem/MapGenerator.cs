@@ -76,6 +76,16 @@ public class MapGenerator : MonoBehaviour
     [InfoBox("Weight for forcing Boss on final floor (should be highest or 1.0).", InfoMessageType.None)]
     public float weightBoss = 1f;
 
+    [FoldoutGroup("Node Weights", expanded: true)]
+    [SerializeField]
+    [InfoBox("Weight for creating a Event node.", InfoMessageType.None)]
+    public float weightEvents = 0.1f;
+
+    [FoldoutGroup("Node Weights", expanded: true)]
+    [SerializeField]
+    [InfoBox("Weight for forcing General battle on the map.", InfoMessageType.None)]
+    public float weightGeneral = 1f;
+
     [FoldoutGroup("Per-Floor Type Limits", expanded: true)]
     [SerializeField]
     [InfoBox("Maximum number of Treasure nodes allowed per floor.", InfoMessageType.None)]
@@ -95,6 +105,16 @@ public class MapGenerator : MonoBehaviour
     [SerializeField]
     [InfoBox("Maximum number of Corruption nodes allowed per floor.", InfoMessageType.None)]
     public int _maxCorruptionPerFloor = 1;
+
+    [FoldoutGroup("Per-Floor Type Limits", expanded: true)]
+    [SerializeField]
+    [InfoBox("Maximum number of Events nodes allowed per floor.", InfoMessageType.None)]
+    public int _maxEventsPerFloor = 1;
+
+    [FoldoutGroup("Per-Floor Type Limits", expanded: true)]
+    [SerializeField]
+    [InfoBox("Maximum number of Elite nodes allowed per floor.", InfoMessageType.None)]
+    public int _maxGeneralsPerFloor = 0;
 
     [FoldoutGroup("Forced Requirements", expanded: true)]
     [SerializeField]
@@ -221,11 +241,12 @@ public class MapGenerator : MonoBehaviour
             int shopCount = 0;
             int eliteCount = 0;
             int corruptionCount = 0;
+            int eventCount = 0;
 
             for (int i = 0; i < countThisFloor; i++)
             {
                 MapNodeType chosenType = PickNodeTypeWithLimits(
-                    treasureCount, shopCount, eliteCount, corruptionCount);
+                    treasureCount, shopCount, eliteCount, corruptionCount, eventCount);
 
                 switch (chosenType)
                 {
@@ -233,6 +254,7 @@ public class MapGenerator : MonoBehaviour
                     case MapNodeType.Shop: shopCount++; break;
                     case MapNodeType.Elite: eliteCount++; break;
                     case MapNodeType.Corruption: corruptionCount++; break;
+                    case MapNodeType.Event: eventCount++; break;
                 }
 
                 var node = new MapNode(
@@ -275,7 +297,8 @@ public class MapGenerator : MonoBehaviour
         int treasureCount,
         int shopCount,
         int eliteCount,
-        int corruptionCount)
+        int corruptionCount,
+        int eventCount)
     {
         var types = new List<MapNodeType>();
         var weights = new List<float>();
@@ -310,6 +333,13 @@ public class MapGenerator : MonoBehaviour
         {
             types.Add(MapNodeType.Corruption);
             weights.Add(weightCorruption);
+        }
+
+        // Event if below limit
+        if (eventCount < _maxEventsPerFloor)
+        {
+            types.Add(MapNodeType.Event);
+            weights.Add(weightEvents);
         }
 
         float total = 0f;
