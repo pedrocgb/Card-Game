@@ -46,6 +46,9 @@ public static class CardEffectResolver
                     case UEnums.CardEffects.Burn:
                         target.Stats.SufferBurn(effect.Amount, effect.Duration);
                         break;
+                    case UEnums.CardEffects.Poison:
+                        target.Stats.SufferPoison(effect.Amount, effect.Duration);
+                        break;
 
                     // Buff effects
                     case UEnums.CardEffects.Heal:
@@ -55,6 +58,7 @@ public static class CardEffectResolver
                         target.Stats.GainBlock(effect.Amount, effect.Duration);
                         break;
                     case UEnums.CardEffects.Haste:
+                        target.Stats.GainHaste(effect.Amount, effect.Duration);
                         break;
                     case UEnums.CardEffects.Toughness:
                         target.Stats.GainToughness(effect.Amount, effect.Duration);

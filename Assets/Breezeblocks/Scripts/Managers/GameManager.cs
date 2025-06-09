@@ -13,6 +13,17 @@ public class GameManager : MonoBehaviour
     [FoldoutGroup("Components")]
     [SerializeField]
     private GameObject _combatUi = null;
+    [FoldoutGroup("Components")]
+    [SerializeField]
+    private GameObject _infoUi = null;
+    [FoldoutGroup("Components")]
+    [SerializeField]
+    private GameObject _combatRewardPanel = null;
+
+    [FoldoutGroup("Components/Actors")]
+    [SerializeField]
+    private Sprite _deadActorPortrait = null;
+    public static Sprite DeadActorPortrait => Instance._deadActorPortrait;
     #endregion
 
     // ========================================================================
@@ -22,7 +33,21 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
 
+        _combatUi.SetActive(false);
+        _infoUi.SetActive(false);
         _mapUi.SetActive(true);
+    }
+    #endregion
+
+    // ========================================================================
+
+    #region Loop Methods
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftAlt))
+        {
+            _infoUi.SetActive(!_infoUi.activeSelf);
+        }
     }
     #endregion
 
@@ -111,7 +136,7 @@ public class GameManager : MonoBehaviour
         _mapUi.SetActive(false);
         _combatUi.SetActive(true);
         PositionsManager.UpdatePositions();
-        CombatManager.StartRound();
+        CombatManager.StartNewCombat();
     }
 
     private void EndCombat()
@@ -119,9 +144,9 @@ public class GameManager : MonoBehaviour
         _mapUi.SetActive(true);
         _combatUi.SetActive(false);
 
-        TurnOrderUI.Instance.ClearTurnOrder();
         CombatManager.EndCombat();
     }
+
     #endregion
 
     // ========================================================================

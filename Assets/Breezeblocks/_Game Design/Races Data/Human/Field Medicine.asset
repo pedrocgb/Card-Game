@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Field Medicine
   _cardDescription: Heal 3 hit points.
+  _cardOrigin: 1
   _cardImage: {fileID: 701390690, guid: 08a83672c0c70724cb8105b33ad64832, type: 3}
   _actionCost: 0
+  _cardRarity: 1
+  _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
   _cardEffects:
   - EffectType: 100
     Amount: 3

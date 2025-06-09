@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Confuse
   _cardDescription: Apply 2x Lock
+  _cardOrigin: 1
   _cardImage: {fileID: 1474198686, guid: da9ee10c1eb816441987213dd0509f48, type: 3}
   _actionCost: 1
+  _cardRarity: 1
+  _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
   _cardEffects:
   - EffectType: 11
     Amount: 2

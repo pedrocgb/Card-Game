@@ -63,8 +63,12 @@ public class NodeView : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
     private bool _isHidden = false;
 
     // Colors for enabled vs locked (visible) states
-    private readonly Color _enabledColor = Color.white;
-    private readonly Color _lockedColor = new Color(1f, 1f, 1f, 0.5f);
+    [FoldoutGroup("Colors", expanded: true)]
+    [SerializeField]
+    private Color _enabledColor = Color.white;
+    [FoldoutGroup("Colors", expanded: true)]
+    [SerializeField]
+    private Color _lockedColor = new Color(1f, 1f, 1f, 0.5f);
 
     // The MapNode data this NodeView represents
     private MapNode _mapNode;

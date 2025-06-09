@@ -279,6 +279,9 @@ public class ActorStats : MonoBehaviour
                 case StatusEffects.Riposte:
                     UpdateStatusDuration(effect);
                     break;
+                case StatusEffects.Haste:
+                    UpdateStatusDuration(effect);
+                    break;
             }
         }
     }
@@ -474,8 +477,6 @@ public class ActorStats : MonoBehaviour
         _isDead = true;
         PositionsManager.RemoveActor(_actor);
         CombatManager.RemoveCombatent(_actor);
-        TurnOrderUI.Instance.RemoveActorFromTurn(_actor);
-
         gameObject.SetActive(false);
     }
     #endregion
@@ -566,6 +567,11 @@ public class ActorStats : MonoBehaviour
     public void GainRiposte(int amount, int duration)
     {
         AddStatusEffect(StatusEffects.Riposte, amount, duration);
+    }
+
+    public void GainHaste(int amount, int duration)
+    {
+        AddStatusEffect(StatusEffects.Haste, amount, duration);
     }
     #endregion
 

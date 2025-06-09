@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Dance with the Dead
   _cardDescription: Apply 2x Vulnerability. Apply 1x Restrained.
+  _cardOrigin: 1
   _cardImage: {fileID: 131749392, guid: 1168068855744cc4f968c2801b91e36d, type: 3}
   _actionCost: 1
+  _cardRarity: 1
+  _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
   _cardEffects:
   - EffectType: 2
     Amount: 2

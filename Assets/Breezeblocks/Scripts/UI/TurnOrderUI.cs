@@ -120,13 +120,20 @@ public class TurnOrderUI : MonoBehaviour
 
     public void RemoveActorFromTurn(ActorManager actor)
     {
+        // find the icon
         TurnIcon icon = _iconList.Find(i => i.LinkedActor == actor);
-        if (icon != null)
-        {
-            _iconList.Remove(icon);
-            icon.FadeOutAndDestroy();
-            RebuildUI();
-        }
+        if (icon == null) return;
+
+        int idx = _iconList.IndexOf(icon);
+
+        // if they're the front icon, do nothing – AdvanceTurn() will pop it
+        if (idx == 0)
+            return;
+
+        // otherwise remove them immediately
+        _iconList.RemoveAt(idx);
+        icon.FadeOutAndDestroy();
+        RebuildUI();
     }
 
     public void ClearTurnOrder()
@@ -155,7 +162,11 @@ public class TurnOrderUI : MonoBehaviour
             startX += targetSize.x + _spacing;
         }
 
-        AnimateName(_iconList[0].LinkedActor.ActorName);
+        if (_iconList.Count > 0)
+            AnimateName(_iconList[0].LinkedActor.ActorName);
+        else
+            _actorNameText.text = "";
+     
     }
     #endregion
 

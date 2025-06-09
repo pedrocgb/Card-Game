@@ -3,16 +3,6 @@ using UnityEngine;
 
 public class UEnums
 {
-    public enum HeroClasses
-    {
-        Warrior,
-        Archer,
-        Rogue,
-        Mage,
-        Cleric,
-        Paladin
-    }
-
     [Flags]
     public enum CardTypes
     {
@@ -138,5 +128,11 @@ public class UEnums
         Event,
         General
         
+    }
+
+    public enum CardOrigin
+    {
+        Racial = 1,
+        Specialization = 2
     }
 }

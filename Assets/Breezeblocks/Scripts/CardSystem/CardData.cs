@@ -15,6 +15,11 @@ public class CardData : ScriptableObject
     [SerializeField]
     private string _cardDescription = string.Empty;
     public string CardDescription => _cardDescription;
+    [FoldoutGroup("Card Info", expanded: true)]
+    [FoldoutGroup("Card Info/Base", expanded: true)]
+    [SerializeField]
+    private UEnums.CardOrigin _cardOrigin = UEnums.CardOrigin.Racial;
+    public UEnums.CardOrigin CardOrigin => _cardOrigin;
     [FoldoutGroup("Card Info/Base", expanded: true)]
     [SerializeField]
     [PreviewField(height: 100, alignment: ObjectFieldAlignment.Left)]
@@ -24,6 +29,15 @@ public class CardData : ScriptableObject
     [SerializeField]
     private int _actionCost = 0;
     public int ActionCost => _actionCost;
+    [FoldoutGroup("Card Info/Base", expanded: true)]
+    [SerializeField]
+    private UEnums.CardRarity _cardRarity = UEnums.CardRarity.Common;
+    public UEnums.CardRarity CardRarity => _cardRarity;
+    [FoldoutGroup("Card Info/Base", expanded: true)]
+    [SerializeField]
+    [PreviewField(height: 100, alignment: ObjectFieldAlignment.Left)]
+    private Sprite _cardBackImage = null;
+    public Sprite CardBackImage => _cardBackImage;
 
     // ========================================================================
 

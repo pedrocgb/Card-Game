@@ -16,8 +16,15 @@ public class PlayerActor : ActorManager
         IsMyTurn = true;
         TurnOutlineEffect(true);
 
-        _hand.ShowHand();
         _myStats.OnNewTurn();
+
+        if (_myStats.IsDead)
+        {
+            CombatManager.Instance.EndTurn();
+            return;
+        }
+
+        _hand.ShowHand();
         _myUi.UpdateTurnMarker(false);
 
         _hand.DrawCards(_actorData.CardBuy);

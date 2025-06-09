@@ -17,6 +17,11 @@ public class RacesData : ScriptableObject
 
     // ========================================================================
 
+    [FoldoutGroup("Cards", expanded: true)]
+    [SerializeField]
+    private List<CardData> _racialCards = new List<CardData>();
+    public List<CardData> RacialCards => _racialCards;
+
     // Add race Imunities
 
     // Add race Effects

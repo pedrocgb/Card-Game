@@ -1,4 +1,4 @@
-using Rewired;
+﻿using Rewired;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,6 @@ public class EnemyTurnManager : MonoBehaviour
     #region Variables and Properties
     public static EnemyTurnManager Instance;
     private bool _cardPlayed = false;
-    private bool _isEnemyTurn = false;
     #endregion
 
     // ========================================================================
@@ -31,25 +30,23 @@ public class EnemyTurnManager : MonoBehaviour
     /// <returns></returns>
     private IEnumerator EnemyTurnCoroutine(EnemyActor enemy)
     {
+        yield return new WaitForSeconds(0.5f);
+        enemy.StartNewTurn();
+
         if (enemy.Stats.IsDead)
         {
-            Console.Log($"[AI] Enemy {enemy.name} is dead, cannot start turn.");
+            Debug.Log($"[AI] {enemy.name} died mid-turn. Removing then ending.");
+            CombatManager.RemoveCombatent(enemy);
+            TargetingManager.Instance.ClearHightLights();
             CombatManager.Instance.EndTurn();
             yield break;
         }
 
-        yield return new WaitForSeconds(0.5f); // small delay before starting turn
-
-        _isEnemyTurn = true;
-        enemy.StartNewTurn(); // draws cards, restores mana
-
-        yield return new WaitForSeconds(1f); // small delay before acting
-
+        yield return new WaitForSeconds(1f);
         if (enemy.Stats.IsStunned)
         {
+            Debug.Log($"[AI] {enemy.name} is stunned. Skipping.");
             CombatManager.Instance.EndTurn();
-            Console.Log($"Enemy {enemy.name} is stunned! Skipping turn.");
-            _isEnemyTurn = false;
             yield break;
         }
 
@@ -57,18 +54,13 @@ public class EnemyTurnManager : MonoBehaviour
         {
             _cardPlayed = false;
             yield return StartCoroutine(TryPlayCard(enemy));
-
-            if (!_cardPlayed)
-                break;
-
-            yield return new WaitForSeconds(0.5f); // delay between actions 
+            if (!_cardPlayed) break;
+            yield return new WaitForSeconds(0.5f);
         }
 
-        yield return new WaitForSeconds(1f); // delay before passing turn
-
+        yield return new WaitForSeconds(1f);
         TargetingManager.Instance.ClearHightLights();
         CombatManager.Instance.EndTurn();
-        _isEnemyTurn = false;
     }
     #endregion
 
@@ -82,12 +74,6 @@ public class EnemyTurnManager : MonoBehaviour
     /// <returns></returns>
     private IEnumerator TryPlayCard(EnemyActor enemy)
     {
-        if (enemy.Stats.IsDead)
-        {
-            Console.Log($"[AI] Enemy {enemy.name} is dead, cannot play cards.");
-            yield break;
-        }
-
         List<CardInstance> playableCards = new List<CardInstance>();
 
         // Loop through all cards in the enemy's hand

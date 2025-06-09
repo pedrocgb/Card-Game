@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Unholy Power
   _cardDescription: Apply 1x Toughness
+  _cardOrigin: 1
   _cardImage: {fileID: -513781456, guid: 47b81f7022028d047ac3b6211d56f889, type: 3}
   _actionCost: 0
+  _cardRarity: 1
+  _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
   _cardEffects:
   - EffectType: 107
     Amount: 1

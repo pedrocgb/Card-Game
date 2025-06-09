@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Throw Bone
   _cardDescription: Deals 2 Damage
+  _cardOrigin: 1
   _cardImage: {fileID: 5404408926182034655, guid: 655e0e5bc94b6a048ad90ce380925ef8, type: 3}
   _actionCost: 1
+  _cardRarity: 1
+  _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
   _cardEffects:
   - EffectType: 0
     Amount: 2

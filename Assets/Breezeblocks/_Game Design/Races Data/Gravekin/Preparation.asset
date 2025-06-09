@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Preparation
   _cardDescription: Draw 1 Card. Gain 1x Haste.
+  _cardOrigin: 1
   _cardImage: {fileID: 577148629, guid: 1168068855744cc4f968c2801b91e36d, type: 3}
   _actionCost: 0
+  _cardRarity: 1
+  _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
   _cardEffects:
   - EffectType: 201
     Amount: 1

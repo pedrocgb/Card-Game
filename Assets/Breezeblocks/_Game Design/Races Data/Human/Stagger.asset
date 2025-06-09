@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Staggering Attack
   _cardDescription: Deals 1 Damage. Apply 1x Slow.
+  _cardOrigin: 1
   _cardImage: {fileID: 2037038911, guid: da9ee10c1eb816441987213dd0509f48, type: 3}
   _actionCost: 1
+  _cardRarity: 1
+  _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
   _cardEffects:
   - EffectType: 0
     Amount: 1

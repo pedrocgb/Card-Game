@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Claw
   _cardDescription: Deals 3 Damage.
+  _cardOrigin: 1
   _cardImage: {fileID: 4570838873879264260, guid: 2cf88b289a1abf34faf46a690bc875a8, type: 3}
   _actionCost: 1
+  _cardRarity: 1
+  _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
   _cardEffects:
   - EffectType: 0
     Amount: 3

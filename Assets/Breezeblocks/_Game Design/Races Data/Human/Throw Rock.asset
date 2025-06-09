@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Throw Rock
   _cardDescription: Deals 2 Damage.
+  _cardOrigin: 1
   _cardImage: {fileID: -753498927, guid: 0ea55752e90b15b48ba4f386d7d2df20, type: 3}
   _actionCost: 1
+  _cardRarity: 1
+  _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
   _cardEffects:
   - EffectType: 0
     Amount: 2

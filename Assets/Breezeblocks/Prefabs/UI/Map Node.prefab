@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d26c922bd14e6bd4785ed6793bcc2264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _selectedImage: {fileID: 7009291477206214386}
   _spriteCombat: {fileID: 21300000, guid: a5bf95cb17c9112408b612c30c3eea81, type: 3}
   _spriteShop: {fileID: 21300000, guid: bea779a1424b8074d9c4548497b75133, type: 3}
   _spriteElite: {fileID: 21300000, guid: 711ea44ef9d8c784e98f6c7e0e2447a0, type: 3}
@@ -70,6 +71,8 @@ MonoBehaviour:
   _hiddenSprite: {fileID: 21300000, guid: 93ab2743206be374f9f9271e3423bcf8, type: 3}
   _hoverScale: 1.2
   _hoverDuration: 0.15
+  _enabledColor: {r: 1, g: 1, b: 1, a: 1}
+  _lockedColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &6342610639557453373
 MonoBehaviour:
   m_ObjectHideFlags: 0

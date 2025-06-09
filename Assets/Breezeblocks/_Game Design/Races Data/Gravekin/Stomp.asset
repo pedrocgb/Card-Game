@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Stomp
   _cardDescription: Deals 4 Damage. Push 1.
+  _cardOrigin: 1
   _cardImage: {fileID: 1623009189, guid: 16b8589a6db24244a8a36d4e40f0b4c3, type: 3}
   _actionCost: 2
+  _cardRarity: 1
+  _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
   _cardEffects:
   - EffectType: 0
     Amount: 4

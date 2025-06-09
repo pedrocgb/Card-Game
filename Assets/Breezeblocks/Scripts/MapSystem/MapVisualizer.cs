@@ -9,6 +9,8 @@ using static UEnums;
 [RequireComponent(typeof(MapGenerator))]
 public class MapVisualizer : MonoBehaviour
 {
+    public static MapVisualizer Instance = null;
+
     [FoldoutGroup("Settings", expanded: true)]
     [SerializeField]
     private bool _startNodeIntiallySelected = true;
@@ -102,6 +104,8 @@ public class MapVisualizer : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
+
         _mapGen = GetComponent<MapGenerator>();
         _combatGen = FindAnyObjectByType<CombatGenerator>();
         // Disable the Start button initially (no node is selected).
@@ -116,7 +120,6 @@ public class MapVisualizer : MonoBehaviour
         VisualizeMap();
     }
 
-
     /// <summary>
     /// Called by MapGenerator after generating all MapNode objects.
     /// This method:
@@ -126,6 +129,7 @@ public class MapVisualizer : MonoBehaviour
     ///   4) Initially hides all connections except those from the Start node
     ///   5) Unlocks only the Start node, sets it as _lastCompletedNode
     ///   6) Applies vision, interactability, and highlighting logic
+    ///   7) Ensures lines are below nodes in UI order
     /// </summary>
     public void VisualizeMap()
     {
@@ -144,7 +148,12 @@ public class MapVisualizer : MonoBehaviour
         _currentNode = null;
         _lastCompletedNode = null;
         _currentFloorIndex = 0;
-        _selectedNode = null;
+        // Deselect any previously selected node
+        if (_selectedNode != null && _nodeViewMap.TryGetValue(_selectedNode, out var prevNV))
+        {
+            prevNV.HideSelection();
+            _selectedNode = null;
+        }
         _usedConnections.Clear();
 
         // Disable Start button until a node is selected
@@ -190,16 +199,16 @@ public class MapVisualizer : MonoBehaviour
         _unlockedNodes.Add(startNode);
         _lastCompletedNode = startNode;
 
+        // 6) If start node should be selected initially:
         if (_startNodeIntiallySelected)
         {
             _selectedNode = startNode;
+            if (_nodeViewMap.TryGetValue(startNode, out var startNV))
+                startNV.ShowSelection();
 
             foreach (var cl in _allConnectionLines)
             {
-                if (cl.parent == startNode)
-                    cl.lineGO.SetActive(true);
-                else
-                    cl.lineGO.SetActive(false);
+                cl.lineGO.SetActive(cl.parent == startNode);
             }
 
             if (_startButton != null)
@@ -210,16 +219,58 @@ public class MapVisualizer : MonoBehaviour
             // Hide every connection except those whose parent == startNode
             foreach (var cl in _allConnectionLines)
             {
-                if (cl.parent == startNode)
-                    cl.lineGO.SetActive(true);
-                else
-                    cl.lineGO.SetActive(false);
+                cl.lineGO.SetActive(cl.parent == startNode);
             }
         }
 
-        // 6) Apply vision, interactability, and highlighting logic
+        // 7) Apply vision, interactability, and highlighting logic
         UpdateVisibilityAndInteractability();
         UpdateLineHighlighting();
+
+        // 8) Ensure lines are drawn below nodes in the canvas
+        foreach (var lineGO in _activeLines)
+        {
+            lineGO.transform.SetAsFirstSibling();
+        }
+        foreach (var nodeGO in _activeNodes)
+        {
+            nodeGO.transform.SetAsLastSibling();
+        }
+    }
+
+    /// <summary>
+    /// Spawns a single line UI Image (via pool) between two UI‐space points.
+    /// Pivot is set to (0,0.5) so scaling from X=0 expands from the parent end.
+    /// Returns the new GameObject so calling code can track it.
+    /// </summary>
+    private GameObject SpawnLineAtParent(Vector2 start, Vector2 end)
+    {
+        GameObject lineGO = ObjectPooler.SpawnFromPool(_linePrefab, Vector3.zero, Quaternion.identity);
+        _activeLines.Add(lineGO);
+
+        var rt = lineGO.GetComponent<RectTransform>();
+        rt.SetParent(_mapContainer, false);
+
+        // Pivot at the parent end
+        rt.pivot = new Vector2(0f, 0.5f);
+        rt.anchoredPosition = start;
+
+        float length = Vector2.Distance(start, end);
+        float angle = Mathf.Atan2(end.y - start.y, end.x - start.x) * Mathf.Rad2Deg;
+        rt.localRotation = Quaternion.Euler(0f, 0f, angle);
+        rt.sizeDelta = new Vector2(length, _lineThickness);
+        lineGO.transform.localScale = Vector3.one;
+
+        var img = lineGO.GetComponent<Image>();
+        if (img != null)
+        {
+            Color c = _defaultLineColor;
+            c.a = 0f;
+            img.color = c;
+        }
+
+        lineGO.SetActive(false);
+        return lineGO;
     }
 
     /// <summary>
@@ -234,6 +285,8 @@ public class MapVisualizer : MonoBehaviour
             foreach (var parent in floors[f])
             {
                 Vector2 start = parent.Position * _positionMultiplier;
+                if (parent.Connections == null) continue;
+
                 foreach (var child in parent.Connections)
                 {
                     Vector2 end = child.Position * _positionMultiplier;
@@ -257,58 +310,36 @@ public class MapVisualizer : MonoBehaviour
     private GameObject SpawnAnimatedLine(Vector2 start, Vector2 end)
     {
         GameObject lineGO = ObjectPooler.SpawnFromPool(_linePrefab, Vector3.zero, Quaternion.identity);
-        // Track the line so we can clean up later
         _activeLines.Add(lineGO);
-
-        // Ensure it's active before animating
         lineGO.SetActive(true);
 
         var rt = lineGO.GetComponent<RectTransform>();
         rt.SetParent(_mapContainer, false);
 
-        // Compute rotation & full length:
-        float dx = end.x - start.x;
-        float dy = end.y - start.y;
+        // Compute rotation & length
         float length = Vector2.Distance(start, end);
-        float angle = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(end.y - start.y, end.x - start.x) * Mathf.Rad2Deg;
 
-        // Place line at midpoint:
+        // Place at midpoint, rotate, size
         rt.anchoredPosition = (start + end) / 2f;
         rt.localRotation = Quaternion.Euler(0f, 0f, angle);
-
-        // Set full size but start with zero scale on X:
         rt.sizeDelta = new Vector2(length, _lineThickness);
-        lineGO.transform.localScale = new Vector3(0f, 1f, 1f);
 
-        // Setup initial color (invisible):
+        // Make sure it's behind everything else
+        lineGO.transform.SetAsFirstSibling();
+
+        // Set its final alpha immediately
         var img = lineGO.GetComponent<Image>();
         if (img != null)
         {
             Color c = _defaultLineColor;
-            c.a = 0f;
-            img.color = c;
+            img.color = c; // no fade, full alpha
         }
 
-        // Force line behind everything else:
-        lineGO.transform.SetAsFirstSibling();
-
-        // Animate: scale X from 0 → 1, fade alpha 0 → defaultAlpha
-        if (img != null)
-        {
-            float targetAlpha = _defaultLineColor.a;
-            Sequence seq = DOTween.Sequence();
-            seq.Append(lineGO.transform.DOScaleX(1f, _lineFadeDuration).SetEase(Ease.OutQuad))
-               .Join(img.DOFade(targetAlpha, _lineFadeDuration).SetEase(Ease.InOutSine))
-               .SetUpdate(true);
-        }
-        else
-        {
-            // If no Image present, just scale without fading:
-            lineGO.transform.DOScaleX(1f, _lineFadeDuration).SetEase(Ease.OutQuad).SetUpdate(true);
-        }
-
+        // No tween here. Just return the fully‐formed line.
         return lineGO;
     }
+
 
     /// <summary>
     /// Updates every NodeView:
@@ -381,7 +412,35 @@ public class MapVisualizer : MonoBehaviour
         foreach (var cl in _allConnectionLines)
         {
             if (cl.parent == node)
-                cl.lineGO.SetActive(true);
+            {
+                // Animate this line from invisible→visible:
+                var lineGO = cl.lineGO;
+                var img = lineGO.GetComponent<Image>();
+                // Start from zero scale & zero alpha:
+                lineGO.transform.localScale = new Vector3(0f, 1f, 1f);
+                if (img != null)
+                {
+                    Color c = img.color;
+                    c.a = 0f;
+                    img.color = c;
+                }
+
+                lineGO.SetActive(true);
+
+                // Tween scale X from 0→1, alpha from 0→default:
+                if (img != null)
+                {
+                    float targetAlpha = _defaultLineColor.a;
+                    Sequence seq = DOTween.Sequence();
+                    seq.Append(lineGO.transform.DOScaleX(1f, _lineFadeDuration).SetEase(Ease.OutQuad))
+                       .Join(img.DOFade(targetAlpha, _lineFadeDuration).SetEase(Ease.InOutSine))
+                       .SetUpdate(true);
+                }
+                else
+                {
+                    lineGO.transform.DOScaleX(1f, _lineFadeDuration).SetEase(Ease.OutQuad).SetUpdate(true);
+                }
+            }
         }
     }
 
@@ -414,9 +473,13 @@ public class MapVisualizer : MonoBehaviour
         if (!_unlockedNodes.Contains(node))
             return;
 
-        // If clicking the already‐selected node, deselect and hide its connections:
+        // If clicking the already-selected node, deselect and hide its connections:
         if (_selectedNode == node)
         {
+            // Hide radial selection
+            if (_nodeViewMap.TryGetValue(node, out var nvToHide))
+                nvToHide.HideSelection();
+
             HideConnections(node);
             _selectedNode = null;
         }
@@ -424,10 +487,17 @@ public class MapVisualizer : MonoBehaviour
         {
             // Deselect previous if any:
             if (_selectedNode != null)
+            {
                 HideConnections(_selectedNode);
+                if (_nodeViewMap.TryGetValue(_selectedNode, out var nvPrev))
+                    nvPrev.HideSelection();
+            }
 
-            // Select new node and reveal its connections:
+            // Select new node: show radial selection and reveal its connections:
             _selectedNode = node;
+            if (_nodeViewMap.TryGetValue(node, out var nvToShow))
+                nvToShow.ShowSelection();
+
             RevealConnections(node);
         }
 
@@ -436,13 +506,8 @@ public class MapVisualizer : MonoBehaviour
             _startButton.interactable = (_selectedNode != null);
     }
 
-    private void SelectNode(MapNode node)
-    {
-        _selectedNode = node;
-    }
-
     /// <summary>
-    /// Called when the Start‐Event button is clicked, or when Enter is pressed.
+    /// Called when the Start-Event button is clicked, or when Enter is pressed.
     /// Records the chosen path (parent→child), blacks out that line permanently,
     /// hides all sibling lines from the parent, then starts the event.
     /// </summary>
@@ -450,6 +515,10 @@ public class MapVisualizer : MonoBehaviour
     {
         if (_selectedNode == null || _lastCompletedNode == null)
             return;
+
+        // Hide radial selection on the selected node:
+        if (_nodeViewMap.TryGetValue(_selectedNode, out var nv))
+            nv.HideSelection();
 
         // 1) Record the chosen connection: (parent = lastCompletedNode → child = selectedNode)
         var chosenPair = (_lastCompletedNode, _selectedNode);
@@ -526,6 +595,10 @@ public class MapVisualizer : MonoBehaviour
         if (_currentNode == null)
             return;
 
+        // Hide any lingering selection radial
+        if (_nodeViewMap.TryGetValue(_currentNode, out var nvCur))
+            nvCur.HideSelection();
+
         // 1) Update floor index and lastCompletedNode:
         int completedFloor = _currentNode.FloorIndex;
         _currentFloorIndex = completedFloor;
@@ -535,8 +608,11 @@ public class MapVisualizer : MonoBehaviour
         _unlockedNodes.Clear();
 
         // 3) Unlock only direct children of the completed node:
-        foreach (var child in _currentNode.Connections)
-            _unlockedNodes.Add(child);
+        if (_currentNode.Connections != null)
+        {
+            foreach (var child in _currentNode.Connections)
+                _unlockedNodes.Add(child);
+        }
 
         // 4) Clear _currentNode so we don’t re-complete it:
         _currentNode = null;
