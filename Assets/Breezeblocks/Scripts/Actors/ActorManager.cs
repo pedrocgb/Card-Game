@@ -26,6 +26,7 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     [FoldoutGroup("Graphics", expanded: true)]
     [SerializeField]
     private Animator _actorAnimator = null;
+
     [FoldoutGroup("Graphics/Effects", expanded: true)]
     [SerializeField]
     protected GameObject _hostilePositionEffect = null;
@@ -38,14 +39,17 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     [FoldoutGroup("Graphics/Effects", expanded: true)]
     [SerializeField]
     protected GameObject _allyTargetEffect = null;
+
     [FoldoutGroup("Graphics/Effects/Turn", expanded: true)]
     [SerializeField]
-    private Color _outlineColor = Color.white;
+    private Material _defaultMaterial = null;
     [FoldoutGroup("Graphics/Effects/Turn", expanded: true)]
     [SerializeField]
-    private float _outlineWidth = 2f;
-    private MaterialPropertyBlock _materialBlock = null;
-    private SpriteRenderer _spriteRenderer = null;
+    private Material _outlineMaterial = null;
+
+    private Material _defaultMaterialInstance;
+    private Material _outlineMaterialInstance;
+    private SpriteRenderer _spriteRenderer;
 
     // Deck and Hand managers
     protected DeckManager _deck = null;
@@ -58,7 +62,7 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     private string _actorName = string.Empty;
     public string ActorName => _actorName;
     private int _initiativeBonus = 0;
-    public int InitiativeBonus { get { return _initiativeBonus; } }
+    public int InitiativeBonus => _initiativeBonus;
     private int _currentInitiative = 0;
     public int CurrentInitiative => _currentInitiative;
     public bool IsMyTurn { get; protected set; } = false;
@@ -69,8 +73,6 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     protected UEnums.Target _currentAttacker = UEnums.Target.Self;
     #endregion
 
-    // ========================================================================
-
     #region Initialization
     protected virtual void Awake()
     {
@@ -79,14 +81,15 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
 
         _myStats = GetComponent<ActorStats>();
         _myPosition = GetComponent<ActorPosition>();
-
         _myUi = GetComponent<ActorWorldUI>();
 
         _spriteRenderer = _actorModel.GetComponent<SpriteRenderer>();
-        _actorAnimator = _actorModel.GetComponent<Animator>();
 
-        _materialBlock = new MaterialPropertyBlock();
-        _spriteRenderer.GetPropertyBlock(_materialBlock);
+        // Create unique material instances for this actor
+        _defaultMaterialInstance = new Material(_defaultMaterial);
+        _outlineMaterialInstance = new Material(_outlineMaterial);
+        // Start with default material
+        _spriteRenderer.material = _defaultMaterialInstance;
     }
 
     public virtual void Initialize()
@@ -98,8 +101,6 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
         _initiativeBonus = _actorData.InitiativeBonus;
     }
     #endregion
-
-    // ========================================================================
 
     #region Turn Methods
     public void RollInitiative()
@@ -129,22 +130,16 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     }
     #endregion
 
-    // ========================================================================
-
     #region Animations and Effects Methods
     public void HightLightActor(UEnums.Target TargetFaction)
     {
         switch (TargetFaction)
         {
-            default:
             case UEnums.Target.Enemy:
-                _hostilePositionEffect.SetActive(true);                
+                _hostilePositionEffect.SetActive(true);
                 break;
-            case UEnums.Target.Ally:
-                _allyPositionEffect.SetActive(true);                
-                break;
-            case UEnums.Target.Self:
-                _allyPositionEffect.SetActive(true);                
+            default:
+                _allyPositionEffect.SetActive(true);
                 break;
         }
 
@@ -157,15 +152,11 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
 
         switch (_currentAttacker)
         {
-            default:
-            case UEnums.Target.Self:
-                _allyTargetEffect.SetActive(true);
-                break;
-            case UEnums.Target.Ally:
-                _allyTargetEffect.SetActive(true);
-                break;
             case UEnums.Target.Enemy:
                 _hostileTargetEffect.SetActive(true);
+                break;
+            default:
+                _allyTargetEffect.SetActive(true);
                 break;
         }
     }
@@ -183,83 +174,64 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
 
     public void TurnOutlineEffect(bool on)
     {
-        _spriteRenderer.GetPropertyBlock(_materialBlock);
-        _materialBlock.SetFloat("_OutlineThickness", on ? _outlineWidth : 0f);
-        _materialBlock.SetColor("_OutlineColor", on ? _outlineColor : Color.white);
-        _spriteRenderer.SetPropertyBlock(_materialBlock);
+        // Swap between default and outline materials
+        _spriteRenderer.material = on ? _outlineMaterialInstance : _defaultMaterialInstance;
     }
     #endregion
-
-    // ========================================================================
 
     #region Pointer Handler Methods
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (!CombatManager.Instance.IsPlayerTurn) return; // Prevent interaction during enemy turn
-
-        if (!_targetable || _highTarget) return;
+        if (!CombatManager.Instance.IsPlayerTurn || !_targetable || _highTarget)
+            return;
 
         switch (_currentAttacker)
         {
-            default:
-            case UEnums.Target.Self:
-                _allyTargetEffect.SetActive(true);
-                break;
-            case UEnums.Target.Ally:
-                _allyTargetEffect.SetActive(true);
-                break;
             case UEnums.Target.Enemy:
                 _hostileTargetEffect.SetActive(true);
+                break;
+            default:
+                _allyTargetEffect.SetActive(true);
                 break;
         }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (!CombatManager.Instance.IsPlayerTurn) return; // Prevent interaction during enemy turn
-
-        if (!_targetable || _highTarget) return;
+        if (!CombatManager.Instance.IsPlayerTurn || !_targetable || _highTarget)
+            return;
 
         switch (_currentAttacker)
         {
-            default:
-            case UEnums.Target.Self:
-                _allyTargetEffect.SetActive(false);
-                break;
-            case UEnums.Target.Ally:
-                _allyTargetEffect.SetActive(false);
-                break;
             case UEnums.Target.Enemy:
                 _hostileTargetEffect.SetActive(false);
+                break;
+            default:
+                _allyTargetEffect.SetActive(false);
                 break;
         }
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (!CombatManager.Instance.IsPlayerTurn) return; // Prevent interaction during enemy turn
-
-        if (!_targetable) return;
+        if (!CombatManager.Instance.IsPlayerTurn || !_targetable)
+            return;
 
         TargetingManager.Instance.SetTarget(this);
         PlayerTurnManager.Instance.UseCard();
     }
     #endregion
 
-    // ========================================================================
-
     #region AI Highlight Methods
     public void ShowTargetFeedback(UEnums.Target TargetType)
     {
         switch (TargetType)
         {
-            default:
-            case UEnums.Target.Ally:
-            case UEnums.Target.Self:
-                _allyTargetEffect.SetActive(true);
-                break;
             case UEnums.Target.Enemy:
                 _hostileTargetEffect.SetActive(true);
+                break;
+            default:
+                _allyTargetEffect.SetActive(true);
                 break;
         }
     }
@@ -270,6 +242,4 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
         _allyTargetEffect.SetActive(false);
     }
     #endregion
-
-    // ========================================================================
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _actorName: 
   _portrait: {fileID: 6255626776881019847, guid: 57b4c0397dcd0764e8a29920d42ec03b, type: 3}
-  _actorAnimatorParameter: {fileID: 9100000, guid: 41bec3ce55a0e6748a8dcaa2a8737a11, type: 2}
+  _actorAnimatorParameter: {fileID: 9100000, guid: 5cb580e2c8e1b9f4e9b33e2a795ca130, type: 2}
   _actorRace: {fileID: 11400000, guid: 3543198674c43ee439d9691da59007a3, type: 2}
   _startingCards:
   - {fileID: 11400000, guid: 5ebaab0113bab6441a42633c3eeb45e3, type: 2}
