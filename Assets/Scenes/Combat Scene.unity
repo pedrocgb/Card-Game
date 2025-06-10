@@ -442,6 +442,9 @@ MonoBehaviour:
   - type: 105
     stackingMode: 0
     icon: {fileID: 5251112635998323775, guid: 81f979f8d49fc2a49b7f6ccd51cd7d63, type: 3}
+  - type: 10
+    stackingMode: 1
+    icon: {fileID: 4360865083311393745, guid: 43fc4aee4cd91ec42b4787d724db860e, type: 3}
 --- !u!4 &49525629
 Transform:
   m_ObjectHideFlags: 0
@@ -5752,7 +5755,7 @@ PrefabInstance:
     - target: {fileID: 2967473644843886963, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
       propertyPath: _actorData
       value: 
-      objectReference: {fileID: 11400000, guid: b52c0db2f39e3b94da93704ec00cb166, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3289935725924518161, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -9567,7 +9570,10 @@ MonoBehaviour:
   - level: 1
     parties:
     - enemyPrefabs:
-      - {fileID: 11400000, guid: 767e1cbdb0bc266468775d390193d703, type: 2}
+      - {fileID: 11400000, guid: b70674ba3f265884594b6a8fcf0c4522, type: 2}
+      - {fileID: 11400000, guid: b70674ba3f265884594b6a8fcf0c4522, type: 2}
+      - {fileID: 11400000, guid: b70674ba3f265884594b6a8fcf0c4522, type: 2}
+      - {fileID: 11400000, guid: b70674ba3f265884594b6a8fcf0c4522, type: 2}
   - level: 2
     parties:
     - enemyPrefabs:
@@ -10991,7 +10997,7 @@ PrefabInstance:
     - target: {fileID: 6163624491599570395, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: _actorData
       value: 
-      objectReference: {fileID: 11400000, guid: 1bb3c3ccd7ff0e246bf66de3cf2ac7fd, type: 2}
+      objectReference: {fileID: 11400000, guid: c18ed13a29cf9bb49a4e0e1138a0090d, type: 2}
     - target: {fileID: 6163624491599570395, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: _outlineWidth
       value: 5
@@ -13010,12 +13016,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5044934173528301063, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6163624491599570395, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: _actorData
       value: 
-      objectReference: {fileID: 11400000, guid: 21188d0b0c9ee0d48bdb1cd271e33f2f, type: 2}
+      objectReference: {fileID: 11400000, guid: c18ed13a29cf9bb49a4e0e1138a0090d, type: 2}
     - target: {fileID: 6163624491599570395, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: _outlineWidth
       value: 5
@@ -13675,12 +13681,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5044934173528301063, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6163624491599570395, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: _actorData
       value: 
-      objectReference: {fileID: 11400000, guid: 1bb3c3ccd7ff0e246bf66de3cf2ac7fd, type: 2}
+      objectReference: {fileID: 11400000, guid: c18ed13a29cf9bb49a4e0e1138a0090d, type: 2}
     - target: {fileID: 6163624491599570395, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: _outlineWidth
       value: 5
@@ -16227,10 +16233,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1626863875}
   - component: {fileID: 1626863874}
-  - component: {fileID: 1626863876}
   - component: {fileID: 1626863877}
   - component: {fileID: 1626863878}
   - component: {fileID: 1626863879}
+  - component: {fileID: 1626863880}
   m_Layer: 0
   m_Name: '#UI Managers'
   m_TagString: Untagged
@@ -16275,24 +16281,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1626863876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1626863873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6dd68413684d0b41b391e2b7f0e81be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mainCanvas: {fileID: 714495320}
-  _previewParent: {fileID: 1961489327}
-  _moveDuration: 0.5
-  _flipDuration: 0.3
-  _holdDuration: 0.6
-  _fadeDuration: 0.3
 --- !u!114 &1626863877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16360,6 +16348,24 @@ MonoBehaviour:
     description: Shop
   _offset: {x: 70, y: 20}
   _padding: {x: 20, y: 20}
+--- !u!114 &1626863880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626863873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29c19028878b11341831b8a7a18a2d19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainCanvas: {fileID: 714495320}
+  _previewParent: {fileID: 1961489327}
+  _moveDuration: 0.5
+  _flipDuration: 0.3
+  _holdDuration: 0.6
+  _fadeDuration: 0.3
 --- !u!1 &1691080491
 GameObject:
   m_ObjectHideFlags: 0
@@ -17802,7 +17808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a05dce96959ba4894fb3567525af68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startNodeIntiallySelected: 1
+  _startNodeIntiallySelected: 0
   _mapContainer: {fileID: 1734750543}
   _nodePrefab: Node View
   _linePrefab: Node Line
@@ -17827,7 +17833,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _useCustomSeed: 0
   _seed: 502819772
-  _totalFloors: 7
+  _totalFloors: 4
   _minNodesPerFloor: 2
   _maxNodesPerFloor: 4
   _horizontalSpacing: 2
@@ -17846,10 +17852,7 @@ MonoBehaviour:
   _maxCorruptionPerFloor: 0
   _maxEventsPerFloor: 1
   _maxGeneralsPerFloor: 0
-  _forcedRequirements:
-  - floorIndex: 2
-    nodeType: 2
-    count: 3
+  _forcedRequirements: []
 --- !u!4 &1884940423
 Transform:
   m_ObjectHideFlags: 0
@@ -19208,6 +19211,9 @@ MonoBehaviour:
   - tag: Card Reward UI
     prefab: {fileID: 5903213188334675933, guid: 37a667e2a6ee7064f9c587f5578756f4, type: 3}
     size: 26
+  - tag: Card Preview
+    prefab: {fileID: 5903213188334675933, guid: 3fea426749d2f804b8bd5723e9d9c732, type: 3}
+    size: 8
 --- !u!4 &1975440103
 Transform:
   m_ObjectHideFlags: 0
@@ -19999,7 +20005,7 @@ PrefabInstance:
     - target: {fileID: 2967473644843886963, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
       propertyPath: _actorData
       value: 
-      objectReference: {fileID: 11400000, guid: b52c0db2f39e3b94da93704ec00cb166, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3289935725924518161, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5

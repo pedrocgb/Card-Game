@@ -27,6 +27,13 @@ public class ActorStats : MonoBehaviour
     // Debuffs stats
     private bool _isStunned = false;
     public bool IsStunned => _isStunned;
+    public bool IsRestrained
+    {
+        get
+        {
+           return GetTotalEffectAmount(StatusEffects.Restrained) > 0;
+        }
+    }
 
     // Actions stats
     private int _unmodifiedActionsPerTurn = 0;

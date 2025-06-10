@@ -147,12 +147,21 @@ public class CombatManager : MonoBehaviour
 
     private void createCombatent(List<ActorData> newParty)
     {
+        // 1) Activate the right number of placeholders
         for (int i = 0; i < _persistentEnemiesObjects.Count; i++)
             _persistentEnemiesObjects[i].SetActive(i < newParty.Count);
 
-        UpdateCombatents();
+        // 2) *Do not* re-scan or rebuild _enemyActors yet
+        //    Instead, map each newParty[i] straight onto the matching GameObject:
         for (int i = 0; i < newParty.Count; i++)
-            _enemyActors[i].InitializeEnemy(newParty[i], i + 1);
+        {
+            var go = _persistentEnemiesObjects[i];
+            var ea = go.GetComponent<EnemyActor>();
+            ea.InitializeEnemy(newParty[i], i + 1);
+        }
+
+        // 3) _Now_ you can rebuild your lists and update PositionsManager:
+        UpdateCombatents();
     }
 
     // CombatManager.cs
@@ -189,6 +198,7 @@ public class CombatManager : MonoBehaviour
         _combatents = new List<ActorManager>(all);
         _enemyActors = _combatents.OfType<EnemyActor>().ToList();
         _playerActors = _combatents.OfType<PlayerActor>().ToList();
+        PositionsManager.UpdatePositions();
     }
 
     private void CheckForVictoryOrDefeat()

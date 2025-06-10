@@ -116,7 +116,6 @@ public class MapVisualizer : MonoBehaviour
     private void Start()
     {
         _mapGen.GenerateMap();
-        _combatGen.GenerateCombats();
         VisualizeMap();
     }
 

@@ -38,6 +38,28 @@ public class ActorPosition : MonoBehaviour
         var anchor = PositionAchorSlots.GetAnchor(_parentActor, newPos);
         AnimatePosition(anchor.position, 0.75f);
     }
+
+    public void MoveActor(int amount)
+    {
+        if (_parentActor.Stats.IsRestrained)
+        {
+            Console.Log($"{_parentActor.ActorName} is restrained and cannot move.");
+            return;
+        }
+
+        PositionsManager.MoveActor(_parentActor, amount);
+    }
+
+    public void ForceMovement(int amount)
+    {
+        if (_parentActor.Stats.IsRestrained)
+        {
+            Console.Log($"{_parentActor.ActorName} is restrained and cannot move.");
+            return;
+        }
+
+        PositionsManager.MoveActor(_parentActor, amount);
+    }
     #endregion
 
     // ========================================================================

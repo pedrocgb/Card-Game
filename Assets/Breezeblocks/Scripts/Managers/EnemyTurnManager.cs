@@ -35,7 +35,7 @@ public class EnemyTurnManager : MonoBehaviour
 
         if (enemy.Stats.IsDead)
         {
-            Debug.Log($"[AI] {enemy.name} died mid-turn. Removing then ending.");
+            Console.Log($"[AI] {enemy.name} died mid-turn. Removing then ending.");
             CombatManager.RemoveCombatent(enemy);
             TargetingManager.Instance.ClearHightLights();
             CombatManager.Instance.EndTurn();
@@ -45,7 +45,7 @@ public class EnemyTurnManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         if (enemy.Stats.IsStunned)
         {
-            Debug.Log($"[AI] {enemy.name} is stunned. Skipping.");
+            Console.Log($"[AI] {enemy.name} is stunned. Skipping.");
             CombatManager.Instance.EndTurn();
             yield break;
         }
@@ -87,7 +87,7 @@ public class EnemyTurnManager : MonoBehaviour
             var possibleTargets = UCardValidator.GetAllValidTargets(card, enemy);
 
             // c) if this card cannot target self, remove the enemy from the list
-            if (!card.CanTargetSelf)            
+            if (!card.CanTargetSelf && card.TargetType != UEnums.Target.Self)            
                 possibleTargets = possibleTargets.Where(t => t != (ActorManager)enemy).ToList();
             
 
@@ -111,7 +111,7 @@ public class EnemyTurnManager : MonoBehaviour
         // 3) pick one and re-calc its filtered target list
         var selectedCard = playableCards[Random.Range(0, playableCards.Count)];
         var validTargets = UCardValidator.GetAllValidTargets(selectedCard, enemy);
-        if (!selectedCard.CanTargetSelf)
+        if (!selectedCard.CanTargetSelf && selectedCard.TargetType != UEnums.Target.Self)
             validTargets = validTargets.Where(t => t != (ActorManager)enemy).ToList();
 
         // 4) highlight
@@ -129,7 +129,7 @@ public class EnemyTurnManager : MonoBehaviour
             var chosen = validTargets[Random.Range(0, validTargets.Count)];
             chosen.ShowTargetFeedback(selectedCard.TargetType);
             yield return new WaitForSeconds(0.5f);
-            CardPreviewUI.ShowEnemyCard(enemy, selectedCard);
+            CardPreviewManager.ShowEnemyCard(enemy, selectedCard);
             yield return new WaitForSeconds(0.5f);
 
             CardEffectResolver.ApplyEffects(
@@ -147,7 +147,7 @@ public class EnemyTurnManager : MonoBehaviour
             foreach (var t in validTargets)
                 t.ShowTargetFeedback(selectedCard.TargetType);
             yield return new WaitForSeconds(0.5f);
-            CardPreviewUI.ShowEnemyCard(enemy, selectedCard);
+            CardPreviewManager.ShowEnemyCard(enemy, selectedCard);
             yield return new WaitForSeconds(0.5f);
 
             CardEffectResolver.ApplyEffects(

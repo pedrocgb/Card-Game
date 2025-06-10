@@ -78,10 +78,10 @@ public static class CardEffectResolver
 
                     // Other effects
                     case UEnums.CardEffects.Movement:
-                        PositionsManager.MoveActor(target, effect.Amount);
+                        target.Positioning.ForceMovement(effect.Amount);
                         break;
                     case UEnums.CardEffects.SelfMovement:
-                        PositionsManager.MoveActor(Source, effect.Amount);
+                        Source.Positioning.MoveActor(effect.Amount);
                         break;
                 }
             }

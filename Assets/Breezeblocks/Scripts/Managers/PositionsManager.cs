@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -177,12 +177,17 @@ public class PositionsManager : MonoBehaviour
     #endregion
 
     // ========================================================================
-    private void SortAndApplyPositions(List<ActorManager> Party)
+    private void SortAndApplyPositions(List<ActorManager> party)
     {
-        for (int i = 0; i < Party.Count; i++)
+        // 1) Filter out dead actors, but DON’T re-sort by their old CurrentPosition
+        var ordered = party
+            .Where(a => !a.Stats.IsDead)
+            .ToList();
+
+        // 2) Now assign slots based on the new list order
+        for (int i = 0; i < ordered.Count; i++)
         {
-            if (!Party[i].Stats.IsDead)
-                Party[i].Positioning.SetCombatPosition(i + 1);
+            ordered[i].Positioning.SetCombatPosition(i + 1);
         }
     }
 

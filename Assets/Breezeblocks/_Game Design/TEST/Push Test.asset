@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71a19dccf1348014ead4ded939d7251e, type: 3}
-  m_Name: Test Burn
+  m_Name: Push Test
   m_EditorClassIdentifier: 
-  _cardName: Test Burn
-  _cardDescription: BURN
-  _cardImage: {fileID: 2021654916430229660, guid: 8b3560dccf8a7f84184c75241015bbbd, type: 3}
-  _actionCost: 1
+  _cardName: Push Test
+  _cardDescription: Push 1
+  _cardOrigin: 1
+  _cardImage: {fileID: -754878435, guid: 974fd4d62621aff44a47d580012b1df2, type: 3}
+  _actionCost: 0
+  _cardRarity: 1
+  _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
   _cardEffects:
-  - EffectType: 0
-    Amount: 11
-    Duration: 0
-  - EffectType: 6
+  - EffectType: 200
     Amount: 1
-    Duration: 3
-  _cardType: 1
+    Duration: 0
+  _cardType: 32
   _positions: 01000000020000000300000004000000
   _posIcon: {fileID: 21300000, guid: 82ad41af0fecd294c8aa2ad5394e66aa, type: 3}
   _targetType: 3
   _targetScope: 1
   _targetPositions: 01000000020000000300000004000000
-  _canTargetSelf: 0
-  _targetIcon: {fileID: 21300000, guid: e41ebb9ac4c86fb438283eb392816e0e, type: 3}
+  _canTargetSelf: 1
+  _targetIcon: {fileID: 21300000, guid: ad456bd8d3660bc46a2dc57f713a3450, type: 3}

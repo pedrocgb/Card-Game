@@ -4,10 +4,10 @@ using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class CardPreviewUI : MonoBehaviour
+public class CardPreviewManager : MonoBehaviour
 {
     #region Variables and Properties
-    public static CardPreviewUI Instance;
+    public static CardPreviewManager Instance;
 
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField] 
@@ -58,8 +58,8 @@ public class CardPreviewUI : MonoBehaviour
     private IEnumerator showEnemyCard(EnemyActor enemy, CardInstance cardData)
     {
         // 1) Spawn & initialize
-        GameObject go = ObjectPooler.SpawnFromPool("Card", Vector3.zero, Quaternion.identity);
-        CardUI cardUI = go.GetComponent<CardUI>();
+        GameObject go = ObjectPooler.SpawnFromPool("Card Preview", Vector3.zero, Quaternion.identity);
+        CardPreview cardUI = go.GetComponent<CardPreview>();
         cardUI.Initialize(cardData);
         cardUI.transform.SetParent(_previewParent, false);
 

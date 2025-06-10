@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71a19dccf1348014ead4ded939d7251e, type: 3}
-  m_Name: Test Poison
+  m_Name: Self Kill
   m_EditorClassIdentifier: 
-  _cardName: Test Poison
-  _cardDescription: 
-  _cardImage: {fileID: -6683329395495822188, guid: bb2b91bbb58350e4d8fbe6442d18b869, type: 3}
-  _actionCost: 1
+  _cardName: Self Kill
+  _cardDescription: Kill yourself
+  _cardOrigin: 1
+  _cardImage: {fileID: -1689714043, guid: b5370efeb5c5ed74e9363d4268e12f39, type: 3}
+  _actionCost: 0
+  _cardRarity: 1
+  _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
   _cardEffects:
-  - EffectType: 0
-    Amount: 6
+  - EffectType: 1
+    Amount: 200
     Duration: 0
-  - EffectType: 7
-    Amount: 7
-    Duration: 7
   _cardType: 1
   _positions: 01000000020000000300000004000000
   _posIcon: {fileID: 21300000, guid: 82ad41af0fecd294c8aa2ad5394e66aa, type: 3}
-  _targetType: 3
+  _targetType: 1
   _targetScope: 1
   _targetPositions: 01000000020000000300000004000000
   _canTargetSelf: 0
