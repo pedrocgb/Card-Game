@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: Protect
   m_EditorClassIdentifier: 
   _cardName: Protect
-  _cardDescription: Apply 6 Block.
+  _cardDescription: Apply 6 Block
+  _cardOrigin: 2
   _cardImage: {fileID: 822932673, guid: 974fd4d62621aff44a47d580012b1df2, type: 3}
   _actionCost: 1
+  _cardRarity: 1
+  _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
   _cardEffects:
   - EffectType: 101
     Amount: 6
@@ -26,4 +29,5 @@ MonoBehaviour:
   _targetType: 2
   _targetScope: 1
   _targetPositions: 01000000020000000300000004000000
+  _canTargetSelf: 0
   _targetIcon: {fileID: 21300000, guid: 4a2fe08ef900a304a954bfc81bc411de, type: 3}

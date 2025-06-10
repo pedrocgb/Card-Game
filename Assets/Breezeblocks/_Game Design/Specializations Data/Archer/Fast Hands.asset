@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Fast Hands
   _cardDescription: Draws 2 Cards
+  _cardOrigin: 2
   _cardImage: {fileID: 171105975, guid: 3d75b524956dad146a772e86ce8f9252, type: 3}
   _actionCost: 1
+  _cardRarity: 1
+  _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
   _cardEffects:
   - EffectType: 201
     Amount: 2

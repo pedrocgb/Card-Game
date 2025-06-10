@@ -49,6 +49,9 @@ public static class CardEffectResolver
                     case UEnums.CardEffects.Poison:
                         target.Stats.SufferPoison(effect.Amount, effect.Duration);
                         break;
+                    case UEnums.CardEffects.Bleed:
+                        target.Stats.SufferBleed(effect.Amount, effect.Duration);
+                        break;
 
                     // Buff effects
                     case UEnums.CardEffects.Heal:

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9a0da49b5b2178141aeb08d938e71fe0
+guid: a7e9da66a43e9eb41809b80ef6260a0f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3441241762525020502
-    second: Skeleton Rigging Sprite_0
+      213: -250745664381918284
+    second: spider_01_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Skeleton Rigging Sprite_0
+      name: spider_01_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 291
-        height: 615
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aaef47679d04e30d0800000000000000
-      internalID: -3441241762525020502
+      spriteID: 4b3eb81952c258cf0800000000000000
+      internalID: -250745664381918284
       vertices: []
       indices: 
       edges: []

@@ -76,80 +76,98 @@ public class EnemyTurnManager : MonoBehaviour
     {
         List<CardInstance> playableCards = new List<CardInstance>();
 
-        // Loop through all cards in the enemy's hand
+        // 1) Build list of playable cards, respecting CanTargetSelf
         foreach (var card in enemy.Hand.CurrentHand)
         {
-            // Check if the card is playable
+            // a) base playability
             if (!UCardValidator.IsCardPlayable(card, enemy, PositionsManager.GetTeam<PlayerActor>()))
-            {
-                Console.Log($"[AI] Skipping card {card.CardName} (not playable)");
                 continue;
-            }
 
+            // b) get all valid targets
             var possibleTargets = UCardValidator.GetAllValidTargets(card, enemy);
-            if (card.TargetScope == UEnums.TargetAmount.All ||
-                possibleTargets.Count > 0)
-            {
-                playableCards.Add(card);
-            }
 
+            // c) if this card cannot target self, remove the enemy from the list
+            if (!card.CanTargetSelf)            
+                possibleTargets = possibleTargets.Where(t => t != (ActorManager)enemy).ToList();
+            
+
+            // d) decide if card is okay:
+            //    - if it's an AoE/all card, we need at least one valid target
+            //    - if it's a single-target card, we also need at least one
+            bool ok = possibleTargets.Count > 0;
+            if (card.TargetScope == UEnums.TargetAmount.All && ok)
+                playableCards.Add(card);
+            else if (card.TargetScope == UEnums.TargetAmount.Single && ok)
+                playableCards.Add(card);
         }
 
+        // 2) nothing to play?
         if (playableCards.Count == 0)
         {
             _cardPlayed = false;
             yield break;
         }
 
-        // Choose random card to play
-        CardInstance selectedCard = playableCards[Random.Range(0, playableCards.Count)];
-        // Get all valid targets
-        List<ActorManager> validTargets = UCardValidator.GetAllValidTargets(selectedCard, enemy);
-        // Highlight valid targets
-        TargetingManager.Instance.HighLightActors(enemy, selectedCard.TargetPositions, selectedCard.TargetType, selectedCard.CanTargetSelf);
+        // 3) pick one and re-calc its filtered target list
+        var selectedCard = playableCards[Random.Range(0, playableCards.Count)];
+        var validTargets = UCardValidator.GetAllValidTargets(selectedCard, enemy);
+        if (!selectedCard.CanTargetSelf)
+            validTargets = validTargets.Where(t => t != (ActorManager)enemy).ToList();
 
-        yield return new WaitForSeconds(0.4f); // simulate thinking time
+        // 4) highlight
+        TargetingManager.Instance.HighLightActors(
+            enemy,
+            selectedCard.TargetPositions,
+            selectedCard.TargetType,
+            selectedCard.CanTargetSelf
+        );
+        yield return new WaitForSeconds(0.4f);
 
+        // 5) actually play it
         if (selectedCard.TargetScope == UEnums.TargetAmount.Single)
         {
-            var chosenTarget = validTargets[Random.Range(0, validTargets.Count)];
-            chosenTarget.ShowTargetFeedback(selectedCard.TargetType);
-
+            var chosen = validTargets[Random.Range(0, validTargets.Count)];
+            chosen.ShowTargetFeedback(selectedCard.TargetType);
+            yield return new WaitForSeconds(0.5f);
+            CardPreviewUI.ShowEnemyCard(enemy, selectedCard);
             yield return new WaitForSeconds(0.5f);
 
-            CardPreviewUI.ShowEnemyCard(enemy, selectedCard);
-
-            yield return new WaitForSeconds(0.5f); // simulate casting time
-
-            CardEffectResolver.ApplyEffects(selectedCard.CardEffects, enemy, chosenTarget, selectedCard);
-            chosenTarget.HideTargetFeedBack();
-
-            Console.Log($"Enemy {enemy.name} played {selectedCard.CardName} on {chosenTarget.name}");
+            CardEffectResolver.ApplyEffects(
+                selectedCard.CardEffects,
+                enemy,
+                chosen,
+                selectedCard
+            );
+            chosen.HideTargetFeedBack();
+            Debug.Log($"Enemy {enemy.name} played {selectedCard.CardName} on {chosen.name}");
         }
         else
         {
+            // multi‐target / AoE
             foreach (var t in validTargets)
                 t.ShowTargetFeedback(selectedCard.TargetType);
-
+            yield return new WaitForSeconds(0.5f);
+            CardPreviewUI.ShowEnemyCard(enemy, selectedCard);
             yield return new WaitForSeconds(0.5f);
 
-            CardPreviewUI.ShowEnemyCard(enemy, selectedCard);
-
-            yield return new WaitForSeconds(0.5f); // simulate casting time
-
-            CardEffectResolver.ApplyEffects(selectedCard.CardEffects, enemy, null, selectedCard);
-
+            CardEffectResolver.ApplyEffects(
+                selectedCard.CardEffects,
+                enemy,
+                null,   // or pass the list if your resolver supports it
+                selectedCard
+            );
             foreach (var t in validTargets)
                 t.HideTargetFeedBack();
-
-            Console.Log($"Enemy {enemy.name} played {selectedCard.CardName} on all valid targets");
+            Debug.Log($"Enemy {enemy.name} played {selectedCard.CardName} on all valid targets");
         }
 
+        // 6) cleanup
         TargetingManager.Instance.ClearHightLights();
         enemy.Stats.SpendAction(selectedCard.ActionCost);
         enemy.Hand.DiscardCard(selectedCard);
         _cardPlayed = true;
     }
+
     #endregion
 
     // ========================================================================

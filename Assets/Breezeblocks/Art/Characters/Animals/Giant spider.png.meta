@@ -118,12 +118,12 @@ TextureImporter:
       name: Giant spider_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 224
-        width: 411
-        height: 800
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 39
+        y: 511
+        width: 322
+        height: 251
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -140,12 +140,12 @@ TextureImporter:
       name: Giant spider_1
       rect:
         serializedVersion: 2
-        x: 11
-        y: 0
-        width: 385
-        height: 437
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 488
+        y: 513
+        width: 315
+        height: 251
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: Giant spider_2
       rect:
         serializedVersion: 2
-        x: 439
-        y: 417
-        width: 365
-        height: 607
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 872
+        y: 513
+        width: 358
+        height: 226
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -184,12 +184,12 @@ TextureImporter:
       name: Giant spider_3
       rect:
         serializedVersion: 2
-        x: 465
-        y: 1
-        width: 390
-        height: 415
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 52
+        y: 185
+        width: 322
+        height: 247
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -206,12 +206,12 @@ TextureImporter:
       name: Giant spider_4
       rect:
         serializedVersion: 2
-        x: 826
-        y: 0
-        width: 698
-        height: 1024
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 484
+        y: 185
+        width: 359
+        height: 226
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -228,12 +228,12 @@ TextureImporter:
       name: Giant spider_5
       rect:
         serializedVersion: 2
-        x: 872
-        y: 179
-        width: 495
-        height: 221
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 874
+        y: 183
+        width: 472
+        height: 217
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -250,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: cf279c24a1c45134ba98e3385eb9c067
     internalID: 0
     vertices: []
     indices: 
@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Giant spider_0: 7793551060224492780
+      Giant spider_1: -4690294666388465825
+      Giant spider_2: -4143582168024681511
+      Giant spider_3: -7235782486286128952
+      Giant spider_4: 827557907972208331
+      Giant spider_5: -2619264789773369926
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -112,28 +112,6 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Skeleton_0
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 177
-        width: 253
-        height: 561
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8a9e3e5f5e3d5424b92b84d9f34bd11a
-      internalID: 2024543061
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Skeleton_1
       rect:
         serializedVersion: 2

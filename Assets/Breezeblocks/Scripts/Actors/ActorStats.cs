@@ -80,9 +80,19 @@ public class ActorStats : MonoBehaviour
 
         ResolveStartTurnEffects();
         _actor.UI.UpdateStatusUI(_activeEffects);
-        ActorsUI.UpdateUserInterface(_actor.ActorName, _actor.Data.ActorRace.RaceName, _actor.Data.ActorSpecialization.SpecializationName, 
-            _currentHealth, _maxHealth, _currentActions, _actionsPerTurn, HealthPercentage,
-            _actor.Data.Portrait, _actor.Deck.CurrentDeck.Count, _actor.Deck.DiscardPile.Count);
+
+        if (_actor.Data.HasSpecialization)
+        {
+            ActorsUI.UpdateUserInterface(_actor.ActorName, _actor.Data.ActorRace.RaceName, _actor.Data.ActorSpecialization.SpecializationName,
+                _currentHealth, _maxHealth, _currentActions, _actionsPerTurn, HealthPercentage,
+                _actor.Data.Portrait, _actor.Deck.CurrentDeck.Count, _actor.Deck.DiscardPile.Count);
+        }
+        else
+        {
+            ActorsUI.UpdateUserInterface(_actor.ActorName, _actor.Data.ActorRace.RaceName, string.Empty,
+               _currentHealth, _maxHealth, _currentActions, _actionsPerTurn, HealthPercentage,
+               _actor.Data.Portrait, _actor.Deck.CurrentDeck.Count, _actor.Deck.DiscardPile.Count);
+        }
     }
 
     public void OnEndTurn()

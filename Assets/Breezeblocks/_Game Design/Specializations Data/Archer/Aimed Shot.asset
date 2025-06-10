@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Aimed Shot
   _cardDescription: Deals 11 Damage
+  _cardOrigin: 2
   _cardImage: {fileID: -791211164, guid: 5a360552dad24ae4db8afc57c072fff6, type: 3}
   _actionCost: 3
+  _cardRarity: 1
+  _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
   _cardEffects:
   - EffectType: 0
     Amount: 11

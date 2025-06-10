@@ -31,6 +31,7 @@ public class CardRewardPortrait : MonoBehaviour
     public void Initialize(Sprite Portrait, string ActorName, string ActorRace, string ActorSpec, int DeckSize, ActorManager Actor)
     {
         MyActor = Actor;
+        _skipRewardBtn.interactable = true;
 
         if (Actor.Stats.IsDead)
         {

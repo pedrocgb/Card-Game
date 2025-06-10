@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a19dccf1348014ead4ded939d7251e, type: 3}
+  m_Name: Evade
+  m_EditorClassIdentifier: 
+  _cardName: Evade
+  _cardDescription: Gain Dodge
+  _cardOrigin: 1
+  _cardImage: {fileID: -1790123204, guid: ab5b9a0af6a3f594182583175bf13886, type: 3}
+  _actionCost: 1
+  _cardRarity: 1
+  _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
+  _cardEffects:
+  - EffectType: 104
+    Amount: 1
+    Duration: 1
+  _cardType: 2
+  _positions: 01000000020000000300000004000000
+  _posIcon: {fileID: 21300000, guid: 82ad41af0fecd294c8aa2ad5394e66aa, type: 3}
+  _targetType: 1
+  _targetScope: 1
+  _targetPositions: 
+  _canTargetSelf: 0
+  _targetIcon: {fileID: 21300000, guid: 4a2fe08ef900a304a954bfc81bc411de, type: 3}

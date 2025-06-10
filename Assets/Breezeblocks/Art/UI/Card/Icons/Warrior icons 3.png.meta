@@ -1,0 +1,420 @@
+fileFormatVersion: 2
+guid: 8e338582b71eab94b82b1a1ea68ac87e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 219977311682987844
+    second: Warrior icons 3_0
+  - first:
+      213: -1562180739199614267
+    second: Warrior icons 3_1
+  - first:
+      213: -2294544595150514757
+    second: Warrior icons 3_2
+  - first:
+      213: -6069634359523599217
+    second: Warrior icons 3_3
+  - first:
+      213: -2323799118172023131
+    second: Warrior icons 3_4
+  - first:
+      213: -4321039520456737534
+    second: Warrior icons 3_5
+  - first:
+      213: 6368386281675997005
+    second: Warrior icons 3_6
+  - first:
+      213: 5549764790557020768
+    second: Warrior icons 3_7
+  - first:
+      213: 8884583156829259081
+    second: Warrior icons 3_8
+  - first:
+      213: 654978455746165773
+    second: Warrior icons 3_9
+  - first:
+      213: 7947160292357877860
+    second: Warrior icons 3_10
+  - first:
+      213: -3474591461736660345
+    second: Warrior icons 3_11
+  - first:
+      213: -1449747952789132451
+    second: Warrior icons 3_12
+  - first:
+      213: -504237228603500356
+    second: Warrior icons 3_13
+  - first:
+      213: -8499399348629734246
+    second: Warrior icons 3_14
+  - first:
+      213: -9075879420470282219
+    second: Warrior icons 3_15
+  - first:
+      213: 4798993319840816767
+    second: Warrior icons 3_16
+  - first:
+      213: -408268136651709664
+    second: Warrior icons 3_17
+  - first:
+      213: 809285937675371857
+    second: Warrior icons 3_18
+  - first:
+      213: 6386824706309397425
+    second: Warrior icons 3_19
+  - first:
+      213: 6917029040424099752
+    second: Warrior icons 3_20
+  - first:
+      213: 2901802615631882755
+    second: Warrior icons 3_21
+  - first:
+      213: -7921657434485427236
+    second: Warrior icons 3_22
+  - first:
+      213: -784942681577423760
+    second: Warrior icons 3_23
+  - first:
+      213: -2249844442069067521
+    second: Warrior icons 3_24
+  - first:
+      213: -7897790781665664849
+    second: Warrior icons 3_25
+  - first:
+      213: -5512918272829084975
+    second: Warrior icons 3_26
+  - first:
+      213: 8357523977211297641
+    second: Warrior icons 3_27
+  - first:
+      213: 6446870995448897880
+    second: Warrior icons 3_28
+  - first:
+      213: 2754459612431546281
+    second: Warrior icons 3_29
+  - first:
+      213: -2256730018535590146
+    second: Warrior icons 3_30
+  - first:
+      213: 2948746900142620781
+    second: Warrior icons 3_31
+  - first:
+      213: -5849795474826201273
+    second: Warrior icons 3_32
+  - first:
+      213: 3545727595188879374
+    second: Warrior icons 3_33
+  - first:
+      213: 376940812007895792
+    second: Warrior icons 3_34
+  - first:
+      213: -7265322622876250519
+    second: Warrior icons 3_35
+  - first:
+      213: -3198302611471368874
+    second: Warrior icons 3_36
+  - first:
+      213: 9219407496165539743
+    second: Warrior icons 3_37
+  - first:
+      213: 6695489904931379300
+    second: Warrior icons 3_38
+  - first:
+      213: 2969200646416272788
+    second: Warrior icons 3_39
+  - first:
+      213: -8115125628680437619
+    second: Warrior icons 3_40
+  - first:
+      213: 5259202630316756499
+    second: Warrior icons 3_41
+  - first:
+      213: -1610672930705291321
+    second: Warrior icons 3_42
+  - first:
+      213: -4542910082089026092
+    second: Warrior icons 3_43
+  - first:
+      213: -6315121613927730735
+    second: Warrior icons 3_44
+  - first:
+      213: -4118044713775768697
+    second: Warrior icons 3_45
+  - first:
+      213: 5215692519579083624
+    second: Warrior icons 3_46
+  - first:
+      213: 2527953424599874047
+    second: Warrior icons 3_47
+  - first:
+      213: -468092960011478528
+    second: Warrior icons 3_48
+  - first:
+      213: -2731567077325778402
+    second: Warrior icons 3_49
+  - first:
+      213: -6716989666550265238
+    second: Warrior icons 3_50
+  - first:
+      213: 4949303305684070084
+    second: Warrior icons 3_51
+  - first:
+      213: -1916517043128519849
+    second: Warrior icons 3_52
+  - first:
+      213: -4015023883700189509
+    second: Warrior icons 3_53
+  - first:
+      213: 4660882409404621449
+    second: Warrior icons 3_54
+  - first:
+      213: -6518772953434091970
+    second: Warrior icons 3_55
+  - first:
+      213: 2205896515884843901
+    second: Warrior icons 3_56
+  - first:
+      213: 5200188413190553954
+    second: Warrior icons 3_57
+  - first:
+      213: 7665699843091361960
+    second: Warrior icons 3_58
+  - first:
+      213: -2291726453780462786
+    second: Warrior icons 3_59
+  - first:
+      213: 1422000191129286558
+    second: Warrior icons 3_60
+  - first:
+      213: 7905144455613662524
+    second: Warrior icons 3_61
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Command
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 1048
+        width: 321
+        height: 303
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ffe72032ae323242a4c9a869da07d55
+      internalID: 1039907429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Disarm
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 1052
+        width: 307
+        height: 298
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca8efe82125899444ac298fbed15fe97
+      internalID: 92270951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Intercept
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 636
+        width: 312
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fcd8d05c97ca634c9eef4750cfde2a3
+      internalID: 1841683467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Intimidate
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 638
+        width: 301
+        height: 297
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2be9a6555d2ac4886eea1306c62921
+      internalID: 1327611162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Whirlwind
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 227
+        width: 309
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a5a65348b7f17947826bd4c58ed4d9a
+      internalID: -1198212767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 2692ce92ae8bcd44da9863e0e83e6b38
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":1536.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Command: 1039907429
+      Disarm: 92270951
+      Intercept: 1841683467
+      Intimidate: 1327611162
+      Whirlwind: -1198212767
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

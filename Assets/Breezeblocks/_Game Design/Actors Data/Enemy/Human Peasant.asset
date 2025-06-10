@@ -33,6 +33,6 @@ MonoBehaviour:
   _startingSpecializedCards: []
   _baseMaxHealth: 8
   _baseActionsPerTurn: 3
-  _initiativeBonus: 1
+  _initiativeBonus: 0
   _baseCardBuy: 4
   _maxHandSize: 8

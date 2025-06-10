@@ -58,7 +58,7 @@ Material:
     m_Floats:
     - CORNERS: 1
     - _ComparisonFloat: 43
-    - _OutlineThickness: 3
+    - _OutlineThickness: 8
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:

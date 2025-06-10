@@ -94,7 +94,13 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
 
     public virtual void Initialize()
     {
-        _actorName = UConstants.LIST_OF_NAMES[Random.Range(0, UConstants.LIST_OF_NAMES.Count)];
+        string aName = string.Empty;
+        if (_actorData.ActorName == "" ||
+            _actorData.ActorName == string.Empty)
+            _actorName = UConstants.LIST_OF_NAMES[Random.Range(0, UConstants.LIST_OF_NAMES.Count)];
+        else
+            _actorName = _actorData.ActorName;
+
         gameObject.name = _actorName;
         _actorAnimator.runtimeAnimatorController = _actorData.ActorAnimatorParameter;
 

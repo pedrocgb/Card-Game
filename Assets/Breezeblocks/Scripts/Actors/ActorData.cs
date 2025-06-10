@@ -6,6 +6,7 @@ using UnityEngine;
 public class ActorData : ScriptableObject
 {
     [FoldoutGroup("Actor Info", expanded:true)]
+    [InfoBox("Actor Name, leave empty for a random name in the name generator list from the Game Constants.", InfoMessageType.Warning)]
     [SerializeField]
     private string _actorName = string.Empty;
     public string ActorName => _actorName;

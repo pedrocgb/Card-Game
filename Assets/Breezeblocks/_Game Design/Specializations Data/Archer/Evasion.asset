@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Evasion
   _cardDescription: Gain 1x Dodge
+  _cardOrigin: 2
   _cardImage: {fileID: -6009022535894784331, guid: 8d9ae6617f46a534c87cbc96e6693d0c, type: 3}
   _actionCost: 1
+  _cardRarity: 1
+  _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
   _cardEffects:
   - EffectType: 104
     Amount: 1

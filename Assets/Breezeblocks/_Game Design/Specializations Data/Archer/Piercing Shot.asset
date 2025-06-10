@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Piercing Shot
   _cardDescription: Deals 3 Damage to ALL targets.
+  _cardOrigin: 2
   _cardImage: {fileID: -7935393282397795651, guid: 8d9ae6617f46a534c87cbc96e6693d0c, type: 3}
   _actionCost: 2
+  _cardRarity: 1
+  _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
   _cardEffects:
   - EffectType: 0
     Amount: 3
