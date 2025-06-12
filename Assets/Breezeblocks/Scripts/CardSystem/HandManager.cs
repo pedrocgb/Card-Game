@@ -365,6 +365,12 @@ public class HandManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f); // to allow any previous animations to finish
 
+        if (_actor.Stats.IsDead)
+        {
+            Console.Log("Cannot lock cards, actor is dead.");
+            yield break;
+        }
+
         var unlockedCards = _currentHand
             .Where(c => !c.IsLocked)
             .ToList();

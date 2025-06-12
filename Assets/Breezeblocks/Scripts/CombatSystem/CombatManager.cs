@@ -106,7 +106,6 @@ public class CombatManager : MonoBehaviour
         TurnOrderUI.Instance.AdvanceTurn();
         _currentCombatent.EndTurn();
         AdvanceToNextLivingActor();
-
         NewTurn();
     }
 
@@ -118,16 +117,15 @@ public class CombatManager : MonoBehaviour
         int start = _currentTurnIndex;
         for (int i = 1; i <= cnt; i++)
         {
-            int nxt = start + i;            // no %cnt here
+            int nxt = start + i;
             if (nxt >= cnt)
-                break;                      // we’ve gone past the last actor
+                break;
             if (!_turnOrder[nxt].Stats.IsDead)
             {
                 _currentTurnIndex = nxt;
                 return;
             }
         }
-        // if we get here, we've exhausted the list → will trigger new round
         _currentTurnIndex = cnt;
     }
 
@@ -135,24 +133,21 @@ public class CombatManager : MonoBehaviour
 
     // ========================================================================
 
-    #region Party & Removal
+    #region Party & Death Handling
     private void startRound()
     {
         if (CombatEnded) return;
 
         _currentTurnIndex = 0;
-        RollInitiative();       
+        RollInitiative();
         NewTurn();
     }
 
     private void createCombatent(List<ActorData> newParty)
     {
-        // 1) Activate the right number of placeholders
         for (int i = 0; i < _persistentEnemiesObjects.Count; i++)
             _persistentEnemiesObjects[i].SetActive(i < newParty.Count);
 
-        // 2) *Do not* re-scan or rebuild _enemyActors yet
-        //    Instead, map each newParty[i] straight onto the matching GameObject:
         for (int i = 0; i < newParty.Count; i++)
         {
             var go = _persistentEnemiesObjects[i];
@@ -160,36 +155,30 @@ public class CombatManager : MonoBehaviour
             ea.InitializeEnemy(newParty[i], i + 1);
         }
 
-        // 3) _Now_ you can rebuild your lists and update PositionsManager:
         UpdateCombatents();
     }
 
-    // CombatManager.cs
+    // Modified: do NOT remove from _turnOrder list on death; only adjust index and UI
     private void removeCombatent(ActorManager dead)
     {
-        // 1) Find the slot in the current turn order
+        // mark dead (Stats.IsDead should already be true when called)
         int idx = _turnOrder.IndexOf(dead);
         if (idx < 0) return;
 
-        Console.Log($"[Combat] Removing {dead.name} @ idx={idx}.  pre-idx={_currentTurnIndex}, count={_turnOrder.Count}");
+        Console.Log($"[Combat] Handling death of {dead.name} @ idx={idx}. pre-idx={_currentTurnIndex}, count={_turnOrder.Count}");
 
-        // 2) If they were at or before the current pointer, back it up so we don't skip
+        // adjust index so next living actor isn't skipped
         if (idx <= _currentTurnIndex)
             _currentTurnIndex = Mathf.Max(0, _currentTurnIndex - 1);
 
-        // 3) Remove exactly that entry
-        _turnOrder.RemoveAt(idx);
+        // remove only UI icon for dead actor
         TurnOrderUI.Instance.RemoveActorFromTurn(dead);
 
-        Console.Log($"[Combat] After removal: new-idx={_currentTurnIndex}, count={_turnOrder.Count}");
-
-        // update the actor lists too, so _playerActors/_enemyActors reflect the new state
+        // refresh actor lists for win/lose checks
         _enemyActors = _combatents.OfType<EnemyActor>().ToList();
         _playerActors = _combatents.OfType<PlayerActor>().ToList();
 
-        // now check for end-of-combat
         CheckForVictoryOrDefeat();
-
     }
 
     private void UpdateCombatents()
@@ -215,7 +204,6 @@ public class CombatManager : MonoBehaviour
         {
             CombatEnded = true;
             Console.Log("Defeat...");
-            // game-over screen, reload, etc.
             EndCombat();
         }
     }
@@ -226,6 +214,7 @@ public class CombatManager : MonoBehaviour
     #region Cleanup
     private void startNewCombat()
     {
+        _currentRound = 0;
         CombatEnded = false;
         startRound();
     }
@@ -241,6 +230,4 @@ public class CombatManager : MonoBehaviour
         }
     }
     #endregion
-
-    // ========================================================================
 }

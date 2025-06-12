@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 846fe29fb228318439d02bed391d5f77, type: 3}
   m_Name: Human Fighter
   m_EditorClassIdentifier: 
-  _actorName: 
+  _actorName: Fighter
   _portrait: {fileID: -4176156179168271795, guid: f0ab33ac2ad531043bbcdc6c44460ed6, type: 3}
   _actorAnimatorParameter: {fileID: 9100000, guid: 3c919e0774cd4be4a99b69860edf12ce, type: 2}
   _actorRace: {fileID: 11400000, guid: 3543198674c43ee439d9691da59007a3, type: 2}

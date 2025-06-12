@@ -69,6 +69,14 @@ public class PlayerTurnManager : MonoBehaviour
             _actor.Stats.SpendAction(_card.ActionCost);
             CardEffectResolver.ApplyEffects(_card.CardEffects, _actor, TargetingManager.Instance.CurrentTarget, _card);
 
+            // if I just killed myself, end the turn right away
+            if (_actor.Stats.IsDead)
+            {
+                Console.Log($"[Player] {_actor.name} died mid-turn. Ending turn.");
+                CombatManager.Instance.EndTurn();
+                yield break;
+            }
+
             _actor.Hand.DiscardCard(_selectedCard);
             _targetingManager.ClearHightLights();
             _targetingManager.SetTarget(null);

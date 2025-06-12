@@ -54,6 +54,15 @@ public class EnemyTurnManager : MonoBehaviour
         {
             _cardPlayed = false;
             yield return StartCoroutine(TryPlayCard(enemy));
+
+            if (enemy.Stats.IsDead)
+            {
+                Console.Log($"[AI] {enemy.name} died mid-turn after playing a card. Ending turn.");
+                TargetingManager.Instance.ClearHightLights();
+                CombatManager.Instance.EndTurn();
+                yield break;
+            }
+
             if (!_cardPlayed) break;
             yield return new WaitForSeconds(0.5f);
         }

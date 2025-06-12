@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 846fe29fb228318439d02bed391d5f77, type: 3}
   m_Name: Human Hunter
   m_EditorClassIdentifier: 
-  _actorName: 
+  _actorName: Hunter
   _portrait: {fileID: -322113226, guid: bd93a5eb2744c6743a538a61fd3b708e, type: 3}
   _actorAnimatorParameter: {fileID: 9100000, guid: 4669e39e39f9bbe4b96c5822bd2d3c8b, type: 2}
   _actorRace: {fileID: 11400000, guid: 3543198674c43ee439d9691da59007a3, type: 2}
