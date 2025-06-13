@@ -73,6 +73,8 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     protected UEnums.Target _currentAttacker = UEnums.Target.Self;
     #endregion
 
+    // ========================================================================
+
     #region Initialization
     protected virtual void Awake()
     {
@@ -108,6 +110,8 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     }
     #endregion
 
+    // ========================================================================
+
     #region Turn Methods
     public void RollInitiative()
     {
@@ -135,6 +139,8 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
         _myStats.OnEndTurn();
     }
     #endregion
+
+    // ========================================================================
 
     #region Animations and Effects Methods
     public void HightLightActor(UEnums.Target TargetFaction)
@@ -185,6 +191,8 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     }
     #endregion
 
+    // ========================================================================
+
     #region Pointer Handler Methods
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -228,6 +236,8 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     }
     #endregion
 
+    // ========================================================================
+
     #region AI Highlight Methods
     public void ShowTargetFeedback(UEnums.Target TargetType)
     {
@@ -248,4 +258,6 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
         _allyTargetEffect.SetActive(false);
     }
     #endregion
+
+    // ========================================================================
 }

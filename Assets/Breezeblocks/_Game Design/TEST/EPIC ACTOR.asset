@@ -26,11 +26,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 06ba73019a483b5418677fd2c56eda37, type: 2}
   - {fileID: 11400000, guid: 06ba73019a483b5418677fd2c56eda37, type: 2}
   - {fileID: 11400000, guid: 43455887bded3534fb40192e147639ad, type: 2}
+  - {fileID: 11400000, guid: 5d8a870c0db888d4bba1b89db6984e65, type: 2}
+  - {fileID: 11400000, guid: 5d8a870c0db888d4bba1b89db6984e65, type: 2}
+  - {fileID: 11400000, guid: 5d8a870c0db888d4bba1b89db6984e65, type: 2}
+  - {fileID: 11400000, guid: 5d8a870c0db888d4bba1b89db6984e65, type: 2}
+  - {fileID: 11400000, guid: 5d8a870c0db888d4bba1b89db6984e65, type: 2}
   _hasSpecialization: 0
   _actorSpecialization: {fileID: 11400000, guid: c17b1af7cf73ed849872b5ac40bb72de, type: 2}
   _startingSpecializedCards: []
   _baseMaxHealth: 100
   _baseActionsPerTurn: 10
   _initiativeBonus: 100
-  _baseCardBuy: 6
+  _baseCardBuy: 8
   _maxHandSize: 20

@@ -20,14 +20,14 @@ MonoBehaviour:
   _cardRarity: 1
   _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
   _cardEffects:
-  - EffectType: 1
+  - EffectType: 0
     Amount: 200
     Duration: 0
   _cardType: 1
   _positions: 01000000020000000300000004000000
   _posIcon: {fileID: 21300000, guid: 82ad41af0fecd294c8aa2ad5394e66aa, type: 3}
-  _targetType: 1
+  _targetType: 2
   _targetScope: 1
   _targetPositions: 01000000020000000300000004000000
-  _canTargetSelf: 0
+  _canTargetSelf: 1
   _targetIcon: {fileID: 21300000, guid: ad456bd8d3660bc46a2dc57f713a3450, type: 3}

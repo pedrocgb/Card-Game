@@ -6,6 +6,8 @@ public class DeckManager : MonoBehaviour
 {
     #region Variablens and Properties
     // Cards variables
+    private List<CardInstance> _deck = new List<CardInstance>();
+    public List<CardInstance> MainDeck => _deck;
     private List<CardInstance> _currentDeck = new List<CardInstance>();
     public List<CardInstance> CurrentDeck => _currentDeck;
 
@@ -53,6 +55,8 @@ public class DeckManager : MonoBehaviour
                 _currentDeck.Add(card);
             }
         }
+
+        _deck = new List<CardInstance>(_currentDeck);
 
         ShuffleDeck();
     }

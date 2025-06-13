@@ -15,6 +15,11 @@ public class CardData : ScriptableObject
     [SerializeField]
     private string _cardDescription = string.Empty;
     public string CardDescription => _cardDescription;
+    [FoldoutGroup("Card Info/Base", expanded: true)]
+    [SerializeField]
+    private string _cardLore = string.Empty;
+    public string CardLore => _cardLore;
+
     [FoldoutGroup("Card Info", expanded: true)]
     [FoldoutGroup("Card Info/Base", expanded: true)]
     [SerializeField]
@@ -22,18 +27,23 @@ public class CardData : ScriptableObject
     public UEnums.CardOrigin CardOrigin => _cardOrigin;
     [FoldoutGroup("Card Info/Base", expanded: true)]
     [SerializeField]
+    private UEnums.CardRarity _cardRarity = UEnums.CardRarity.Common;
+    public UEnums.CardRarity CardRarity => _cardRarity;
+
+    // Card type
+    [FoldoutGroup("Card Info/Base", expanded: true)]
+    [SerializeField]
+    private UEnums.CardTypes _cardType = UEnums.CardTypes.Attack;
+    public UEnums.CardTypes CardType => _cardType;
+
+    // ========================================================================
+
+    [FoldoutGroup("Card Info/Images", expanded: true)]
+    [SerializeField]
     [PreviewField(height: 100, alignment: ObjectFieldAlignment.Left)]
     private Sprite _cardImage = null;
     public Sprite CardImage => _cardImage;
-    [FoldoutGroup("Card Info/Base", expanded: true)]
-    [SerializeField]
-    private int _actionCost = 0;
-    public int ActionCost => _actionCost;
-    [FoldoutGroup("Card Info/Base", expanded: true)]
-    [SerializeField]
-    private UEnums.CardRarity _cardRarity = UEnums.CardRarity.Common;
-    public UEnums.CardRarity CardRarity => _cardRarity;
-    [FoldoutGroup("Card Info/Base", expanded: true)]
+    [FoldoutGroup("Card Info/Images", expanded: true)]
     [SerializeField]
     [PreviewField(height: 100, alignment: ObjectFieldAlignment.Left)]
     private Sprite _cardBackImage = null;
@@ -44,16 +54,12 @@ public class CardData : ScriptableObject
     // Card Effects
     [FoldoutGroup("Card Info/Effects", expanded: true)]
     [SerializeField]
+    private int _actionCost = 0;
+    public int ActionCost => _actionCost;
+    [FoldoutGroup("Card Info/Effects", expanded: true)]
+    [SerializeField]
     private List<EffectBlock> _cardEffects = new List<EffectBlock>();
     public List<EffectBlock> CardEffects => _cardEffects;
-
-    // ========================================================================
-
-    // Card type
-    [FoldoutGroup("Card Info/Type", expanded: true)]
-    [SerializeField]
-    private UEnums.CardTypes _cardType = UEnums.CardTypes.Attack;
-    public UEnums.CardTypes CardType => _cardType;
 
     // ========================================================================
 
