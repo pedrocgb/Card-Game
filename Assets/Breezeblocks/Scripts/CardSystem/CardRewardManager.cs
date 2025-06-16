@@ -6,7 +6,7 @@ using static UEnums;
 [System.Serializable]
 public struct RarityWeight
 {
-    public CardRarity rarity;
+    public Rarity rarity;
     [Range(0, 1)]
     public float weight;
 }
@@ -29,7 +29,7 @@ public class CardRewardManager : MonoBehaviour
     public List<RarityWeight> rarityWeightsList;
 
     // fast lookup
-    private Dictionary<CardRarity, float> _rarityWeights;
+    private Dictionary<Rarity, float> _rarityWeights;
 
     void Awake()
     {
@@ -61,7 +61,7 @@ public class CardRewardManager : MonoBehaviour
             var pool = pickSpec ? specPool : racePool;
 
             // 3) Roll weighted rarity
-            CardRarity rar = PickRandomRarity();
+            Rarity rar = PickRandomRarity();
 
             // 4) Filter by rarity (or fallback to whole pool)
             var candidates = pool.Where(c => c.CardRarity == rar).ToList();
@@ -75,7 +75,7 @@ public class CardRewardManager : MonoBehaviour
         return results;
     }
 
-    private CardRarity PickRandomRarity()
+    private Rarity PickRandomRarity()
     {
         float total = _rarityWeights.Values.Sum();
         float roll = Random.value * total;

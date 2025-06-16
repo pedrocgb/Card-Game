@@ -36,12 +36,13 @@ public class UEnums
         Random = 3
     }
 
-    public enum CardRarity
+    public enum Rarity
     {
         Common = 1,
         Uncommon = 2,
         Rare = 3,
-        Unique = 4
+        Epic = 4,
+        Unique = 5
     }
 
     public enum CardEffects
@@ -58,6 +59,7 @@ public class UEnums
         Blind = 9,
         Bleed = 10,
         Lock = 11,
+        BlockDamage = 12,
 
         Heal = 100,
         Block = 101,

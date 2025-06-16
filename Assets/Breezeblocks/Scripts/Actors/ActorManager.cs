@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -18,6 +19,8 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     public ActorWorldUI UI => _myUi;
     protected ActorPosition _myPosition = null;
     public ActorPosition Positioning => _myPosition;
+    private ActorRelics _myRelics = null;
+    public ActorRelics MyRelics => _myRelics;
 
     // Actor graphics in the scene
     [FoldoutGroup("Graphics", expanded: true)]
@@ -71,6 +74,10 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     protected bool _targetable = false;
     private bool _highTarget = false;
     protected UEnums.Target _currentAttacker = UEnums.Target.Self;
+
+    // Actions
+    public event Action TurnStartEvent;
+    public event Action TurnEndEvent;
     #endregion
 
     // ========================================================================
@@ -80,6 +87,7 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     {
         _deck = GetComponent<DeckManager>();
         _hand = GetComponent<HandManager>();
+        _myRelics = GetComponent<ActorRelics>();
 
         _myStats = GetComponent<ActorStats>();
         _myPosition = GetComponent<ActorPosition>();
@@ -99,7 +107,7 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
         string aName = string.Empty;
         if (_actorData.ActorName == "" ||
             _actorData.ActorName == string.Empty)
-            _actorName = UConstants.LIST_OF_NAMES[Random.Range(0, UConstants.LIST_OF_NAMES.Count)];
+            _actorName = UConstants.LIST_OF_NAMES[UnityEngine.Random.Range(0, UConstants.LIST_OF_NAMES.Count)];
         else
             _actorName = _actorData.ActorName;
 
@@ -115,28 +123,35 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     #region Turn Methods
     public void RollInitiative()
     {
-        int init = Random.Range(1, 9) + _initiativeBonus;
+        int init = UnityEngine.Random.Range(1, 9) + _initiativeBonus;
         _currentInitiative = init;
         Console.Log($"{name} rolled {init} + {_initiativeBonus} = {init + _initiativeBonus}");
     }
 
-    public virtual void StartNewTurn()
+    public virtual void OnTurnStart()
     {
         IsMyTurn = true;
         TurnOutlineEffect(true);
         _myStats.OnNewTurn();
         _myUi.UpdateTurnMarker(false);
 
-        _hand.DrawCards(_actorData.CardBuy);
+        _hand.DrawCards(_myStats.CardBuy);
     }
 
-    public virtual void EndTurn()
+    public virtual void OnTurnEnd()
     {
         IsMyTurn = false;
         TurnOutlineEffect(false);
         TargetingManager.Instance.ClearHightLights();
 
         _myStats.OnEndTurn();
+
+        TurnEndEvent?.Invoke();
+    }
+
+    protected void RaiseTurnStartEvent()
+    {
+        TurnStartEvent?.Invoke();
     }
     #endregion
 

@@ -119,6 +119,14 @@ public class ActorStats : MonoBehaviour
         if (_actor.IsMyTurn)
             ActorsUI.UpdateActionsInterface(_currentActions, _actionsPerTurn);
     }
+
+    private void CalculateActions()
+    {
+        _currentActions = _actionsPerTurn;
+
+        _currentActions += GetTotalEffectAmount(StatusEffects.Haste);
+        _currentActions -= GetTotalEffectAmount(StatusEffects.Slow);
+    }
     #endregion
 
     // ========================================================================
@@ -340,7 +348,27 @@ public class ActorStats : MonoBehaviour
         Target.Stats.TakeDamage(finalDamage, _actor);
 
         // Log
-        string log = $"{_actor.Data.ActorName} deals {finalDamage} damage to {Target.Data.ActorName}. " +
+        string log = $"{_actor.ActorName} deals {finalDamage} damage to {Target.Data.ActorName}. " +
+            $"Weakness: {initialWeakness}, Toughness: {initialToughness}, Damage dealt: {finalDamage}";
+        Console.Log(log);
+    }
+
+    public void DealBlockDamage(ActorManager Target)
+    {
+        // Calculate damage dealt with weakness
+        int initialWeakness = GetTotalEffectAmount(StatusEffects.Weakness);
+        int damageAfterWeakness = Mathf.Max(0, GetTotalEffectAmount(StatusEffects.Block) - initialWeakness);
+
+        // Calculate damage dealth with bonus damage from Toughness
+        int initialToughness = GetTotalEffectAmount(StatusEffects.Toughness);
+
+        int finalDamage = Mathf.Max(0, damageAfterWeakness + initialToughness);
+
+        // Deal damage
+        Target.Stats.TakeDamage(finalDamage, _actor);
+
+        // Log
+        string log = $"{_actor.ActorName} deals {finalDamage} damage to {Target.Data.ActorName}. " +
             $"Weakness: {initialWeakness}, Toughness: {initialToughness}, Damage dealt: {finalDamage}";
         Console.Log(log);
     }
@@ -356,7 +384,7 @@ public class ActorStats : MonoBehaviour
             _actor.UI.UpdateStatusUI(_activeEffects);
 
             FloatingTextManager.SpawnText(transform.position, "DODGE!", HealthModColors.Dodge);
-            Console.Log($"{_actor.Data.ActorName} dodges the attack!");
+            Console.Log($"{_actor.ActorName} dodges the attack!");
             return;
         }
 
@@ -386,11 +414,11 @@ public class ActorStats : MonoBehaviour
         if (GetTotalEffectAmount(StatusEffects.Riposte) > 0)
         {
             source.Stats.TakeDamage(GetTotalEffectAmount(StatusEffects.Riposte), _actor);
-            Console.Log($"{_actor.Data.ActorName} ripostes {source.Data.ActorName} for {GetTotalEffectAmount(StatusEffects.Riposte)} damage!");
+            Console.Log($"{_actor.ActorName} ripostes {source.ActorName} for {GetTotalEffectAmount(StatusEffects.Riposte)} damage!");
         }
 
         // Log
-        string log = $"{_actor.Data.ActorName} takes {damage} damage: " +
+        string log = $"{_actor.ActorName} takes {damage} damage: " +
             $"{blockedAmount} blocked, {damageAfterBlock} dealt. " +
             $"Block remaining: {initialBlock}, Health: {_currentHealth}";
         Console.Log(log);  
@@ -532,13 +560,58 @@ public class ActorStats : MonoBehaviour
 
     // ========================================================================
 
-    private void CalculateActions()
+    #region Relic Methods
+    public void IncreaseMaxHealth(int flatAmount, bool equip)
     {
-        _currentActions = _actionsPerTurn;
-
-        _currentActions += GetTotalEffectAmount(StatusEffects.Haste);
-        _currentActions -= GetTotalEffectAmount(StatusEffects.Slow);
+        if (equip)
+        {
+            // On equip we increase the max health and current health by the flat amount
+            _maxHealth += flatAmount;
+            _currentHealth += flatAmount;
+            _ui.UpdateHealthUI();
+        }
+        else
+        {
+            // On unequip we reduce the max health and current health by the flat amount
+            _maxHealth -= flatAmount;
+            _currentHealth = Mathf.Min(_currentHealth, _maxHealth);
+            _ui.UpdateHealthUI();
+        }
     }
+
+    public void IncreaseMaxHealth(float percentageAmount, bool equip)
+    {
+        if (equip)
+        {
+            int increaseAmount = Mathf.RoundToInt(_maxHealth * percentageAmount);
+            _maxHealth += increaseAmount;
+            _currentHealth += increaseAmount;
+            _ui.UpdateHealthUI();
+        }
+        else
+        {
+            int decreaseAmount = Mathf.RoundToInt(_maxHealth * percentageAmount);
+            _maxHealth -= decreaseAmount;
+            _currentHealth = Mathf.Min(_currentHealth, _maxHealth);
+            _ui.UpdateHealthUI();
+        }
+    }
+
+    public void IncreaseAction(int amount)
+    {
+        _currentActions += amount;
+        if (_actor.IsMyTurn)
+            ActorsUI.UpdateActionsInterface(_currentActions, _actionsPerTurn);
+    }
+
+    public void IncreaseCardBuy(int amount, bool equip)
+    {
+        if (equip)
+            _cardBuy += amount;
+        else
+            _cardBuy = Mathf.Max(0, _cardBuy - amount);
+    }
+    #endregion
 
     // ========================================================================
 

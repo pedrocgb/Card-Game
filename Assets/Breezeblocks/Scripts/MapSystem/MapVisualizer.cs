@@ -9,6 +9,7 @@ using static UEnums;
 [RequireComponent(typeof(MapGenerator))]
 public class MapVisualizer : MonoBehaviour
 {
+    #region Variables and Properties
     public static MapVisualizer Instance = null;
 
     [FoldoutGroup("Settings", expanded: true)]
@@ -101,7 +102,11 @@ public class MapVisualizer : MonoBehaviour
 
     private MapGenerator _mapGen;
     private CombatGenerator _combatGen;
+    #endregion
 
+    // ========================================================================
+
+    #region Initialization
     private void Awake()
     {
         Instance = this;
@@ -118,6 +123,9 @@ public class MapVisualizer : MonoBehaviour
         _mapGen.GenerateMap();
         VisualizeMap();
     }
+    #endregion
+
+    // ========================================================================
 
     /// <summary>
     /// Called by MapGenerator after generating all MapNode objects.
@@ -237,41 +245,10 @@ public class MapVisualizer : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Spawns a single line UI Image (via pool) between two UI‐space points.
-    /// Pivot is set to (0,0.5) so scaling from X=0 expands from the parent end.
-    /// Returns the new GameObject so calling code can track it.
-    /// </summary>
-    private GameObject SpawnLineAtParent(Vector2 start, Vector2 end)
-    {
-        GameObject lineGO = ObjectPooler.SpawnFromPool(_linePrefab, Vector3.zero, Quaternion.identity);
-        _activeLines.Add(lineGO);
+    // ========================================================================
 
-        var rt = lineGO.GetComponent<RectTransform>();
-        rt.SetParent(_mapContainer, false);
 
-        // Pivot at the parent end
-        rt.pivot = new Vector2(0f, 0.5f);
-        rt.anchoredPosition = start;
-
-        float length = Vector2.Distance(start, end);
-        float angle = Mathf.Atan2(end.y - start.y, end.x - start.x) * Mathf.Rad2Deg;
-        rt.localRotation = Quaternion.Euler(0f, 0f, angle);
-        rt.sizeDelta = new Vector2(length, _lineThickness);
-        lineGO.transform.localScale = Vector3.one;
-
-        var img = lineGO.GetComponent<Image>();
-        if (img != null)
-        {
-            Color c = _defaultLineColor;
-            c.a = 0f;
-            img.color = c;
-        }
-
-        lineGO.SetActive(false);
-        return lineGO;
-    }
-
+    #region Linesa and Connections Methods
     /// <summary>
     /// Loops through every MapNode & its children, spawns a line UI Image
     /// between each pair (animated via DOTween), then forces it behind nodes.
@@ -463,6 +440,45 @@ public class MapVisualizer : MonoBehaviour
     }
 
     /// <summary>
+    /// Spawns a single line UI Image (via pool) between two UI‐space points.
+    /// Pivot is set to (0,0.5) so scaling from X=0 expands from the parent end.
+    /// Returns the new GameObject so calling code can track it.
+    /// </summary>
+    private GameObject SpawnLineAtParent(Vector2 start, Vector2 end)
+    {
+        GameObject lineGO = ObjectPooler.SpawnFromPool(_linePrefab, Vector3.zero, Quaternion.identity);
+        _activeLines.Add(lineGO);
+
+        var rt = lineGO.GetComponent<RectTransform>();
+        rt.SetParent(_mapContainer, false);
+
+        // Pivot at the parent end
+        rt.pivot = new Vector2(0f, 0.5f);
+        rt.anchoredPosition = start;
+
+        float length = Vector2.Distance(start, end);
+        float angle = Mathf.Atan2(end.y - start.y, end.x - start.x) * Mathf.Rad2Deg;
+        rt.localRotation = Quaternion.Euler(0f, 0f, angle);
+        rt.sizeDelta = new Vector2(length, _lineThickness);
+        lineGO.transform.localScale = Vector3.one;
+
+        var img = lineGO.GetComponent<Image>();
+        if (img != null)
+        {
+            Color c = _defaultLineColor;
+            c.a = 0f;
+            img.color = c;
+        }
+
+        lineGO.SetActive(false);
+        return lineGO;
+    }
+    #endregion
+
+    // ========================================================================
+
+    #region Events
+    /// <summary>
     /// Called whenever a node is clicked.
     /// Toggles selection and reveals/hides its own connections.
     /// Also enables/disables the _startButton accordingly.
@@ -553,33 +569,12 @@ public class MapVisualizer : MonoBehaviour
 
         // 5) Begin the event using GameManager (same as original behavior):
         CombatManager.CreateCombatent(_currentNode.EnemiesData);
-        GameManager.StartEvent(MapNodeType.Combat);
+        Debug.Log(nv.Node.Type);
+        GameManager.StartEvent(nv.Node.Type);
     }
 
     /// <summary>
-    /// In PlayMode, pressing 'C' will complete the currently selected node
-    /// (for testing purposes), automatically unlocking its children, shifting
-    /// the vision window forward, and re-highlighting the relevant lines.
-    ///
-    /// Pressing 'Return' (Enter) will do the same as clicking the Start button.
-    /// </summary>
-    private void Update()
-    {
-        // 'C' for completing the battle at _currentNode_:
-        if (Input.GetKeyDown(KeyCode.C) && _currentNode != null)
-        {
-            CompleteBattle();
-        }
-
-        // 'Enter' to start the selected node's event:
-        if (Input.GetKeyDown(KeyCode.Return) && _selectedNode != null)
-        {
-            StartEventOnSelected();
-        }
-    }
-
-    /// <summary>
-    /// Call this once the player has WON the battle at _currentNode_.
+    /// Call this once the player has completed any EVENT
     /// We then:
     ///   • Update _currentFloorIndex = floor index of completed node
     ///   • Set _lastCompletedNode = _currentNode
@@ -589,7 +584,7 @@ public class MapVisualizer : MonoBehaviour
     ///   • Re-highlight lines based on all used connections + new lastCompletedNode
     ///   • Notify GameManager that battle ended
     /// </summary>
-    public void CompleteBattle()
+    public void CompleteEvent()
     {
         if (_currentNode == null)
             return;
@@ -623,6 +618,34 @@ public class MapVisualizer : MonoBehaviour
         UpdateLineHighlighting();
 
         // 7) Notify GameManager that the battle is complete:
-        GameManager.EndEvent(MapNodeType.Combat);
+        GameManager.EndEvent(nvCur.Node.Type);
     }
+    #endregion
+
+    // ========================================================================
+
+    /// <summary>
+    /// In PlayMode, pressing 'C' will complete the currently selected node
+    /// (for testing purposes), automatically unlocking its children, shifting
+    /// the vision window forward, and re-highlighting the relevant lines.
+    ///
+    /// Pressing 'Return' (Enter) will do the same as clicking the Start button.
+    /// </summary>
+    private void Update()
+    {
+        // 'C' for completing the battle at _currentNode_:
+        if (Input.GetKeyDown(KeyCode.F2) && _currentNode != null)
+        {
+            CompleteEvent();
+        }
+
+        // 'Enter' to start the selected node's event:
+        if (Input.GetKeyDown(KeyCode.Return) && _selectedNode != null)
+        {
+            StartEventOnSelected();
+        }
+    }
+
+    // ========================================================================
+
 }

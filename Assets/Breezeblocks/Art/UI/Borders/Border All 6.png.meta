@@ -238,7 +238,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -247,7 +247,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -276,7 +276,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -305,11 +305,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 447
-        width: 65
-        height: 65
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -326,12 +326,12 @@ TextureImporter:
       name: Border All 6_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 384
+        x: 64
+        y: 448
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -348,12 +348,12 @@ TextureImporter:
       name: Border All 6_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 128
         y: 448
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -370,12 +370,12 @@ TextureImporter:
       name: Border All 6_3
       rect:
         serializedVersion: 2
-        x: 64
-        y: 384
+        x: 192
+        y: 448
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -392,12 +392,12 @@ TextureImporter:
       name: Border All 6_4
       rect:
         serializedVersion: 2
-        x: 127
-        y: 383
-        width: 66
-        height: 129
+        x: 256
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -414,12 +414,12 @@ TextureImporter:
       name: Border All 6_5
       rect:
         serializedVersion: 2
-        x: 192
+        x: 320
         y: 448
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -436,12 +436,12 @@ TextureImporter:
       name: Border All 6_6
       rect:
         serializedVersion: 2
-        x: 192
-        y: 384
+        x: 384
+        y: 448
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -458,12 +458,12 @@ TextureImporter:
       name: Border All 6_7
       rect:
         serializedVersion: 2
-        x: 255
-        y: 383
-        width: 130
-        height: 129
+        x: 448
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -480,12 +480,12 @@ TextureImporter:
       name: Border All 6_8
       rect:
         serializedVersion: 2
-        x: 383
-        y: 383
-        width: 194
-        height: 129
+        x: 512
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -502,12 +502,12 @@ TextureImporter:
       name: Border All 6_9
       rect:
         serializedVersion: 2
-        x: 575
-        y: 447
-        width: 65
-        height: 65
+        x: 576
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -524,12 +524,12 @@ TextureImporter:
       name: Border All 6_10
       rect:
         serializedVersion: 2
-        x: 576
+        x: 0
         y: 384
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -546,12 +546,12 @@ TextureImporter:
       name: Border All 6_11
       rect:
         serializedVersion: 2
-        x: 0
-        y: 319
-        width: 65
-        height: 66
+        x: 64
+        y: 384
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -568,12 +568,12 @@ TextureImporter:
       name: Border All 6_12
       rect:
         serializedVersion: 2
-        x: 0
-        y: 256
+        x: 128
+        y: 384
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -590,12 +590,12 @@ TextureImporter:
       name: Border All 6_13
       rect:
         serializedVersion: 2
-        x: 64
-        y: 320
+        x: 192
+        y: 384
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -612,12 +612,12 @@ TextureImporter:
       name: Border All 6_14
       rect:
         serializedVersion: 2
-        x: 64
-        y: 256
+        x: 256
+        y: 384
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -634,12 +634,12 @@ TextureImporter:
       name: Border All 6_15
       rect:
         serializedVersion: 2
-        x: 127
-        y: 256
-        width: 65
+        x: 320
+        y: 384
+        width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -656,12 +656,12 @@ TextureImporter:
       name: Border All 6_16
       rect:
         serializedVersion: 2
-        x: 128
-        y: 320
+        x: 384
+        y: 384
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -678,12 +678,12 @@ TextureImporter:
       name: Border All 6_17
       rect:
         serializedVersion: 2
-        x: 192
-        y: 320
+        x: 448
+        y: 384
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -700,12 +700,12 @@ TextureImporter:
       name: Border All 6_18
       rect:
         serializedVersion: 2
-        x: 192
-        y: 256
+        x: 512
+        y: 384
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -722,12 +722,12 @@ TextureImporter:
       name: Border All 6_19
       rect:
         serializedVersion: 2
-        x: 256
-        y: 320
+        x: 576
+        y: 384
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -744,12 +744,12 @@ TextureImporter:
       name: Border All 6_20
       rect:
         serializedVersion: 2
-        x: 256
-        y: 256
+        x: 0
+        y: 320
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -766,12 +766,12 @@ TextureImporter:
       name: Border All 6_21
       rect:
         serializedVersion: 2
-        x: 319
-        y: 255
-        width: 66
-        height: 66
+        x: 64
+        y: 321
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -788,12 +788,12 @@ TextureImporter:
       name: Border All 6_22
       rect:
         serializedVersion: 2
-        x: 320
+        x: 128
         y: 320
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -810,12 +810,12 @@ TextureImporter:
       name: Border All 6_23
       rect:
         serializedVersion: 2
-        x: 384
+        x: 192
         y: 320
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -832,12 +832,12 @@ TextureImporter:
       name: Border All 6_24
       rect:
         serializedVersion: 2
-        x: 384
-        y: 256
+        x: 256
+        y: 320
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -854,12 +854,12 @@ TextureImporter:
       name: Border All 6_25
       rect:
         serializedVersion: 2
-        x: 448
+        x: 320
         y: 320
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -876,12 +876,12 @@ TextureImporter:
       name: Border All 6_26
       rect:
         serializedVersion: 2
-        x: 448
-        y: 256
+        x: 384
+        y: 320
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -898,12 +898,12 @@ TextureImporter:
       name: Border All 6_27
       rect:
         serializedVersion: 2
-        x: 511
-        y: 319
-        width: 66
-        height: 66
+        x: 448
+        y: 320
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -921,11 +921,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 512
-        y: 256
+        y: 320
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -947,7 +947,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -964,12 +964,12 @@ TextureImporter:
       name: Border All 6_30
       rect:
         serializedVersion: 2
-        x: 576
+        x: 0
         y: 256
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -986,12 +986,12 @@ TextureImporter:
       name: Border All 6_31
       rect:
         serializedVersion: 2
-        x: 0
-        y: 191
-        width: 65
-        height: 66
+        x: 64
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1008,12 +1008,12 @@ TextureImporter:
       name: Border All 6_32
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
+        x: 128
+        y: 256
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1030,12 +1030,12 @@ TextureImporter:
       name: Border All 6_33
       rect:
         serializedVersion: 2
-        x: 63
-        y: 127
-        width: 66
-        height: 66
+        x: 192
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1052,12 +1052,12 @@ TextureImporter:
       name: Border All 6_34
       rect:
         serializedVersion: 2
-        x: 64
-        y: 192
+        x: 256
+        y: 256
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1074,12 +1074,12 @@ TextureImporter:
       name: Border All 6_35
       rect:
         serializedVersion: 2
-        x: 128
-        y: 192
+        x: 320
+        y: 256
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1096,12 +1096,12 @@ TextureImporter:
       name: Border All 6_36
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
+        x: 384
+        y: 256
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1118,12 +1118,12 @@ TextureImporter:
       name: Border All 6_37
       rect:
         serializedVersion: 2
-        x: 191
-        y: 191
-        width: 66
-        height: 66
+        x: 448
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1140,12 +1140,12 @@ TextureImporter:
       name: Border All 6_38
       rect:
         serializedVersion: 2
-        x: 192
-        y: 128
+        x: 512
+        y: 256
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1162,12 +1162,12 @@ TextureImporter:
       name: Border All 6_39
       rect:
         serializedVersion: 2
-        x: 255
-        y: 191
-        width: 66
-        height: 66
+        x: 576
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1184,12 +1184,12 @@ TextureImporter:
       name: Border All 6_40
       rect:
         serializedVersion: 2
-        x: 256
-        y: 128
+        x: 0
+        y: 192
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1206,12 +1206,12 @@ TextureImporter:
       name: Border All 6_41
       rect:
         serializedVersion: 2
-        x: 315
-        y: 127
-        width: 70
-        height: 70
+        x: 64
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1228,12 +1228,12 @@ TextureImporter:
       name: Border All 6_42
       rect:
         serializedVersion: 2
-        x: 320
+        x: 128
         y: 192
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1250,12 +1250,12 @@ TextureImporter:
       name: Border All 6_43
       rect:
         serializedVersion: 2
-        x: 384
+        x: 192
         y: 192
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1272,12 +1272,12 @@ TextureImporter:
       name: Border All 6_44
       rect:
         serializedVersion: 2
-        x: 384
-        y: 128
+        x: 256
+        y: 192
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1294,12 +1294,12 @@ TextureImporter:
       name: Border All 6_45
       rect:
         serializedVersion: 2
-        x: 447
-        y: 127
-        width: 130
-        height: 130
+        x: 320
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1316,12 +1316,12 @@ TextureImporter:
       name: Border All 6_46
       rect:
         serializedVersion: 2
-        x: 576
+        x: 384
         y: 192
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1338,12 +1338,12 @@ TextureImporter:
       name: Border All 6_47
       rect:
         serializedVersion: 2
-        x: 576
-        y: 128
+        x: 448
+        y: 192
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1360,12 +1360,12 @@ TextureImporter:
       name: Border All 6_48
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
+        x: 512
+        y: 192
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1382,12 +1382,12 @@ TextureImporter:
       name: Border All 6_49
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 65
-        height: 65
+        x: 576
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1404,12 +1404,12 @@ TextureImporter:
       name: Border All 6_50
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
+        x: 0
+        y: 128
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1427,11 +1427,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 0
+        y: 128
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1448,12 +1448,12 @@ TextureImporter:
       name: Border All 6_52
       rect:
         serializedVersion: 2
-        x: 127
-        y: 0
-        width: 66
-        height: 65
+        x: 128
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1470,12 +1470,12 @@ TextureImporter:
       name: Border All 6_53
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
+        x: 192
+        y: 128
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1492,12 +1492,12 @@ TextureImporter:
       name: Border All 6_54
       rect:
         serializedVersion: 2
-        x: 191
-        y: 63
-        width: 66
-        height: 66
+        x: 256
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1514,12 +1514,12 @@ TextureImporter:
       name: Border All 6_55
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
+        x: 320
+        y: 128
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1536,12 +1536,12 @@ TextureImporter:
       name: Border All 6_56
       rect:
         serializedVersion: 2
-        x: 256
-        y: 64
+        x: 384
+        y: 128
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1558,12 +1558,12 @@ TextureImporter:
       name: Border All 6_57
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
+        x: 448
+        y: 128
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1580,12 +1580,12 @@ TextureImporter:
       name: Border All 6_58
       rect:
         serializedVersion: 2
-        x: 319
-        y: 0
-        width: 66
-        height: 65
+        x: 512
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1602,12 +1602,12 @@ TextureImporter:
       name: Border All 6_59
       rect:
         serializedVersion: 2
-        x: 320
-        y: 64
+        x: 576
+        y: 128
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1624,12 +1624,12 @@ TextureImporter:
       name: Border All 6_60
       rect:
         serializedVersion: 2
-        x: 383
-        y: 63
-        width: 66
-        height: 66
+        x: 0
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1646,12 +1646,12 @@ TextureImporter:
       name: Border All 6_61
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
+        x: 64
+        y: 64
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1668,12 +1668,12 @@ TextureImporter:
       name: Border All 6_62
       rect:
         serializedVersion: 2
-        x: 447
-        y: 0
-        width: 66
-        height: 65
+        x: 128
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1690,12 +1690,12 @@ TextureImporter:
       name: Border All 6_63
       rect:
         serializedVersion: 2
-        x: 448
+        x: 192
         y: 64
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1712,12 +1712,12 @@ TextureImporter:
       name: Border All 6_64
       rect:
         serializedVersion: 2
-        x: 512
+        x: 256
         y: 64
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1734,12 +1734,12 @@ TextureImporter:
       name: Border All 6_65
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
+        x: 320
+        y: 64
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1756,12 +1756,12 @@ TextureImporter:
       name: Border All 6_66
       rect:
         serializedVersion: 2
-        x: 575
-        y: 0
-        width: 65
-        height: 65
+        x: 384
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1778,12 +1778,12 @@ TextureImporter:
       name: Border All 6_67
       rect:
         serializedVersion: 2
-        x: 576
+        x: 448
         y: 64
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1792,6 +1792,270 @@ TextureImporter:
       bones: []
       spriteID: 3b210f4a9d8e6cd40800000000000000
       internalID: 5604422807781905075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border All 6_68
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 447295059cdd15849ba786cfc1e105e2
+      internalID: 923940412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border All 6_69
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c75e050679d418b4d84fc6b1f5e51411
+      internalID: 355861685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border All 6_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 534bd706a7d08ed48bbe50c7f615aa42
+      internalID: -1204803996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border All 6_71
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58a1a993ac6d31b46ad998b4a42c32e8
+      internalID: -1441094177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border All 6_72
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0273056d064c22f419dbfd173ae8bbc2
+      internalID: -1901066434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border All 6_73
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8013009cab6aef74f8d5680865459a26
+      internalID: -1530823113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border All 6_74
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41cb6b2a22f87ea4a873d72f6bf26760
+      internalID: 443428770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border All 6_75
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4577755892acff419344ff2afa841b8
+      internalID: 764655688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border All 6_76
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dacee75a8f0fd345870e0fcb6f4726c
+      internalID: -526575812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border All 6_77
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ecc78f5a368564ba8ea5aca16cdea0
+      internalID: 772956938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border All 6_78
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 372f6be5f5dda0749b2e3a598b50da67
+      internalID: -1351031131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border All 6_79
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50ca7d305dc38eb48a082bfd11fbfd9d
+      internalID: 1468353453
       vertices: []
       indices: 
       edges: []
@@ -1808,7 +2072,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Border All 6_0: 4566200336387860162
       Border All 6_1: 4398255461492212905
@@ -1875,7 +2141,19 @@ TextureImporter:
       Border All 6_65: -4293846528279131065
       Border All 6_66: 5473704366729897357
       Border All 6_67: 5604422807781905075
+      Border All 6_68: 923940412
+      Border All 6_69: 355861685
       Border All 6_7: 4382035908240123023
+      Border All 6_70: -1204803996
+      Border All 6_71: -1441094177
+      Border All 6_72: -1901066434
+      Border All 6_73: -1530823113
+      Border All 6_74: 443428770
+      Border All 6_75: 764655688
+      Border All 6_76: -526575812
+      Border All 6_77: 772956938
+      Border All 6_78: -1351031131
+      Border All 6_79: 1468353453
       Border All 6_8: -7587791510534479328
       Border All 6_9: 7523608822723544098
   mipmapLimitGroupName: 

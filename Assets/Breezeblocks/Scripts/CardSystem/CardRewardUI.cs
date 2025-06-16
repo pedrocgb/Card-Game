@@ -210,7 +210,7 @@ public class CardRewardUI : MonoBehaviour
         }
 
         _mapUi.SetActive(true);
-        MapVisualizer.Instance.CompleteBattle();
+        MapVisualizer.Instance.CompleteEvent();
     }
 
     // ========================================================================

@@ -14,19 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Jumping Shot
   _cardDescription: Deals 2 Damage. Move 2 Backwards.
+  _cardLore: 
   _cardOrigin: 2
-  _cardImage: {fileID: -37353350, guid: 3d75b524956dad146a772e86ce8f9252, type: 3}
-  _actionCost: 1
   _cardRarity: 1
+  _cardType: 32
+  _cardImage: {fileID: -37353350, guid: 3d75b524956dad146a772e86ce8f9252, type: 3}
   _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
+  _actionCost: 1
   _cardEffects:
   - EffectType: 0
     Amount: 2
     Duration: 0
   - EffectType: 202
-    Amount: -2
+    Amount: 2
     Duration: 0
-  _cardType: 32
   _positions: 0100000002000000
   _posIcon: {fileID: 21300000, guid: bebec778a275e3949ba8827f6030776b, type: 3}
   _targetType: 3

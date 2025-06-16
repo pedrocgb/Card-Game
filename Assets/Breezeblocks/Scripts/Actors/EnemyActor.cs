@@ -15,14 +15,14 @@ public class EnemyActor : ActorManager
         _myPosition.SetCombatPosition(NewPosition);
     }
 
-    public override void StartNewTurn()
+    public override void OnTurnStart()
     {
-        base.StartNewTurn();
+        base.OnTurnStart();
     }
 
-    public override void EndTurn()
+    public override void OnTurnEnd()
     {
-        base.EndTurn();
+        base.OnTurnEnd();
 
         _hand.DiscardHand(IsPlayer: false);
     }

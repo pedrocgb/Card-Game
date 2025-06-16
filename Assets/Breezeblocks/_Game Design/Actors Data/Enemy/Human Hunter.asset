@@ -36,8 +36,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dda1c37bc4c4f234e917e8f9a781f4ce, type: 2}
   - {fileID: 11400000, guid: 5b5e924c2361d5c4bba9f9fe8d6b670e, type: 2}
   - {fileID: 11400000, guid: 61a51befc271cda40b4d423124bd34dd, type: 2}
-  _baseMaxHealth: 14
+  _baseMaxHealth: 30
   _baseActionsPerTurn: 3
-  _initiativeBonus: 4
+  _initiativeBonus: 5
   _baseCardBuy: 5
   _maxHandSize: 8

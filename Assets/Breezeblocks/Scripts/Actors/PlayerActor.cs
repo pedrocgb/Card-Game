@@ -11,7 +11,7 @@ public class PlayerActor : ActorManager
         _myStats.Initialize();
     }
 
-    public override void StartNewTurn()
+    public override void OnTurnStart()
     {
         IsMyTurn = true;
         TurnOutlineEffect(true);
@@ -27,12 +27,14 @@ public class PlayerActor : ActorManager
         _hand.ShowHand();
         _myUi.UpdateTurnMarker(false);
 
-        _hand.DrawCards(_actorData.CardBuy);
+        _hand.DrawCards(_myStats.CardBuy);
+
+        RaiseTurnStartEvent();
     }
 
-    public override void EndTurn()
+    public override void OnTurnEnd()
     {
-        base.EndTurn();
+        base.OnTurnEnd();
         _hand.HideHand();
         _hand.DiscardHand(IsPlayer: true);
     }

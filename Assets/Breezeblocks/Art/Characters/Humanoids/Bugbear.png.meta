@@ -122,11 +122,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 11
-        y: 488
+        y: 517
         width: 513
-        height: 536
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 507
+      alignment: 9
+      pivot: {x: 0.4647799, y: 0.32711053}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -140,28 +140,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bugbear_1
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 992
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b1c4c882890e6f520800000000000000
-      internalID: 2735620767794088987
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Bugbear_2
       rect:
         serializedVersion: 2
@@ -169,8 +147,8 @@ TextureImporter:
         y: 505
         width: 492
         height: 519
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4148298, y: 0.33852133}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -188,11 +166,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1027
-        y: 499
+        y: 498
         width: 486
         height: 525
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.40879992, y: 0.3530377}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -213,8 +191,8 @@ TextureImporter:
         y: 0
         width: 516
         height: 501
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.44882303, y: 0.42701793}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -235,8 +213,8 @@ TextureImporter:
         y: 0
         width: 489
         height: 504
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.42522693, y: 0.42745236}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -257,8 +235,8 @@ TextureImporter:
         y: 0
         width: 483
         height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.40747526, y: 0.4228094}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -275,7 +253,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 768e59fbd99bb164cabc2b5ae8c854ce
     internalID: 0
     vertices: []
     indices: 

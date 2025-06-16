@@ -27,8 +27,8 @@ public class CardData : ScriptableObject
     public UEnums.CardOrigin CardOrigin => _cardOrigin;
     [FoldoutGroup("Card Info/Base", expanded: true)]
     [SerializeField]
-    private UEnums.CardRarity _cardRarity = UEnums.CardRarity.Common;
-    public UEnums.CardRarity CardRarity => _cardRarity;
+    private UEnums.Rarity _cardRarity = UEnums.Rarity.Common;
+    public UEnums.Rarity CardRarity => _cardRarity;
 
     // Card type
     [FoldoutGroup("Card Info/Base", expanded: true)]

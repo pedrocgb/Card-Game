@@ -31,7 +31,7 @@ public class EnemyTurnManager : MonoBehaviour
     private IEnumerator EnemyTurnCoroutine(EnemyActor enemy)
     {
         yield return new WaitForSeconds(0.5f);
-        enemy.StartNewTurn();
+        enemy.OnTurnStart();
 
         if (enemy.Stats.IsDead)
         {

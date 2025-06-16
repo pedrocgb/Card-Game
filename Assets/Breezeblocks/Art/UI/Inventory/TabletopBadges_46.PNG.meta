@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TabletopBadges_46_0: -5280309380786412204
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

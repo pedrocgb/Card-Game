@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 35e77c32f7f83fc40a7f13cd9784728e
+guid: fffac6d00d23c6f438d9f9a8475d2449
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7150752056011216386
-    second: Badge_22_01_0
+      213: 194267116164964566
+    second: 008_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Badge_22_01_0
+      name: 008_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1571
-        height: 1197
+        width: 1415
+        height: 1097
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ef9ae8034ec63cc90800000000000000
-      internalID: -7150752056011216386
+      spriteID: 6d06d82b9ec22b200800000000000000
+      internalID: 194267116164964566
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Badge_22_01_0: -7150752056011216386
+      008_0: 194267116164964566
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

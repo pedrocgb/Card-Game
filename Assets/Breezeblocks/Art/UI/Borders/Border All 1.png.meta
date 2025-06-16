@@ -305,9 +305,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 447
-        width: 65
-        height: 65
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,8 +326,8 @@ TextureImporter:
       name: Border All 1_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 384
+        x: 64
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -348,7 +348,7 @@ TextureImporter:
       name: Border All 1_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 128
         y: 448
         width: 64
         height: 64
@@ -370,8 +370,8 @@ TextureImporter:
       name: Border All 1_3
       rect:
         serializedVersion: 2
-        x: 64
-        y: 384
+        x: 192
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -392,10 +392,10 @@ TextureImporter:
       name: Border All 1_4
       rect:
         serializedVersion: 2
-        x: 127
-        y: 383
-        width: 66
-        height: 129
+        x: 256
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -414,7 +414,7 @@ TextureImporter:
       name: Border All 1_5
       rect:
         serializedVersion: 2
-        x: 192
+        x: 320
         y: 448
         width: 64
         height: 64
@@ -436,13 +436,13 @@ TextureImporter:
       name: Border All 1_6
       rect:
         serializedVersion: 2
-        x: 192
-        y: 384
+        x: 384
+        y: 448
         width: 64
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 12, y: 12, z: 12, w: 12}
       customData: 
       outline: []
       physicsShape: []
@@ -458,10 +458,10 @@ TextureImporter:
       name: Border All 1_7
       rect:
         serializedVersion: 2
-        x: 255
-        y: 383
-        width: 130
-        height: 129
+        x: 448
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -480,10 +480,10 @@ TextureImporter:
       name: Border All 1_8
       rect:
         serializedVersion: 2
-        x: 383
-        y: 383
-        width: 194
-        height: 129
+        x: 512
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -502,10 +502,10 @@ TextureImporter:
       name: Border All 1_9
       rect:
         serializedVersion: 2
-        x: 575
-        y: 447
-        width: 65
-        height: 65
+        x: 576
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -524,13 +524,13 @@ TextureImporter:
       name: Border All 1_10
       rect:
         serializedVersion: 2
-        x: 576
+        x: 0
         y: 384
         width: 64
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 15, y: 7, z: 15, w: 7}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -546,10 +546,10 @@ TextureImporter:
       name: Border All 1_11
       rect:
         serializedVersion: 2
-        x: 0
-        y: 319
-        width: 65
-        height: 66
+        x: 64
+        y: 384
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -568,13 +568,13 @@ TextureImporter:
       name: Border All 1_12
       rect:
         serializedVersion: 2
-        x: 0
-        y: 256
+        x: 128
+        y: 384
         width: 64
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 14, y: 14, z: 14, w: 14}
       customData: 
       outline: []
       physicsShape: []
@@ -590,8 +590,8 @@ TextureImporter:
       name: Border All 1_13
       rect:
         serializedVersion: 2
-        x: 64
-        y: 320
+        x: 192
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -612,8 +612,8 @@ TextureImporter:
       name: Border All 1_14
       rect:
         serializedVersion: 2
-        x: 64
-        y: 256
+        x: 256
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -634,9 +634,9 @@ TextureImporter:
       name: Border All 1_15
       rect:
         serializedVersion: 2
-        x: 127
-        y: 256
-        width: 65
+        x: 320
+        y: 384
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -656,8 +656,8 @@ TextureImporter:
       name: Border All 1_16
       rect:
         serializedVersion: 2
-        x: 128
-        y: 320
+        x: 384
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -678,8 +678,8 @@ TextureImporter:
       name: Border All 1_17
       rect:
         serializedVersion: 2
-        x: 192
-        y: 320
+        x: 448
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -700,8 +700,8 @@ TextureImporter:
       name: Border All 1_18
       rect:
         serializedVersion: 2
-        x: 192
-        y: 256
+        x: 512
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -722,8 +722,8 @@ TextureImporter:
       name: Border All 1_19
       rect:
         serializedVersion: 2
-        x: 256
-        y: 320
+        x: 576
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -744,8 +744,8 @@ TextureImporter:
       name: Border All 1_20
       rect:
         serializedVersion: 2
-        x: 256
-        y: 256
+        x: 0
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -766,10 +766,10 @@ TextureImporter:
       name: Border All 1_21
       rect:
         serializedVersion: 2
-        x: 319
-        y: 255
-        width: 66
-        height: 66
+        x: 64
+        y: 320
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -788,7 +788,7 @@ TextureImporter:
       name: Border All 1_22
       rect:
         serializedVersion: 2
-        x: 320
+        x: 128
         y: 320
         width: 64
         height: 64
@@ -810,7 +810,7 @@ TextureImporter:
       name: Border All 1_23
       rect:
         serializedVersion: 2
-        x: 384
+        x: 192
         y: 320
         width: 64
         height: 64
@@ -832,13 +832,13 @@ TextureImporter:
       name: Border All 1_24
       rect:
         serializedVersion: 2
-        x: 384
-        y: 256
+        x: 256
+        y: 320
         width: 64
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 14, y: 14, z: 14, w: 14}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -854,7 +854,7 @@ TextureImporter:
       name: Border All 1_25
       rect:
         serializedVersion: 2
-        x: 448
+        x: 320
         y: 320
         width: 64
         height: 64
@@ -876,8 +876,8 @@ TextureImporter:
       name: Border All 1_26
       rect:
         serializedVersion: 2
-        x: 448
-        y: 256
+        x: 384
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -898,10 +898,10 @@ TextureImporter:
       name: Border All 1_27
       rect:
         serializedVersion: 2
-        x: 511
-        y: 319
-        width: 66
-        height: 66
+        x: 448
+        y: 320
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -921,7 +921,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 512
-        y: 256
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -964,7 +964,7 @@ TextureImporter:
       name: Border All 1_30
       rect:
         serializedVersion: 2
-        x: 576
+        x: 0
         y: 256
         width: 64
         height: 64
@@ -986,10 +986,10 @@ TextureImporter:
       name: Border All 1_31
       rect:
         serializedVersion: 2
-        x: 0
-        y: 191
-        width: 65
-        height: 66
+        x: 64
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1008,8 +1008,8 @@ TextureImporter:
       name: Border All 1_32
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
+        x: 128
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -1030,10 +1030,10 @@ TextureImporter:
       name: Border All 1_33
       rect:
         serializedVersion: 2
-        x: 63
-        y: 127
-        width: 66
-        height: 66
+        x: 192
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1052,8 +1052,8 @@ TextureImporter:
       name: Border All 1_34
       rect:
         serializedVersion: 2
-        x: 64
-        y: 192
+        x: 256
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -1074,8 +1074,8 @@ TextureImporter:
       name: Border All 1_35
       rect:
         serializedVersion: 2
-        x: 128
-        y: 192
+        x: 320
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -1096,8 +1096,8 @@ TextureImporter:
       name: Border All 1_36
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
+        x: 384
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -1118,10 +1118,10 @@ TextureImporter:
       name: Border All 1_37
       rect:
         serializedVersion: 2
-        x: 191
-        y: 191
-        width: 66
-        height: 66
+        x: 448
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1140,8 +1140,8 @@ TextureImporter:
       name: Border All 1_38
       rect:
         serializedVersion: 2
-        x: 192
-        y: 128
+        x: 512
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -1162,10 +1162,10 @@ TextureImporter:
       name: Border All 1_39
       rect:
         serializedVersion: 2
-        x: 255
-        y: 191
-        width: 66
-        height: 66
+        x: 576
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1184,8 +1184,8 @@ TextureImporter:
       name: Border All 1_40
       rect:
         serializedVersion: 2
-        x: 256
-        y: 128
+        x: 0
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -1206,10 +1206,10 @@ TextureImporter:
       name: Border All 1_41
       rect:
         serializedVersion: 2
-        x: 315
-        y: 127
-        width: 70
-        height: 70
+        x: 64
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1228,7 +1228,7 @@ TextureImporter:
       name: Border All 1_42
       rect:
         serializedVersion: 2
-        x: 320
+        x: 128
         y: 192
         width: 64
         height: 64
@@ -1250,7 +1250,7 @@ TextureImporter:
       name: Border All 1_43
       rect:
         serializedVersion: 2
-        x: 384
+        x: 192
         y: 192
         width: 64
         height: 64
@@ -1272,8 +1272,8 @@ TextureImporter:
       name: Border All 1_44
       rect:
         serializedVersion: 2
-        x: 384
-        y: 128
+        x: 256
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -1294,10 +1294,10 @@ TextureImporter:
       name: Border All 1_45
       rect:
         serializedVersion: 2
-        x: 447
-        y: 127
-        width: 130
-        height: 130
+        x: 320
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1316,7 +1316,7 @@ TextureImporter:
       name: Border All 1_46
       rect:
         serializedVersion: 2
-        x: 576
+        x: 384
         y: 192
         width: 64
         height: 64
@@ -1338,8 +1338,8 @@ TextureImporter:
       name: Border All 1_47
       rect:
         serializedVersion: 2
-        x: 576
-        y: 128
+        x: 448
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -1360,8 +1360,8 @@ TextureImporter:
       name: Border All 1_48
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
+        x: 512
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -1382,10 +1382,10 @@ TextureImporter:
       name: Border All 1_49
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 65
-        height: 65
+        x: 576
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1404,8 +1404,8 @@ TextureImporter:
       name: Border All 1_50
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
+        x: 0
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -1427,7 +1427,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 0
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -1448,10 +1448,10 @@ TextureImporter:
       name: Border All 1_52
       rect:
         serializedVersion: 2
-        x: 127
-        y: 0
-        width: 66
-        height: 65
+        x: 128
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1470,8 +1470,8 @@ TextureImporter:
       name: Border All 1_53
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
+        x: 192
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -1492,10 +1492,10 @@ TextureImporter:
       name: Border All 1_54
       rect:
         serializedVersion: 2
-        x: 191
-        y: 63
-        width: 66
-        height: 66
+        x: 256
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1514,8 +1514,8 @@ TextureImporter:
       name: Border All 1_55
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
+        x: 320
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -1536,8 +1536,8 @@ TextureImporter:
       name: Border All 1_56
       rect:
         serializedVersion: 2
-        x: 256
-        y: 64
+        x: 384
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -1558,13 +1558,13 @@ TextureImporter:
       name: Border All 1_57
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
+        x: 448
+        y: 128
         width: 64
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 16, y: 16, z: 16, w: 16}
+      border: {x: 12, y: 12, z: 12, w: 12}
       customData: 
       outline: []
       physicsShape: []
@@ -1580,10 +1580,10 @@ TextureImporter:
       name: Border All 1_58
       rect:
         serializedVersion: 2
-        x: 319
-        y: 0
-        width: 66
-        height: 65
+        x: 512
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1602,8 +1602,8 @@ TextureImporter:
       name: Border All 1_59
       rect:
         serializedVersion: 2
-        x: 320
-        y: 64
+        x: 576
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -1624,10 +1624,10 @@ TextureImporter:
       name: Border All 1_60
       rect:
         serializedVersion: 2
-        x: 383
-        y: 63
-        width: 66
-        height: 66
+        x: 0
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1646,8 +1646,8 @@ TextureImporter:
       name: Border All 1_61
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
+        x: 64
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -1668,10 +1668,10 @@ TextureImporter:
       name: Border All 1_62
       rect:
         serializedVersion: 2
-        x: 447
-        y: 0
-        width: 66
-        height: 65
+        x: 128
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1690,7 +1690,7 @@ TextureImporter:
       name: Border All 1_63
       rect:
         serializedVersion: 2
-        x: 448
+        x: 192
         y: 64
         width: 64
         height: 64
@@ -1712,7 +1712,7 @@ TextureImporter:
       name: Border All 1_64
       rect:
         serializedVersion: 2
-        x: 512
+        x: 256
         y: 64
         width: 64
         height: 64
@@ -1734,8 +1734,8 @@ TextureImporter:
       name: Border All 1_65
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
+        x: 320
+        y: 64
         width: 64
         height: 64
       alignment: 0
@@ -1756,10 +1756,10 @@ TextureImporter:
       name: Border All 1_66
       rect:
         serializedVersion: 2
-        x: 575
-        y: 0
-        width: 65
-        height: 65
+        x: 384
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1778,7 +1778,7 @@ TextureImporter:
       name: Border All 1_67
       rect:
         serializedVersion: 2
-        x: 576
+        x: 448
         y: 64
         width: 64
         height: 64
@@ -1796,6 +1796,270 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Border All 1_68
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bab558905d809cb48b7e5590027b59de
+      internalID: 207729826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border All 1_69
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feb5821021171454fbbbaa69c2283529
+      internalID: 101868534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border All 1_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9eb8f5533d2fe247b2def44164fa305
+      internalID: 1700820723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border All 1_71
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 084ef70aacfed764c976f20fc4669f5d
+      internalID: -1395039350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border All 1_72
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a7a6326983d881489cd119e404ea4a1
+      internalID: -1041241707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border All 1_73
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ed0396ca83df17469d08d3965bb55fd
+      internalID: -636962759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border All 1_74
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 457f7e36d4452014abeb7a8f3fb6cc7b
+      internalID: 189521264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border All 1_75
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f46c138c8ce580c419b425e5e128b1e6
+      internalID: -801267880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border All 1_76
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 292c805ee08884045acb7aeb81fb71fe
+      internalID: 721585765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border All 1_77
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13d1a4b22a0b4284a8aebdcaa7aba6a3
+      internalID: -1041042433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border All 1_78
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa5ab00af4ac60b4cbe8c11835c74f49
+      internalID: 1958359394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Border All 1_79
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44078268e15662649b8786ece2d84be7
+      internalID: 1213773489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1808,7 +2072,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Border All 1_0: 1579634340695147797
       Border All 1_1: 8230112951929061729
@@ -1875,7 +2141,19 @@ TextureImporter:
       Border All 1_65: -3034184068512327569
       Border All 1_66: -644046801279652834
       Border All 1_67: -4164507318353967945
+      Border All 1_68: 207729826
+      Border All 1_69: 101868534
       Border All 1_7: 970384203861119329
+      Border All 1_70: 1700820723
+      Border All 1_71: -1395039350
+      Border All 1_72: -1041241707
+      Border All 1_73: -636962759
+      Border All 1_74: 189521264
+      Border All 1_75: -801267880
+      Border All 1_76: 721585765
+      Border All 1_77: -1041042433
+      Border All 1_78: 1958359394
+      Border All 1_79: 1213773489
       Border All 1_8: -882143960156148867
       Border All 1_9: 4180822661446702196
   mipmapLimitGroupName: 

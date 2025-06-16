@@ -104,7 +104,7 @@ public class CombatManager : MonoBehaviour
     public void EndTurn()
     {
         TurnOrderUI.Instance.AdvanceTurn();
-        _currentCombatent.EndTurn();
+        _currentCombatent.OnTurnEnd();
         AdvanceToNextLivingActor();
         NewTurn();
     }
@@ -168,8 +168,8 @@ public class CombatManager : MonoBehaviour
         Console.Log($"[Combat] Handling death of {dead.name} @ idx={idx}. pre-idx={_currentTurnIndex}, count={_turnOrder.Count}");
 
         // adjust index so next living actor isn't skipped
-        if (idx <= _currentTurnIndex)
-            _currentTurnIndex = Mathf.Max(0, _currentTurnIndex - 1);
+        //if (idx <= _currentTurnIndex)
+        //    _currentTurnIndex = Mathf.Max(0, _currentTurnIndex - 1);
 
         // remove only UI icon for dead actor
         TurnOrderUI.Instance.RemoveActorFromTurn(dead);
@@ -192,6 +192,8 @@ public class CombatManager : MonoBehaviour
 
     private void CheckForVictoryOrDefeat()
     {
+        if (CombatEnded) return;
+
         if (_enemyActors.All(e => e.Stats.IsDead))
         {
             CombatEnded = true;

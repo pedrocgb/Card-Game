@@ -10,12 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 869471112480768625}
   - component: {fileID: 6163624491599570395}
-  - component: {fileID: 6164888181044039046}
   - component: {fileID: 6833817619914900984}
+  - component: {fileID: 6164888181044039046}
   - component: {fileID: 2205350600815168861}
   - component: {fileID: 6284345710817605182}
-  - component: {fileID: 1511259363529817430}
+  - component: {fileID: 2490860465492492685}
   - component: {fileID: 6992938243690370685}
+  - component: {fileID: 1511259363529817430}
   m_Layer: 0
   m_Name: Player Actor
   m_TagString: Untagged
@@ -65,6 +66,18 @@ MonoBehaviour:
   _allyTargetEffect: {fileID: 1167319704296513206}
   _defaultMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   _outlineMaterial: {fileID: 2100000, guid: 79d4b400b164b1044afa8c1394a4e25b, type: 2}
+--- !u!114 &6833817619914900984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5044934173528301063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1b584c9dc974d449b2e3c2dc90eb0cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6164888181044039046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,18 +91,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentPosition: 1
---- !u!114 &6833817619914900984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5044934173528301063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1b584c9dc974d449b2e3c2dc90eb0cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2205350600815168861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,6 +118,36 @@ MonoBehaviour:
   _deckUi: {fileID: 0}
   _cardGroup: {fileID: 0}
   _mainCanvas: {fileID: 0}
+--- !u!114 &2490860465492492685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5044934173528301063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3fe80644b2ec794197d760aee2fae9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _debugRelic: {fileID: 0}
+--- !u!114 &6992938243690370685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5044934173528301063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b28684e42a700eb4bb3ae3f1029eb03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _worldCanvas: {fileID: 5645247230792205840}
+  _healthBar: {fileID: 7713873620548858398}
+  _healthText: {fileID: 2273861012249546362}
+  _statusPanel: {fileID: 1924747663876292800}
+  _turnMarkerIcon: {fileID: 1656423597047091197}
 --- !u!61 &1511259363529817430
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -163,23 +194,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.5, y: 2}
   m_EdgeRadius: 0
---- !u!114 &6992938243690370685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5044934173528301063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b28684e42a700eb4bb3ae3f1029eb03e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _worldCanvas: {fileID: 5645247230792205840}
-  _healthBar: {fileID: 7713873620548858398}
-  _healthText: {fileID: 2273861012249546362}
-  _statusPanel: {fileID: 1924747663876292800}
-  _turnMarkerIcon: {fileID: 1656423597047091197}
 --- !u!1 &5919497451703877235
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +279,7 @@ SpriteRenderer:
   m_Size: {x: 2.91, y: 6.15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &9059914199689791697

@@ -48,7 +48,7 @@ public class PlayerTurnManager : MonoBehaviour
         _actor = Player;
         DeselectCard();
 
-        _actor.StartNewTurn();
+        _actor.OnTurnStart();
     }
     #endregion
 

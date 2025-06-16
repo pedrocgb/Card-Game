@@ -92,6 +92,7 @@ public class GameManager : MonoBehaviour
                 break;
 
             case MapNodeType.Treasure:
+                RelicRewardManager.Instance.GenerateRelic();
                 break;
 
             case MapNodeType.Elite:
@@ -116,6 +117,7 @@ public class GameManager : MonoBehaviour
             case MapNodeType.Shop:
                 break;
             case MapNodeType.Treasure:
+                EndTreasureEvent();
                 break;
             case MapNodeType.Elite:
                 break;
@@ -147,6 +149,11 @@ public class GameManager : MonoBehaviour
         CombatManager.EndCombat();
     }
 
+    private void EndTreasureEvent()
+    {
+        _mapUi.SetActive(true);
+        MapVisualizer.Instance.CompleteEvent();
+    }
     #endregion
 
     // ========================================================================
