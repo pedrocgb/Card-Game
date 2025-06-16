@@ -14,19 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cardName: Charge
   _cardDescription: Deals 1 Damage. Move 1 Foward.
+  _cardLore: 
   _cardOrigin: 1
-  _cardImage: {fileID: 1633795990, guid: ab5b9a0af6a3f594182583175bf13886, type: 3}
-  _actionCost: 0
   _cardRarity: 1
+  _cardType: 1
+  _cardImage: {fileID: 1633795990, guid: ab5b9a0af6a3f594182583175bf13886, type: 3}
   _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
+  _actionCost: 0
   _cardEffects:
   - EffectType: 0
     Amount: 1
     Duration: 0
-  - EffectType: 202
-    Amount: 1
+    TargetSelf: 0
+  - EffectType: 200
+    Amount: -1
     Duration: 0
-  _cardType: 1
+    TargetSelf: 1
   _positions: 0300000004000000
   _posIcon: {fileID: 21300000, guid: 4db289aacf9b64c45b1ab4259ccc9e28, type: 3}
   _targetType: 3

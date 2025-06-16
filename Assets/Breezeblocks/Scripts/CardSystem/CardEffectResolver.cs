@@ -15,45 +15,51 @@ public static class CardEffectResolver
         {
             foreach (var effect in Effects)
             {
+                ActorManager definitiveTarget;
+                if (effect.TargetSelf)
+                    definitiveTarget = Source;
+                else
+                    definitiveTarget = target;
+
                 switch (effect.EffectType)
                 {
                     // Hostile Effects
                     default:
                     case UEnums.CardEffects.Damage:
-                        Source.Stats.DealDamage(effect.Amount, target);
-                        break;
-                    case UEnums.CardEffects.SelfDamage:
-                        Source.Stats.DealDamage(effect.Amount, Source);
+                        Source.Stats.DealDamage(effect.Amount, definitiveTarget);
                         break;
                     case UEnums.CardEffects.Slow:
-                        target.Stats.SufferSlow(effect.Amount, effect.Duration);
+                        definitiveTarget.Stats.SufferSlow(effect.Amount, effect.Duration);
                         break;
                     case UEnums.CardEffects.Vulnerability:
-                        target.Stats.SufferVulnerability(effect.Amount, effect.Duration);
+                        definitiveTarget.Stats.SufferVulnerability(effect.Amount, effect.Duration);
                         break;
                     case UEnums.CardEffects.Weakness:
-                        target.Stats.SufferWeakness(effect.Amount, effect.Duration);
+                        definitiveTarget.Stats.SufferWeakness(effect.Amount, effect.Duration);
                         break;
                     case UEnums.CardEffects.Stun:
-                        target.Stats.SufferStun(effect.Duration);
+                        definitiveTarget.Stats.SufferStun(effect.Duration);
                         break;
                     case UEnums.CardEffects.Restrained:
-                        target.Stats.SufferRestrained(effect.Amount, effect.Duration);
+                        definitiveTarget.Stats.SufferRestrained(effect.Amount, effect.Duration);
                         break;
                     case UEnums.CardEffects.Lock:
-                        target.Stats.SufferLockDebuff(effect.Amount, effect.Duration);
+                        definitiveTarget.Stats.SufferLockDebuff(effect.Amount, effect.Duration);
                         break;
                     case UEnums.CardEffects.Burn:
-                        target.Stats.SufferBurn(effect.Amount, effect.Duration);
+                        definitiveTarget.Stats.SufferBurn(effect.Amount, effect.Duration);
                         break;
                     case UEnums.CardEffects.Poison:
-                        target.Stats.SufferPoison(effect.Amount, effect.Duration);
+                        definitiveTarget.Stats.SufferPoison(effect.Amount, effect.Duration);
                         break;
                     case UEnums.CardEffects.Bleed:
-                        target.Stats.SufferBleed(effect.Amount, effect.Duration);
+                        definitiveTarget.Stats.SufferBleed(effect.Amount, effect.Duration);
                         break;
                     case UEnums.CardEffects.BlockDamage:
-                        Source.Stats.DealBlockDamage(target);
+                        Source.Stats.DealBlockDamage(definitiveTarget);
+                        break;
+                    case UEnums.CardEffects.Blind:
+                        definitiveTarget.Stats.SufferBlind(effect.Amount, effect.Duration);
                         break;
 
                     // Buff effects

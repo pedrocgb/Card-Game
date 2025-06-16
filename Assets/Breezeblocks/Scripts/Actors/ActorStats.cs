@@ -335,6 +335,19 @@ public class ActorStats : MonoBehaviour
     #region Damage Effects
     public void DealDamage(int Damage, ActorManager Target)
     {
+        // Blind check
+        if (GetTotalEffectAmount(StatusEffects.Blind) > 0)
+        {
+            var blind = _activeEffects.FirstOrDefault(e => e.StatusEffect == StatusEffects.Blind);
+            if (blind != null)
+                UpdateStatusDuration(blind);
+            _actor.UI.UpdateStatusUI(_activeEffects);
+
+            FloatingTextManager.SpawnText(transform.position, "MISS!", HealthModColors.Dodge);
+            Console.Log($"{_actor.ActorName} misses the attack!");
+            return;
+        }
+
         // Calculate damage dealt with weakness
         int initialWeakness = GetTotalEffectAmount(StatusEffects.Weakness);
         int damageAfterWeakness = Mathf.Max(0, Damage - initialWeakness);
@@ -355,6 +368,19 @@ public class ActorStats : MonoBehaviour
 
     public void DealBlockDamage(ActorManager Target)
     {
+        // Blind check
+        if (GetTotalEffectAmount(StatusEffects.Blind) > 0)
+        {
+            var blind = _activeEffects.FirstOrDefault(e => e.StatusEffect == StatusEffects.Blind);
+            if (blind != null)
+                UpdateStatusDuration(blind);
+            _actor.UI.UpdateStatusUI(_activeEffects);
+
+            FloatingTextManager.SpawnText(transform.position, "MISS!", HealthModColors.Dodge);
+            Console.Log($"{_actor.ActorName} misses the attack!");
+            return;
+        }
+
         // Calculate damage dealt with weakness
         int initialWeakness = GetTotalEffectAmount(StatusEffects.Weakness);
         int damageAfterWeakness = Mathf.Max(0, GetTotalEffectAmount(StatusEffects.Block) - initialWeakness);

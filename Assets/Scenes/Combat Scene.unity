@@ -12108,10 +12108,10 @@ MonoBehaviour:
   - level: 1
     parties:
     - enemyPrefabs:
-      - {fileID: 11400000, guid: b70674ba3f265884594b6a8fcf0c4522, type: 2}
-      - {fileID: 11400000, guid: b70674ba3f265884594b6a8fcf0c4522, type: 2}
-      - {fileID: 11400000, guid: b70674ba3f265884594b6a8fcf0c4522, type: 2}
-      - {fileID: 11400000, guid: b70674ba3f265884594b6a8fcf0c4522, type: 2}
+      - {fileID: 11400000, guid: b7c9e5bf622e3a947948383ef33b878d, type: 2}
+      - {fileID: 11400000, guid: b7c9e5bf622e3a947948383ef33b878d, type: 2}
+      - {fileID: 11400000, guid: b7c9e5bf622e3a947948383ef33b878d, type: 2}
+      - {fileID: 11400000, guid: b7c9e5bf622e3a947948383ef33b878d, type: 2}
   - level: 2
     parties:
     - enemyPrefabs:
@@ -17356,7 +17356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5044934173528301063, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6163624491599570395, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: _actorData
@@ -18101,7 +18101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5044934173528301063, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6163624491599570395, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: _actorData

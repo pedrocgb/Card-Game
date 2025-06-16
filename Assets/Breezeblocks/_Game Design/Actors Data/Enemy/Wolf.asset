@@ -17,17 +17,14 @@ MonoBehaviour:
   _actorAnimatorParameter: {fileID: 9100000, guid: 78d69c81f37c8224abb5be2f4de5ee98, type: 2}
   _actorRace: {fileID: 11400000, guid: 850508763c9986849a67f8ff3aa24af6, type: 2}
   _startingCards:
-  - {fileID: 11400000, guid: b870d148f174a414f93970f912f7c7ad, type: 2}
-  - {fileID: 11400000, guid: b870d148f174a414f93970f912f7c7ad, type: 2}
-  - {fileID: 11400000, guid: b870d148f174a414f93970f912f7c7ad, type: 2}
-  - {fileID: 11400000, guid: a817f79bb04204e43a5309687466f2f6, type: 2}
-  - {fileID: 11400000, guid: 4cf71e09c2cb00a4e8a5189033516cc2, type: 2}
-  - {fileID: 11400000, guid: c7a1a955c0b73494b9dddd27551f5d8d, type: 2}
   - {fileID: 11400000, guid: 7c9be73b357eca1469a62ca544184519, type: 2}
-  - {fileID: 11400000, guid: 32021c9575cd3594399dcb90d929b176, type: 2}
-  - {fileID: 11400000, guid: 32021c9575cd3594399dcb90d929b176, type: 2}
-  - {fileID: 11400000, guid: 0949656da70516d4e88775cb2c2c3019, type: 2}
-  - {fileID: 11400000, guid: 4cf71e09c2cb00a4e8a5189033516cc2, type: 2}
+  - {fileID: 11400000, guid: 7c9be73b357eca1469a62ca544184519, type: 2}
+  - {fileID: 11400000, guid: 7c9be73b357eca1469a62ca544184519, type: 2}
+  - {fileID: 11400000, guid: 7c9be73b357eca1469a62ca544184519, type: 2}
+  - {fileID: 11400000, guid: 7c9be73b357eca1469a62ca544184519, type: 2}
+  - {fileID: 11400000, guid: 7c9be73b357eca1469a62ca544184519, type: 2}
+  - {fileID: 11400000, guid: 7c9be73b357eca1469a62ca544184519, type: 2}
+  - {fileID: 11400000, guid: 7c9be73b357eca1469a62ca544184519, type: 2}
   _hasSpecialization: 0
   _actorSpecialization: {fileID: 0}
   _startingSpecializedCards: []
