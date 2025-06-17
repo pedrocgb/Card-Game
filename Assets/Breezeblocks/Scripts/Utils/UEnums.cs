@@ -73,8 +73,10 @@ public class UEnums
 
         Movement = 200,
         Draw = 201,
-        SelfMovement = 202,
+        AddCardToHand = 202,
+        AddCardToDeck = 203,
 
+        None = 1000
     }
 
     public enum  StatusEffects

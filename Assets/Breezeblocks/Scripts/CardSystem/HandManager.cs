@@ -215,6 +215,40 @@ public class HandManager : MonoBehaviour
         RebuildHandLayout();
         yield return seq.WaitForCompletion();
     }
+
+    /// <summary>
+    /// Plays fade+pop animation on one drawn card, then rebuilds layout and re-enables hover.
+    /// </summary>
+    private IEnumerator PlaySingleDrawAnimation(CardUI ui)
+    {
+        // Prepare start state
+        ui.HoverHandler.EnableHover(false);
+        ui.HoverHandler.CaptureOriginalTransform();
+        ui.CanvasGroup.alpha = 0f;
+        ui.transform.localScale = Vector3.one * 0.9f;
+
+        // Build sequence
+        Sequence seq = DOTween.Sequence()
+            .AppendInterval(UConstants.CARD_DRAW_FADE_STAGGER)
+            .Append(ui.CanvasGroup
+                .DOFade(1f, UConstants.CARD_DRAW_FADE_DURATION)
+                .SetEase(Ease.Linear))
+            .Join(ui.transform
+                .DOScale(1f, UConstants.CARD_DRAW_FADE_DURATION)
+                .SetEase(Ease.OutBack));
+
+        // On complete, re-enable hover and rebuild
+        seq.OnComplete(() =>
+        {
+            ui.HoverHandler.EnableHover(true);
+            ui.HoverHandler.CaptureOriginalTransform();
+            RebuildHandLayout();
+        });
+
+        seq.Play();
+        yield return seq.WaitForCompletion();
+    }
+
     public void RebuildHandLayout()
     {
         _cardGroup.blocksRaycasts = false;
@@ -425,6 +459,41 @@ public class HandManager : MonoBehaviour
                 ui.EnableCardLockEffect(false);
             }
         } 
+    }
+
+    public void AddCardToHand(CardData Card, int Amount)
+    {
+        for (int i = 0; i < Amount; i++)
+        {
+            if (_currentHand.Count >= _actor.Data.MaxHandSize)
+            {
+                Debug.LogWarning($"Tried to create card in hand for {_actor.ActorName} but its hand is full, card is added to deck instead.");
+                CardInstance deckCard = new CardInstance(Card);
+                _deckManager.AddCard(deckCard);
+                return;
+            }
+
+            CardInstance newCard = new CardInstance(Card);
+            _currentHand.Add(newCard);
+
+            // Create a new card instance UI
+            CardUI card = ObjectPooler.SpawnFromPool("Card", _cardGroupRect.position, Quaternion.identity).GetComponent<CardUI>();
+            card.Initialize(newCard);
+            card.transform.SetParent(_cardGroupRect, false);
+
+            _currentHandUI.Add(card);
+
+            // Validate if cards are playable, unplayable cards are greyout;
+            ValidateCard(card, _actor);
+
+            // Update Actor UI
+            if (_actor.IsMyTurn)
+            {
+                ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count);
+                if (_actor is PlayerActor)
+                    StartCoroutine(PlaySingleDrawAnimation(card));
+            }
+        }
     }
     #endregion
 

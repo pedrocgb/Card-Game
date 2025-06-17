@@ -39,17 +39,6 @@ public class ActorPosition : MonoBehaviour
         AnimatePosition(anchor.position, 0.75f);
     }
 
-    public void MoveActor(int amount)
-    {
-        if (_parentActor.Stats.IsRestrained)
-        {
-            Console.Log($"{_parentActor.ActorName} is restrained and cannot move.");
-            return;
-        }
-
-        PositionsManager.MoveActor(_parentActor, amount);
-    }
-
     public void ForceMovement(int amount)
     {
         if (_parentActor.Stats.IsRestrained)
@@ -57,7 +46,6 @@ public class ActorPosition : MonoBehaviour
             Console.Log($"{_parentActor.ActorName} is restrained and cannot move.");
             return;
         }
-
         PositionsManager.MoveActor(_parentActor, amount);
     }
     #endregion

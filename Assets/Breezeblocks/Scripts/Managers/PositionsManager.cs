@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
+using UnityEditor.Localization.Plugins.XLIFF.V12;
 using UnityEngine;
 
 public class PositionsManager : MonoBehaviour
@@ -131,29 +132,28 @@ public class PositionsManager : MonoBehaviour
         SortAndApplyPositions(GetPartyList(actor));
     }
 
-    private bool moveActor(ActorManager actor, int offSet)
+    private bool moveActor(ActorManager actor, int offset)
     {
-        // Get the list of actors in the party, either player or enemy
         var list = GetPartyList(actor);
-        if (!list.Contains(actor)) return false;
-
-        // Get the current index of the actor and calculate the target index (the new position it will move)
         int currentIndex = list.IndexOf(actor);
-        int targetIndex = Mathf.Clamp(currentIndex + offSet, 0, list.Count - 1);
-
-        // Prevent swaping with dead actors
-        if (targetIndex == currentIndex ||
-            list[targetIndex].Stats.IsDead)
+        if (currentIndex < 0)
             return false;
 
-        // Swap the actor with the target index
-        list.RemoveAt(currentIndex);
-        list.Insert(targetIndex, actor);
+        // +offset → forward (lower index), –offset → backward (higher index)
+        int desiredIndex = Mathf.Clamp(currentIndex - offset, 0, list.Count - 1);
 
+        // nothing to do if same slot, or target is dead
+        if (desiredIndex == currentIndex || list[desiredIndex].Stats.IsDead)
+            return false;
+
+        // remove and re-insert at the exact same desiredIndex
+        list.RemoveAt(currentIndex);
+        list.Insert(desiredIndex, actor);
         SortAndApplyPositions(list);
+
+        Debug.Log($"Moving {actor.ActorName} by {offset} positions.");
         return true;
     }
-
     private void updatePositions()
     {
         _playerParty.Clear();

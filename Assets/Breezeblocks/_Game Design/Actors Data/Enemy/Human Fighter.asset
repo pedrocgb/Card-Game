@@ -16,24 +16,10 @@ MonoBehaviour:
   _portrait: {fileID: -4176156179168271795, guid: f0ab33ac2ad531043bbcdc6c44460ed6, type: 3}
   _actorAnimatorParameter: {fileID: 9100000, guid: 3c919e0774cd4be4a99b69860edf12ce, type: 2}
   _actorRace: {fileID: 11400000, guid: 3543198674c43ee439d9691da59007a3, type: 2}
-  _startingCards:
-  - {fileID: 11400000, guid: 0d422a1cd5eb1d547b20315a80b3bd5a, type: 2}
-  - {fileID: 11400000, guid: abcfbf1dc2dcb954d84c9dd46988bc79, type: 2}
-  - {fileID: 11400000, guid: ac06da26b44518444bc66b7aa2505509, type: 2}
+  _startingCards: []
   _hasSpecialization: 1
   _actorSpecialization: {fileID: 11400000, guid: 1346c4000a57dc9408d4210a97256482, type: 2}
-  _startingSpecializedCards:
-  - {fileID: 11400000, guid: 95e0cf23098a14044923fd0aa4837650, type: 2}
-  - {fileID: 11400000, guid: 95e0cf23098a14044923fd0aa4837650, type: 2}
-  - {fileID: 11400000, guid: 95e0cf23098a14044923fd0aa4837650, type: 2}
-  - {fileID: 11400000, guid: b93583dfb6441be42867c83e50ebb30c, type: 2}
-  - {fileID: 11400000, guid: 379940461e911c843939b1fc48a38ac8, type: 2}
-  - {fileID: 11400000, guid: fea97a8f1ae8a374bb78e9d4cd635bcb, type: 2}
-  - {fileID: 11400000, guid: 259338a5578f39a419b33a0f31ee8f76, type: 2}
-  - {fileID: 11400000, guid: 5e9756ff7147e6c43bcb0adf034b4a08, type: 2}
-  - {fileID: 11400000, guid: eb28f4f538fbc5a4da150ade05bc7b69, type: 2}
-  - {fileID: 11400000, guid: 102b1a0fbef930a41b69898470f86919, type: 2}
-  - {fileID: 11400000, guid: 76f35b5c2e678e54e921900a589a0089, type: 2}
+  _startingSpecializedCards: []
   _baseMaxHealth: 42
   _baseActionsPerTurn: 3
   _initiativeBonus: 2

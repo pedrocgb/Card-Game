@@ -147,8 +147,7 @@ public class EnemyTurnManager : MonoBehaviour
                 chosen,
                 selectedCard
             );
-            chosen.HideTargetFeedBack();
-            Debug.Log($"Enemy {enemy.name} played {selectedCard.CardName} on {chosen.name}");
+            chosen.HideTargetFeedBack();            
         }
         else
         {
@@ -162,12 +161,11 @@ public class EnemyTurnManager : MonoBehaviour
             CardEffectResolver.ApplyEffects(
                 selectedCard.CardEffects,
                 enemy,
-                null,   // or pass the list if your resolver supports it
+                null,  
                 selectedCard
             );
             foreach (var t in validTargets)
-                t.HideTargetFeedBack();
-            Debug.Log($"Enemy {enemy.name} played {selectedCard.CardName} on all valid targets");
+                t.HideTargetFeedBack();            
         }
 
         // 6) cleanup

@@ -64,33 +64,36 @@ public static class CardEffectResolver
 
                     // Buff effects
                     case UEnums.CardEffects.Heal:
-                        target.Stats.Heal(effect.Amount);
+                        definitiveTarget.Stats.Heal(effect.Amount);
                         break;
                     case UEnums.CardEffects.Block:
-                        target.Stats.GainBlock(effect.Amount, effect.Duration);
+                        definitiveTarget.Stats.GainBlock(effect.Amount, effect.Duration);
                         break;
                     case UEnums.CardEffects.Haste:
-                        target.Stats.GainHaste(effect.Amount, effect.Duration);
+                        definitiveTarget.Stats.GainHaste(effect.Amount, effect.Duration);
                         break;
                     case UEnums.CardEffects.Toughness:
-                        target.Stats.GainToughness(effect.Amount, effect.Duration);
+                        definitiveTarget.Stats.GainToughness(effect.Amount, effect.Duration);
                         break;
                     case UEnums.CardEffects.Dodge:
-                        target.Stats.GainDodge(effect.Amount, effect.Duration);
+                        definitiveTarget.Stats.GainDodge(effect.Amount, effect.Duration);
                         break;
                     case UEnums.CardEffects.Draw:
-                        Source.Hand.DrawCards(effect.Amount);
+                        definitiveTarget.Hand.DrawCards(effect.Amount);
                         break;
                     case UEnums.CardEffects.Riposte:
-                        Source.Stats.GainRiposte(effect.Amount, effect.Duration);
+                        definitiveTarget.Stats.GainRiposte(effect.Amount, effect.Duration);
                         break;
 
                     // Other effects
                     case UEnums.CardEffects.Movement:
-                        target.Positioning.ForceMovement(effect.Amount);
+                        definitiveTarget.Positioning.ForceMovement(effect.Amount);
                         break;
-                    case UEnums.CardEffects.SelfMovement:
-                        Source.Positioning.MoveActor(effect.Amount);
+                    case UEnums.CardEffects.AddCardToHand:
+                        definitiveTarget.Hand.AddCardToHand(effect.NewCard, effect.Amount);
+                        break;
+                    case UEnums.CardEffects.AddCardToDeck:
+                        
                         break;
                 }
             }

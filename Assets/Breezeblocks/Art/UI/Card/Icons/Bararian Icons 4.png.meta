@@ -241,13 +241,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bararian Icons 4_0
+      name: Rage
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 396
-        height: 1024
+        x: 508
+        y: 540
+        width: 381
+        height: 368
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,452 +263,34 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bararian Icons 4_1
+      name: Battle Cry
       rect:
         serializedVersion: 2
-        x: 51
-        y: 464
-        width: 430
-        height: 421
+        x: 898
+        y: 557
+        width: 295
+        height: 349
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 805f81cffe0e2e820800000000000000
-      internalID: 2946164427585025288
+      spriteID: b5aab46eb6c4c4d4db67f75526c9eab2
+      internalID: 829094503
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bararian Icons 4_2
+      name: War Cry
       rect:
         serializedVersion: 2
-        x: 81
-        y: 534
-        width: 8
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a53d25160a05b2360800000000000000
-      internalID: 7145893883511231322
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_3
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 526
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e07f10152c4242a80800000000000000
-      internalID: -8492622580312574194
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_4
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 518
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b66b594714d43ecb0800000000000000
-      internalID: -4835936631341599125
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_5
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 504
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3c89691ab8377a2d0800000000000000
-      internalID: -3267515961085355837
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_6
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 452
-        width: 8
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ae38466767704ea00800000000000000
-      internalID: 784760440443143146
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_7
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 440
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b1a562d794e7f4ab0800000000000000
-      internalID: -5021656205397435877
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_8
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 430
-        width: 8
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6dd130e843f147ae0800000000000000
-      internalID: -1552581660954649130
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_9
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 414
-        width: 8
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2085bd2e9affe1120800000000000000
-      internalID: 2386625957673523202
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_10
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 406
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f14288c172c55a280800000000000000
-      internalID: -9032712154569497569
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_11
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 381
-        width: 8
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 372ff78c78118ddf0800000000000000
-      internalID: -155354912262196621
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_12
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 350
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 23eea48d8a004cb40800000000000000
-      internalID: 5459489373463178802
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_13
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 326
-        width: 8
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 35617671a167f2fa0800000000000000
-      internalID: -5823305938732902829
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_14
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 231
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a31e5fb85f9526990800000000000000
-      internalID: -7394248727038926534
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_15
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 422
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 540e98dcd31b57b60800000000000000
-      internalID: 7743290013332922437
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_16
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 374
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a1b3b620d0d0eba20800000000000000
-      internalID: 3079913544694315802
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_17
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 220
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0634cefe81c6dbbd0800000000000000
-      internalID: -2612813354444766368
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_18
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 24
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8a55d4f60539a0210800000000000000
-      internalID: 1300013416123815336
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_19
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 487
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a54bb04c57a08edc0800000000000000
-      internalID: -3609623600420899750
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_20
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 479
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 031d52dc9d8899ff0800000000000000
-      internalID: -28841453570109136
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_21
-      rect:
-        serializedVersion: 2
-        x: 126
-        y: 123
-        width: 331
+        x: 1195
+        y: 550
+        width: 295
         height: 360
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -716,582 +298,54 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e220182762ba47fa0800000000000000
-      internalID: -5803825838155562450
+      spriteID: ebae8716409d01140bcaf94d9fa6ea06
+      internalID: -908357381
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bararian Icons 4_22
+      name: Rend
       rect:
         serializedVersion: 2
-        x: 418
-        y: 1
-        width: 463
-        height: 1023
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 063022f9433ddeb00800000000000000
-      internalID: 859575326859199328
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_23
-      rect:
-        serializedVersion: 2
-        x: 523
-        y: 163
-        width: 350
-        height: 318
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2ec6cf07e15b572d0800000000000000
-      internalID: -3281517611120300830
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_24
-      rect:
-        serializedVersion: 2
-        x: 677
-        y: 153
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 32606d2d466825e50800000000000000
-      internalID: 6796642555247592995
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_25
-      rect:
-        serializedVersion: 2
-        x: 682
+        x: 503
         y: 133
-        width: 48
-        height: 36
+        width: 387
+        height: 363
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c6af5f345dec1dbc0800000000000000
-      internalID: -3759996798514103700
+      spriteID: 47b5180a613fe1f4b87b0b206702abc0
+      internalID: 86803003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bararian Icons 4_26
+      name: Maim
       rect:
         serializedVersion: 2
-        x: 793
-        y: 143
-        width: 70
-        height: 47
+        x: 918
+        y: 129
+        width: 420
+        height: 380
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 807900d342888e150800000000000000
-      internalID: 5902117000892684040
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_27
-      rect:
-        serializedVersion: 2
-        x: 797
-        y: 800
-        width: 56
-        height: 97
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2378f333a667edee0800000000000000
-      internalID: -1234419049354524878
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_28
-      rect:
-        serializedVersion: 2
-        x: 902
-        y: 456
-        width: 276
-        height: 433
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0b4fcfb9936bac2b0800000000000000
-      internalID: -5563434031116389200
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_29
-      rect:
-        serializedVersion: 2
-        x: 902
-        y: 0
-        width: 634
-        height: 486
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4882c8b57f42d31f0800000000000000
-      internalID: -1063653292178134908
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_30
-      rect:
-        serializedVersion: 2
-        x: 922
-        y: 887
-        width: 125
-        height: 137
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8be89c11552c3aa60800000000000000
-      internalID: 7684199059850628792
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_31
-      rect:
-        serializedVersion: 2
-        x: 993
-        y: 543
-        width: 8
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 95fc7f6a528f338d0800000000000000
-      internalID: -2867675697106137255
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_32
-      rect:
-        serializedVersion: 2
-        x: 994
-        y: 896
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 91292e37389ecc790800000000000000
-      internalID: -7508369727939243495
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_33
-      rect:
-        serializedVersion: 2
-        x: 994
-        y: 536
-        width: 7
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fccaa2809c381ad20800000000000000
-      internalID: 3288054102405852367
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_34
-      rect:
-        serializedVersion: 2
-        x: 994
-        y: 527
-        width: 7
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c9eb7ddc6205819a0800000000000000
-      internalID: -6262167154266227044
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_35
-      rect:
-        serializedVersion: 2
-        x: 994
-        y: 494
-        width: 7
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 73b064d0eab6918b0800000000000000
-      internalID: -5180991501021869257
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_36
-      rect:
-        serializedVersion: 2
-        x: 995
-        y: 517
-        width: 6
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d65269c270e27bf60800000000000000
-      internalID: 8049953467295737197
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_37
-      rect:
-        serializedVersion: 2
-        x: 1039
-        y: 511
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a061daf25e0ce3e10800000000000000
-      internalID: 2179391360273815050
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_38
-      rect:
-        serializedVersion: 2
-        x: 1041
-        y: 551
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bc8b4b675facfe020800000000000000
-      internalID: 2373338684254894283
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_39
-      rect:
-        serializedVersion: 2
-        x: 1041
-        y: 543
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 326ac400ade41cb40800000000000000
-      internalID: 5458730921564612131
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_40
-      rect:
-        serializedVersion: 2
-        x: 1041
-        y: 535
-        width: 6
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d22ab950455fc1430800000000000000
-      internalID: 3755145930540294701
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_41
-      rect:
-        serializedVersion: 2
-        x: 1041
-        y: 527
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b6811bbc038ac87d0800000000000000
-      internalID: -2914769931286275989
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_42
-      rect:
-        serializedVersion: 2
-        x: 1041
-        y: 520
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9aea20e8744b81090800000000000000
-      internalID: -8063496913388654935
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_43
-      rect:
-        serializedVersion: 2
-        x: 1059
-        y: 482
-        width: 477
-        height: 542
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2574801fece371aa0800000000000000
-      internalID: -6190410104269420718
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_44
-      rect:
-        serializedVersion: 2
-        x: 1087
-        y: 554
-        width: 10
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: db5027c5fd5274060800000000000000
-      internalID: 6937555392246449597
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_45
-      rect:
-        serializedVersion: 2
-        x: 1205
-        y: 539
-        width: 274
-        height: 341
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a89baf52f33028530800000000000000
-      internalID: 3855647800737577354
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_46
-      rect:
-        serializedVersion: 2
-        x: 1342
-        y: 542
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 39d253acb505ed730800000000000000
-      internalID: 4025743472080530835
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bararian Icons 4_47
-      rect:
-        serializedVersion: 2
-        x: 1388
-        y: 545
-        width: 10
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a2fea226f5026d0f0800000000000000
-      internalID: -1092650265549803734
+      spriteID: 512c7e3efb7f16847a3a90338c974775
+      internalID: -867969675
       vertices: []
       indices: 
       edges: []
@@ -1300,7 +354,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ca1188edddcd9654aa85e48552879873
     internalID: 0
     vertices: []
     indices: 
@@ -1308,8 +362,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
-    nameFileIdTable: {}
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1536.0,"y":1024.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Battle Cry: 829094503
+      Maim: -867969675
+      Rage: -3738022416129570458
+      Rend: 86803003
+      War Cry: -908357381
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
