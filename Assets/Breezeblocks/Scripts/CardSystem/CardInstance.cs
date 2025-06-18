@@ -16,6 +16,7 @@ public class CardInstance
     public int ActionCost { get; set; }
 
     // Card Effects
+    public bool ConsumeCard { get; set; } = false;
     public List<EffectBlock> CardEffects { get; set; } = new List<EffectBlock>();
 
     // Positions
@@ -45,6 +46,7 @@ public class CardInstance
         CardImage = data.CardImage;
         ActionCost = data.ActionCost;
 
+        ConsumeCard = data.ConsumeCard;
         CardEffects = new List<EffectBlock>(data.CardEffects);
 
         CardType = data.CardType;

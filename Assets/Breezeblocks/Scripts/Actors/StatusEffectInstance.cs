@@ -1,5 +1,3 @@
-using UnityEngine;
-
 [System.Serializable]
 public class StatusEffectInstance
 {
@@ -8,6 +6,8 @@ public class StatusEffectInstance
     public int Amount;
     public int DurationRemaining;
 
+    // ========================================================================
+
     public StatusEffectInstance(UEnums.StatusEffects statusEffect, int amount, int durationRemaining, UEnums.StatusStackingMode stackingMode)
     {
         StatusEffect = statusEffect;
@@ -15,4 +15,6 @@ public class StatusEffectInstance
         DurationRemaining = durationRemaining;
         StackingMode = stackingMode;
     }
+
+    // ========================================================================
 }

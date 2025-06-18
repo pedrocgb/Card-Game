@@ -1,7 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
 using Sirenix.OdinInspector;
-using UnityEngine.UI;
 
 public class CardUIAnimations : MonoBehaviour
 {

@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class ConsoleCommand
 {
     public string Name;

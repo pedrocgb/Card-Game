@@ -6,6 +6,7 @@ using TMPro;
 
 public class Tooltip : MonoBehaviour
 {
+    #region Variables and Properties
     [System.Serializable]
     private struct NodeTypeInfo
     {
@@ -46,6 +47,9 @@ public class Tooltip : MonoBehaviour
 
     // Tween that’s currently animating the text.  We keep a reference so we can Kill() if needed.
     private Tween _typingTween;
+    #endregion
+
+    // ========================================================================
 
     private void Awake()
     {
@@ -62,6 +66,8 @@ public class Tooltip : MonoBehaviour
             _tooltipPanel.gameObject.SetActive(false);
     }
 
+    // ========================================================================
+
     private void LateUpdate()
     {
         // While the tooltip is visible, keep it at (mousePosition + offset)
@@ -71,6 +77,9 @@ public class Tooltip : MonoBehaviour
         }
     }
 
+    // ========================================================================
+
+    #region Tooltip Methods
     /// <summary>
     /// Call this to show a tooltip for the given nodeType at screenPosition.
     /// It types out the text (character by character) using DOTween.
@@ -137,6 +146,9 @@ public class Tooltip : MonoBehaviour
         _typingTween?.Kill();
         _typingTween = null;
     }
+    #endregion
+
+    // ========================================================================
 
     /// <summary>
     /// Adjusts the panel’s size to fit the current text plus padding.
@@ -157,4 +169,6 @@ public class Tooltip : MonoBehaviour
         // Now set the panel’s size to text size + padding on each side
         _tooltipPanel.sizeDelta = new Vector2(textW + _padding.x * 2f, textH + _padding.y * 2f);
     }
+
+    // ========================================================================
 }

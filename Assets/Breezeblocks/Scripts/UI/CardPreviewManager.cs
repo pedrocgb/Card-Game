@@ -1,7 +1,10 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using Breezeblocks.Managers;
 using DG.Tweening;
 using Sirenix.OdinInspector;
+using TMPro;
 using UnityEngine;
 
 public class CardPreviewManager : MonoBehaviour
@@ -28,6 +31,14 @@ public class CardPreviewManager : MonoBehaviour
     [FoldoutGroup("Animation Settings", expanded: true)]
     [SerializeField] 
     private float _fadeDuration = 0.3f;
+
+    [FoldoutGroup("Components/Actor Deck-Discard Displayer", expanded: true)]
+    [SerializeField] private GameObject _actorDeckDiscardDisplayer = null;
+    [FoldoutGroup("Components/Actor Deck-Discard Displayer", expanded: true)]
+    [SerializeField] private TextMeshProUGUI _actorDeckDiscardTitleText = null;
+    [FoldoutGroup("Components/Actor Deck-Discard Displayer", expanded: true)]
+    [SerializeField] private Transform _actorDeckDiscardContainer = null;
+    private List<CardSlideUI> _spawnedCards = new List<CardSlideUI>();
     #endregion
 
     // ========================================================================
@@ -47,6 +58,16 @@ public class CardPreviewManager : MonoBehaviour
             return;
         }
         Instance.StartCoroutine(Instance.showEnemyCard(enemy, cardData));
+    }
+
+    public static void CardDisplayer(UEnums.CardDisplayerTypes Type, bool Activate)
+    {
+        if (Instance == null)
+        {
+            Debug.LogError("CardPreviewUI instance not found!");
+            return;
+        }
+        Instance.cardDisplayer(Type, Activate);
     }
     #endregion
 
@@ -101,6 +122,64 @@ public class CardPreviewManager : MonoBehaviour
 
         yield return seq.WaitForCompletion();
     }
+
+    // ========================================================================
+
+    #region Deck and Discard Displayer
+    private void cardDisplayer(UEnums.CardDisplayerTypes type, bool activate)
+    {
+        if (!activate)
+        {
+            // tear down previous
+            foreach (var ui in _spawnedCards)
+            {
+                ui.transform.SetParent(null, false);
+                ui.gameObject.SetActive(false);
+            }
+            _spawnedCards.Clear();
+
+            _actorDeckDiscardDisplayer.SetActive(false);
+            return;
+        }
+
+        _actorDeckDiscardDisplayer.SetActive(true);
+      
+        List<CardInstance> sorted = new List<CardInstance>();
+        switch (type)
+        {
+            default:
+            case UEnums.CardDisplayerTypes.Deck:
+                _actorDeckDiscardTitleText.text = CombatManager.Instance.CurrentCombatent.ActorName + "'s Deck Pile";
+                sorted = CombatManager.Instance.CurrentCombatent.Deck.CurrentDeck
+                         .OrderBy(c => c.ActionCost)
+                         .ToList();
+                break;
+            case UEnums.CardDisplayerTypes.Discard:
+                _actorDeckDiscardTitleText.text = CombatManager.Instance.CurrentCombatent.ActorName + "'s Discard Pile";
+                sorted = CombatManager.Instance.CurrentCombatent.Deck.DiscardPile
+                         .OrderBy(c => c.ActionCost)
+                         .ToList();
+                break;
+            case UEnums.CardDisplayerTypes.Consume:
+                _actorDeckDiscardTitleText.text = CombatManager.Instance.CurrentCombatent.ActorName + "'s Consumed Cards Pile";
+                sorted = CombatManager.Instance.CurrentCombatent.Deck.ConsumedPile
+                         .OrderBy(c => c.ActionCost)
+                         .ToList();
+                break;
+        }
+
+        foreach (CardInstance card in sorted)
+        {
+            var ui = ObjectPooler
+                .SpawnFromPool("Card Slide UI", _actorDeckDiscardContainer.position, Quaternion.identity)
+                .GetComponent<CardSlideUI>();
+
+            ui.transform.SetParent(_actorDeckDiscardContainer, worldPositionStays: false);
+            ui.Initialize(card);
+            _spawnedCards.Add(ui);
+        }
+    }
+    #endregion
 
     // ========================================================================
 }

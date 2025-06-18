@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
-using UnityEditor.Localization.Plugins.XLIFF.V12;
 using UnityEngine;
 
 public class PositionsManager : MonoBehaviour
 {
+    #region Variables and Properties
     public static PositionsManager Instance { get; private set; }
 
     [FoldoutGroup("Components", expanded: true)]
@@ -17,6 +17,7 @@ public class PositionsManager : MonoBehaviour
 
     private List<ActorManager> _playerParty = new();
     private List<ActorManager> _enemyParty = new();
+    #endregion
 
     // ========================================================================
 
@@ -196,6 +197,9 @@ public class PositionsManager : MonoBehaviour
         return Actor is PlayerActor ? _playerParty : _enemyParty;
     }
 
+    // ========================================================================
+
+    #region Local Methods
     private List<ActorManager> getTeam<T>() where T : ActorManager
     {
         if (typeof(T) == typeof(PlayerActor)) return _playerParty;
@@ -212,8 +216,7 @@ public class PositionsManager : MonoBehaviour
     {
         return actor is PlayerActor ? _enemyParty : _playerParty;
     }
-
-    
+    #endregion
 
     // ========================================================================
 }

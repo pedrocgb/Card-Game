@@ -188,4 +188,6 @@ public class TurnOrderUI : MonoBehaviour
             }, newName.Length, newName.Length * _letterDelay);
         });
     }
+
+    // ========================================================================
 }

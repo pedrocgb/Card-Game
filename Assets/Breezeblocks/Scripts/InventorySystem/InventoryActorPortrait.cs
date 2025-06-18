@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class InventoryActorPortrait : MonoBehaviour
 {
+    #region Variables and Properties
     private ActorManager _myActor = null;
     public ActorManager Actor => _myActor;
 
@@ -14,6 +15,7 @@ public class InventoryActorPortrait : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _actorName = null;
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField] private TextMeshProUGUI _actorRace = null;
+    #endregion
 
     // ========================================================================
 
@@ -27,6 +29,8 @@ public class InventoryActorPortrait : MonoBehaviour
         else
             _actorRace.text = actor.Data.ActorRace.RaceName;
     }
+
+    // ========================================================================
 
     public void OnPortraitSelection()
     {

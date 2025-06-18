@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public static class CommandParser
 {
     public static bool TryGetInt(string[] args, int index, out int value)

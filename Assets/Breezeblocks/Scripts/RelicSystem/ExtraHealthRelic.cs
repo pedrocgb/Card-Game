@@ -14,6 +14,8 @@ public class ExtraHealthRelic : RelicData
     [Range(0,1f)]
     [SerializeField] private float _bonusPercentageHp = 0f;
 
+    // ========================================================================
+
     public override void OnEquip(ActorManager holder)
     {
         switch (_isFlatBonus)
@@ -39,4 +41,6 @@ public class ExtraHealthRelic : RelicData
                 break;
         }
     }
+
+    // ========================================================================
 }

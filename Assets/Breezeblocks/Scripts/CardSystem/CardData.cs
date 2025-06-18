@@ -57,6 +57,11 @@ public class CardData : ScriptableObject
     private int _actionCost = 0;
     public int ActionCost => _actionCost;
     [FoldoutGroup("Card Info/Effects", expanded: true)]
+    [InfoBox("Consumed cards are consumed in the combat and cannot be used again until next combat.", InfoMessageType.Warning)]
+    [SerializeField]
+    private bool _consumeCard = false;
+    public bool ConsumeCard => _consumeCard;
+    [FoldoutGroup("Card Info/Effects", expanded: true)]
     [SerializeField]
     private List<EffectBlock> _cardEffects = new List<EffectBlock>();
     public List<EffectBlock> CardEffects => _cardEffects;

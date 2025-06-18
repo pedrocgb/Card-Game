@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class FloatingText : MonoBehaviour
 {
+    #region Variables and Properties
     private TextMeshProUGUI _text = null;
     private float _deactivateTimeStamp = 0f;
+    #endregion
 
     // ========================================================================
 

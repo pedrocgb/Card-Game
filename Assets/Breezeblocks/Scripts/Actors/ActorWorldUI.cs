@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static UEnums;
 
 [RequireComponent(typeof(ActorManager))]
 public class ActorWorldUI : MonoBehaviour

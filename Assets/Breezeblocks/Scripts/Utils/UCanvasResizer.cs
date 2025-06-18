@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class UCanvasResizer : MonoBehaviour
 {
+    #region Variables and Properties
     private RectTransform _canvasRectTransform = null;
     private RectTransform _myRectTransform = null;
 
@@ -11,6 +12,9 @@ public class UCanvasResizer : MonoBehaviour
     [SerializeField]
     private float _sim = 0f;
     private Vector2 _size;
+    #endregion
+
+    // ========================================================================
 
     private void Start()
     {
@@ -31,4 +35,6 @@ public class UCanvasResizer : MonoBehaviour
         canvasScaler.referenceResolution = new Vector2(canvasScaler.referenceResolution.x,
             canvasScaler.referenceResolution.y + Mathf.Abs(offsetTop)+ Mathf.Abs(offsetBottom));
     }
+
+    // ========================================================================
 }

@@ -4,7 +4,6 @@ using UnityEngine.UI;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using Breezeblocks.Managers;
-using static UEnums;
 
 [RequireComponent(typeof(MapGenerator))]
 public class MapVisualizer : MonoBehaviour

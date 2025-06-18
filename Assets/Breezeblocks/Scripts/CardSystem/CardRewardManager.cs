@@ -11,11 +11,9 @@ public struct RarityWeight
     public float weight;
 }
 
-/// <summary>
-/// Hook this up on a singleton GameObject in your scene.
-/// </summary>
 public class CardRewardManager : MonoBehaviour
 {
+    #region Variables and Properties
     public static CardRewardManager Instance = null;
 
     [Header("Global Settings")]
@@ -30,6 +28,9 @@ public class CardRewardManager : MonoBehaviour
 
     // fast lookup
     private Dictionary<Rarity, float> _rarityWeights;
+    #endregion
+
+    // ========================================================================
 
     void Awake()
     {
@@ -37,6 +38,8 @@ public class CardRewardManager : MonoBehaviour
         _rarityWeights = rarityWeightsList
             .ToDictionary(x => x.rarity, x => x.weight);
     }
+
+    // ========================================================================
 
     /// <summary>
     /// Returns N random CardData for the given actor,
@@ -91,4 +94,6 @@ public class CardRewardManager : MonoBehaviour
         // Fallback
         return _rarityWeights.Keys.Last();
     }
+
+    // ========================================================================
 }

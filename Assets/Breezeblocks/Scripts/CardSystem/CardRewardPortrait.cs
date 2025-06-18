@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CardRewardPortrait : MonoBehaviour
 {
+    #region Variables and Properties
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
     private Image _portraitImage = null;
@@ -27,6 +28,9 @@ public class CardRewardPortrait : MonoBehaviour
     public Button SkipRewardButton => _skipRewardBtn;
     
     public ActorManager MyActor { get; private set; }
+    #endregion
+
+    // ========================================================================
 
     public void Initialize(Sprite Portrait, string ActorName, string ActorRace, string ActorSpec, int DeckSize, ActorManager Actor)
     {
@@ -47,4 +51,6 @@ public class CardRewardPortrait : MonoBehaviour
         _actorRace.text = $"{ActorRace} ({ActorSpec})";
         _deckText.text = $"Deck Size: ({DeckSize})";
     }
+
+    // ========================================================================
 }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CardPreview : MonoBehaviour
 {
+    #region Variables and Properties
     // Components
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
@@ -30,8 +31,9 @@ public class CardPreview : MonoBehaviour
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
     private CanvasGroup _canvasGroup = null;
+    #endregion
 
-
+    // ========================================================================
     public void Initialize(CardInstance Instance)
     {
         _cardNameText.text = Instance.CardName;
@@ -44,4 +46,6 @@ public class CardPreview : MonoBehaviour
 
         transform.localScale = Vector3.one;
     }
+
+    // ========================================================================
 }

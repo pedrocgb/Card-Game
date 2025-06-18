@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Breezeblocks.Managers;
 using UnityEngine;
 using static UEnums;
 
@@ -92,13 +91,13 @@ public class ActorStats : MonoBehaviour
         {
             ActorsUI.UpdateUserInterface(_actor.ActorName, _actor.Data.ActorRace.RaceName, _actor.Data.ActorSpecialization.SpecializationName,
                 _currentHealth, _maxHealth, _currentActions, _actionsPerTurn, HealthPercentage,
-                _actor.Data.Portrait, _actor.Deck.CurrentDeck.Count, _actor.Deck.DiscardPile.Count);
+                _actor.Data.Portrait, _actor.Deck.CurrentDeck.Count, _actor.Deck.DiscardPile.Count, _actor.Deck.ConsumedPile.Count);
         }
         else
         {
             ActorsUI.UpdateUserInterface(_actor.ActorName, _actor.Data.ActorRace.RaceName, string.Empty,
                _currentHealth, _maxHealth, _currentActions, _actionsPerTurn, HealthPercentage,
-               _actor.Data.Portrait, _actor.Deck.CurrentDeck.Count, _actor.Deck.DiscardPile.Count);
+               _actor.Data.Portrait, _actor.Deck.CurrentDeck.Count, _actor.Deck.DiscardPile.Count, _actor.Deck.ConsumedPile.Count);
         }
     }
 

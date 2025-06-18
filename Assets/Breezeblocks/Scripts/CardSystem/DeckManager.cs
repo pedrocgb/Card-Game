@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 public class DeckManager : MonoBehaviour
 {
@@ -31,6 +30,7 @@ public class DeckManager : MonoBehaviour
     private void Start()
     {
         InitializeDeck();
+        _deck = new List<CardInstance>(_currentDeck);
     }
 
     public void InitializeDeck()
@@ -55,9 +55,6 @@ public class DeckManager : MonoBehaviour
                 _currentDeck.Add(card);
             }
         }
-
-        _deck = new List<CardInstance>(_currentDeck);
-
         ShuffleDeck();
     }
     #endregion
@@ -99,6 +96,7 @@ public class DeckManager : MonoBehaviour
         }
 
         _currentDeck.Add(card);
+        _deck.Add(card);
         return true;
     }
 
@@ -123,11 +121,35 @@ public class DeckManager : MonoBehaviour
         _discardPile.Clear();
         ShuffleDeck();
     }
+
+    /// <summary>
+    /// Return deck to original state, removing any temporary cards.
+    /// </summary>
+    public void ResumeDeck()
+    {
+        _discardPile.Clear();
+        _currentDeck.Clear();
+        _currentDeck.AddRange(_deck);
+
+        ShuffleDeck();
+    }
     #endregion
 
     // ========================================================================
 
+    #region Effects Methods
+    public bool AddTemporaryCard(CardInstance card)
+    {
+        if (_currentDeck.Count >= 100)
+        {
+            Debug.LogWarning("Cannot add more cards, deck is full.");
+            return false;
+        }
 
+        _currentDeck.Add(card);
+        return true;
+    }
+    #endregion
 
     // ========================================================================
 }

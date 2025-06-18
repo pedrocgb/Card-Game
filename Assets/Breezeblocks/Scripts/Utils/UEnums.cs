@@ -1,5 +1,4 @@
 using System;
-using UnityEngine;
 
 public class UEnums
 {
@@ -138,5 +137,12 @@ public class UEnums
     {
         Racial = 1,
         Specialization = 2
+    }
+
+    public enum CardDisplayerTypes
+    {
+        Deck,
+        Discard,
+        Consume
     }
 }

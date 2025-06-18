@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class CardRewardView : MonoBehaviour,
     IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
+    #region Variables and Properties
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField] private GameObject _cardContent;
     [FoldoutGroup("Components", expanded: true)]
@@ -78,6 +79,8 @@ public class CardRewardView : MonoBehaviour,
     private bool _isFlipped = false;
     private CardData _data;
     private System.Action<CardRewardView> _onSelected;
+    public CardData CardData => _data;
+    #endregion
 
     // ========================================================================
 
@@ -105,6 +108,9 @@ public class CardRewardView : MonoBehaviour,
         FlipToFrontInstant();
     }
 
+    // ========================================================================
+
+    #region Pointer Methods
     public void OnPointerEnter(PointerEventData e)
     {
         if (!_isFlipped) return;
@@ -126,9 +132,11 @@ public class CardRewardView : MonoBehaviour,
         if (!_isFlipped) return;
         _onSelected?.Invoke(this);
     }
+    #endregion
 
-    public CardData CardData => _data;
+    // ========================================================================
 
+    #region Animations Methods
     /// <summary>
     /// Flip from back → front by activating content.
     /// </summary>
@@ -182,9 +190,14 @@ public class CardRewardView : MonoBehaviour,
         seq.Join(_canvasGroup.DOFade(0f, _shrinkFadeDuration));
         seq.OnComplete(() => gameObject.SetActive(false));
     }
+    #endregion
+
+    // ========================================================================
 
     public CardInstance GetCardInstance()
     {
         return new CardInstance(_data);
     }
+
+    // ========================================================================
 }

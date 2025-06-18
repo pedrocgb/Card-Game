@@ -26,6 +26,9 @@ public class ActorsUI : MonoBehaviour
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
     private TextMeshProUGUI _discardPileText = null;
+    [FoldoutGroup("Components", expanded: true)]
+    [SerializeField]
+    private TextMeshProUGUI _consumedPileText = null;
 
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
@@ -59,12 +62,12 @@ public class ActorsUI : MonoBehaviour
     public static void UpdateUserInterface(string Name, string Race, string Specialization, 
         int CurrentHealth, int MaxHealth, 
         int CurrentActions, int MaxActions, float HealthPercentage, Sprite Portrait,
-        int DeckCards, int DiscardCards)
+        int DeckCards, int DiscardCards, int ConsumedCards)
     {
         if (Instance == null)
             return;
 
-        Instance.updateUserInterface(Name, Race, Specialization, CurrentHealth, MaxHealth, CurrentActions, MaxActions, HealthPercentage, Portrait, DeckCards, DiscardCards);
+        Instance.updateUserInterface(Name, Race, Specialization, CurrentHealth, MaxHealth, CurrentActions, MaxActions, HealthPercentage, Portrait, DeckCards, DiscardCards, ConsumedCards);
     }
 
     /// <summary>
@@ -97,11 +100,11 @@ public class ActorsUI : MonoBehaviour
     /// </summary>
     /// <param name="DeckCards"></param>
     /// <param name="DiscardCards"></param>
-    public static void UpdateCardsInterface(int DeckCards, int DiscardCards)
+    public static void UpdateCardsInterface(int DeckCards, int DiscardCards, int ConsumedCards)
     {
         if (Instance == null)
             return;
-        Instance.updateCardsInterface(DeckCards, DiscardCards);
+        Instance.updateCardsInterface(DeckCards, DiscardCards, ConsumedCards);
     }
     #endregion
 
@@ -111,7 +114,7 @@ public class ActorsUI : MonoBehaviour
     private void updateUserInterface(string name, string race, string specialization, 
         int currentHealth, int maxHealth, 
         int currentActions, int maxActions, float healthPercentage, Sprite portrait,
-        int deckCardsQuantity, int discardCardsQuantity)
+        int deckCardsQuantity, int discardCardsQuantity, int consumedCardsQuantity)
     {
         _nameText.text = name;
         _raceAndSpecText.text = $"{race} ({specialization})";
@@ -119,6 +122,7 @@ public class ActorsUI : MonoBehaviour
         _actionsText.text = $"{currentActions}/{maxActions}";
         _deckPileText.text = deckCardsQuantity.ToString();
         _discardPileText.text = discardCardsQuantity.ToString();
+        _consumedPileText.text = consumedCardsQuantity.ToString();
 
         _healthBar.fillAmount = healthPercentage;
         _portrait.sprite = portrait;
@@ -135,10 +139,11 @@ public class ActorsUI : MonoBehaviour
         _actionsText.text = $"{currentActions}/{maxActions}";
     }
 
-    private void updateCardsInterface(int deckCards, int discardCards)
+    private void updateCardsInterface(int deckCards, int discardCards, int consumedCards)
     {
         _deckPileText.text = deckCards.ToString();
         _discardPileText.text = discardCards.ToString();
+        _consumedPileText.text = consumedCards.ToString();
     }
     #endregion
 

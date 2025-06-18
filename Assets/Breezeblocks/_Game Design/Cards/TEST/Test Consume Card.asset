@@ -10,27 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71a19dccf1348014ead4ded939d7251e, type: 3}
-  m_Name: Test Assassinate
+  m_Name: Test Consume Card
   m_EditorClassIdentifier: 
-  _cardName: Test Assassinate
-  _cardDescription: Deal 15 damages
+  _cardName: Test Consume Card
+  _cardDescription: Consume card
   _cardLore: 
   _cardOrigin: 1
   _cardRarity: 1
   _cardType: 1
-  _cardImage: {fileID: 203795228075687366, guid: fb2cd1e0eff738b4c8b61c2cef5b5499, type: 3}
+  _cardImage: {fileID: 1906892709, guid: aaf45b744e9d06f4a99694e27d27adf8, type: 3}
   _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
   _actionCost: 1
+  _consumeCard: 1
   _cardEffects:
-  - EffectType: 0
-    Amount: 15
+  - EffectType: 1000
+    Amount: 0
     Duration: 0
     TargetSelf: 0
     NewCard: {fileID: 0}
-  _positions: 0100000002000000
-  _posIcon: {fileID: 21300000, guid: bebec778a275e3949ba8827f6030776b, type: 3}
-  _targetType: 3
+  _positions: 01000000
+  _posIcon: {fileID: 21300000, guid: 001ac87b5ae03b94b87880e9ee832b94, type: 3}
+  _targetType: 1
   _targetScope: 1
-  _targetPositions: 010000000200000003000000
+  _targetPositions: 
   _canTargetSelf: 0
-  _targetIcon: {fileID: 21300000, guid: 966071b4d24508a45b4bde1a681056e0, type: 3}
+  _targetIcon: {fileID: 21300000, guid: bca32b5c602a34d468a99c9813d72375, type: 3}

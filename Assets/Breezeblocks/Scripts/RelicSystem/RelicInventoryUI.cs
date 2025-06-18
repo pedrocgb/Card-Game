@@ -5,15 +5,17 @@ using UnityEngine.UI;
 
 public class RelicInventoryUI : MonoBehaviour
 {
+    #region Variables and Properties
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField] private Image _relicImage = null;
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField] private TextMeshProUGUI _relicNameText = null;
     private RelicData _myRelic = null;
+    #endregion
 
-    [FoldoutGroup("Settings", expanded: true)]
-    [SerializeField]
+    // ========================================================================
 
+    #region Initialization Methods
     public void Initialize()
     {
         _myRelic = null;
@@ -31,6 +33,9 @@ public class RelicInventoryUI : MonoBehaviour
 
         _relicImage.color = Color.white;
     }
+    #endregion
+
+    // ========================================================================
 
     public void SelectRelic()
     {
@@ -38,4 +43,6 @@ public class RelicInventoryUI : MonoBehaviour
 
         InventoryManager.SelectRelic(_myRelic);
     }
+
+    // ========================================================================
 }

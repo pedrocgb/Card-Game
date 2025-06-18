@@ -1,5 +1,3 @@
-using static UEnums;
-
 public class EnemyActor : ActorManager
 {
     public void InitializeEnemy(ActorData NewData, int NewPosition)
@@ -15,6 +13,8 @@ public class EnemyActor : ActorManager
         _myPosition.SetCombatPosition(NewPosition);
     }
 
+    // ========================================================================
+
     public override void OnTurnStart()
     {
         base.OnTurnStart();
@@ -26,4 +26,6 @@ public class EnemyActor : ActorManager
 
         _hand.DiscardHand(IsPlayer: false);
     }
+
+    // ========================================================================
 }

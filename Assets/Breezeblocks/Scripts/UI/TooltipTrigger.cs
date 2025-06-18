@@ -4,11 +4,15 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(NodeView))]
 public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    #region Variables and Properties
     // If your NodeView stores its MapNode, we grab it to know the node type.
     private NodeView _nodeView;
 
     // Cached reference to the singleton TooltipManager in the scene:
     private Tooltip _tooltipManager;
+    #endregion
+
+    // ========================================================================
 
     private void Awake()
     {
@@ -17,6 +21,9 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         _tooltipManager = FindAnyObjectByType<Tooltip>();
     }
 
+    // ========================================================================
+
+    #region Pointer Methods
     /// <summary>
     /// Called by Unity when the mouse pointer enters this UI element's RectTransform.
     /// We fetch the MapNodeType from NodeView and tell TooltipManager to show at the mouse position.
@@ -50,4 +57,7 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
         _tooltipManager.HideTooltip();
     }
+    #endregion
+
+    // ========================================================================
 }

@@ -225,11 +225,13 @@ public class CombatManager : MonoBehaviour
         foreach (var a in _combatents)
         {
             a.Hand.DiscardHand(a is PlayerActor);
-            a.Deck.ReshuffleDiscardIntoDeck();
+            a.Deck.ResumeDeck();
             a.Stats.RemoveAllStatusEffects();
             a.RemoveHighLight();
             a.TurnOutlineEffect(false);
         }
     }
     #endregion
+
+    // ========================================================================
 }

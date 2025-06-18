@@ -7,6 +7,8 @@ public class ExtraDrawRelic : RelicData
     [FoldoutGroup("Relic Power Info", expanded: true)]
     [SerializeField] private int _drawAmount = 1;
 
+    // ========================================================================
+
     public override void OnEquip(ActorManager holder)
     {
         holder.Stats.IncreaseCardBuy(_drawAmount, true);
@@ -17,5 +19,6 @@ public class ExtraDrawRelic : RelicData
         holder.Stats.IncreaseCardBuy(_drawAmount, false);
     }
 
+    // ========================================================================
 }
 

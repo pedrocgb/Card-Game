@@ -7,6 +7,8 @@ public class ExtraActionRelic : RelicData
     [FoldoutGroup("Relic Power Info", expanded: true)]
     [SerializeField] private int _actionAmount = 1;
 
+    // ========================================================================
+
     public override void OnEquip(ActorManager holder)
     {
         
@@ -17,8 +19,12 @@ public class ExtraActionRelic : RelicData
         
     }
 
+    // ========================================================================
+
     public override void OnTurnStart(ActorManager holder)
     {
        holder.Stats.IncreaseAction(_actionAmount);
     }
+
+    // ========================================================================
 }

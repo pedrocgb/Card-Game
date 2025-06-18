@@ -84,7 +84,7 @@ public class HandManager : MonoBehaviour
 
             // Update Actor UI
             if (_actor.IsMyTurn)
-                ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count);
+                ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count, _deckManager.ConsumedPile.Count);
         }
     }
 
@@ -95,10 +95,13 @@ public class HandManager : MonoBehaviour
     public void DiscardCard(CardInstance Card)
     {
         _currentHand.Remove(Card);
-        _deckManager.DiscardPile.Add(Card);
+        if (Card.ConsumeCard)
+            _deckManager.ConsumedPile.Add(Card);
+        else
+            _deckManager.DiscardPile.Add(Card);
 
         if (_actor.IsMyTurn)
-            ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count);
+            ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count, _deckManager.ConsumedPile.Count);
     }
     #endregion
 
@@ -143,7 +146,7 @@ public class HandManager : MonoBehaviour
 
         // Update Actor UI
         if (_actor.IsMyTurn)
-            ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count);
+            ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count, _deckManager.ConsumedPile.Count);
 
         return card;
     }
@@ -324,12 +327,18 @@ public class HandManager : MonoBehaviour
 
         // 4) Meanwhile, update your “model” list immediately:
         _currentHand.Remove(Card.CardInstance);
-        _deckManager.DiscardPile.Add(Card.CardInstance);
+
+        // 5) Add the card to the discard pile or consume pile.
+        if (Card.CardInstance.ConsumeCard)
+            _deckManager.ConsumedPile.Add(Card.CardInstance);
+        else
+            _deckManager.DiscardPile.Add(Card.CardInstance);
 
         if (_actor.IsMyTurn)
             ActorsUI.UpdateCardsInterface(
                 _deckManager.CurrentDeck.Count,
-                _deckManager.DiscardPile.Count
+                _deckManager.DiscardPile.Count,
+                _deckManager.ConsumedPile.Count
             );
     }
     #endregion
@@ -345,7 +354,10 @@ public class HandManager : MonoBehaviour
             // Discard all cards in the hand
             foreach (CardUI cardUI in _currentHandUI)
             {
-                _deckManager.DiscardPile.Add(cardUI.CardInstance);
+                if (cardUI.CardInstance.ConsumeCard)
+                    _deckManager.ConsumedPile.Add(cardUI.CardInstance);
+                else
+                    _deckManager.DiscardPile.Add(cardUI.CardInstance);
                 cardUI.gameObject.SetActive(false);
             }
             _currentHand.Clear();
@@ -356,7 +368,10 @@ public class HandManager : MonoBehaviour
             // For AI or non-player actors, just clear the hand without UI
             foreach (CardInstance card in _currentHand)
             {
-                _deckManager.DiscardPile.Add(card);
+                if (card.ConsumeCard)
+                    _deckManager.ConsumedPile.Add(card);
+                else
+                    _deckManager.DiscardPile.Add(card);
             }
             _currentHand.Clear();
             _currentHandUI.Clear();
@@ -364,7 +379,7 @@ public class HandManager : MonoBehaviour
 
         // Update actor Deck and Discard Pile UI
         if (_actor.IsMyTurn)
-            ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count);
+            ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count, _deckManager.ConsumedPile.Count);
     }
 
 
@@ -469,7 +484,7 @@ public class HandManager : MonoBehaviour
             {
                 Debug.LogWarning($"Tried to create card in hand for {_actor.ActorName} but its hand is full, card is added to deck instead.");
                 CardInstance deckCard = new CardInstance(Card);
-                _deckManager.AddCard(deckCard);
+                _deckManager.AddTemporaryCard(deckCard);
                 return;
             }
 
@@ -489,7 +504,7 @@ public class HandManager : MonoBehaviour
             // Update Actor UI
             if (_actor.IsMyTurn)
             {
-                ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count);
+                ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count, _deckManager.ConsumedPile.Count);
                 if (_actor is PlayerActor)
                     StartCoroutine(PlaySingleDrawAnimation(card));
             }

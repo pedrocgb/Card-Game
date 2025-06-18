@@ -1,6 +1,3 @@
-using UnityEngine;
-using UnityEngine.EventSystems;
-
 public class PlayerActor : ActorManager
 {
     protected override void Awake()
@@ -10,6 +7,8 @@ public class PlayerActor : ActorManager
         Initialize();
         _myStats.Initialize();
     }
+
+    // ========================================================================
 
     public override void OnTurnStart()
     {
@@ -38,4 +37,6 @@ public class PlayerActor : ActorManager
         _hand.HideHand();
         _hand.DiscardHand(IsPlayer: true);
     }
+
+    // ========================================================================
 }

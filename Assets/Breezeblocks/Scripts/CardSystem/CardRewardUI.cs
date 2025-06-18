@@ -2,20 +2,13 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
 using Breezeblocks.Managers;
 using Sirenix.OdinInspector;
 using System.Collections;
 
-/// <summary>
-/// Drives the whole reward screen: 
-/// - One portrait per player actor,
-/// - A row of CardRewardView instances,
-/// - An Ignore button,
-/// - A Continue button enabled when all actors have completed.
-/// </summary>
 public class CardRewardUI : MonoBehaviour
 {
+    #region Variables and Properties
     public static CardRewardUI Instance;
 
     [FoldoutGroup("Components")]
@@ -43,6 +36,7 @@ public class CardRewardUI : MonoBehaviour
 
     // Tracks whether each actor has completed selection or skip
     private Dictionary<PlayerActor, bool> _actorCompletion = new Dictionary<PlayerActor, bool>();
+    #endregion
 
     // ========================================================================
 
@@ -56,6 +50,7 @@ public class CardRewardUI : MonoBehaviour
 
     // ========================================================================
 
+    #region UI Methods
     /// <summary>
     /// Call this once combat ends.
     /// </summary>
@@ -155,7 +150,11 @@ public class CardRewardUI : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
     }
+    #endregion
 
+    // ========================================================================
+
+    #region Event Handlers
     public void OnCardSelected(PlayerActor actor, CardRewardView selected, List<CardRewardView> allViews)
     {
         // Disable skip button so they can't ignore after picking
@@ -212,6 +211,7 @@ public class CardRewardUI : MonoBehaviour
         _mapUi.SetActive(true);
         MapVisualizer.Instance.CompleteEvent();
     }
+    #endregion
 
     // ========================================================================
 }
