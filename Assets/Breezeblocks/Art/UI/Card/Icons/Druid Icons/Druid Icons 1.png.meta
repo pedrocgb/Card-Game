@@ -1,0 +1,536 @@
+fileFormatVersion: 2
+guid: 9f4ea27811b57df469cc581f906c26a6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1809377717332141706
+    second: Druid Icons 1_0
+  - first:
+      213: -4475519150971631893
+    second: Druid Icons 1_1
+  - first:
+      213: -4275146498838473976
+    second: Druid Icons 1_2
+  - first:
+      213: -6259284087031182352
+    second: Druid Icons 1_3
+  - first:
+      213: 5574053627687459106
+    second: Druid Icons 1_4
+  - first:
+      213: 9045310126141836100
+    second: Druid Icons 1_5
+  - first:
+      213: -3693264502247661910
+    second: Druid Icons 1_6
+  - first:
+      213: -794849160588283769
+    second: Druid Icons 1_7
+  - first:
+      213: 8237351848935037605
+    second: Druid Icons 1_8
+  - first:
+      213: 2466994820249980987
+    second: Druid Icons 1_9
+  - first:
+      213: 1772882810576081516
+    second: Druid Icons 1_10
+  - first:
+      213: -7634912860693906043
+    second: Druid Icons 1_11
+  - first:
+      213: 5242214262659233101
+    second: Druid Icons 1_12
+  - first:
+      213: -7261323637190353073
+    second: Druid Icons 1_13
+  - first:
+      213: 2816168599228320555
+    second: Druid Icons 1_14
+  - first:
+      213: 7015658895798347444
+    second: Druid Icons 1_15
+  - first:
+      213: -8307783369980882418
+    second: Druid Icons 1_16
+  - first:
+      213: 1377532691211543589
+    second: Druid Icons 1_17
+  - first:
+      213: -7797215629413789359
+    second: Druid Icons 1_18
+  - first:
+      213: -8809899548979994956
+    second: Druid Icons 1_19
+  - first:
+      213: 4433548551599007777
+    second: Druid Icons 1_20
+  - first:
+      213: -4900490255210829792
+    second: Druid Icons 1_21
+  - first:
+      213: -8572484587911428606
+    second: Druid Icons 1_22
+  - first:
+      213: 6643617427637904343
+    second: Druid Icons 1_23
+  - first:
+      213: 5282449771164160399
+    second: Druid Icons 1_24
+  - first:
+      213: -162158719945280005
+    second: Druid Icons 1_25
+  - first:
+      213: -5283018928535833118
+    second: Druid Icons 1_26
+  - first:
+      213: -2369540726460369187
+    second: Druid Icons 1_27
+  - first:
+      213: -1297764920652058405
+    second: Druid Icons 1_28
+  - first:
+      213: -8033969534281288757
+    second: Druid Icons 1_29
+  - first:
+      213: -4600177565808553917
+    second: Druid Icons 1_30
+  - first:
+      213: 8751396741275892333
+    second: Druid Icons 1_31
+  - first:
+      213: -2956492986497041800
+    second: Druid Icons 1_32
+  - first:
+      213: -3904805129161497639
+    second: Druid Icons 1_33
+  - first:
+      213: -8322810351344904829
+    second: Druid Icons 1_34
+  - first:
+      213: 4989351553717080479
+    second: Druid Icons 1_35
+  - first:
+      213: -8070492872258497626
+    second: Druid Icons 1_36
+  - first:
+      213: -8881214435291934818
+    second: Druid Icons 1_37
+  - first:
+      213: -1468771531395641558
+    second: Druid Icons 1_38
+  - first:
+      213: -1145773259586624377
+    second: Druid Icons 1_39
+  - first:
+      213: -3476166061260827006
+    second: Druid Icons 1_40
+  - first:
+      213: 920669506850109454
+    second: Druid Icons 1_41
+  - first:
+      213: 1808883404442838068
+    second: Druid Icons 1_42
+  - first:
+      213: -5182693075645388573
+    second: Druid Icons 1_43
+  - first:
+      213: -8467864848760081602
+    second: Druid Icons 1_44
+  - first:
+      213: 1439921804743806417
+    second: Druid Icons 1_45
+  - first:
+      213: -424580282648972277
+    second: Druid Icons 1_46
+  - first:
+      213: -4839282456029513638
+    second: Druid Icons 1_47
+  - first:
+      213: 3869294306298849999
+    second: Druid Icons 1_48
+  - first:
+      213: 6665318643476206012
+    second: Druid Icons 1_49
+  - first:
+      213: 7985170707235768073
+    second: Druid Icons 1_50
+  - first:
+      213: 7125163019061625739
+    second: Druid Icons 1_51
+  - first:
+      213: 8329407089613845924
+    second: Druid Icons 1_52
+  - first:
+      213: -562374366777975687
+    second: Druid Icons 1_53
+  - first:
+      213: -2975392146774650701
+    second: Druid Icons 1_54
+  - first:
+      213: -3338211039562134690
+    second: Druid Icons 1_55
+  - first:
+      213: -2492217023586699166
+    second: Druid Icons 1_56
+  - first:
+      213: 4892901355806738635
+    second: Druid Icons 1_57
+  - first:
+      213: -5293493085618108214
+    second: Druid Icons 1_58
+  - first:
+      213: -187255042688380004
+    second: Druid Icons 1_59
+  - first:
+      213: 4719511812672428467
+    second: Druid Icons 1_60
+  - first:
+      213: 295114077155105298
+    second: Druid Icons 1_61
+  - first:
+      213: 6386844065700722430
+    second: Druid Icons 1_62
+  - first:
+      213: 5301899503638963307
+    second: Druid Icons 1_63
+  - first:
+      213: 5182033707505112067
+    second: Druid Icons 1_64
+  - first:
+      213: 5557642658090006284
+    second: Druid Icons 1_65
+  - first:
+      213: -1240328332255314744
+    second: Druid Icons 1_66
+  - first:
+      213: 7190863801758907550
+    second: Druid Icons 1_67
+  - first:
+      213: 3335981599737822691
+    second: Druid Icons 1_68
+  - first:
+      213: 1931597301650952121
+    second: Druid Icons 1_69
+  - first:
+      213: 6089952105634229351
+    second: Druid Icons 1_70
+  - first:
+      213: 4868050592089418532
+    second: Druid Icons 1_71
+  - first:
+      213: -6662567277890475730
+    second: Druid Icons 1_72
+  - first:
+      213: -1419787080980044480
+    second: Druid Icons 1_73
+  - first:
+      213: 1871714299637113685
+    second: Druid Icons 1_74
+  - first:
+      213: -988302737017512367
+    second: Druid Icons 1_75
+  - first:
+      213: -2864958485389759642
+    second: Druid Icons 1_76
+  - first:
+      213: 6185600713343749279
+    second: Druid Icons 1_77
+  - first:
+      213: -2160719329957503992
+    second: Druid Icons 1_78
+  - first:
+      213: 7229673257278708785
+    second: Druid Icons 1_79
+  - first:
+      213: -7855236499706848309
+    second: Druid Icons 1_80
+  - first:
+      213: 7739447672725974067
+    second: Druid Icons 1_81
+  - first:
+      213: -6217433819651227296
+    second: Druid Icons 1_82
+  - first:
+      213: -7957719960558508230
+    second: Druid Icons 1_83
+  - first:
+      213: -380018547683778081
+    second: Druid Icons 1_84
+  - first:
+      213: -2355707739236883132
+    second: Druid Icons 1_85
+  - first:
+      213: -111771015935008986
+    second: Druid Icons 1_86
+  - first:
+      213: 6088620112205307377
+    second: Druid Icons 1_87
+  - first:
+      213: 2510972836689601542
+    second: Druid Icons 1_88
+  - first:
+      213: -8970591886598806212
+    second: Druid Icons 1_89
+  - first:
+      213: -5110873431853071315
+    second: Druid Icons 1_90
+  - first:
+      213: 2197565147979021424
+    second: Druid Icons 1_91
+  - first:
+      213: -3149894160761208685
+    second: Druid Icons 1_92
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Shillelagh
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 905
+        width: 466
+        height: 462
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61c2e40bf5343064186578e4f57a9db8
+      internalID: 444277635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thorn Whip
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 905
+        width: 473
+        height: 460
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 208af0e182669d5499f3b9d818723cf1
+      internalID: -1245948426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Healing Word
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 0
+        width: 463
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88aca56eac47b344783cd060c6faa992
+      internalID: 1024222965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cure Wounds
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 426
+        width: 479
+        height: 458
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5152dc651a9edc41ace609af80e1908
+      internalID: 1078927980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poison Spray
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 431
+        width: 448
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 712f14e29ba2e3248a980a8150cdfbb8
+      internalID: -1953020577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Entangle
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 0
+        width: 479
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 203c916d102d8e84e91a4459693c87fc
+      internalID: -1527593125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3aa7758f57958df498df85191334fda5
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":1536.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Cure Wounds: 1078927980
+      Entangle: -1527593125
+      Healing Word: 1024222965
+      Poison Spray: -1953020577
+      Shillelagh: 444277635
+      Thorn Whip: -1245948426
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

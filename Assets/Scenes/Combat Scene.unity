@@ -667,7 +667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _entries:
   - type: 2
-    stackingMode: 2
+    stackingMode: 4
     icon: {fileID: -4515138988766625407, guid: 7ee99f85ddd41944f96f2a7eb79a7f95, type: 3}
   - type: 3
     stackingMode: 4
@@ -676,7 +676,7 @@ MonoBehaviour:
     stackingMode: 2
     icon: {fileID: -2496828161889257060, guid: 5ede2bd7b13bd1f4aa746de012a23d7c, type: 3}
   - type: 4
-    stackingMode: 2
+    stackingMode: 4
     icon: {fileID: -1577068087157668559, guid: 0ec2bc4433b15334ea8031cec49839f6, type: 3}
   - type: 5
     stackingMode: 0
@@ -12427,7 +12427,10 @@ MonoBehaviour:
   - level: 1
     parties:
     - enemyPrefabs:
-      - {fileID: 11400000, guid: b70674ba3f265884594b6a8fcf0c4522, type: 2}
+      - {fileID: 11400000, guid: b7c9e5bf622e3a947948383ef33b878d, type: 2}
+      - {fileID: 11400000, guid: b7c9e5bf622e3a947948383ef33b878d, type: 2}
+      - {fileID: 11400000, guid: b7c9e5bf622e3a947948383ef33b878d, type: 2}
+      - {fileID: 11400000, guid: 8f997474dbeebee47bcfc0af30614c0c, type: 2}
   - level: 2
     parties:
     - enemyPrefabs:

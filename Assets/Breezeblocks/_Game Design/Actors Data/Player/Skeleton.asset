@@ -26,6 +26,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b95826f8433a5f74a9bb6192d44c381c, type: 2}
   - {fileID: 11400000, guid: 871153863e4471f4e942be9f893e9f54, type: 2}
   - {fileID: 11400000, guid: 871153863e4471f4e942be9f893e9f54, type: 2}
+  - {fileID: 11400000, guid: 97f06159ed42b3647b4006a727428136, type: 2}
+  - {fileID: 11400000, guid: 97f06159ed42b3647b4006a727428136, type: 2}
   _hasSpecialization: 0
   _actorSpecialization: {fileID: 0}
   _startingSpecializedCards: []

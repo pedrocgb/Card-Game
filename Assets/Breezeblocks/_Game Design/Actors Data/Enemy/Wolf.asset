@@ -16,7 +16,16 @@ MonoBehaviour:
   _portrait: {fileID: -156802815894202123, guid: 5733ac258a04be041b1dedcd33480600, type: 3}
   _actorAnimatorParameter: {fileID: 9100000, guid: 78d69c81f37c8224abb5be2f4de5ee98, type: 2}
   _actorRace: {fileID: 11400000, guid: 850508763c9986849a67f8ff3aa24af6, type: 2}
-  _startingCards: []
+  _startingCards:
+  - {fileID: 11400000, guid: a71a0ed56361426458cec142d52dc8e1, type: 2}
+  - {fileID: 11400000, guid: a71a0ed56361426458cec142d52dc8e1, type: 2}
+  - {fileID: 11400000, guid: a71a0ed56361426458cec142d52dc8e1, type: 2}
+  - {fileID: 11400000, guid: e9c9e6bb9530f9c40b3f089c2df1f571, type: 2}
+  - {fileID: 11400000, guid: 39e1b54fcc6e6f34d85d909d4e85028d, type: 2}
+  - {fileID: 11400000, guid: e9c9e6bb9530f9c40b3f089c2df1f571, type: 2}
+  - {fileID: 11400000, guid: 24879fbca3415594598509c9de365d10, type: 2}
+  - {fileID: 11400000, guid: 3102547fe5a67ed42b44df4361e765b2, type: 2}
+  - {fileID: 11400000, guid: d28008068ed5c914198764b9db86eb17, type: 2}
   _hasSpecialization: 0
   _actorSpecialization: {fileID: 0}
   _startingSpecializedCards: []

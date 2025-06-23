@@ -57,6 +57,9 @@ public class HandManager : MonoBehaviour
     /// <param name="Quantity"></param>
     public void DrawCards(int Quantity)
     {
+        if (!gameObject.activeInHierarchy)
+            return;
+
         if (_actor is PlayerActor)
             StartCoroutine(DrawPlayerCardAnimation(Quantity));
         else

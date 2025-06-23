@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a19dccf1348014ead4ded939d7251e, type: 3}
+  m_Name: Barkskin
+  m_EditorClassIdentifier: 
+  _cardName: Barkskin
+  _cardDescription: Apply 12 Block.
+  _cardLore: 
+  _cardOrigin: 1
+  _cardRarity: 1
+  _cardType: 2
+  _cardImage: {fileID: 56301849, guid: 6b4b0b982ef3d9b45b4f78f020ed3005, type: 3}
+  _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
+  _actionCost: 2
+  _consumeCard: 0
+  _cardEffects:
+  - EffectType: 101
+    Amount: 12
+    Duration: 1
+    TargetSelf: 0
+    NewCard: {fileID: 0}
+  _positions: 0300000004000000
+  _posIcon: {fileID: 21300000, guid: 4db289aacf9b64c45b1ab4259ccc9e28, type: 3}
+  _targetType: 2
+  _targetScope: 1
+  _targetPositions: 01000000020000000300000004000000
+  _canTargetSelf: 0
+  _targetIcon: {fileID: 21300000, guid: 4a2fe08ef900a304a954bfc81bc411de, type: 3}

@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 846fe29fb228318439d02bed391d5f77, type: 3}
+  m_Name: Human Druid
+  m_EditorClassIdentifier: 
+  _actorName: Druid
+  _portrait: {fileID: -1247581762, guid: 8f4e6b7877a39074ca11a71dd31d7b95, type: 3}
+  _actorAnimatorParameter: {fileID: 9100000, guid: 0ea1af0326cf1b944bab952786de2749, type: 2}
+  _actorRace: {fileID: 11400000, guid: 3543198674c43ee439d9691da59007a3, type: 2}
+  _startingCards:
+  - {fileID: 11400000, guid: 69f9af3a34c1dde498206b9459f5daa6, type: 2}
+  - {fileID: 11400000, guid: 69f9af3a34c1dde498206b9459f5daa6, type: 2}
+  - {fileID: 11400000, guid: 3ed623bf05aea644f915d87979c0b124, type: 2}
+  _hasSpecialization: 1
+  _actorSpecialization: {fileID: 11400000, guid: 1c1d7e1169890f544a3de4495d6eea84, type: 2}
+  _startingSpecializedCards:
+  - {fileID: 11400000, guid: 063031103a71c924f88ca4d0141240f4, type: 2}
+  - {fileID: 11400000, guid: 7e8f27183468b6243ba21826f5a62599, type: 2}
+  - {fileID: 11400000, guid: 0f6571f6684c34945bc9d0092df6baf6, type: 2}
+  - {fileID: 11400000, guid: 0f6571f6684c34945bc9d0092df6baf6, type: 2}
+  - {fileID: 11400000, guid: 73a2a75d934b6f247b841056a93a7d90, type: 2}
+  - {fileID: 11400000, guid: b06f1890ff4d1b64387a86f568951d06, type: 2}
+  - {fileID: 11400000, guid: 8e3a5fcc4e8b97b42a8381f7847eea59, type: 2}
+  - {fileID: 11400000, guid: 8e3a5fcc4e8b97b42a8381f7847eea59, type: 2}
+  - {fileID: 11400000, guid: 8e3a5fcc4e8b97b42a8381f7847eea59, type: 2}
+  - {fileID: 11400000, guid: 97f06159ed42b3647b4006a727428136, type: 2}
+  - {fileID: 11400000, guid: 97f06159ed42b3647b4006a727428136, type: 2}
+  - {fileID: 11400000, guid: 79fc106d34f7de54996674aa032ad90b, type: 2}
+  _baseMaxHealth: 86
+  _baseActionsPerTurn: 3
+  _initiativeBonus: 2
+  _baseCardBuy: 5
+  _maxHandSize: 8

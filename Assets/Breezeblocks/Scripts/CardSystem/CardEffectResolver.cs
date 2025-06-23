@@ -81,6 +81,9 @@ public static class CardEffectResolver
                     case UEnums.CardEffects.Riposte:
                         definitiveTarget.Stats.GainRiposte(effect.Amount, effect.Duration);
                         break;
+                    case UEnums.CardEffects.Regen:
+                        definitiveTarget.Stats.GainRegen(effect.Amount, effect.Duration);
+                        break;
 
                     // Other effects
                     case UEnums.CardEffects.Movement:

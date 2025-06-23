@@ -12,6 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1660071e04986942ab314589068ca79, type: 3}
   m_Name: '[SPEC] Druid'
   m_EditorClassIdentifier: 
-  _specializationName: 
+  _specializationName: Druid
   _specializationDescription: 
-  _specializationCards: []
+  _specializationCards:
+  - {fileID: 11400000, guid: 4a2a7773c2aa63d46906b4308dd061fc, type: 2}
+  - {fileID: 11400000, guid: fa02780626581904ea96993d18cbc228, type: 2}
+  - {fileID: 11400000, guid: 79fc106d34f7de54996674aa032ad90b, type: 2}
+  - {fileID: 11400000, guid: 6ae58c7bdc6a5504d94a6af85f556fa2, type: 2}
+  - {fileID: 11400000, guid: d8ceeac5bd15c764ea234e6525324cce, type: 2}
+  - {fileID: 11400000, guid: 063031103a71c924f88ca4d0141240f4, type: 2}
+  - {fileID: 11400000, guid: 0d5778c07a23a00488ab791cbb6ee3aa, type: 2}
+  - {fileID: 11400000, guid: 81c0dd100370f8146a284d99b65eb07e, type: 2}
+  - {fileID: 11400000, guid: a2c9fc2cfeafceb4fa8d92f6b9cb0a5f, type: 2}
+  - {fileID: 11400000, guid: 97f06159ed42b3647b4006a727428136, type: 2}
+  - {fileID: 11400000, guid: e2f56ae8aae684f42a137c49c9801581, type: 2}
+  - {fileID: 11400000, guid: eca864957ea10d442aca3d4f59b65b08, type: 2}
+  - {fileID: 11400000, guid: 7e8f27183468b6243ba21826f5a62599, type: 2}
+  - {fileID: 11400000, guid: 8e3a5fcc4e8b97b42a8381f7847eea59, type: 2}
+  - {fileID: 11400000, guid: 0f6571f6684c34945bc9d0092df6baf6, type: 2}
+  - {fileID: 11400000, guid: 73a2a75d934b6f247b841056a93a7d90, type: 2}
+  - {fileID: 11400000, guid: b06f1890ff4d1b64387a86f568951d06, type: 2}

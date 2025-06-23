@@ -465,7 +465,7 @@ public class ActorStats : MonoBehaviour
         // Resolve Riposte
         if (GetTotalEffectAmount(StatusEffects.Riposte) > 0)
         {
-            source.Stats.TakeDamage(GetTotalEffectAmount(StatusEffects.Riposte), _actor);
+            source.Stats.TakeRiposteDamage(GetTotalEffectAmount(StatusEffects.Riposte), _actor);
             Console.Log($"{_actor.ActorName} ripostes {source.ActorName} for {GetTotalEffectAmount(StatusEffects.Riposte)} damage!");
         }
 
@@ -474,6 +474,55 @@ public class ActorStats : MonoBehaviour
             $"{blockedAmount} blocked, {damageAfterBlock} dealt. " +
             $"Block remaining: {initialBlock}, Health: {_currentHealth}";
         Console.Log(log);  
+
+        if (_currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void TakeRiposteDamage(int damage, ActorManager source)
+    {
+        // Dodge check
+        if (GetTotalEffectAmount(StatusEffects.Dodge) > 0)
+        {
+            var dodge = _activeEffects.FirstOrDefault(e => e.StatusEffect == StatusEffects.Dodge);
+            if (dodge != null)
+                UpdateStatusDuration(dodge);
+            _actor.UI.UpdateStatusUI(_activeEffects);
+
+            FloatingTextManager.SpawnText(transform.position, "DODGE!", HealthModColors.Dodge);
+            Console.Log($"{_actor.ActorName} dodges the attack!");
+            return;
+        }
+
+        // Calculate extra damage taken from vulnerability
+        if (GetTotalEffectAmount(StatusEffects.Vulnerability) > 0)
+        {
+            damage = Mathf.Max(0, damage + GetTotalEffectAmount(StatusEffects.Vulnerability));
+        }
+
+        // Calculate damage taken with block
+        // Remove from block than remove from health
+        int initialBlock = GetTotalEffectAmount(StatusEffects.Block);
+        int blockedAmount = Mathf.Min(damage, initialBlock);
+        int damageAfterBlock = Mathf.Max(0, damage - initialBlock);
+        SubtractBlock(blockedAmount);
+
+        initialBlock = Mathf.Max(0, initialBlock - damage);
+        _currentHealth -= damageAfterBlock;
+
+        // Update Actor healthbar
+        _actor.UI.UpdateHealthUI();
+
+        // Play taking damage animations
+        FloatingTextManager.SpawnText(transform.position, damageAfterBlock.ToString(), HealthModColors.BasicDamage);
+
+        // Log
+        string log = $"{_actor.ActorName} takes {damage} riposte damage: " +
+            $"{blockedAmount} blocked, {damageAfterBlock} dealt. " +
+            $"Block remaining: {initialBlock}, Health: {_currentHealth}";
+        Console.Log(log);
 
         if (_currentHealth <= 0)
         {
