@@ -1,0 +1,343 @@
+fileFormatVersion: 2
+guid: d0222d5910c12e44698aaaf278914ba5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1814068288352667264
+    second: warrior icons 3_0
+  - first:
+      213: 6071720920989864239
+    second: warrior icons 3_1
+  - first:
+      213: -6420114372241247852
+    second: warrior icons 3_2
+  - first:
+      213: 4757076940716905284
+    second: warrior icons 3_3
+  - first:
+      213: 7441720986696180268
+    second: warrior icons 3_4
+  - first:
+      213: 3506691010669122889
+    second: warrior icons 3_5
+  - first:
+      213: -4127893465224730574
+    second: warrior icons 3_6
+  - first:
+      213: 7315687483860015086
+    second: warrior icons 3_7
+  - first:
+      213: -3812978086926266633
+    second: warrior icons 3_8
+  - first:
+      213: 2586531023956201782
+    second: warrior icons 3_9
+  - first:
+      213: -9081467817929149998
+    second: warrior icons 3_10
+  - first:
+      213: 2465965322797049502
+    second: warrior icons 3_11
+  - first:
+      213: 4704011518048063720
+    second: warrior icons 3_12
+  - first:
+      213: 621111148964252739
+    second: warrior icons 3_13
+  - first:
+      213: -8716778717752868897
+    second: warrior icons 3_14
+  - first:
+      213: 7109467848867149199
+    second: warrior icons 3_15
+  - first:
+      213: -7085573504870511444
+    second: warrior icons 3_16
+  - first:
+      213: 5814795667462855557
+    second: warrior icons 3_17
+  - first:
+      213: 6221663305348085205
+    second: warrior icons 3_18
+  - first:
+      213: 7253627576701540527
+    second: warrior icons 3_19
+  - first:
+      213: -7928552702886581215
+    second: warrior icons 3_20
+  - first:
+      213: 3152099911517444191
+    second: warrior icons 3_21
+  - first:
+      213: -3664669689509378809
+    second: warrior icons 3_22
+  - first:
+      213: -8342608637290310310
+    second: warrior icons 3_23
+  - first:
+      213: 4410524399447411123
+    second: warrior icons 3_24
+  - first:
+      213: 44818052670883962
+    second: warrior icons 3_25
+  - first:
+      213: 4546481352642751762
+    second: warrior icons 3_26
+  - first:
+      213: 7583957667634149378
+    second: warrior icons 3_27
+  - first:
+      213: 6941320352402571119
+    second: warrior icons 3_28
+  - first:
+      213: 9109464652246690146
+    second: warrior icons 3_29
+  - first:
+      213: 2485536673914111690
+    second: warrior icons 3_30
+  - first:
+      213: -3948747027699058897
+    second: warrior icons 3_31
+  - first:
+      213: -7563254767422382644
+    second: warrior icons 3_32
+  - first:
+      213: -8777865631842367286
+    second: warrior icons 3_33
+  - first:
+      213: 3470902034208894898
+    second: warrior icons 3_34
+  - first:
+      213: -3275767341851618398
+    second: warrior icons 3_35
+  - first:
+      213: -1549158277624331822
+    second: warrior icons 3_36
+  - first:
+      213: -9077837890398080233
+    second: warrior icons 3_37
+  - first:
+      213: -1218432326558828558
+    second: warrior icons 3_38
+  - first:
+      213: -8574029536923680523
+    second: warrior icons 3_39
+  - first:
+      213: -5146360968149296332
+    second: warrior icons 3_40
+  - first:
+      213: 5070369754822142135
+    second: warrior icons 3_41
+  - first:
+      213: -8806244523798351809
+    second: warrior icons 3_42
+  - first:
+      213: 2794273043661310842
+    second: warrior icons 3_43
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hold the Line
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 976
+        width: 481
+        height: 447
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2188fc19cfabb4440bad580b34d99ec0
+      internalID: -524723307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Battle Cry
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 977
+        width: 458
+        height: 451
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3daae09baab084a4cbdba72f739123ca
+      internalID: 1426905270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield Block
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 65
+        width: 465
+        height: 428
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee07e6e89a0889244b1c7839c71e785c
+      internalID: 1011102759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield Up
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 60
+        width: 492
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fd3126e04a516d4e86cab78e3312e14
+      internalID: -535481064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 879b654c60df152418bb0751558f2a49
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":1536.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Battle Cry: 1426905270
+      Hold the Line: -524723307
+      Shield Block: 1011102759
+      Shield Up: -535481064
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

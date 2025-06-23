@@ -4,6 +4,7 @@ using DG.Tweening;
 using Sirenix.OdinInspector;
 using Breezeblocks.Managers;
 using TMPro;
+using UnityEngine.UI;
 
 public class TurnOrderUI : MonoBehaviour
 {
@@ -44,6 +45,19 @@ public class TurnOrderUI : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _actorNameText = null;
     private CanvasGroup _actorNameCanvasGroup = null;
+
+    [FoldoutGroup("Components/Combat Panel", expanded: true)]
+    [SerializeField]
+    private Image _combatPanelImage = null;
+    [FoldoutGroup("Components/Combat Panel", expanded: true)]
+    [SerializeField]
+    private Image _actorHandImage = null;
+    [FoldoutGroup("Components/Combat Panel", expanded: true)]
+    [SerializeField]
+    private Sprite _playerCombatPanelSprite = null;
+    [FoldoutGroup("Components/Combat Panel", expanded: true)]
+    [SerializeField]
+    private Sprite _enemyCombatPanelSprite = null;
     #endregion
 
     // ========================================================================
@@ -168,9 +182,6 @@ public class TurnOrderUI : MonoBehaviour
             _actorNameText.text = "";
      
     }
-    #endregion
-
-    // ========================================================================
 
     private void AnimateName(string newName)
     {
@@ -187,6 +198,16 @@ public class TurnOrderUI : MonoBehaviour
                 _actorNameText.text = newName.Substring(0, length);
             }, newName.Length, newName.Length * _letterDelay);
         });
+    }
+    #endregion
+
+    // ========================================================================
+
+    public void ChangeCombatPanel(bool isPlayer)
+    {
+        if (_combatPanelImage == null || _actorHandImage == null) return;
+        _combatPanelImage.sprite = isPlayer ? _playerCombatPanelSprite : _enemyCombatPanelSprite;
+        _actorHandImage.sprite = isPlayer ? _playerCombatPanelSprite : _enemyCombatPanelSprite;
     }
 
     // ========================================================================

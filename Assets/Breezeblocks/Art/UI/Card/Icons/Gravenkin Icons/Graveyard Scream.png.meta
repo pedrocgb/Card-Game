@@ -1,0 +1,310 @@
+fileFormatVersion: 2
+guid: 32622e7f98e56ae47a0d9cb5cd242530
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7316622567116658962
+    second: Graveyard Scream_0
+  - first:
+      213: -7664603303391225955
+    second: Graveyard Scream_1
+  - first:
+      213: 691644674390191994
+    second: Graveyard Scream_2
+  - first:
+      213: -8992133080817368643
+    second: Graveyard Scream_3
+  - first:
+      213: 2424928087375698495
+    second: Graveyard Scream_4
+  - first:
+      213: 7314332237449674886
+    second: Graveyard Scream_5
+  - first:
+      213: 6865086789204240488
+    second: Graveyard Scream_6
+  - first:
+      213: 7006066081322024067
+    second: Graveyard Scream_7
+  - first:
+      213: -6081501628830085246
+    second: Graveyard Scream_8
+  - first:
+      213: -4839524254469170689
+    second: Graveyard Scream_9
+  - first:
+      213: -2056002831002445705
+    second: Graveyard Scream_10
+  - first:
+      213: 7062024339537914541
+    second: Graveyard Scream_11
+  - first:
+      213: -3210568249235240934
+    second: Graveyard Scream_12
+  - first:
+      213: -9001438429240574035
+    second: Graveyard Scream_13
+  - first:
+      213: 5441841216297323126
+    second: Graveyard Scream_14
+  - first:
+      213: -7386646411291577633
+    second: Graveyard Scream_15
+  - first:
+      213: -2355797840963347895
+    second: Graveyard Scream_16
+  - first:
+      213: -6904068860414004720
+    second: Graveyard Scream_17
+  - first:
+      213: -1919858119459675693
+    second: Graveyard Scream_18
+  - first:
+      213: 8787291590955208341
+    second: Graveyard Scream_19
+  - first:
+      213: 5989046482136842814
+    second: Graveyard Scream_20
+  - first:
+      213: 370322549035433988
+    second: Graveyard Scream_21
+  - first:
+      213: 4053276319169857283
+    second: Graveyard Scream_22
+  - first:
+      213: 3234978510244524794
+    second: Graveyard Scream_23
+  - first:
+      213: 5471290454532753810
+    second: Graveyard Scream_24
+  - first:
+      213: -8740849305499431858
+    second: Graveyard Scream_25
+  - first:
+      213: -5910261782687657109
+    second: Graveyard Scream_26
+  - first:
+      213: -1697989193961840090
+    second: Graveyard Scream_27
+  - first:
+      213: -8860948166184340995
+    second: Graveyard Scream_28
+  - first:
+      213: 6537238109561259461
+    second: Graveyard Scream_29
+  - first:
+      213: -5750206588543784738
+    second: Graveyard Scream_30
+  - first:
+      213: -4525266120011161529
+    second: Graveyard Scream_31
+  - first:
+      213: 5900680026051601480
+    second: Graveyard Scream_32
+  - first:
+      213: 3644797404195426806
+    second: Graveyard Scream_33
+  - first:
+      213: 1884013207547271083
+    second: Graveyard Scream_34
+  - first:
+      213: 8582707788367952743
+    second: Graveyard Scream_35
+  - first:
+      213: -4122883170780513163
+    second: Graveyard Scream_36
+  - first:
+      213: -408090996937304030
+    second: Graveyard Scream_37
+  - first:
+      213: -4982400864494440690
+    second: Graveyard Scream_38
+  - first:
+      213: -8634472709787503422
+    second: Graveyard Scream_39
+  - first:
+      213: -5283191347861530696
+    second: Graveyard Scream_40
+  - first:
+      213: -4029569205309190748
+    second: Graveyard Scream_41
+  - first:
+      213: -1950049535512428877
+    second: Graveyard Scream_42
+  - first:
+      213: 4324766104305422209
+    second: Graveyard Scream_43
+  - first:
+      213: -4774294920777183412
+    second: Graveyard Scream_44
+  - first:
+      213: -5672314085131648522
+    second: Graveyard Scream_45
+  - first:
+      213: 3873454190171895937
+    second: Graveyard Scream_46
+  - first:
+      213: -3441399630941289260
+    second: Graveyard Scream_47
+  - first:
+      213: 6689288519975344302
+    second: Graveyard Scream_48
+  - first:
+      213: -4210419160549567778
+    second: Graveyard Scream_49
+  - first:
+      213: 7340085098042088392
+    second: Graveyard Scream_50
+  - first:
+      213: 15722620416257401
+    second: Graveyard Scream_51
+  - first:
+      213: 5254653022252239684
+    second: Graveyard Scream_52
+  - first:
+      213: 6207735387344190993
+    second: Graveyard Scream_53
+  - first:
+      213: -5666279702321230520
+    second: Graveyard Scream_54
+  - first:
+      213: -6632207229656912488
+    second: Graveyard Scream_55
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Graveyard Scream_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 129
+        width: 1024
+        height: 1237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee6a7635a82267a90800000000000000
+      internalID: -7316622567116658962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":1536.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Graveyard Scream_0: -7316622567116658962
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,708 @@
+fileFormatVersion: 2
+guid: 638e845373ff4974caae0c7eaa9588b3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8009601239860015687
+    second: Goblinoid Icons 1_0
+  - first:
+      213: -7508492841443487301
+    second: Goblinoid Icons 1_1
+  - first:
+      213: 8378142464457466870
+    second: Goblinoid Icons 1_2
+  - first:
+      213: -7792795008503173039
+    second: Goblinoid Icons 1_3
+  - first:
+      213: -1313317095210655830
+    second: Goblinoid Icons 1_4
+  - first:
+      213: -2263271366687582417
+    second: Goblinoid Icons 1_5
+  - first:
+      213: 3288849910164454054
+    second: Goblinoid Icons 1_6
+  - first:
+      213: 5817176124936662644
+    second: Goblinoid Icons 1_7
+  - first:
+      213: -5380544873211538888
+    second: Goblinoid Icons 1_8
+  - first:
+      213: -9094258344599739964
+    second: Goblinoid Icons 1_9
+  - first:
+      213: -3625622089517318140
+    second: Goblinoid Icons 1_10
+  - first:
+      213: -2807458106055977967
+    second: Goblinoid Icons 1_11
+  - first:
+      213: 5355974962652573425
+    second: Goblinoid Icons 1_12
+  - first:
+      213: 5097444193720122046
+    second: Goblinoid Icons 1_13
+  - first:
+      213: -6707697467112736984
+    second: Goblinoid Icons 1_14
+  - first:
+      213: -1339934084861622709
+    second: Goblinoid Icons 1_15
+  - first:
+      213: -3801391959143261841
+    second: Goblinoid Icons 1_16
+  - first:
+      213: -5694326443107192772
+    second: Goblinoid Icons 1_17
+  - first:
+      213: -5119889935129764531
+    second: Goblinoid Icons 1_18
+  - first:
+      213: -3040527471342352136
+    second: Goblinoid Icons 1_19
+  - first:
+      213: 5965221629612220008
+    second: Goblinoid Icons 1_20
+  - first:
+      213: -7831208596224031903
+    second: Goblinoid Icons 1_21
+  - first:
+      213: 4189418246614807885
+    second: Goblinoid Icons 1_22
+  - first:
+      213: -1975776082126057674
+    second: Goblinoid Icons 1_23
+  - first:
+      213: 6368502766947050530
+    second: Goblinoid Icons 1_24
+  - first:
+      213: -6473747586725832385
+    second: Goblinoid Icons 1_25
+  - first:
+      213: 7706361635673703465
+    second: Goblinoid Icons 1_26
+  - first:
+      213: -1641364494145557906
+    second: Goblinoid Icons 1_27
+  - first:
+      213: -6217256730086353134
+    second: Goblinoid Icons 1_28
+  - first:
+      213: -7505487987897416895
+    second: Goblinoid Icons 1_29
+  - first:
+      213: -1505922567166145854
+    second: Goblinoid Icons 1_30
+  - first:
+      213: -4180321012293375142
+    second: Goblinoid Icons 1_31
+  - first:
+      213: 2562139468527028219
+    second: Goblinoid Icons 1_32
+  - first:
+      213: 2199807395902090817
+    second: Goblinoid Icons 1_33
+  - first:
+      213: 6438951671358264505
+    second: Goblinoid Icons 1_34
+  - first:
+      213: -6555668415251840014
+    second: Goblinoid Icons 1_35
+  - first:
+      213: -1260854612907030045
+    second: Goblinoid Icons 1_36
+  - first:
+      213: 3839127108010572691
+    second: Goblinoid Icons 1_37
+  - first:
+      213: -6973376317957534760
+    second: Goblinoid Icons 1_38
+  - first:
+      213: -9006788796521689834
+    second: Goblinoid Icons 1_39
+  - first:
+      213: -8132063547495747891
+    second: Goblinoid Icons 1_40
+  - first:
+      213: 6652189456337592359
+    second: Goblinoid Icons 1_41
+  - first:
+      213: 187402758292906421
+    second: Goblinoid Icons 1_42
+  - first:
+      213: 7389080888432808906
+    second: Goblinoid Icons 1_43
+  - first:
+      213: 4229882803858264768
+    second: Goblinoid Icons 1_44
+  - first:
+      213: 6630034745521769057
+    second: Goblinoid Icons 1_45
+  - first:
+      213: -1540389408810126373
+    second: Goblinoid Icons 1_46
+  - first:
+      213: 5008214375098802414
+    second: Goblinoid Icons 1_47
+  - first:
+      213: -3158721992494890076
+    second: Goblinoid Icons 1_48
+  - first:
+      213: 5320265203698687393
+    second: Goblinoid Icons 1_49
+  - first:
+      213: 2084806038619026908
+    second: Goblinoid Icons 1_50
+  - first:
+      213: -2369735228966810578
+    second: Goblinoid Icons 1_51
+  - first:
+      213: 2687819457566703371
+    second: Goblinoid Icons 1_52
+  - first:
+      213: -1594267617736015896
+    second: Goblinoid Icons 1_53
+  - first:
+      213: -5844310265880477905
+    second: Goblinoid Icons 1_54
+  - first:
+      213: -2046205833483557586
+    second: Goblinoid Icons 1_55
+  - first:
+      213: 5726530006136876477
+    second: Goblinoid Icons 1_56
+  - first:
+      213: -5971594141918020325
+    second: Goblinoid Icons 1_57
+  - first:
+      213: 7277609077601928461
+    second: Goblinoid Icons 1_58
+  - first:
+      213: 5942209496405060351
+    second: Goblinoid Icons 1_59
+  - first:
+      213: -5464759422151822473
+    second: Goblinoid Icons 1_60
+  - first:
+      213: -8524886193486722515
+    second: Goblinoid Icons 1_61
+  - first:
+      213: -5056623076634957745
+    second: Goblinoid Icons 1_62
+  - first:
+      213: 3126490952120530006
+    second: Goblinoid Icons 1_63
+  - first:
+      213: -4736304740889114445
+    second: Goblinoid Icons 1_64
+  - first:
+      213: -1258311576366287187
+    second: Goblinoid Icons 1_65
+  - first:
+      213: 4707248178841412530
+    second: Goblinoid Icons 1_66
+  - first:
+      213: -8142811656735592377
+    second: Goblinoid Icons 1_67
+  - first:
+      213: 1559154746903229814
+    second: Goblinoid Icons 1_68
+  - first:
+      213: 2573209463910122517
+    second: Goblinoid Icons 1_69
+  - first:
+      213: 2292405067575830331
+    second: Goblinoid Icons 1_70
+  - first:
+      213: -4837242738477270171
+    second: Goblinoid Icons 1_71
+  - first:
+      213: -3662600571227120974
+    second: Goblinoid Icons 1_72
+  - first:
+      213: 5873467038321638310
+    second: Goblinoid Icons 1_73
+  - first:
+      213: 4027178878850975906
+    second: Goblinoid Icons 1_74
+  - first:
+      213: 6315821141553371440
+    second: Goblinoid Icons 1_75
+  - first:
+      213: 9055783682208848639
+    second: Goblinoid Icons 1_76
+  - first:
+      213: 5766323350174821529
+    second: Goblinoid Icons 1_77
+  - first:
+      213: 8738342996154950962
+    second: Goblinoid Icons 1_78
+  - first:
+      213: 7604922767591462402
+    second: Goblinoid Icons 1_79
+  - first:
+      213: 4491690201844858575
+    second: Goblinoid Icons 1_80
+  - first:
+      213: -3527422070119174454
+    second: Goblinoid Icons 1_81
+  - first:
+      213: -1376040388217036951
+    second: Goblinoid Icons 1_82
+  - first:
+      213: 3462429015397585459
+    second: Goblinoid Icons 1_83
+  - first:
+      213: -603209838249338871
+    second: Goblinoid Icons 1_84
+  - first:
+      213: 5431906169973642365
+    second: Goblinoid Icons 1_85
+  - first:
+      213: -2047448984742529798
+    second: Goblinoid Icons 1_86
+  - first:
+      213: -2995950501562778396
+    second: Goblinoid Icons 1_87
+  - first:
+      213: -9064494813614980222
+    second: Goblinoid Icons 1_88
+  - first:
+      213: -3131764305776139594
+    second: Goblinoid Icons 1_89
+  - first:
+      213: 3586903328553501
+    second: Goblinoid Icons 1_90
+  - first:
+      213: -8527735527792587466
+    second: Goblinoid Icons 1_91
+  - first:
+      213: 7339974460933878910
+    second: Goblinoid Icons 1_92
+  - first:
+      213: -7379448365364499985
+    second: Goblinoid Icons 1_93
+  - first:
+      213: -4205122289753257084
+    second: Goblinoid Icons 1_94
+  - first:
+      213: 3980448106715779678
+    second: Goblinoid Icons 1_95
+  - first:
+      213: -8962917121029032186
+    second: Goblinoid Icons 1_96
+  - first:
+      213: -6716989489890750834
+    second: Goblinoid Icons 1_97
+  - first:
+      213: 5354323709285493043
+    second: Goblinoid Icons 1_98
+  - first:
+      213: -4247261630244325814
+    second: Goblinoid Icons 1_99
+  - first:
+      213: 3633984562216263398
+    second: Goblinoid Icons 1_100
+  - first:
+      213: -4557349884668619205
+    second: Goblinoid Icons 1_101
+  - first:
+      213: -2825934539109618318
+    second: Goblinoid Icons 1_102
+  - first:
+      213: -5183719431347609885
+    second: Goblinoid Icons 1_103
+  - first:
+      213: -6763687767703623110
+    second: Goblinoid Icons 1_104
+  - first:
+      213: -2671040609911364748
+    second: Goblinoid Icons 1_105
+  - first:
+      213: 4554308749685425774
+    second: Goblinoid Icons 1_106
+  - first:
+      213: 2491418885489038138
+    second: Goblinoid Icons 1_107
+  - first:
+      213: 4836332060263321529
+    second: Goblinoid Icons 1_108
+  - first:
+      213: 4131592711299355575
+    second: Goblinoid Icons 1_109
+  - first:
+      213: 7325367278104052205
+    second: Goblinoid Icons 1_110
+  - first:
+      213: 5805921835291795027
+    second: Goblinoid Icons 1_111
+  - first:
+      213: -6061705727698253952
+    second: Goblinoid Icons 1_112
+  - first:
+      213: 8419544098362209930
+    second: Goblinoid Icons 1_113
+  - first:
+      213: 5978211265715254932
+    second: Goblinoid Icons 1_114
+  - first:
+      213: 6104242760658195904
+    second: Goblinoid Icons 1_115
+  - first:
+      213: -8965316569890593618
+    second: Goblinoid Icons 1_116
+  - first:
+      213: 9069740610237973390
+    second: Goblinoid Icons 1_117
+  - first:
+      213: -4133706703366942681
+    second: Goblinoid Icons 1_118
+  - first:
+      213: -3946029415302664443
+    second: Goblinoid Icons 1_119
+  - first:
+      213: -2211228898417591544
+    second: Goblinoid Icons 1_120
+  - first:
+      213: -5111890392166604431
+    second: Goblinoid Icons 1_121
+  - first:
+      213: -1693889377457780657
+    second: Goblinoid Icons 1_122
+  - first:
+      213: -3976730465398535953
+    second: Goblinoid Icons 1_123
+  - first:
+      213: 6312433875623394144
+    second: Goblinoid Icons 1_124
+  - first:
+      213: -6171491974129986736
+    second: Goblinoid Icons 1_125
+  - first:
+      213: -3544555937088555510
+    second: Goblinoid Icons 1_126
+  - first:
+      213: 4123463408032383116
+    second: Goblinoid Icons 1_127
+  - first:
+      213: 3069604638835701045
+    second: Goblinoid Icons 1_128
+  - first:
+      213: 8705459859098940810
+    second: Goblinoid Icons 1_129
+  - first:
+      213: 304145589050288458
+    second: Goblinoid Icons 1_130
+  - first:
+      213: 1015995213568953760
+    second: Goblinoid Icons 1_131
+  - first:
+      213: -8606924214824853764
+    second: Goblinoid Icons 1_132
+  - first:
+      213: -4594501600670485427
+    second: Goblinoid Icons 1_133
+  - first:
+      213: 1944705741782006783
+    second: Goblinoid Icons 1_134
+  - first:
+      213: -6042712551301244452
+    second: Goblinoid Icons 1_135
+  - first:
+      213: 2613429506253294571
+    second: Goblinoid Icons 1_136
+  - first:
+      213: 8998470401186514296
+    second: Goblinoid Icons 1_137
+  - first:
+      213: 1734975784943760132
+    second: Goblinoid Icons 1_138
+  - first:
+      213: -2390876872067145890
+    second: Goblinoid Icons 1_139
+  - first:
+      213: -8457285153855180860
+    second: Goblinoid Icons 1_140
+  - first:
+      213: -3258477053682548812
+    second: Goblinoid Icons 1_141
+  - first:
+      213: 1931125492498752050
+    second: Goblinoid Icons 1_142
+  - first:
+      213: 8491027080753092996
+    second: Goblinoid Icons 1_143
+  - first:
+      213: 8286103576706382948
+    second: Goblinoid Icons 1_144
+  - first:
+      213: 3788483503434578147
+    second: Goblinoid Icons 1_145
+  - first:
+      213: -4376175905946943440
+    second: Goblinoid Icons 1_146
+  - first:
+      213: -2945769256315882646
+    second: Goblinoid Icons 1_147
+  - first:
+      213: 2552303760364204830
+    second: Goblinoid Icons 1_148
+  - first:
+      213: -4115154799148465287
+    second: Goblinoid Icons 1_149
+  - first:
+      213: 7165107586025733453
+    second: Goblinoid Icons 1_150
+  - first:
+      213: -3372354782976434040
+    second: Goblinoid Icons 1_151
+  - first:
+      213: 4517799431088566140
+    second: Goblinoid Icons 1_152
+  - first:
+      213: -211348204283493628
+    second: Goblinoid Icons 1_153
+  - first:
+      213: 959967616711601272
+    second: Goblinoid Icons 1_154
+  - first:
+      213: -6036473313781151148
+    second: Goblinoid Icons 1_155
+  - first:
+      213: 6759398033573743233
+    second: Goblinoid Icons 1_156
+  - first:
+      213: 2687397302372968448
+    second: Goblinoid Icons 1_157
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Poison Dart
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 59
+        width: 452
+        height: 452
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef14b5facf83dd49b0279658c3cf41c
+      internalID: 695077654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stab
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 512
+        width: 473
+        height: 431
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56d16c0163355f244a8976c5059ec5b2
+      internalID: -162048877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Junkie Dive
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 507
+        width: 489
+        height: 438
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62c5828025b74a246aedb2656cfc2036
+      internalID: -885697308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cheap Shot
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 957
+        width: 475
+        height: 454
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c2de6ed65c71444e90b8ce2f233c157
+      internalID: -1068343132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Backstab
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 964
+        width: 458
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2719feb739280641b7b51d064ad80cc
+      internalID: 1782486502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 266e91d35816a11409551740aa2c27f4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":1536.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Backstab: 1782486502
+      Cheap Shot: -1068343132
+      Junkie Dive: -885697308
+      Poison Dart: 695077654
+      Stab: -162048877
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

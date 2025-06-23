@@ -18,12 +18,16 @@ public class EnemyActor : ActorManager
     public override void OnTurnStart()
     {
         base.OnTurnStart();
+        _hand.ShowHand();
+
+        TurnOrderUI.Instance.ChangeCombatPanel(false);
     }
 
     public override void OnTurnEnd()
     {
         base.OnTurnEnd();
 
+        _hand.HideHand();
         _hand.DiscardHand(IsPlayer: false);
     }
 

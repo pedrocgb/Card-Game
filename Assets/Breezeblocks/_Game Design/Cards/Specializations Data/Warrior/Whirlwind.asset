@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a19dccf1348014ead4ded939d7251e, type: 3}
+  m_Name: Whirlwind
+  m_EditorClassIdentifier: 
+  _cardName: Whirlwind
+  _cardDescription: '[ALL] Deals 1 Damage. Apply 1x Bleed for 2 turns.'
+  _cardLore: 
+  _cardOrigin: 2
+  _cardRarity: 2
+  _cardType: 4
+  _cardImage: {fileID: -1771308530, guid: a271d0c2fc904aa4ca5837fa4ed1bebf, type: 3}
+  _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
+  _actionCost: 2
+  _consumeCard: 0
+  _cardEffects:
+  - EffectType: 0
+    Amount: 1
+    Duration: 0
+    TargetSelf: 0
+    NewCard: {fileID: 0}
+  - EffectType: 10
+    Amount: 2
+    Duration: 2
+    TargetSelf: 0
+    NewCard: {fileID: 0}
+  _positions: 0100000003000000
+  _posIcon: {fileID: 21300000, guid: d9742f82ff1d25942b435784668eed43, type: 3}
+  _targetType: 3
+  _targetScope: 2
+  _targetPositions: 01000000020000000300000004000000
+  _canTargetSelf: 0
+  _targetIcon: {fileID: 21300000, guid: e41ebb9ac4c86fb438283eb392816e0e, type: 3}

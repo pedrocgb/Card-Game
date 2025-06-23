@@ -1,0 +1,324 @@
+fileFormatVersion: 2
+guid: ee2ecbe01a34a234d81dc30d38040456
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9222927560189528601
+    second: warrior icons 2_0
+  - first:
+      213: 1988972607943156744
+    second: warrior icons 2_1
+  - first:
+      213: -991313853739895941
+    second: warrior icons 2_2
+  - first:
+      213: 7843091203335391106
+    second: warrior icons 2_3
+  - first:
+      213: -2789121719505717662
+    second: warrior icons 2_4
+  - first:
+      213: -1348880366965497481
+    second: warrior icons 2_5
+  - first:
+      213: 61016418588981186
+    second: warrior icons 2_6
+  - first:
+      213: 2448438347492844937
+    second: warrior icons 2_7
+  - first:
+      213: 972053508405399786
+    second: warrior icons 2_8
+  - first:
+      213: 4736507810800953907
+    second: warrior icons 2_9
+  - first:
+      213: 6840357748614551464
+    second: warrior icons 2_10
+  - first:
+      213: 7235297218286007809
+    second: warrior icons 2_11
+  - first:
+      213: -8050432898418936565
+    second: warrior icons 2_12
+  - first:
+      213: 8252461856927480505
+    second: warrior icons 2_13
+  - first:
+      213: -7992141961353616465
+    second: warrior icons 2_14
+  - first:
+      213: 462110906937394698
+    second: warrior icons 2_15
+  - first:
+      213: -6762471887739406034
+    second: warrior icons 2_16
+  - first:
+      213: 4900475126280766329
+    second: warrior icons 2_17
+  - first:
+      213: 7687047279563462180
+    second: warrior icons 2_18
+  - first:
+      213: -2650196175469784225
+    second: warrior icons 2_19
+  - first:
+      213: 4190347711392041665
+    second: warrior icons 2_20
+  - first:
+      213: -1147030779824992371
+    second: warrior icons 2_21
+  - first:
+      213: 1091425321672426520
+    second: warrior icons 2_22
+  - first:
+      213: -7025113646365525702
+    second: warrior icons 2_23
+  - first:
+      213: 1477918584278721147
+    second: warrior icons 2_24
+  - first:
+      213: 3297050971818110928
+    second: warrior icons 2_25
+  - first:
+      213: 5047082469931238252
+    second: warrior icons 2_26
+  - first:
+      213: 4114798452721067402
+    second: warrior icons 2_27
+  - first:
+      213: -1891290490296414107
+    second: warrior icons 2_28
+  - first:
+      213: 3093748672985040709
+    second: warrior icons 2_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sword Slash
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1042
+        width: 503
+        height: 494
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8e54ac002aeaa24e9ec0c7771f52770
+      internalID: 1078746307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raise Shield
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 1042
+        width: 478
+        height: 479
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baeb6892bb0453846bcef083f2f745c1
+      internalID: -1510793563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protect
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 589
+        width: 492
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79bc86da46c6d424e83a09982d20d191
+      internalID: -1314103557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Armor Up
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 507
+        width: 518
+        height: 526
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33791d5d3a2bb494f90b325d26e0825e
+      internalID: 996600477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Command
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 511
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71e15f831d2321c44ac6cb1e7835909f
+      internalID: 1192610585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 261d28cd0204c0948967616e47135079
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":1536.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Armor Up: 996600477
+      Command: 1192610585
+      Protect: -1314103557
+      Raise Shield: -1510793563
+      Sword Slash: 1078746307
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

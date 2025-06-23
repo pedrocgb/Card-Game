@@ -1,0 +1,280 @@
+fileFormatVersion: 2
+guid: 124d271cee166ce4abf47eefef4c69a9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3112173299017071141
+    second: Grave Disciple_0
+  - first:
+      213: -2602066493205651088
+    second: Grave Disciple_1
+  - first:
+      213: -6966876704566750107
+    second: Grave Disciple_2
+  - first:
+      213: 5973737025811747243
+    second: Grave Disciple_3
+  - first:
+      213: -6429687248222750982
+    second: Grave Disciple_4
+  - first:
+      213: 6920767530708308950
+    second: Grave Disciple_5
+  - first:
+      213: -3110994761860432001
+    second: Grave Disciple_6
+  - first:
+      213: 401056551280488335
+    second: Grave Disciple_7
+  - first:
+      213: 7337158969188002213
+    second: Grave Disciple_8
+  - first:
+      213: -2805216355202621671
+    second: Grave Disciple_9
+  - first:
+      213: 9026778519489493841
+    second: Grave Disciple_10
+  - first:
+      213: -4547873745473586666
+    second: Grave Disciple_11
+  - first:
+      213: 6870637385902113204
+    second: Grave Disciple_12
+  - first:
+      213: 6135115883316415284
+    second: Grave Disciple_13
+  - first:
+      213: 5175564927331812335
+    second: Grave Disciple_14
+  - first:
+      213: 4104401579035465205
+    second: Grave Disciple_15
+  - first:
+      213: -4242996565733053752
+    second: Grave Disciple_16
+  - first:
+      213: 6843965622656719988
+    second: Grave Disciple_17
+  - first:
+      213: -4185697107313167576
+    second: Grave Disciple_18
+  - first:
+      213: -384477230389753077
+    second: Grave Disciple_19
+  - first:
+      213: 1952185187896029895
+    second: Grave Disciple_20
+  - first:
+      213: -8461691028615578546
+    second: Grave Disciple_21
+  - first:
+      213: 4403453942092343777
+    second: Grave Disciple_22
+  - first:
+      213: 6454249511636873465
+    second: Grave Disciple_23
+  - first:
+      213: 5971707405359839386
+    second: Grave Disciple_24
+  - first:
+      213: -1540913386377699124
+    second: Grave Disciple_25
+  - first:
+      213: 2744631220964688484
+    second: Grave Disciple_26
+  - first:
+      213: -7140530183320554258
+    second: Grave Disciple_27
+  - first:
+      213: 2030783666458458241
+    second: Grave Disciple_28
+  - first:
+      213: 5665003529601622718
+    second: Grave Disciple_29
+  - first:
+      213: 4035820641739672468
+    second: Grave Disciple_30
+  - first:
+      213: 4031509039579980891
+    second: Grave Disciple_31
+  - first:
+      213: 7003048349276498002
+    second: Grave Disciple_32
+  - first:
+      213: 6612466371289407808
+    second: Grave Disciple_33
+  - first:
+      213: 1009106732351180108
+    second: Grave Disciple_34
+  - first:
+      213: -8537839545216895167
+    second: Grave Disciple_35
+  - first:
+      213: 5856983826026210912
+    second: Grave Disciple_36
+  - first:
+      213: -6416114896058077626
+    second: Grave Disciple_37
+  - first:
+      213: -7306075690159049155
+    second: Grave Disciple_38
+  - first:
+      213: -3583268064334193532
+    second: Grave Disciple_39
+  - first:
+      213: 2378763688900652349
+    second: Grave Disciple_40
+  - first:
+      213: 789438559393813976
+    second: Grave Disciple_41
+  - first:
+      213: -9107280936535123485
+    second: Grave Disciple_42
+  - first:
+      213: 63775971824429998
+    second: Grave Disciple_43
+  - first:
+      213: 6755173038490849571
+    second: Grave Disciple_44
+  - first:
+      213: 4677368885107338509
+    second: Grave Disciple_45
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Grave Disciple_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 243
+        width: 1024
+        height: 1133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52a3e5f5029a03b20800000000000000
+      internalID: 3112173299017071141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":1536.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Grave Disciple_0: 3112173299017071141
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

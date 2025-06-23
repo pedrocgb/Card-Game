@@ -29,6 +29,8 @@ public class PlayerActor : ActorManager
         _hand.DrawCards(_myStats.CardBuy);
 
         RaiseTurnStartEvent();
+
+        TurnOrderUI.Instance.ChangeCombatPanel(true);
     }
 
     public override void OnTurnEnd()

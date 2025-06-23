@@ -170,7 +170,7 @@ public class EnemyTurnManager : MonoBehaviour
         // 6) cleanup
         TargetingManager.Instance.ClearHightLights();
         enemy.Stats.SpendAction(selectedCard.ActionCost);
-        enemy.Hand.DiscardCard(selectedCard);
+        enemy.Hand.DiscardEnemyCard(selectedCard);
         _cardPlayed = true;
     }
 

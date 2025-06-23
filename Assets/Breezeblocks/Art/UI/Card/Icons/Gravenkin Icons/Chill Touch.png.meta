@@ -1,0 +1,268 @@
+fileFormatVersion: 2
+guid: 402227041274a0f46bbbba2c41daccfd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5916601779174718493
+    second: Chill Touch_0
+  - first:
+      213: -4085054200849065165
+    second: Chill Touch_1
+  - first:
+      213: 2537651326369556135
+    second: Chill Touch_2
+  - first:
+      213: -7494182741025219350
+    second: Chill Touch_3
+  - first:
+      213: 874688120519644115
+    second: Chill Touch_4
+  - first:
+      213: 8551246202752217698
+    second: Chill Touch_5
+  - first:
+      213: -8464040757946021500
+    second: Chill Touch_6
+  - first:
+      213: -3573899973946304534
+    second: Chill Touch_7
+  - first:
+      213: 1963060013344641336
+    second: Chill Touch_8
+  - first:
+      213: 7402304973499077875
+    second: Chill Touch_9
+  - first:
+      213: 7414049726188960817
+    second: Chill Touch_10
+  - first:
+      213: 4344002226601376945
+    second: Chill Touch_11
+  - first:
+      213: -6733551963881545728
+    second: Chill Touch_12
+  - first:
+      213: -1876310760816430499
+    second: Chill Touch_13
+  - first:
+      213: 7159061252552087912
+    second: Chill Touch_14
+  - first:
+      213: 1111475330913880426
+    second: Chill Touch_15
+  - first:
+      213: 9163057504614505709
+    second: Chill Touch_16
+  - first:
+      213: 7613352889090505300
+    second: Chill Touch_17
+  - first:
+      213: -6230856499340738274
+    second: Chill Touch_18
+  - first:
+      213: 7246830893974012399
+    second: Chill Touch_19
+  - first:
+      213: 7868968208763683064
+    second: Chill Touch_20
+  - first:
+      213: -2276056676473651172
+    second: Chill Touch_21
+  - first:
+      213: 1112580956362437612
+    second: Chill Touch_22
+  - first:
+      213: 356835818057329767
+    second: Chill Touch_23
+  - first:
+      213: -5400483492368811073
+    second: Chill Touch_24
+  - first:
+      213: -72212117833694816
+    second: Chill Touch_25
+  - first:
+      213: -3578334799948805876
+    second: Chill Touch_26
+  - first:
+      213: 1521110353076225056
+    second: Chill Touch_27
+  - first:
+      213: -5840730605957175045
+    second: Chill Touch_28
+  - first:
+      213: -1112956112115224824
+    second: Chill Touch_29
+  - first:
+      213: -3763943201827743983
+    second: Chill Touch_30
+  - first:
+      213: 2338364715122601751
+    second: Chill Touch_31
+  - first:
+      213: 6231113557876114720
+    second: Chill Touch_32
+  - first:
+      213: 8863724045587589002
+    second: Chill Touch_33
+  - first:
+      213: 8096441156535335111
+    second: Chill Touch_34
+  - first:
+      213: 9068561574242969915
+    second: Chill Touch_35
+  - first:
+      213: -8690736375986774579
+    second: Chill Touch_36
+  - first:
+      213: -7792492685267693062
+    second: Chill Touch_37
+  - first:
+      213: 8475515275471321052
+    second: Chill Touch_38
+  - first:
+      213: 1232560181009173659
+    second: Chill Touch_39
+  - first:
+      213: -5750744819118643144
+    second: Chill Touch_40
+  - first:
+      213: -315466754002877253
+    second: Chill Touch_41
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Chill Touch_0
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 264
+        width: 857
+        height: 1086
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e3c8d2870204eda0800000000000000
+      internalID: -5916601779174718493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":1536.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Chill Touch_0: -5916601779174718493
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -47,7 +47,29 @@ public class ActorStats : MonoBehaviour
 
     // Status
     private List<StatusEffectInstance> _activeEffects = new List<StatusEffectInstance>();
+    private static readonly Dictionary<StatusEffects, int> _startTurnEffectPriority = new Dictionary<StatusEffects, int>
+    {
+        [StatusEffects.Toughness] = -1,
+        [StatusEffects.Weakness] = -1,
+        [StatusEffects.Slow] = -1,
+        [StatusEffects.Stun] = -1,
+        [StatusEffects.Restrained] = -1,
+        [StatusEffects.Blind] = -1,
 
+        [StatusEffects.Lock] = 0,
+        [StatusEffects.Vulnerability] = 1,
+        [StatusEffects.Regen] = 2,
+
+        [StatusEffects.Burn] = 3,
+        [StatusEffects.Poison] = 4,
+        [StatusEffects.Bleed] = 5,
+
+        [StatusEffects.Dodge] = 6,
+        [StatusEffects.Hide] = 7,
+        [StatusEffects.Riposte] = 8,
+        [StatusEffects.Haste] = 9,
+        [StatusEffects.Block] = 10,
+    };
     #endregion
 
     // ========================================================================
@@ -260,6 +282,11 @@ public class ActorStats : MonoBehaviour
     /// </summary>
     private void ResolveStartTurnEffects()
     {
+        // Sort once by your priority
+        _activeEffects.Sort((a, b) =>
+            _startTurnEffectPriority[a.StatusEffect]
+          .CompareTo(_startTurnEffectPriority[b.StatusEffect]));
+
         foreach (StatusEffectInstance effect in _activeEffects.ToList())
         {
             switch (effect.StatusEffect)
@@ -464,11 +491,19 @@ public class ActorStats : MonoBehaviour
         if (burnDamage > 0)
         {
             burnDamage = Mathf.Max(0, burnDamage);
-            _currentHealth -= burnDamage;
+
+            // Calculate damage taken with block
+            // Remove from block than remove from health
+            int initialBlock = GetTotalEffectAmount(StatusEffects.Block);
+            int blockedAmount = Mathf.Min(burnDamage, initialBlock);
+            int damageAfterBlock = Mathf.Max(0, burnDamage - initialBlock);
+            SubtractBlock(blockedAmount);
+
+            initialBlock = Mathf.Max(0, initialBlock - burnDamage);
+            _currentHealth -= damageAfterBlock;
 
             // Update Actor healthbar
             _actor.UI.UpdateHealthUI();
-
             // Play taking damage animations
             FloatingTextManager.SpawnText(transform.position, burnDamage.ToString(), HealthModColors.BurnDamage);
 
@@ -496,6 +531,8 @@ public class ActorStats : MonoBehaviour
             poisonDamage = Mathf.Max(0, poisonDamage);
             _currentHealth -= poisonDamage;
 
+            // Update Actor healthbar
+            _actor.UI.UpdateHealthUI();
             // Play taking damage animations
             FloatingTextManager.SpawnText(transform.position, poisonDamage.ToString(), HealthModColors.PoisonDamage);
 
@@ -528,6 +565,8 @@ public class ActorStats : MonoBehaviour
             bleedDamage = Mathf.Max(0, bleedDamage);
             _currentHealth -= bleedDamage;
 
+            // Update Actor healthbar
+            _actor.UI.UpdateHealthUI();
             // Play taking damage animations
             FloatingTextManager.SpawnText(transform.position, bleedDamage.ToString(), HealthModColors.BasicDamage);
 
@@ -744,7 +783,6 @@ public class ActorStats : MonoBehaviour
         AddStatusEffect(StatusEffects.Lock, amount, duration);
     }
     #endregion
-
 
     // ========================================================================
 }

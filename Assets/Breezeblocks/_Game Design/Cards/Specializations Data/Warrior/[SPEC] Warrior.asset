@@ -15,4 +15,22 @@ MonoBehaviour:
   _specializationName: Warrior
   _specializationDescription: Warriors are frontline fighters specialized in melee
     combat and defense.
-  _specializationCards: []
+  _specializationCards:
+  - {fileID: 11400000, guid: b060a3cddf0ff0243863cabae305bce7, type: 2}
+  - {fileID: 11400000, guid: 8c41de694ebb7e547ae746bb6a2bc62e, type: 2}
+  - {fileID: 11400000, guid: a40ca1c2fc4b1d94f9ac7828b32325a5, type: 2}
+  - {fileID: 11400000, guid: dc9f777733623e943bee9cb11feaf8af, type: 2}
+  - {fileID: 11400000, guid: ac76ef1c1f1296f40a0efb65647a21a3, type: 2}
+  - {fileID: 11400000, guid: 231c3b6cbc4607848bb5cbf0fb5a04ca, type: 2}
+  - {fileID: 11400000, guid: 45cae7cd89983254a9ab1dba13b93e69, type: 2}
+  - {fileID: 11400000, guid: e9dea65ef506e424a89767d0e6f6bc68, type: 2}
+  - {fileID: 11400000, guid: c6be9c5d1f9eda24f98cc352e4eb7c6d, type: 2}
+  - {fileID: 11400000, guid: afaae0a006bdc18498a0c46b80ef2010, type: 2}
+  - {fileID: 11400000, guid: 90a6aa474ac20434d82411bd8b3d30bb, type: 2}
+  - {fileID: 11400000, guid: cc1995ee5a41ec54782290c20f7320c3, type: 2}
+  - {fileID: 11400000, guid: 5dfaea295711a6d46be0d464bb8c4cba, type: 2}
+  - {fileID: 11400000, guid: 6626fc217b804e445afa765faa16730f, type: 2}
+  - {fileID: 11400000, guid: 5d9e7b1ee6ad0be4c81b79440113893e, type: 2}
+  - {fileID: 11400000, guid: d0ab853ea480b9f40af244d3e2665567, type: 2}
+  - {fileID: 11400000, guid: 91a0f7201430e68428955935312a2fd9, type: 2}
+  - {fileID: 11400000, guid: f379b6638fbc6d7459571be918e74b80, type: 2}

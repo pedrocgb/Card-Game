@@ -74,6 +74,7 @@ public class UEnums
         Draw = 201,
         AddCardToHand = 202,
         AddCardToDeck = 203,
+        AddCardToDiscard = 204,
 
         None = 1000
     }
@@ -144,5 +145,13 @@ public class UEnums
         Deck,
         Discard,
         Consume
+    }
+
+    public enum DamageTypes
+    {
+        DirectDamage,
+        BurnDamage,
+        PoisonDamage,
+        BleedDamage
     }
 }

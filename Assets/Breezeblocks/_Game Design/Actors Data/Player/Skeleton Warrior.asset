@@ -19,7 +19,15 @@ MonoBehaviour:
   _startingCards: []
   _hasSpecialization: 1
   _actorSpecialization: {fileID: 11400000, guid: 1346c4000a57dc9408d4210a97256482, type: 2}
-  _startingSpecializedCards: []
+  _startingSpecializedCards:
+  - {fileID: 11400000, guid: b060a3cddf0ff0243863cabae305bce7, type: 2}
+  - {fileID: 11400000, guid: 5d9e7b1ee6ad0be4c81b79440113893e, type: 2}
+  - {fileID: 11400000, guid: d0ab853ea480b9f40af244d3e2665567, type: 2}
+  - {fileID: 11400000, guid: 91a0f7201430e68428955935312a2fd9, type: 2}
+  - {fileID: 11400000, guid: 45cae7cd89983254a9ab1dba13b93e69, type: 2}
+  - {fileID: 11400000, guid: a40ca1c2fc4b1d94f9ac7828b32325a5, type: 2}
+  - {fileID: 11400000, guid: afaae0a006bdc18498a0c46b80ef2010, type: 2}
+  - {fileID: 11400000, guid: 231c3b6cbc4607848bb5cbf0fb5a04ca, type: 2}
   _baseMaxHealth: 55
   _baseActionsPerTurn: 3
   _initiativeBonus: 0

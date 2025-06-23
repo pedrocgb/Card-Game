@@ -688,7 +688,7 @@ MonoBehaviour:
     stackingMode: 4
     icon: {fileID: 6250701994635682432, guid: e271fc98832776a4b89672b907bfa286, type: 3}
   - type: 6
-    stackingMode: 1
+    stackingMode: 2
     icon: {fileID: 2021654916430229660, guid: 8b3560dccf8a7f84184c75241015bbbd, type: 3}
   - type: 7
     stackingMode: 4
@@ -712,7 +712,7 @@ MonoBehaviour:
     stackingMode: 0
     icon: {fileID: 5251112635998323775, guid: 81f979f8d49fc2a49b7f6ccd51cd7d63, type: 3}
   - type: 10
-    stackingMode: 1
+    stackingMode: 4
     icon: {fileID: 4360865083311393745, guid: 43fc4aee4cd91ec42b4787d724db860e, type: 3}
 --- !u!4 &49525629
 Transform:
@@ -6599,6 +6599,18 @@ PrefabInstance:
       propertyPath: _currentPosition
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8935140890322494112, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
+      propertyPath: _deckUi
+      value: 
+      objectReference: {fileID: 361127232}
+    - target: {fileID: 8935140890322494112, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
+      propertyPath: _cardGroup
+      value: 
+      objectReference: {fileID: 628954155}
+    - target: {fileID: 8935140890322494112, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
+      propertyPath: _mainCanvas
+      value: 
+      objectReference: {fileID: 714495320}
     - target: {fileID: 9059914199689791697, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
       propertyPath: m_Controller
       value: 
@@ -8332,6 +8344,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328577295}
   m_CullTransparentMesh: 1
+--- !u!1 &345942315
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 345942317}
+  - component: {fileID: 345942316}
+  m_Layer: 5
+  m_Name: Enemy Actor 3 - Deck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!225 &345942316
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345942315}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!224 &345942317
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345942315}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1800400924}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &361127231
 GameObject:
   m_ObjectHideFlags: 0
@@ -9956,7 +10016,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Next attack card automatically misses. Does not stack.
+  m_text: "Next attack card automatically misses. Does \nnot stack."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11417,6 +11477,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 623659208}
   m_CullTransparentMesh: 1
+--- !u!1 &628954154
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 628954156}
+  - component: {fileID: 628954155}
+  m_Layer: 5
+  m_Name: 'Enemy Actor 4 - Deck '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!225 &628954155
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628954154}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!224 &628954156
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628954154}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1800400924}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &638957234
 GameObject:
   m_ObjectHideFlags: 0
@@ -12320,9 +12428,6 @@ MonoBehaviour:
     parties:
     - enemyPrefabs:
       - {fileID: 11400000, guid: b70674ba3f265884594b6a8fcf0c4522, type: 2}
-    - enemyPrefabs:
-      - {fileID: 11400000, guid: 665a77f63a7d08049ace276e14155f4d, type: 2}
-      - {fileID: 11400000, guid: 665a77f63a7d08049ace276e14155f4d, type: 2}
   - level: 2
     parties:
     - enemyPrefabs:
@@ -13578,8 +13683,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 295.204, y: -25.00002}
-  m_SizeDelta: {x: 472.408, y: 50}
+  m_AnchoredPosition: {x: 295.204, y: -36.842}
+  m_SizeDelta: {x: 472.408, y: 73.684}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &808762070
 MonoBehaviour:
@@ -13601,8 +13706,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Takes 1 damage at end of your turn. Takes extra 3 damage if moved. Duration
-    stacks.
+  m_text: Takes 1 damage at end of your turn. Takes extra 3 damage if moved. Ignores
+    Block. Duration and Effect Stacks.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14131,6 +14236,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852331738}
   m_CullTransparentMesh: 1
+--- !u!1 &866238015
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 866238017}
+  - component: {fileID: 866238016}
+  m_Layer: 5
+  m_Name: Enemy Actor 2 - Deck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!225 &866238016
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866238015}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!224 &866238017
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866238015}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1800400924}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &884862849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14222,7 +14375,7 @@ PrefabInstance:
     - target: {fileID: 6163624491599570395, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: _actorData
       value: 
-      objectReference: {fileID: 11400000, guid: 1bb3c3ccd7ff0e246bf66de3cf2ac7fd, type: 2}
+      objectReference: {fileID: 11400000, guid: 567fa6c587e79cd47a540b3a2a59e2d1, type: 2}
     - target: {fileID: 6163624491599570395, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: _outlineWidth
       value: 5
@@ -14948,7 +15101,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Takes 3 damage at the end of your turn. Duration stacks.
+  m_text: Takes 3 damage per stack at the end of your turn. Amount stacks.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15163,6 +15316,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987820941}
   m_CullTransparentMesh: 1
+--- !u!1 &991942497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 991942499}
+  - component: {fileID: 991942498}
+  m_Layer: 5
+  m_Name: Enemy Actor 1 - Deck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!225 &991942498
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991942497}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!224 &991942499
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991942497}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1800400924}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1013225233
 GameObject:
   m_ObjectHideFlags: 0
@@ -15328,7 +15529,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Takes X damage at the end of your turn. Duration and effect stacks.
+  m_text: Takes X damage at the end of your turn, ignores Block. Duration and Effect
+    Stacks.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16236,7 +16438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5044934173528301063, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6163624491599570395, guid: 01d12382555c236418e80298a76d7fb3, type: 3}
       propertyPath: _actorData
@@ -16573,6 +16775,18 @@ PrefabInstance:
       propertyPath: _currentPosition
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8935140890322494112, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
+      propertyPath: _deckUi
+      value: 
+      objectReference: {fileID: 361127232}
+    - target: {fileID: 8935140890322494112, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
+      propertyPath: _cardGroup
+      value: 
+      objectReference: {fileID: 866238016}
+    - target: {fileID: 8935140890322494112, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
+      propertyPath: _mainCanvas
+      value: 
+      objectReference: {fileID: 714495320}
     - target: {fileID: 9059914199689791697, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
       propertyPath: m_Controller
       value: 
@@ -20341,6 +20555,18 @@ PrefabInstance:
       propertyPath: _currentPosition
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8935140890322494112, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
+      propertyPath: _deckUi
+      value: 
+      objectReference: {fileID: 361127232}
+    - target: {fileID: 8935140890322494112, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
+      propertyPath: _cardGroup
+      value: 
+      objectReference: {fileID: 991942498}
+    - target: {fileID: 8935140890322494112, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
+      propertyPath: _mainCanvas
+      value: 
+      objectReference: {fileID: 714495320}
     - target: {fileID: 9059914199689791697, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
       propertyPath: m_Controller
       value: 
@@ -21566,6 +21792,10 @@ MonoBehaviour:
   _letterDelay: 0.05
   _turnOrderContainer: {fileID: 817283074}
   _actorNameText: {fileID: 2010388031}
+  _combatPanelImage: {fileID: 684410714}
+  _actorHandImage: {fileID: 1800400926}
+  _playerCombatPanelSprite: {fileID: -2380700144120085364, guid: 536957b338edfd744987864de172e28b, type: 3}
+  _enemyCombatPanelSprite: {fileID: 5751306885679554928, guid: 0532594bd219e8e4eb2cc1e1508cb31f, type: 3}
 --- !u!4 &1626863875
 Transform:
   m_ObjectHideFlags: 0
@@ -23305,6 +23535,10 @@ RectTransform:
   - {fileID: 1720174319}
   - {fileID: 2147233032}
   - {fileID: 645037142}
+  - {fileID: 991942499}
+  - {fileID: 866238017}
+  - {fileID: 345942317}
+  - {fileID: 628954156}
   - {fileID: 527455085}
   m_Father: {fileID: 684410713}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25672,6 +25906,9 @@ MonoBehaviour:
   - tag: Inventory Actor Portrait
     prefab: {fileID: 7482137361952954351, guid: 7b5f6b7c4d69ae64ba8afb5c4444baca, type: 3}
     size: 5
+  - tag: Enemy Card UI
+    prefab: {fileID: 5903213188334675933, guid: bf59390a8eee45447a882e993528f7fd, type: 3}
+    size: 20
 --- !u!4 &1975440103
 Transform:
   m_ObjectHideFlags: 0
@@ -27319,6 +27556,18 @@ PrefabInstance:
       propertyPath: _currentPosition
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8935140890322494112, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
+      propertyPath: _deckUi
+      value: 
+      objectReference: {fileID: 361127232}
+    - target: {fileID: 8935140890322494112, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
+      propertyPath: _cardGroup
+      value: 
+      objectReference: {fileID: 345942316}
+    - target: {fileID: 8935140890322494112, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
+      propertyPath: _mainCanvas
+      value: 
+      objectReference: {fileID: 714495320}
     - target: {fileID: 9059914199689791697, guid: a5b77032115c13b418bc2e777d9df1c2, type: 3}
       propertyPath: m_Controller
       value: 

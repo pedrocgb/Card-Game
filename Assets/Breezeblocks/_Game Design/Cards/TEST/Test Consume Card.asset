@@ -18,7 +18,7 @@ MonoBehaviour:
   _cardOrigin: 1
   _cardRarity: 1
   _cardType: 1
-  _cardImage: {fileID: 1906892709, guid: aaf45b744e9d06f4a99694e27d27adf8, type: 3}
+  _cardImage: {fileID: 0}
   _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
   _actionCost: 1
   _consumeCard: 1

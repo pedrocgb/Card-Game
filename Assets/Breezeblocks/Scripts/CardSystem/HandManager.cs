@@ -18,6 +18,8 @@ public class HandManager : MonoBehaviour
     private List<CardUI> _currentHandUI = new List<CardUI>();
     public List<CardUI> CurrentHandUI => _currentHandUI;
 
+    private List<CardPreview> _currentEnemyHandUI = new List<CardPreview>();
+
     // Components
     [FoldoutGroup("Components", expanded: true)]
     [SerializeField]
@@ -49,7 +51,6 @@ public class HandManager : MonoBehaviour
 
     // ========================================================================
 
-    #region Enemy Draw Methods
     /// <summary>
     /// Draw a number of cards from the deck, add it to current hand and animate them.
     /// </summary>
@@ -57,42 +58,136 @@ public class HandManager : MonoBehaviour
     public void DrawCards(int Quantity)
     {
         if (_actor is PlayerActor)
-            StartCoroutine(DrawCardAnimation(Quantity));
+            StartCoroutine(DrawPlayerCardAnimation(Quantity));
         else
-            DrawCardLogic(Quantity);
-    }
-
-    private void DrawCardLogic(int Quantity)
-    {
-        for (int i = 0; i < Quantity; i++)
-        {
-            if (_currentHand.Count >= _actor.Data.MaxHandSize)
-            {
-                Debug.LogWarning("Hand is full!");
-                break;
-            }
-
-
-            if (_deckManager.CurrentDeck.Count == 0)
-            {
-                Debug.LogWarning("Deck is empty! Reshuffling discard");
-                _deckManager.ReshuffleDiscardIntoDeck();
-                continue;
-            }
-
-            _currentHand.Add(_deckManager.GetTopCard());
-
-            // Update Actor UI
-            if (_actor.IsMyTurn)
-                ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count, _deckManager.ConsumedPile.Count);
-        }
+            StartCoroutine(DrawEnemyCardAnimation(Quantity));
     }
 
     /// <summary>
-    /// Discard Card. Basic method, no UI.
+    /// Discard entire hand.
     /// </summary>
-    /// <param name="Card"></param>
-    public void DiscardCard(CardInstance Card)
+    /// <param name="IsPlayer"></param>
+    public void DiscardHand(bool IsPlayer)
+    {
+        if (IsPlayer)
+        {
+            // Discard all cards in the hand
+            foreach (CardUI cardUI in _currentHandUI)
+            {
+                _deckManager.DiscardPile.Add(cardUI.CardInstance);
+                cardUI.gameObject.SetActive(false);
+            }
+            _currentHand.Clear();
+            _currentHandUI.Clear();
+        }
+        else
+        {
+            // For AI or non-player actors, just clear the hand without UI
+            foreach (CardInstance card in _currentHand)
+            {
+                _deckManager.DiscardPile.Add(card);
+            }
+            foreach (var ui in _currentEnemyHandUI)
+                ui.gameObject.SetActive(false);
+            _currentHand.Clear();
+            _currentEnemyHandUI.Clear();
+        }
+
+        // Update actor Deck and Discard Pile UI
+        if (_actor.IsMyTurn)
+            ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count, _deckManager.ConsumedPile.Count);
+    }
+
+    public void ShowHand()
+    {
+        _cardGroupRect.anchoredPosition = _visiblePosition;
+    }
+    public void HideHand()
+    {
+        _cardGroupRect.anchoredPosition = _hiddenPosition;
+    }
+
+    // ========================================================================
+
+    #region Enemy Draw Methods
+    private IEnumerator DrawEnemyCardAnimation(int quantity)
+    {
+        // 1) draw logic + spawn all enemy UIs immediately
+        var drawnEnemyUIs = new List<CardPreview>();
+        for (int i = 0; i < quantity; i++)
+        {
+            // pull the model‐card
+            if (_deckManager.CurrentDeck.Count == 0)
+                _deckManager.ReshuffleDiscardIntoDeck();
+            var drawn = _deckManager.GetTopCard();
+            _currentHand.Add(drawn);
+
+            // spawn the visual
+            var go = ObjectPooler
+                .SpawnFromPool("Enemy Card UI", _cardGroup.transform.position, Quaternion.identity);
+            var ui = go.GetComponent<CardPreview>();
+            ui.Initialize(drawn);
+            ui.transform.SetParent(_cardGroupRect, false);
+            _currentEnemyHandUI.Add(ui);
+
+            drawnEnemyUIs.Add(ui);
+        }
+
+        // 2) build the same fade+pop sequence
+        var seq = DOTween.Sequence();
+        for (int i = 0; i < drawnEnemyUIs.Count; i++)
+        {
+            var ui = drawnEnemyUIs[i];
+            ui.CanvasGroup.alpha = 0f;
+            ui.transform.localScale = Vector3.one * 0.9f;
+
+            seq.AppendInterval(UConstants.CARD_DRAW_FADE_STAGGER);
+            seq.Append(ui.CanvasGroup
+                .DOFade(1f, UConstants.CARD_DRAW_FADE_DURATION)
+                .SetEase(Ease.Linear));
+            seq.Join(ui.transform
+                .DOScale(1f, UConstants.CARD_DRAW_FADE_DURATION)
+                .SetEase(Ease.OutBack));
+        }
+
+        seq.OnComplete(() =>
+        {
+            // once the enemy cards are in, rebuild layout
+            RebuildEnemyHandLayout();
+        });
+
+        seq.Play();
+        RebuildEnemyHandLayout();
+        yield return seq.WaitForCompletion();
+    }
+
+    private IEnumerator PlaySingleEnemyDrawAnimation(CardPreview ui)
+    {
+        // Prepare start state
+        ui.CanvasGroup.alpha = 0f;
+        ui.transform.localScale = Vector3.one * 0.9f;
+
+        // Build sequence
+        Sequence seq = DOTween.Sequence()
+            .AppendInterval(UConstants.CARD_DRAW_FADE_STAGGER)
+            .Append(ui.CanvasGroup
+                .DOFade(1f, UConstants.CARD_DRAW_FADE_DURATION)
+                .SetEase(Ease.Linear))
+            .Join(ui.transform
+                .DOScale(1f, UConstants.CARD_DRAW_FADE_DURATION)
+                .SetEase(Ease.OutBack));
+
+        // On complete, re-enable hover and rebuild
+        seq.OnComplete(() =>
+        {
+            RebuildEnemyHandLayout();
+        });
+
+        seq.Play();
+        yield return seq.WaitForCompletion();
+    }
+
+    private void OnCardUse(CardInstance Card)
     {
         _currentHand.Remove(Card);
         if (Card.ConsumeCard)
@@ -103,19 +198,65 @@ public class HandManager : MonoBehaviour
         if (_actor.IsMyTurn)
             ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count, _deckManager.ConsumedPile.Count);
     }
+
+    public void DiscardEnemyCard(CardInstance cardInstance)
+    {
+        // 1) Find UI index before backend removes it
+        int idx = _currentHand.IndexOf(cardInstance);
+        if (idx < 0) return;
+        var ui = _currentEnemyHandUI[idx];
+
+        // 2) Call existing backend to remove from _currentHand and move to discard/consume
+        OnCardUse(cardInstance);
+
+        // 3) Compute discard pile canvas position
+        Vector2 discardPos = UAnchoredPositions.WorldToCanvasPosition(_mainCanvas, transform.position);
+
+        // 4) Animate UI
+        var seq = DOTween.Sequence()
+            .Append(ui.MyRectTransform.DOAnchorPos(discardPos, 0.4f).SetEase(Ease.InCubic))
+            .Join(ui.MyRectTransform.DOSizeDelta(new Vector2(50, 50), 0.4f).SetEase(Ease.InBack))
+            .Join(ui.CanvasGroup.DOFade(0f, 0.4f));
+
+        seq.OnComplete(() =>
+        {
+            ui.gameObject.SetActive(false);
+            _currentEnemyHandUI.RemoveAt(idx);
+            RebuildEnemyHandLayout();
+        });
+
+        seq.Play();
+    }
+
+    private void RebuildEnemyHandLayout()
+    {
+        _cardGroup.blocksRaycasts = false;
+        Canvas.ForceUpdateCanvases();
+
+        for (int i = 0; i < _currentEnemyHandUI.Count; i++)
+        {
+            var ui = _currentEnemyHandUI[i];
+            var rt = ui.MyRectTransform;
+            float targetX = UConstants.CARD_DRAW_START_ANCHORED_X
+                          + i * UConstants.CARD_DRAW_ANCHORED_OFFSET;
+            Vector2 pos = new Vector2(targetX, 0f);
+
+            rt.DOKill();
+            rt.DOAnchorPos(pos, 0.25f)
+              .SetEase(Ease.OutCubic)
+              .OnComplete(() => {
+                  _cardGroup.blocksRaycasts = true;
+              });
+
+            if (rt != null)
+                rt.SetSiblingIndex(i);
+        }
+    }
     #endregion
 
     // ========================================================================
 
     #region Player Card Draw Methods
-    public void ShowHand()
-    {
-        _cardGroupRect.anchoredPosition = _visiblePosition;
-    }
-    public void HideHand()
-    {
-        _cardGroupRect.anchoredPosition = _hiddenPosition;
-    }
     private CardUI DrawPlayerCard()
     {
         if (_currentHand.Count >= _actor.Data.MaxHandSize)
@@ -155,7 +296,7 @@ public class HandManager : MonoBehaviour
     /// </summary>
     /// <param name="quantity"></param>
     /// <returns></returns>
-    private IEnumerator DrawCardAnimation(int quantity)
+    private IEnumerator DrawPlayerCardAnimation(int quantity)
     {
         foreach (var cardUI in _currentHandUI)
         {
@@ -222,7 +363,7 @@ public class HandManager : MonoBehaviour
     /// <summary>
     /// Plays fade+pop animation on one drawn card, then rebuilds layout and re-enables hover.
     /// </summary>
-    private IEnumerator PlaySingleDrawAnimation(CardUI ui)
+    private IEnumerator PlaySinglePlayerDrawAnimation(CardUI ui)
     {
         // Prepare start state
         ui.HoverHandler.EnableHover(false);
@@ -343,48 +484,6 @@ public class HandManager : MonoBehaviour
     }
     #endregion
 
-    /// <summary>
-    /// Discard entire hand.
-    /// </summary>
-    /// <param name="IsPlayer"></param>
-    public void DiscardHand(bool IsPlayer)
-    {
-        if (IsPlayer)
-        {
-            // Discard all cards in the hand
-            foreach (CardUI cardUI in _currentHandUI)
-            {
-                if (cardUI.CardInstance.ConsumeCard)
-                    _deckManager.ConsumedPile.Add(cardUI.CardInstance);
-                else
-                    _deckManager.DiscardPile.Add(cardUI.CardInstance);
-                cardUI.gameObject.SetActive(false);
-            }
-            _currentHand.Clear();
-            _currentHandUI.Clear();
-        }
-        else
-        {
-            // For AI or non-player actors, just clear the hand without UI
-            foreach (CardInstance card in _currentHand)
-            {
-                if (card.ConsumeCard)
-                    _deckManager.ConsumedPile.Add(card);
-                else
-                    _deckManager.DiscardPile.Add(card);
-            }
-            _currentHand.Clear();
-            _currentHandUI.Clear();
-        }
-
-        // Update actor Deck and Discard Pile UI
-        if (_actor.IsMyTurn)
-            ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count, _deckManager.ConsumedPile.Count);
-    }
-
-
-    // ========================================================================
-
     #region Card Validation Methods - Player
     public bool ValidateCard(CardUI Card, ActorManager Source)
     {
@@ -445,12 +544,25 @@ public class HandManager : MonoBehaviour
             var instance = unlockedCards[k];
             instance.LockCard(true);
 
-            var ui = _currentHandUI
-                .FirstOrDefault(c => c.CardInstance == instance);
-            if (ui != null)
+            if (_actor is PlayerActor)
             {
-                Console.Log($"Enabling lock effect for card UI: {ui.CardInstance.CardName}");
-                ui.EnableCardLockEffect(true);
+                var ui = _currentHandUI
+                    .FirstOrDefault(c => c.CardInstance == instance);
+                if (ui != null)
+                {
+                    Console.Log($"Enabling lock effect for card UI: {ui.CardInstance.CardName}");
+                    ui.EnableCardLockEffect(true);
+                }
+            }
+            else
+            {
+                var ui = _currentEnemyHandUI
+                    .FirstOrDefault(c => c.CardInstance == instance);
+                if (ui != null)
+                {
+                    Console.Log($"Enabling lock effect for enemy card UI: {ui.CardInstance.CardName}");
+                    ui.EnableCardLockEffect(true);
+                }
             }
         }
     }
@@ -478,35 +590,65 @@ public class HandManager : MonoBehaviour
 
     public void AddCardToHand(CardData Card, int Amount)
     {
-        for (int i = 0; i < Amount; i++)
+        if (_actor is PlayerActor)
         {
-            if (_currentHand.Count >= _actor.Data.MaxHandSize)
+            for (int i = 0; i < Amount; i++)
             {
-                Debug.LogWarning($"Tried to create card in hand for {_actor.ActorName} but its hand is full, card is added to deck instead.");
-                CardInstance deckCard = new CardInstance(Card);
-                _deckManager.AddTemporaryCard(deckCard);
-                return;
+                if (_currentHand.Count >= _actor.Data.MaxHandSize)
+                {
+                    Debug.LogWarning($"Tried to create card in hand for {_actor.ActorName} but its hand is full, card is added to deck instead.");
+                    _deckManager.AddCardToDrawPile(Card);
+                    return;
+                }
+
+                CardInstance newCard = new CardInstance(Card);
+                _currentHand.Add(newCard);
+
+                // Create a new card instance UI
+                CardUI card = ObjectPooler.SpawnFromPool("Card", _cardGroupRect.position, Quaternion.identity).GetComponent<CardUI>();
+                card.Initialize(newCard);
+                card.transform.SetParent(_cardGroupRect, false);
+
+                _currentHandUI.Add(card);
+
+                // Validate if cards are playable, unplayable cards are greyout;
+                ValidateCard(card, _actor);
+
+                // Update Actor UI
+                if (_actor.IsMyTurn)
+                {
+                    ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count, _deckManager.ConsumedPile.Count);
+                    StartCoroutine(PlaySinglePlayerDrawAnimation(card));
+                }
             }
-
-            CardInstance newCard = new CardInstance(Card);
-            _currentHand.Add(newCard);
-
-            // Create a new card instance UI
-            CardUI card = ObjectPooler.SpawnFromPool("Card", _cardGroupRect.position, Quaternion.identity).GetComponent<CardUI>();
-            card.Initialize(newCard);
-            card.transform.SetParent(_cardGroupRect, false);
-
-            _currentHandUI.Add(card);
-
-            // Validate if cards are playable, unplayable cards are greyout;
-            ValidateCard(card, _actor);
-
-            // Update Actor UI
-            if (_actor.IsMyTurn)
+        }
+        else
+        {
+            for (int i = 0; i < Amount; i++)
             {
-                ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count, _deckManager.ConsumedPile.Count);
-                if (_actor is PlayerActor)
-                    StartCoroutine(PlaySingleDrawAnimation(card));
+                if (_currentHand.Count >= _actor.Data.MaxHandSize)
+                {
+                    Debug.LogWarning($"Tried to create card in hand for {_actor.ActorName} but its hand is full, card is added to deck instead.");
+                    _deckManager.AddCardToDrawPile(Card);
+                    return;
+                }
+
+                CardInstance newCard = new CardInstance(Card);
+                _currentHand.Add(newCard);
+
+                // Create a new card instance UI
+                CardPreview card = ObjectPooler.SpawnFromPool("Enemy Card UI", _cardGroupRect.position, Quaternion.identity).GetComponent<CardPreview>();
+                card.Initialize(newCard);
+                card.transform.SetParent(_cardGroupRect, false);
+
+                _currentEnemyHandUI.Add(card);
+
+                // Update Actor UI
+                if (_actor.IsMyTurn)
+                {
+                    ActorsUI.UpdateCardsInterface(_deckManager.CurrentDeck.Count, _deckManager.DiscardPile.Count, _deckManager.ConsumedPile.Count);
+                    StartCoroutine(PlaySingleEnemyDrawAnimation(card));
+                }
             }
         }
     }

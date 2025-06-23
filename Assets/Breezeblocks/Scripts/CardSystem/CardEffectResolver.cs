@@ -90,7 +90,16 @@ public static class CardEffectResolver
                         definitiveTarget.Hand.AddCardToHand(effect.NewCard, effect.Amount);
                         break;
                     case UEnums.CardEffects.AddCardToDeck:
-                        
+                        for (int i = 0; i < effect.Amount; i++)
+                        {
+                            definitiveTarget.Deck.AddCardToDrawPile(effect.NewCard);
+                        }
+                        break;
+                    case UEnums.CardEffects.AddCardToDiscard:
+                        for (int i = 0; i < effect.Amount; i++)
+                        {
+                            definitiveTarget.Deck.AddCardToDiscardPile(effect.NewCard);
+                        }
                         break;
                 }
             }

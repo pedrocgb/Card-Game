@@ -14,4 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _raceName: Gravekin
   _raceDescription: A creature once dead now raised in an empty hollow husk.
-  _racialCards: []
+  _racialCards:
+  - {fileID: 11400000, guid: 4e9259e506c410940aa80ce37883e9c6, type: 2}
+  - {fileID: 11400000, guid: 7c19d05ba3c75554aafd9a17ea605424, type: 2}
+  - {fileID: 11400000, guid: 4e623f3ce48b9454aa8951cc602bc984, type: 2}
+  - {fileID: 11400000, guid: 6870eb5a60a7a714a85018927ccc4c06, type: 2}
+  - {fileID: 11400000, guid: b95826f8433a5f74a9bb6192d44c381c, type: 2}
+  - {fileID: 11400000, guid: 71804710d64747342a967af1209d9c31, type: 2}
+  - {fileID: 11400000, guid: 8869a0d6911520a4db62fc3acf9f93fa, type: 2}
+  - {fileID: 11400000, guid: 8050f5ad023e0f941a31e4ca8dc42618, type: 2}
+  - {fileID: 11400000, guid: d6a0d4667c0e2924995641ec3c2a8445, type: 2}
+  - {fileID: 11400000, guid: 871153863e4471f4e942be9f893e9f54, type: 2}
+  - {fileID: 11400000, guid: 3455891805525784caaa19c4de6443be, type: 2}
+  - {fileID: 11400000, guid: 75a5cd26335ba3c478900b68368f6cfa, type: 2}

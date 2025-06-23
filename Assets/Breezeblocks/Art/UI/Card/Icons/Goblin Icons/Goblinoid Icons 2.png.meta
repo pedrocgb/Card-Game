@@ -1,0 +1,439 @@
+fileFormatVersion: 2
+guid: e53fda522685a1740bd0c17cacf3f22a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8385240115841912116
+    second: Goblinoid Icons 2_0
+  - first:
+      213: -8332503810223787750
+    second: Goblinoid Icons 2_1
+  - first:
+      213: 1166538661204154497
+    second: Goblinoid Icons 2_2
+  - first:
+      213: 2422676097434341293
+    second: Goblinoid Icons 2_3
+  - first:
+      213: 3479124133742010034
+    second: Goblinoid Icons 2_4
+  - first:
+      213: 3834817333829904067
+    second: Goblinoid Icons 2_5
+  - first:
+      213: 7350399468844930065
+    second: Goblinoid Icons 2_6
+  - first:
+      213: -2851871297434442577
+    second: Goblinoid Icons 2_7
+  - first:
+      213: -994143763713992010
+    second: Goblinoid Icons 2_8
+  - first:
+      213: 7020408111074124073
+    second: Goblinoid Icons 2_9
+  - first:
+      213: -427741991426576459
+    second: Goblinoid Icons 2_10
+  - first:
+      213: -6243293828924404863
+    second: Goblinoid Icons 2_11
+  - first:
+      213: -1593881109197655548
+    second: Goblinoid Icons 2_12
+  - first:
+      213: -265226571232244292
+    second: Goblinoid Icons 2_13
+  - first:
+      213: -3861693236436321969
+    second: Goblinoid Icons 2_14
+  - first:
+      213: -3868872038321678664
+    second: Goblinoid Icons 2_15
+  - first:
+      213: -9210195888288714281
+    second: Goblinoid Icons 2_16
+  - first:
+      213: 7763813351428983651
+    second: Goblinoid Icons 2_17
+  - first:
+      213: -4484807807493087586
+    second: Goblinoid Icons 2_18
+  - first:
+      213: -689758669405772992
+    second: Goblinoid Icons 2_19
+  - first:
+      213: -4874198123004099554
+    second: Goblinoid Icons 2_20
+  - first:
+      213: -93666523462965334
+    second: Goblinoid Icons 2_21
+  - first:
+      213: -3167814748954229050
+    second: Goblinoid Icons 2_22
+  - first:
+      213: 2200994470225191978
+    second: Goblinoid Icons 2_23
+  - first:
+      213: -2827862276207605216
+    second: Goblinoid Icons 2_24
+  - first:
+      213: -8610643568828943352
+    second: Goblinoid Icons 2_25
+  - first:
+      213: 4917806679250384121
+    second: Goblinoid Icons 2_26
+  - first:
+      213: 2146257639792763470
+    second: Goblinoid Icons 2_27
+  - first:
+      213: -7829041618887190951
+    second: Goblinoid Icons 2_28
+  - first:
+      213: -5601986982040729043
+    second: Goblinoid Icons 2_29
+  - first:
+      213: 1259701621625393110
+    second: Goblinoid Icons 2_30
+  - first:
+      213: -2120741396527809545
+    second: Goblinoid Icons 2_31
+  - first:
+      213: -469520086857356153
+    second: Goblinoid Icons 2_32
+  - first:
+      213: 2234541998494562089
+    second: Goblinoid Icons 2_33
+  - first:
+      213: 1310388511664814550
+    second: Goblinoid Icons 2_34
+  - first:
+      213: -2917022441132801979
+    second: Goblinoid Icons 2_35
+  - first:
+      213: 3247573430555178084
+    second: Goblinoid Icons 2_36
+  - first:
+      213: -1775239652432450190
+    second: Goblinoid Icons 2_37
+  - first:
+      213: -4284429552958692895
+    second: Goblinoid Icons 2_38
+  - first:
+      213: 9200133370574691742
+    second: Goblinoid Icons 2_39
+  - first:
+      213: 1405820962023210029
+    second: Goblinoid Icons 2_40
+  - first:
+      213: -6055963480775543690
+    second: Goblinoid Icons 2_41
+  - first:
+      213: -5813611202170306773
+    second: Goblinoid Icons 2_42
+  - first:
+      213: -5262631245968311961
+    second: Goblinoid Icons 2_43
+  - first:
+      213: -3399448605213241188
+    second: Goblinoid Icons 2_44
+  - first:
+      213: -1186136000852001170
+    second: Goblinoid Icons 2_45
+  - first:
+      213: -7779924128091427192
+    second: Goblinoid Icons 2_46
+  - first:
+      213: 6141662372756011184
+    second: Goblinoid Icons 2_47
+  - first:
+      213: 3647975976633215048
+    second: Goblinoid Icons 2_48
+  - first:
+      213: -9167928299334750806
+    second: Goblinoid Icons 2_49
+  - first:
+      213: 5111043626654755922
+    second: Goblinoid Icons 2_50
+  - first:
+      213: 1650667682701427361
+    second: Goblinoid Icons 2_51
+  - first:
+      213: 5585450402911284174
+    second: Goblinoid Icons 2_52
+  - first:
+      213: 2312077046804023504
+    second: Goblinoid Icons 2_53
+  - first:
+      213: 9065590464793069931
+    second: Goblinoid Icons 2_54
+  - first:
+      213: 7325187636728453510
+    second: Goblinoid Icons 2_55
+  - first:
+      213: 5447058814788860499
+    second: Goblinoid Icons 2_56
+  - first:
+      213: -198862403026015741
+    second: Goblinoid Icons 2_57
+  - first:
+      213: 3034027935037493265
+    second: Goblinoid Icons 2_58
+  - first:
+      213: -8570765001454745512
+    second: Goblinoid Icons 2_59
+  - first:
+      213: 5101987673019010698
+    second: Goblinoid Icons 2_60
+  - first:
+      213: -7071528193674875381
+    second: Goblinoid Icons 2_61
+  - first:
+      213: 1299493027668386025
+    second: Goblinoid Icons 2_62
+  - first:
+      213: 3632979948648179108
+    second: Goblinoid Icons 2_63
+  - first:
+      213: -7227545647539700223
+    second: Goblinoid Icons 2_64
+  - first:
+      213: 2922028993216968120
+    second: Goblinoid Icons 2_65
+  - first:
+      213: -7793575568626347633
+    second: Goblinoid Icons 2_66
+  - first:
+      213: 781024327496047659
+    second: Goblinoid Icons 2_67
+  - first:
+      213: 1430713042074191829
+    second: Goblinoid Icons 2_68
+  - first:
+      213: -7946050718305078579
+    second: Goblinoid Icons 2_69
+  - first:
+      213: -7368646984307993821
+    second: Goblinoid Icons 2_70
+  - first:
+      213: 537118450928120656
+    second: Goblinoid Icons 2_71
+  - first:
+      213: 7564708508642420893
+    second: Goblinoid Icons 2_72
+  - first:
+      213: -4685875642138328725
+    second: Goblinoid Icons 2_73
+  - first:
+      213: -2259849291227052690
+    second: Goblinoid Icons 2_74
+  - first:
+      213: 3200242906150671835
+    second: Goblinoid Icons 2_75
+  - first:
+      213: -894323826770133674
+    second: Goblinoid Icons 2_76
+  - first:
+      213: 5101907927638385757
+    second: Goblinoid Icons 2_77
+  - first:
+      213: -8245003052939687664
+    second: Goblinoid Icons 2_78
+  - first:
+      213: -4006003154448753185
+    second: Goblinoid Icons 2_79
+  - first:
+      213: -3159844230843756419
+    second: Goblinoid Icons 2_80
+  - first:
+      213: 6932697246562870471
+    second: Goblinoid Icons 2_81
+  - first:
+      213: 1481377334758772387
+    second: Goblinoid Icons 2_82
+  - first:
+      213: -5288473246677771215
+    second: Goblinoid Icons 2_83
+  - first:
+      213: -3317325165382350122
+    second: Goblinoid Icons 2_84
+  - first:
+      213: 5435581309905566946
+    second: Goblinoid Icons 2_85
+  - first:
+      213: 7044206291540631344
+    second: Goblinoid Icons 2_86
+  - first:
+      213: 6728494030470683596
+    second: Goblinoid Icons 2_87
+  - first:
+      213: -8185397967454494453
+    second: Goblinoid Icons 2_88
+  - first:
+      213: -394128537244058499
+    second: Goblinoid Icons 2_89
+  - first:
+      213: -7274598404150731360
+    second: Goblinoid Icons 2_90
+  - first:
+      213: 2809175535070882648
+    second: Goblinoid Icons 2_91
+  - first:
+      213: -6184736701573453775
+    second: Goblinoid Icons 2_92
+  - first:
+      213: -4476732363602618840
+    second: Goblinoid Icons 2_93
+  - first:
+      213: 6501038764619293407
+    second: Goblinoid Icons 2_94
+  - first:
+      213: -5826845963985096212
+    second: Goblinoid Icons 2_95
+  - first:
+      213: -220328066935793598
+    second: Goblinoid Icons 2_96
+  - first:
+      213: -7766901131281461245
+    second: Goblinoid Icons 2_97
+  - first:
+      213: 6905633317575655143
+    second: Goblinoid Icons 2_98
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Throw Spear
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 599
+        width: 490
+        height: 420
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 309512a74df774c44b3fa9c3e99599dd
+      internalID: 786112153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a750d96d3e95b1643aec6b214e572073
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":1536.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Throw Spear: 786112153
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

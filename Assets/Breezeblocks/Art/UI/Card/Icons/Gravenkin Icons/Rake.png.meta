@@ -1,0 +1,274 @@
+fileFormatVersion: 2
+guid: 98737018945e8ea4988277473ff45006
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2658678680662877083
+    second: Rake_0
+  - first:
+      213: -4419635868493962186
+    second: Rake_1
+  - first:
+      213: -1739683036236301777
+    second: Rake_2
+  - first:
+      213: 4363770262220855063
+    second: Rake_3
+  - first:
+      213: -2391990131106579214
+    second: Rake_4
+  - first:
+      213: -3352946082815709584
+    second: Rake_5
+  - first:
+      213: 8382091424490380248
+    second: Rake_6
+  - first:
+      213: 6920581203420058895
+    second: Rake_7
+  - first:
+      213: -8612773018847061782
+    second: Rake_8
+  - first:
+      213: -1436991106519244111
+    second: Rake_9
+  - first:
+      213: -3582304453814083230
+    second: Rake_10
+  - first:
+      213: 4456388454560281212
+    second: Rake_11
+  - first:
+      213: 5365323318016256290
+    second: Rake_12
+  - first:
+      213: 3806748900591190622
+    second: Rake_13
+  - first:
+      213: 5827505849678958847
+    second: Rake_14
+  - first:
+      213: -1992681451104824594
+    second: Rake_15
+  - first:
+      213: 7784799036662828715
+    second: Rake_16
+  - first:
+      213: -4939614544839936761
+    second: Rake_17
+  - first:
+      213: -7310507189656092254
+    second: Rake_18
+  - first:
+      213: 3835505975060019071
+    second: Rake_19
+  - first:
+      213: 4017198716729600697
+    second: Rake_20
+  - first:
+      213: 6789785056979199612
+    second: Rake_21
+  - first:
+      213: -7427305477035041717
+    second: Rake_22
+  - first:
+      213: 3454553282307550988
+    second: Rake_23
+  - first:
+      213: -7516886383327313541
+    second: Rake_24
+  - first:
+      213: 7455841066123689741
+    second: Rake_25
+  - first:
+      213: 2090660103490560594
+    second: Rake_26
+  - first:
+      213: 5996078662434528534
+    second: Rake_27
+  - first:
+      213: 6895532375767156973
+    second: Rake_28
+  - first:
+      213: -6433432577314961332
+    second: Rake_29
+  - first:
+      213: 6556659918270842328
+    second: Rake_30
+  - first:
+      213: 1855286206375481271
+    second: Rake_31
+  - first:
+      213: -4857710223632237249
+    second: Rake_32
+  - first:
+      213: 5503024543059447760
+    second: Rake_33
+  - first:
+      213: 7898000050252063244
+    second: Rake_34
+  - first:
+      213: 6676670091720990989
+    second: Rake_35
+  - first:
+      213: -1617461311570070424
+    second: Rake_36
+  - first:
+      213: 201173183589263981
+    second: Rake_37
+  - first:
+      213: -3097894416715639869
+    second: Rake_38
+  - first:
+      213: -4296865333215522371
+    second: Rake_39
+  - first:
+      213: -7484704961084212919
+    second: Rake_40
+  - first:
+      213: 5573334981682806204
+    second: Rake_41
+  - first:
+      213: 6698522451817717712
+    second: Rake_42
+  - first:
+      213: -6138059290201886627
+    second: Rake_43
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Rake_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 1024
+        height: 1268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56c5f2383d97a1bd0800000000000000
+      internalID: -2658678680662877083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":1536.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Rake_0: -2658678680662877083
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

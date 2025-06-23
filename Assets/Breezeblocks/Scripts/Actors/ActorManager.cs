@@ -134,7 +134,7 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
         _myStats.OnNewTurn();
         _myUi.UpdateTurnMarker(false);
 
-        _hand.DrawCards(_myStats.CardBuy);
+       _hand.DrawCards(_myStats.CardBuy);
     }
 
     public virtual void OnTurnEnd()

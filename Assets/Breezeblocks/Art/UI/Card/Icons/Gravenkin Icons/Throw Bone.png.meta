@@ -1,0 +1,607 @@
+fileFormatVersion: 2
+guid: 824469cb0c77dc649a0f817c8f12484c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8416552687271177709
+    second: Throw Bone_0
+  - first:
+      213: 1612925539828236425
+    second: Throw Bone_1
+  - first:
+      213: -8134430023517060060
+    second: Throw Bone_2
+  - first:
+      213: 5324222860623871999
+    second: Throw Bone_3
+  - first:
+      213: 1359721724114867258
+    second: Throw Bone_4
+  - first:
+      213: 4262169671860146307
+    second: Throw Bone_5
+  - first:
+      213: -3882308977054695801
+    second: Throw Bone_6
+  - first:
+      213: -7605288115558361021
+    second: Throw Bone_7
+  - first:
+      213: -3618294577726935273
+    second: Throw Bone_8
+  - first:
+      213: 7640958455423001355
+    second: Throw Bone_9
+  - first:
+      213: -1522965691761464390
+    second: Throw Bone_10
+  - first:
+      213: 8503168443255062488
+    second: Throw Bone_11
+  - first:
+      213: 6669487381880375534
+    second: Throw Bone_12
+  - first:
+      213: -6746754942427943302
+    second: Throw Bone_13
+  - first:
+      213: 3329541266629516707
+    second: Throw Bone_14
+  - first:
+      213: -5810212199349175820
+    second: Throw Bone_15
+  - first:
+      213: 552823299659019236
+    second: Throw Bone_16
+  - first:
+      213: 6896784168093619612
+    second: Throw Bone_17
+  - first:
+      213: -1826807028695190726
+    second: Throw Bone_18
+  - first:
+      213: 6142776156412913367
+    second: Throw Bone_19
+  - first:
+      213: 8239935051316577835
+    second: Throw Bone_20
+  - first:
+      213: 4644455155369217743
+    second: Throw Bone_21
+  - first:
+      213: -7066645449430308502
+    second: Throw Bone_22
+  - first:
+      213: -4593342272515628141
+    second: Throw Bone_23
+  - first:
+      213: 4481101410382455775
+    second: Throw Bone_24
+  - first:
+      213: 5109354799128837774
+    second: Throw Bone_25
+  - first:
+      213: 4783004191821767983
+    second: Throw Bone_26
+  - first:
+      213: -5642175843271158573
+    second: Throw Bone_27
+  - first:
+      213: -9113483627142275231
+    second: Throw Bone_28
+  - first:
+      213: -7231155836751795590
+    second: Throw Bone_29
+  - first:
+      213: -8323045470310667461
+    second: Throw Bone_30
+  - first:
+      213: 6647815021645708432
+    second: Throw Bone_31
+  - first:
+      213: 1828625848493674501
+    second: Throw Bone_32
+  - first:
+      213: 7628429498638803061
+    second: Throw Bone_33
+  - first:
+      213: 3919739535205659890
+    second: Throw Bone_34
+  - first:
+      213: -2127886576895459676
+    second: Throw Bone_35
+  - first:
+      213: 1803499920210244852
+    second: Throw Bone_36
+  - first:
+      213: 5760440767401378337
+    second: Throw Bone_37
+  - first:
+      213: -1374370835238639955
+    second: Throw Bone_38
+  - first:
+      213: -5672936526978494500
+    second: Throw Bone_39
+  - first:
+      213: 3299824135299368253
+    second: Throw Bone_40
+  - first:
+      213: 4140643049348567657
+    second: Throw Bone_41
+  - first:
+      213: 8498095502495500709
+    second: Throw Bone_42
+  - first:
+      213: 3936588877047331666
+    second: Throw Bone_43
+  - first:
+      213: -1898457385456634785
+    second: Throw Bone_44
+  - first:
+      213: 7120120248651350147
+    second: Throw Bone_45
+  - first:
+      213: -3007219780657291365
+    second: Throw Bone_46
+  - first:
+      213: -2988605015020662259
+    second: Throw Bone_47
+  - first:
+      213: 2299068668564231556
+    second: Throw Bone_48
+  - first:
+      213: 1444176452233867683
+    second: Throw Bone_49
+  - first:
+      213: 8927283027676420959
+    second: Throw Bone_50
+  - first:
+      213: -732856650743920273
+    second: Throw Bone_51
+  - first:
+      213: -8738506132580835493
+    second: Throw Bone_52
+  - first:
+      213: -5142340457164835612
+    second: Throw Bone_53
+  - first:
+      213: -6231690138240960575
+    second: Throw Bone_54
+  - first:
+      213: -2199239691518350934
+    second: Throw Bone_55
+  - first:
+      213: 2204323227438157310
+    second: Throw Bone_56
+  - first:
+      213: -2229916023108869402
+    second: Throw Bone_57
+  - first:
+      213: 1682757743400588225
+    second: Throw Bone_58
+  - first:
+      213: -1993813654324215143
+    second: Throw Bone_59
+  - first:
+      213: 7873925491487029044
+    second: Throw Bone_60
+  - first:
+      213: 6458062398423429116
+    second: Throw Bone_61
+  - first:
+      213: -615519393980420210
+    second: Throw Bone_62
+  - first:
+      213: 7284064400778855759
+    second: Throw Bone_63
+  - first:
+      213: -324574526835156562
+    second: Throw Bone_64
+  - first:
+      213: 5218053796973697712
+    second: Throw Bone_65
+  - first:
+      213: 6272176947808337000
+    second: Throw Bone_66
+  - first:
+      213: -7112512330965897219
+    second: Throw Bone_67
+  - first:
+      213: -2509597740195455201
+    second: Throw Bone_68
+  - first:
+      213: 1190345503094336908
+    second: Throw Bone_69
+  - first:
+      213: -4703169440911789473
+    second: Throw Bone_70
+  - first:
+      213: -6612892041020265904
+    second: Throw Bone_71
+  - first:
+      213: 6933665425583203121
+    second: Throw Bone_72
+  - first:
+      213: 8519815065101663217
+    second: Throw Bone_73
+  - first:
+      213: -7970369675190717569
+    second: Throw Bone_74
+  - first:
+      213: 6583219882333404486
+    second: Throw Bone_75
+  - first:
+      213: 1954500314662211679
+    second: Throw Bone_76
+  - first:
+      213: 7123348344198743271
+    second: Throw Bone_77
+  - first:
+      213: 2062183969058671976
+    second: Throw Bone_78
+  - first:
+      213: -236388694653730358
+    second: Throw Bone_79
+  - first:
+      213: -244947679484182455
+    second: Throw Bone_80
+  - first:
+      213: -6171733130534035240
+    second: Throw Bone_81
+  - first:
+      213: 2774899505269254407
+    second: Throw Bone_82
+  - first:
+      213: 1740123811292143963
+    second: Throw Bone_83
+  - first:
+      213: -3389167452493134915
+    second: Throw Bone_84
+  - first:
+      213: 3580590909700497758
+    second: Throw Bone_85
+  - first:
+      213: 8204551766495827015
+    second: Throw Bone_86
+  - first:
+      213: 3118965571770286983
+    second: Throw Bone_87
+  - first:
+      213: 5375513218917637982
+    second: Throw Bone_88
+  - first:
+      213: -2674676778573817204
+    second: Throw Bone_89
+  - first:
+      213: 758190662423131893
+    second: Throw Bone_90
+  - first:
+      213: -6665009891105368618
+    second: Throw Bone_91
+  - first:
+      213: 2296570218244450598
+    second: Throw Bone_92
+  - first:
+      213: 4808471299561486268
+    second: Throw Bone_93
+  - first:
+      213: 816551957683515713
+    second: Throw Bone_94
+  - first:
+      213: 6976669962262947426
+    second: Throw Bone_95
+  - first:
+      213: 949756661236216796
+    second: Throw Bone_96
+  - first:
+      213: -6338974113176212303
+    second: Throw Bone_97
+  - first:
+      213: 3748539409161473799
+    second: Throw Bone_98
+  - first:
+      213: -7408968718949984801
+    second: Throw Bone_99
+  - first:
+      213: -1969568069597987056
+    second: Throw Bone_100
+  - first:
+      213: -7065597064843779655
+    second: Throw Bone_101
+  - first:
+      213: -3081384022789951747
+    second: Throw Bone_102
+  - first:
+      213: 4596966892485562296
+    second: Throw Bone_103
+  - first:
+      213: -8193415699528330254
+    second: Throw Bone_104
+  - first:
+      213: -7115183351532440804
+    second: Throw Bone_105
+  - first:
+      213: -8466640655539405297
+    second: Throw Bone_106
+  - first:
+      213: 7618287595690438349
+    second: Throw Bone_107
+  - first:
+      213: 3962013826095850172
+    second: Throw Bone_108
+  - first:
+      213: 4659701694528881793
+    second: Throw Bone_109
+  - first:
+      213: -6935071099605292126
+    second: Throw Bone_110
+  - first:
+      213: 8524478577155623441
+    second: Throw Bone_111
+  - first:
+      213: 6698511479523586345
+    second: Throw Bone_112
+  - first:
+      213: 1566426037355115807
+    second: Throw Bone_113
+  - first:
+      213: -5723130565688784119
+    second: Throw Bone_114
+  - first:
+      213: -6379698595466294158
+    second: Throw Bone_115
+  - first:
+      213: 7590965106889369663
+    second: Throw Bone_116
+  - first:
+      213: -880793390438359197
+    second: Throw Bone_117
+  - first:
+      213: 9135840059222981921
+    second: Throw Bone_118
+  - first:
+      213: -9059940228856848790
+    second: Throw Bone_119
+  - first:
+      213: -6225424270021290312
+    second: Throw Bone_120
+  - first:
+      213: -6134783746377797825
+    second: Throw Bone_121
+  - first:
+      213: -4155719680442050613
+    second: Throw Bone_122
+  - first:
+      213: -2194592546949322495
+    second: Throw Bone_123
+  - first:
+      213: -5021295682247758297
+    second: Throw Bone_124
+  - first:
+      213: -5843249586324540904
+    second: Throw Bone_125
+  - first:
+      213: -4590168764791251461
+    second: Throw Bone_126
+  - first:
+      213: -3589677475718504786
+    second: Throw Bone_127
+  - first:
+      213: 2420589164984487829
+    second: Throw Bone_128
+  - first:
+      213: -5209938046843280303
+    second: Throw Bone_129
+  - first:
+      213: -7030329132771098182
+    second: Throw Bone_130
+  - first:
+      213: 3053916000504772463
+    second: Throw Bone_131
+  - first:
+      213: -3691482110695044171
+    second: Throw Bone_132
+  - first:
+      213: 3857534653262912858
+    second: Throw Bone_133
+  - first:
+      213: -3018186939243692362
+    second: Throw Bone_134
+  - first:
+      213: 258791388159145388
+    second: Throw Bone_135
+  - first:
+      213: 5102322748949241653
+    second: Throw Bone_136
+  - first:
+      213: -4010195945622966286
+    second: Throw Bone_137
+  - first:
+      213: 368840702856746292
+    second: Throw Bone_138
+  - first:
+      213: -3592285984035356962
+    second: Throw Bone_139
+  - first:
+      213: -6449186863110069176
+    second: Throw Bone_140
+  - first:
+      213: -5646560900247185399
+    second: Throw Bone_141
+  - first:
+      213: 1610871984238850149
+    second: Throw Bone_142
+  - first:
+      213: 5476627889574686077
+    second: Throw Bone_143
+  - first:
+      213: -8743803944593151426
+    second: Throw Bone_144
+  - first:
+      213: -312148340153072530
+    second: Throw Bone_145
+  - first:
+      213: -5601663836848975557
+    second: Throw Bone_146
+  - first:
+      213: -401971972229561978
+    second: Throw Bone_147
+  - first:
+      213: 3381919893607048717
+    second: Throw Bone_148
+  - first:
+      213: -8024655819396988624
+    second: Throw Bone_149
+  - first:
+      213: -4300099624505911080
+    second: Throw Bone_150
+  - first:
+      213: 6263027285694740597
+    second: Throw Bone_151
+  - first:
+      213: -7604775784755602752
+    second: Throw Bone_152
+  - first:
+      213: 506407193324015397
+    second: Throw Bone_153
+  - first:
+      213: 484969795916967467
+    second: Throw Bone_154
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Throw Bone_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 186
+        width: 1024
+        height: 1101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ded6826831a9dc470800000000000000
+      internalID: 8416552687271177709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":1536.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Throw Bone_0: 8416552687271177709
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

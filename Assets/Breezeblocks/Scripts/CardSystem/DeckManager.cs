@@ -138,7 +138,7 @@ public class DeckManager : MonoBehaviour
     // ========================================================================
 
     #region Effects Methods
-    public bool AddTemporaryCard(CardInstance card)
+    public bool AddCardToDrawPile(CardData card)
     {
         if (_currentDeck.Count >= 100)
         {
@@ -146,7 +146,15 @@ public class DeckManager : MonoBehaviour
             return false;
         }
 
-        _currentDeck.Add(card);
+        CardInstance newCard = new CardInstance(card);
+        _currentDeck.Add(newCard);        
+        return true;
+    }
+
+    public bool AddCardToDiscardPile(CardData card)
+    {
+        CardInstance newCard = new CardInstance(card);
+        _discardPile.Add(newCard);
         return true;
     }
     #endregion
