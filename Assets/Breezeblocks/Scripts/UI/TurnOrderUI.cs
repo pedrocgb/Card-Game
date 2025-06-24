@@ -54,10 +54,28 @@ public class TurnOrderUI : MonoBehaviour
     private Image _actorHandImage = null;
     [FoldoutGroup("Components/Combat Panel", expanded: true)]
     [SerializeField]
+    private Image _actorCombatPortrait = null;
+    [FoldoutGroup("Components/Combat Panel", expanded: true)]
+    [SerializeField]
+    private Image _actorActionsPanel = null;
+    [FoldoutGroup("Components/Combat Panel", expanded: true)]
+    [SerializeField]
     private Sprite _playerCombatPanelSprite = null;
     [FoldoutGroup("Components/Combat Panel", expanded: true)]
     [SerializeField]
     private Sprite _enemyCombatPanelSprite = null;
+    [FoldoutGroup("Components/Combat Panel", expanded: true)]
+    [SerializeField]
+    private Sprite _playerPortraitSprite = null;
+    [FoldoutGroup("Components/Combat Panel", expanded: true)]
+    [SerializeField]
+    private Sprite _enemyPortraitSprite = null;
+    [FoldoutGroup("Components/Combat Panel", expanded: true)]
+    [SerializeField]
+    private Sprite _playerActionsSprite = null;
+    [FoldoutGroup("Components/Combat Panel", expanded: true)]
+    [SerializeField]
+    private Sprite _enemyActionsSprite = null;
     #endregion
 
     // ========================================================================
@@ -208,6 +226,8 @@ public class TurnOrderUI : MonoBehaviour
         if (_combatPanelImage == null || _actorHandImage == null) return;
         _combatPanelImage.sprite = isPlayer ? _playerCombatPanelSprite : _enemyCombatPanelSprite;
         _actorHandImage.sprite = isPlayer ? _playerCombatPanelSprite : _enemyCombatPanelSprite;
+        _actorCombatPortrait.sprite = isPlayer ? _playerPortraitSprite : _enemyPortraitSprite;
+        _actorActionsPanel.sprite = isPlayer ? _playerActionsSprite : _enemyActionsSprite;
     }
 
     // ========================================================================

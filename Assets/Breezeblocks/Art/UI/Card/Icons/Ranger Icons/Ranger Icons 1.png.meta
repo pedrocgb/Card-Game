@@ -1,0 +1,462 @@
+fileFormatVersion: 2
+guid: 03237ef0c54e0ca41a5f18ca743129ec
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3457421574677889197
+    second: Ranger Icons 1_0
+  - first:
+      213: -4888924909916089881
+    second: Ranger Icons 1_1
+  - first:
+      213: 3861410735138498729
+    second: Ranger Icons 1_2
+  - first:
+      213: 7838888635375440876
+    second: Ranger Icons 1_3
+  - first:
+      213: 8390503070565321275
+    second: Ranger Icons 1_4
+  - first:
+      213: 7757887894484727084
+    second: Ranger Icons 1_5
+  - first:
+      213: 3208499933282702233
+    second: Ranger Icons 1_6
+  - first:
+      213: -8027052417671229849
+    second: Ranger Icons 1_7
+  - first:
+      213: 3934166375734472442
+    second: Ranger Icons 1_8
+  - first:
+      213: -1867953312004065458
+    second: Ranger Icons 1_9
+  - first:
+      213: 3361164255236817023
+    second: Ranger Icons 1_10
+  - first:
+      213: -7580873838339652760
+    second: Ranger Icons 1_11
+  - first:
+      213: -721883515539833922
+    second: Ranger Icons 1_12
+  - first:
+      213: -8970740419197047479
+    second: Ranger Icons 1_13
+  - first:
+      213: -3274329680059060671
+    second: Ranger Icons 1_14
+  - first:
+      213: -1032076643943294110
+    second: Ranger Icons 1_15
+  - first:
+      213: 6479436967995896245
+    second: Ranger Icons 1_16
+  - first:
+      213: 8646165059547403453
+    second: Ranger Icons 1_17
+  - first:
+      213: 1331786797001155570
+    second: Ranger Icons 1_18
+  - first:
+      213: -4568008662070132208
+    second: Ranger Icons 1_19
+  - first:
+      213: 7302177502904699394
+    second: Ranger Icons 1_20
+  - first:
+      213: -4188077491290305710
+    second: Ranger Icons 1_21
+  - first:
+      213: 643297628412226385
+    second: Ranger Icons 1_22
+  - first:
+      213: 7514784739552647814
+    second: Ranger Icons 1_23
+  - first:
+      213: 570040988390093202
+    second: Ranger Icons 1_24
+  - first:
+      213: -6353958171451293630
+    second: Ranger Icons 1_25
+  - first:
+      213: -981127747961764455
+    second: Ranger Icons 1_26
+  - first:
+      213: 2416306488500739424
+    second: Ranger Icons 1_27
+  - first:
+      213: -1029396010436499462
+    second: Ranger Icons 1_28
+  - first:
+      213: -2856719451934602033
+    second: Ranger Icons 1_29
+  - first:
+      213: 8976959257649522502
+    second: Ranger Icons 1_30
+  - first:
+      213: 1175684807915757348
+    second: Ranger Icons 1_31
+  - first:
+      213: 6116986065565596820
+    second: Ranger Icons 1_32
+  - first:
+      213: -1681637791136386137
+    second: Ranger Icons 1_33
+  - first:
+      213: -2453635920554252246
+    second: Ranger Icons 1_34
+  - first:
+      213: -2684078776322845055
+    second: Ranger Icons 1_35
+  - first:
+      213: 7084712225752599634
+    second: Ranger Icons 1_36
+  - first:
+      213: 4102468722399684834
+    second: Ranger Icons 1_37
+  - first:
+      213: 8568285188578887020
+    second: Ranger Icons 1_38
+  - first:
+      213: -604312991525995128
+    second: Ranger Icons 1_39
+  - first:
+      213: 6133267586915051509
+    second: Ranger Icons 1_40
+  - first:
+      213: -6578573722949789504
+    second: Ranger Icons 1_41
+  - first:
+      213: 124666292623599453
+    second: Ranger Icons 1_42
+  - first:
+      213: -6676263544517208940
+    second: Ranger Icons 1_43
+  - first:
+      213: 8584755904231929222
+    second: Ranger Icons 1_44
+  - first:
+      213: 263928724469018452
+    second: Ranger Icons 1_45
+  - first:
+      213: -6834048567498871608
+    second: Ranger Icons 1_46
+  - first:
+      213: 2271433997085478908
+    second: Ranger Icons 1_47
+  - first:
+      213: 2620176328045093694
+    second: Ranger Icons 1_48
+  - first:
+      213: 1631037956951656697
+    second: Ranger Icons 1_49
+  - first:
+      213: 884813605418973951
+    second: Ranger Icons 1_50
+  - first:
+      213: -1665311088930421683
+    second: Ranger Icons 1_51
+  - first:
+      213: -1794010633904819848
+    second: Ranger Icons 1_52
+  - first:
+      213: 4765795738400915748
+    second: Ranger Icons 1_53
+  - first:
+      213: -3269104333273835339
+    second: Ranger Icons 1_54
+  - first:
+      213: -4920328798274051206
+    second: Ranger Icons 1_55
+  - first:
+      213: -3563887667675731880
+    second: Ranger Icons 1_56
+  - first:
+      213: -925348094222841156
+    second: Ranger Icons 1_57
+  - first:
+      213: 8859855771036758576
+    second: Ranger Icons 1_58
+  - first:
+      213: -7342965060417339629
+    second: Ranger Icons 1_59
+  - first:
+      213: -8171394624413967444
+    second: Ranger Icons 1_60
+  - first:
+      213: 1574420596177870731
+    second: Ranger Icons 1_61
+  - first:
+      213: 7069778635622494606
+    second: Ranger Icons 1_62
+  - first:
+      213: 3748843331860766493
+    second: Ranger Icons 1_63
+  - first:
+      213: 1372582577924135746
+    second: Ranger Icons 1_64
+  - first:
+      213: 1917076111010181805
+    second: Ranger Icons 1_65
+  - first:
+      213: 1246791655004150137
+    second: Ranger Icons 1_66
+  - first:
+      213: 5169541868331667665
+    second: Ranger Icons 1_67
+  - first:
+      213: -7630728362699401054
+    second: Ranger Icons 1_68
+  - first:
+      213: 4100394904167827943
+    second: Ranger Icons 1_69
+  - first:
+      213: -4192732084368789730
+    second: Ranger Icons 1_70
+  - first:
+      213: -8676643153955759749
+    second: Ranger Icons 1_71
+  - first:
+      213: 7815812585038509577
+    second: Ranger Icons 1_72
+  - first:
+      213: 5432409941803999976
+    second: Ranger Icons 1_73
+  - first:
+      213: -2437298683090181810
+    second: Ranger Icons 1_74
+  - first:
+      213: -2324285169504032795
+    second: Ranger Icons 1_75
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Aid
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 36
+        width: 480
+        height: 483
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 874fa03dda1a0dc4abdb675ed20ff33e
+      internalID: 1561231138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aimed Shot
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 1044
+        width: 506
+        height: 492
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01bbf598d6aa9c244af95fe6ef4922a1
+      internalID: 1916225255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rain of Arrows
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 535
+        width: 499
+        height: 483
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f79ba39c472a9c441b2243e4bba06b40
+      internalID: 477187673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1019
+        width: 512
+        height: 517
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e04388373fb1ce43ae92d2233442833
+      internalID: -229347471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Piercing Shot
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 495
+        height: 523
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1668ce346660bf4d90884063941ec9f
+      internalID: -395386200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c70d1e2829b555641ad926e491d0190a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":1536.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Aid: 1561231138
+      Aimed Shot: 1916225255
+      Piercing Shot: -395386200
+      Rain of Arrows: 477187673
+      Shoot: -229347471
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

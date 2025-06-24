@@ -60,9 +60,6 @@ public static class CardEffectResolver
                         break;
 
                     // Buff effects
-                    case UEnums.CardEffects.Heal:
-                        definitiveTarget.Stats.Heal(effect.Amount);
-                        break;
                     case UEnums.CardEffects.Block:
                         definitiveTarget.Stats.GainBlock(effect.Amount, effect.Duration);
                         break;
@@ -84,6 +81,39 @@ public static class CardEffectResolver
                     case UEnums.CardEffects.Regen:
                         definitiveTarget.Stats.GainRegen(effect.Amount, effect.Duration);
                         break;
+
+                    // Healing
+                    case UEnums.CardEffects.Heal:
+                        definitiveTarget.Stats.Heal(effect.Amount);
+                        break;
+                    case UEnums.CardEffects.CureWeakness:
+                        definitiveTarget.Stats.CureStatusEffect(UEnums.StatusEffects.Weakness);
+                        break;
+                    case UEnums.CardEffects.CureBleed:
+                        definitiveTarget.Stats.CureStatusEffect(UEnums.StatusEffects.Bleed);
+                        break;
+                    case UEnums.CardEffects.CureBurn:
+                        definitiveTarget.Stats.CureStatusEffect(UEnums.StatusEffects.Burn);
+                        break;
+                    case UEnums.CardEffects.CurePoison:
+                        definitiveTarget.Stats.CureStatusEffect(UEnums.StatusEffects.Poison);
+                        break;
+                    case UEnums.CardEffects.CureVulnerability:
+                        definitiveTarget.Stats.CureStatusEffect(UEnums.StatusEffects.Vulnerability);
+                        break;
+                    case UEnums.CardEffects.CureStun:
+                        definitiveTarget.Stats.CureStatusEffect(UEnums.StatusEffects.Stun);
+                        break;
+                    case UEnums.CardEffects.CureRestrained:
+                        definitiveTarget.Stats.CureStatusEffect(UEnums.StatusEffects.Restrained);
+                        break;
+                    case UEnums.CardEffects.CureBlind:
+                        definitiveTarget.Stats.CureStatusEffect(UEnums.StatusEffects.Blind);
+                        break;
+                    case UEnums.CardEffects.CureAll:
+                        definitiveTarget.Stats.CureAllStatusEffects();
+                        break;
+
 
                     // Other effects
                     case UEnums.CardEffects.Movement:

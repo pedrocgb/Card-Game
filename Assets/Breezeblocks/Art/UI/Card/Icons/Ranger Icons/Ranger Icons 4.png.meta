@@ -1,0 +1,235 @@
+fileFormatVersion: 2
+guid: 8a7abd7d678a7804e8c20af4e3e3f6dc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3649401597252836802
+    second: Ranger Icons 4_0
+  - first:
+      213: 465774252935891710
+    second: Ranger Icons 4_1
+  - first:
+      213: 6768296975704515781
+    second: Ranger Icons 4_2
+  - first:
+      213: 1735307140841283936
+    second: Ranger Icons 4_3
+  - first:
+      213: 7827321057583342513
+    second: Ranger Icons 4_4
+  - first:
+      213: 2825762915063272787
+    second: Ranger Icons 4_5
+  - first:
+      213: 2766236814644784563
+    second: Ranger Icons 4_6
+  - first:
+      213: -4077156196656831199
+    second: Ranger Icons 4_7
+  - first:
+      213: 114573044017868188
+    second: Ranger Icons 4_8
+  - first:
+      213: -7102533308082589596
+    second: Ranger Icons 4_9
+  - first:
+      213: 5403267540789437953
+    second: Ranger Icons 4_10
+  - first:
+      213: 4833221199402433874
+    second: Ranger Icons 4_11
+  - first:
+      213: -3249729010517549788
+    second: Ranger Icons 4_12
+  - first:
+      213: 3485499041854036264
+    second: Ranger Icons 4_13
+  - first:
+      213: 2559969269677469530
+    second: Ranger Icons 4_14
+  - first:
+      213: -3248715654495145026
+    second: Ranger Icons 4_15
+  - first:
+      213: -2036817937222829818
+    second: Ranger Icons 4_16
+  - first:
+      213: -964039126064214196
+    second: Ranger Icons 4_17
+  - first:
+      213: -5647091292401455581
+    second: Ranger Icons 4_18
+  - first:
+      213: 611556733631675231
+    second: Ranger Icons 4_19
+  - first:
+      213: 8887975309446829993
+    second: Ranger Icons 4_20
+  - first:
+      213: -4344605571668560074
+    second: Ranger Icons 4_21
+  - first:
+      213: -4044385167176879356
+    second: Ranger Icons 4_22
+  - first:
+      213: -1179845141118060491
+    second: Ranger Icons 4_23
+  - first:
+      213: 925872359876713148
+    second: Ranger Icons 4_24
+  - first:
+      213: 443175500255853183
+    second: Ranger Icons 4_25
+  - first:
+      213: -3058853439082714481
+    second: Ranger Icons 4_26
+  - first:
+      213: -5998147881004505468
+    second: Ranger Icons 4_27
+  - first:
+      213: -3447548328576124678
+    second: Ranger Icons 4_28
+  - first:
+      213: -3813954031976565595
+    second: Ranger Icons 4_29
+  - first:
+      213: 6301050580511557821
+    second: Ranger Icons 4_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Jumping Shot
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 538
+        width: 505
+        height: 479
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44148f2d1c1da1d4fa822d0ae28fdaf4
+      internalID: 130225576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ac14ed3e8cee2ca4cbdfc1a13d7ba34e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":1536.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Jumping Shot: 130225576
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

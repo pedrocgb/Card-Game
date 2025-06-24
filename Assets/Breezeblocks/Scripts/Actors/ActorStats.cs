@@ -669,6 +669,24 @@ public class ActorStats : MonoBehaviour
 
         _ui.UpdateHealthUI();
     }
+
+    public void CureStatusEffect(StatusEffects statusEffect)
+    {
+        var effect = _activeEffects.FirstOrDefault(e => e.StatusEffect == statusEffect);
+        if (effect != null)
+        {
+            _activeEffects.Remove(effect);
+            _actor.UI.UpdateStatusUI(_activeEffects);
+            Console.Log($"{_actor.Data.ActorName} cured {statusEffect}.");
+        }
+    }
+
+    public void CureAllStatusEffects()
+    {
+        _activeEffects.Clear();
+        _actor.UI.UpdateStatusUI(_activeEffects);
+        Console.Log($"{_actor.Data.ActorName} cured all status effects.");
+    }
     #endregion
 
     // ========================================================================
@@ -775,6 +793,7 @@ public class ActorStats : MonoBehaviour
     public void GainHaste(int amount, int duration)
     {
         AddStatusEffect(StatusEffects.Haste, amount, duration);
+        _actor.CurrentInitiative += amount;
     }
     #endregion
 

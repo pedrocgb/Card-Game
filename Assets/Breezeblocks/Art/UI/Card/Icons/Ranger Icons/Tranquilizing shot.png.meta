@@ -1,0 +1,253 @@
+fileFormatVersion: 2
+guid: f38753c664aaf524784f7445f479aef0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1960365923875108025
+    second: Tranquilizing shot_0
+  - first:
+      213: 500001407092380863
+    second: Tranquilizing shot_1
+  - first:
+      213: 4339004865188965494
+    second: Tranquilizing shot_2
+  - first:
+      213: -943614312277553895
+    second: Tranquilizing shot_3
+  - first:
+      213: -3525503167894437793
+    second: Tranquilizing shot_4
+  - first:
+      213: 7098374876369414571
+    second: Tranquilizing shot_5
+  - first:
+      213: -1164717062550282360
+    second: Tranquilizing shot_6
+  - first:
+      213: -6506489477107874716
+    second: Tranquilizing shot_7
+  - first:
+      213: 4480940152688823544
+    second: Tranquilizing shot_8
+  - first:
+      213: 9199115983947938688
+    second: Tranquilizing shot_9
+  - first:
+      213: -6002743270531098486
+    second: Tranquilizing shot_10
+  - first:
+      213: -916704652803151128
+    second: Tranquilizing shot_11
+  - first:
+      213: -1589842921454609765
+    second: Tranquilizing shot_12
+  - first:
+      213: -2978079805237125587
+    second: Tranquilizing shot_13
+  - first:
+      213: 5895743151851057249
+    second: Tranquilizing shot_14
+  - first:
+      213: 8558240211057117691
+    second: Tranquilizing shot_15
+  - first:
+      213: 4853902945706779790
+    second: Tranquilizing shot_16
+  - first:
+      213: 6367834612341150340
+    second: Tranquilizing shot_17
+  - first:
+      213: 8078603342464010306
+    second: Tranquilizing shot_18
+  - first:
+      213: 3878895048956978514
+    second: Tranquilizing shot_19
+  - first:
+      213: 3410391127385489315
+    second: Tranquilizing shot_20
+  - first:
+      213: -2348924593071632182
+    second: Tranquilizing shot_21
+  - first:
+      213: 3527128934279646103
+    second: Tranquilizing shot_22
+  - first:
+      213: -3844585263221445595
+    second: Tranquilizing shot_23
+  - first:
+      213: 3665432719805776261
+    second: Tranquilizing shot_24
+  - first:
+      213: -4925281198123585724
+    second: Tranquilizing shot_25
+  - first:
+      213: 446928712192549020
+    second: Tranquilizing shot_26
+  - first:
+      213: 5261904159134806822
+    second: Tranquilizing shot_27
+  - first:
+      213: -2003835249898749522
+    second: Tranquilizing shot_28
+  - first:
+      213: 7607817339536052883
+    second: Tranquilizing shot_29
+  - first:
+      213: -2901863917138960459
+    second: Tranquilizing shot_30
+  - first:
+      213: 933877368045896587
+    second: Tranquilizing shot_31
+  - first:
+      213: 5870755296470460908
+    second: Tranquilizing shot_32
+  - first:
+      213: -2900687157548394009
+    second: Tranquilizing shot_33
+  - first:
+      213: -5742623084532217463
+    second: Tranquilizing shot_34
+  - first:
+      213: 1870229688921571182
+    second: Tranquilizing shot_35
+  - first:
+      213: 2825845215013556343
+    second: Tranquilizing shot_36
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tranquilizing shot_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 293
+        width: 1024
+        height: 1065
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98734e9ce6e5fd646ba7713f54bd608c
+      internalID: 1869964688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 47233ded01e567c499df7984550ee494
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":1536.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Tranquilizing shot_0: 1869964688
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

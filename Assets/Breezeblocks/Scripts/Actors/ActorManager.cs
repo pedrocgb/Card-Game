@@ -274,4 +274,16 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     #endregion
 
     // ========================================================================
+
+    public void ChangeInitiative(int amount)
+    {
+        _initiativeBonus += amount;
+    }
+
+    public void ResetInitiative()
+    {
+        _initiativeBonus = _actorData.InitiativeBonus;
+    }
+
+    // ========================================================================
 }

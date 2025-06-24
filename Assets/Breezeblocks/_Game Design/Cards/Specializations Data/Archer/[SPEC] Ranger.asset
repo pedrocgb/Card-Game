@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1660071e04986942ab314589068ca79, type: 3}
-  m_Name: '[SPEC] Archer'
+  m_Name: '[SPEC] Ranger'
   m_EditorClassIdentifier: 
-  _specializationName: Archer
-  _specializationDescription: Archer are backline fighters specialized in taking
+  _specializationName: Ranger
+  _specializationDescription: Ranger are backline fighters specialized in taking
     down enemies in the backline.
   _specializationCards: []

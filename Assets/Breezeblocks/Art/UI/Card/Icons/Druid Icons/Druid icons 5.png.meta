@@ -1,0 +1,241 @@
+fileFormatVersion: 2
+guid: 10bd7ba9a89506a4885b059bbfc62638
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4740260693903119649
+    second: Druid icons 5_0
+  - first:
+      213: 3645363326636755201
+    second: Druid icons 5_1
+  - first:
+      213: 6997039275909633429
+    second: Druid icons 5_2
+  - first:
+      213: -6726891796901478982
+    second: Druid icons 5_3
+  - first:
+      213: -8325488054916670581
+    second: Druid icons 5_4
+  - first:
+      213: -1462924057342503700
+    second: Druid icons 5_5
+  - first:
+      213: 1710034355901173009
+    second: Druid icons 5_6
+  - first:
+      213: -5535016338768334025
+    second: Druid icons 5_7
+  - first:
+      213: 3723483098514463765
+    second: Druid icons 5_8
+  - first:
+      213: -7034480398772412113
+    second: Druid icons 5_9
+  - first:
+      213: 6431551697545509271
+    second: Druid icons 5_10
+  - first:
+      213: -6861995938987269777
+    second: Druid icons 5_11
+  - first:
+      213: 1684384773062813743
+    second: Druid icons 5_12
+  - first:
+      213: -1790574403252572571
+    second: Druid icons 5_13
+  - first:
+      213: -1689883299510006953
+    second: Druid icons 5_14
+  - first:
+      213: -7449070763089302686
+    second: Druid icons 5_15
+  - first:
+      213: 4182726154365088895
+    second: Druid icons 5_16
+  - first:
+      213: 5758175341691674243
+    second: Druid icons 5_17
+  - first:
+      213: -2544322878121019230
+    second: Druid icons 5_18
+  - first:
+      213: -8878301500230234203
+    second: Druid icons 5_19
+  - first:
+      213: 2715817815712088261
+    second: Druid icons 5_20
+  - first:
+      213: -2690406459896491630
+    second: Druid icons 5_21
+  - first:
+      213: 524220988272365935
+    second: Druid icons 5_22
+  - first:
+      213: 4485009665034318750
+    second: Druid icons 5_23
+  - first:
+      213: -7712857329295112713
+    second: Druid icons 5_24
+  - first:
+      213: 1168335129103940528
+    second: Druid icons 5_25
+  - first:
+      213: 1133977587097827731
+    second: Druid icons 5_26
+  - first:
+      213: 6952197770594349006
+    second: Druid icons 5_27
+  - first:
+      213: -1509878633199994416
+    second: Druid icons 5_28
+  - first:
+      213: -5717311276234290738
+    second: Druid icons 5_29
+  - first:
+      213: 2827029168780731394
+    second: Druid icons 5_30
+  - first:
+      213: -3727443863991053383
+    second: Druid icons 5_31
+  - first:
+      213: -5607808476069837081
+    second: Druid icons 5_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CureAll
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 487
+        width: 484
+        height: 549
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a7f908fa31a26440bd111250e0f61e5
+      internalID: -106059644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 48d0032d7d90a9e4ba39294ec47ceef9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":1536.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      CureAll: -106059644
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

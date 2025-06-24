@@ -13856,7 +13856,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 1.5
 --- !u!222 &817283076
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21797,8 +21797,14 @@ MonoBehaviour:
   _actorNameText: {fileID: 2010388031}
   _combatPanelImage: {fileID: 684410714}
   _actorHandImage: {fileID: 1800400926}
+  _actorCombatPortrait: {fileID: 476410024}
+  _actorActionsPanel: {fileID: 1185777191}
   _playerCombatPanelSprite: {fileID: -2380700144120085364, guid: 536957b338edfd744987864de172e28b, type: 3}
   _enemyCombatPanelSprite: {fileID: 5751306885679554928, guid: 0532594bd219e8e4eb2cc1e1508cb31f, type: 3}
+  _playerPortraitSprite: {fileID: -3856017026411106015, guid: 536957b338edfd744987864de172e28b, type: 3}
+  _enemyPortraitSprite: {fileID: 1674728996908312924, guid: 0532594bd219e8e4eb2cc1e1508cb31f, type: 3}
+  _playerActionsSprite: {fileID: 1623072265, guid: 536957b338edfd744987864de172e28b, type: 3}
+  _enemyActionsSprite: {fileID: -8997881579812785258, guid: 0532594bd219e8e4eb2cc1e1508cb31f, type: 3}
 --- !u!4 &1626863875
 Transform:
   m_ObjectHideFlags: 0

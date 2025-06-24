@@ -1,0 +1,543 @@
+fileFormatVersion: 2
+guid: 960c78e5b3bc0474eb108be5d84de285
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2889556000364426694
+    second: Ranger Icons 5_0
+  - first:
+      213: -8424760531857339049
+    second: Ranger Icons 5_1
+  - first:
+      213: 8877049364413704989
+    second: Ranger Icons 5_2
+  - first:
+      213: -6826815586020243522
+    second: Ranger Icons 5_3
+  - first:
+      213: -2748462282519804372
+    second: Ranger Icons 5_4
+  - first:
+      213: -7182182568638502677
+    second: Ranger Icons 5_5
+  - first:
+      213: 5895163346860505523
+    second: Ranger Icons 5_6
+  - first:
+      213: -7439695084991050496
+    second: Ranger Icons 5_7
+  - first:
+      213: -6001796073236134517
+    second: Ranger Icons 5_8
+  - first:
+      213: -6820423308847991250
+    second: Ranger Icons 5_9
+  - first:
+      213: -3747750816843553057
+    second: Ranger Icons 5_10
+  - first:
+      213: -7362517941236544007
+    second: Ranger Icons 5_11
+  - first:
+      213: 6494007026262592430
+    second: Ranger Icons 5_12
+  - first:
+      213: 6395290419913286424
+    second: Ranger Icons 5_13
+  - first:
+      213: 6259204206728788239
+    second: Ranger Icons 5_14
+  - first:
+      213: -8813540095552216897
+    second: Ranger Icons 5_15
+  - first:
+      213: -6614553328538699394
+    second: Ranger Icons 5_16
+  - first:
+      213: -7298652882453621605
+    second: Ranger Icons 5_17
+  - first:
+      213: -7474451474497311338
+    second: Ranger Icons 5_18
+  - first:
+      213: -2411970697365512102
+    second: Ranger Icons 5_19
+  - first:
+      213: 5280490754193673842
+    second: Ranger Icons 5_20
+  - first:
+      213: 1306431550290986507
+    second: Ranger Icons 5_21
+  - first:
+      213: 2399889778526272243
+    second: Ranger Icons 5_22
+  - first:
+      213: 8288226600469767251
+    second: Ranger Icons 5_23
+  - first:
+      213: 971780355042291716
+    second: Ranger Icons 5_24
+  - first:
+      213: 2072627281171531855
+    second: Ranger Icons 5_25
+  - first:
+      213: 1506331726906954310
+    second: Ranger Icons 5_26
+  - first:
+      213: 2414920559333575810
+    second: Ranger Icons 5_27
+  - first:
+      213: 8260864274410316817
+    second: Ranger Icons 5_28
+  - first:
+      213: 778261255287567486
+    second: Ranger Icons 5_29
+  - first:
+      213: -3769029005273779707
+    second: Ranger Icons 5_30
+  - first:
+      213: -8600084367643396110
+    second: Ranger Icons 5_31
+  - first:
+      213: 4636206574305412527
+    second: Ranger Icons 5_32
+  - first:
+      213: 7363887555168389874
+    second: Ranger Icons 5_33
+  - first:
+      213: -7228059099015249870
+    second: Ranger Icons 5_34
+  - first:
+      213: -8694531511884617789
+    second: Ranger Icons 5_35
+  - first:
+      213: -750868432368312141
+    second: Ranger Icons 5_36
+  - first:
+      213: -1104882205416507468
+    second: Ranger Icons 5_37
+  - first:
+      213: 3823100454300503372
+    second: Ranger Icons 5_38
+  - first:
+      213: -6254870892115719666
+    second: Ranger Icons 5_39
+  - first:
+      213: 9020746622542325291
+    second: Ranger Icons 5_40
+  - first:
+      213: -7832047634368944382
+    second: Ranger Icons 5_41
+  - first:
+      213: 4249047713013313975
+    second: Ranger Icons 5_42
+  - first:
+      213: -2120373865233832196
+    second: Ranger Icons 5_43
+  - first:
+      213: 4321422983623707000
+    second: Ranger Icons 5_44
+  - first:
+      213: -2529368899451650490
+    second: Ranger Icons 5_45
+  - first:
+      213: 8886131606418362399
+    second: Ranger Icons 5_46
+  - first:
+      213: 720969665047197300
+    second: Ranger Icons 5_47
+  - first:
+      213: 8454332629361685793
+    second: Ranger Icons 5_48
+  - first:
+      213: 6730343446565083624
+    second: Ranger Icons 5_49
+  - first:
+      213: -2344190250587179269
+    second: Ranger Icons 5_50
+  - first:
+      213: 607002078567070950
+    second: Ranger Icons 5_51
+  - first:
+      213: -7315321482656204276
+    second: Ranger Icons 5_52
+  - first:
+      213: -4123657102187424219
+    second: Ranger Icons 5_53
+  - first:
+      213: -9221647892518731214
+    second: Ranger Icons 5_54
+  - first:
+      213: -7513361165731954255
+    second: Ranger Icons 5_55
+  - first:
+      213: -8099080042856657743
+    second: Ranger Icons 5_56
+  - first:
+      213: 3434813569682959548
+    second: Ranger Icons 5_57
+  - first:
+      213: -7490951615563654122
+    second: Ranger Icons 5_58
+  - first:
+      213: 4830833949023454850
+    second: Ranger Icons 5_59
+  - first:
+      213: 5303928900909898212
+    second: Ranger Icons 5_60
+  - first:
+      213: 6976765396786240813
+    second: Ranger Icons 5_61
+  - first:
+      213: 6371827547463421228
+    second: Ranger Icons 5_62
+  - first:
+      213: 7297774348256261196
+    second: Ranger Icons 5_63
+  - first:
+      213: 5291569017983073556
+    second: Ranger Icons 5_64
+  - first:
+      213: -5454649214334269146
+    second: Ranger Icons 5_65
+  - first:
+      213: 1681847081080155972
+    second: Ranger Icons 5_66
+  - first:
+      213: 2999027889792616007
+    second: Ranger Icons 5_67
+  - first:
+      213: -150411591230546212
+    second: Ranger Icons 5_68
+  - first:
+      213: -7683129504054846785
+    second: Ranger Icons 5_69
+  - first:
+      213: -8260355095122188996
+    second: Ranger Icons 5_70
+  - first:
+      213: 3385222478019512378
+    second: Ranger Icons 5_71
+  - first:
+      213: -8696504386350691106
+    second: Ranger Icons 5_72
+  - first:
+      213: 3084948927610993495
+    second: Ranger Icons 5_73
+  - first:
+      213: -2815640916669433588
+    second: Ranger Icons 5_74
+  - first:
+      213: 6461253999560758022
+    second: Ranger Icons 5_75
+  - first:
+      213: 7755078144372569631
+    second: Ranger Icons 5_76
+  - first:
+      213: 2501879017401323647
+    second: Ranger Icons 5_77
+  - first:
+      213: -1215390936634637367
+    second: Ranger Icons 5_78
+  - first:
+      213: -6537069828737356350
+    second: Ranger Icons 5_79
+  - first:
+      213: -7263543650344377123
+    second: Ranger Icons 5_80
+  - first:
+      213: 8930071187758313762
+    second: Ranger Icons 5_81
+  - first:
+      213: 2488576184346364413
+    second: Ranger Icons 5_82
+  - first:
+      213: 1999792257862977228
+    second: Ranger Icons 5_83
+  - first:
+      213: 7098688492030619517
+    second: Ranger Icons 5_84
+  - first:
+      213: -2806441917067821830
+    second: Ranger Icons 5_85
+  - first:
+      213: 9051105063468878418
+    second: Ranger Icons 5_86
+  - first:
+      213: -5451553921157905375
+    second: Ranger Icons 5_87
+  - first:
+      213: -518130310932607362
+    second: Ranger Icons 5_88
+  - first:
+      213: -5833273360220394634
+    second: Ranger Icons 5_89
+  - first:
+      213: -7900719950095486382
+    second: Ranger Icons 5_90
+  - first:
+      213: 1948025214772858467
+    second: Ranger Icons 5_91
+  - first:
+      213: -6582166566685303332
+    second: Ranger Icons 5_92
+  - first:
+      213: 6331942303974329415
+    second: Ranger Icons 5_93
+  - first:
+      213: 8609024332073415041
+    second: Ranger Icons 5_94
+  - first:
+      213: 5664948739366716835
+    second: Ranger Icons 5_95
+  - first:
+      213: -4835566968249072111
+    second: Ranger Icons 5_96
+  - first:
+      213: -689890041186131353
+    second: Ranger Icons 5_97
+  - first:
+      213: 3451245652260691955
+    second: Ranger Icons 5_98
+  - first:
+      213: -7294252892298273735
+    second: Ranger Icons 5_99
+  - first:
+      213: -90090557129205932
+    second: Ranger Icons 5_100
+  - first:
+      213: -144126687901943257
+    second: Ranger Icons 5_101
+  - first:
+      213: -5712082619004440689
+    second: Ranger Icons 5_102
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Frost Arrow
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1017
+        width: 492
+        height: 519
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e01523b7ed215649bc87398f6781b66
+      internalID: 2034904829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Poison Arrow
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 1020
+        width: 531
+        height: 516
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08fa07bb3794bbe4d9635a77bad26542
+      internalID: -712170135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ensnaring Strike
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 522
+        width: 506
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 998072fc9a9ca6d49afa07a5e2c29420
+      internalID: -2025968129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wounding Strike
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 528
+        width: 518
+        height: 488
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e5435db08b53124bac1744048320330
+      internalID: 2079057629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chimera Shot
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 0
+        width: 511
+        height: 518
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65e40655f80940e47b362388feb86b9d
+      internalID: -1703863219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 898d89941e5481441a367e25f5f7faf9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1024.0,"y":1536.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Chimera Shot: -1703863219
+      Ensnaring Strike: -2025968129
+      Frost Arrow: 2034904829
+      Poison Arrow: -712170135
+      Wounding Strike: 2079057629
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
