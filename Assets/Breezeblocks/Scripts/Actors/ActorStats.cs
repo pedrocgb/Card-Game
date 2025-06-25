@@ -793,7 +793,6 @@ public class ActorStats : MonoBehaviour
     public void GainHaste(int amount, int duration)
     {
         AddStatusEffect(StatusEffects.Haste, amount, duration);
-        _actor.CurrentInitiative += amount;
     }
     #endregion
 

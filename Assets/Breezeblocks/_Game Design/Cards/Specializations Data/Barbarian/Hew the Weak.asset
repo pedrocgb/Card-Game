@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71a19dccf1348014ead4ded939d7251e, type: 3}
-  m_Name: Disarm
+  m_Name: Hew the Weak
   m_EditorClassIdentifier: 
-  _cardName: Disarm
-  _cardDescription: Deals 1 Damage. Apply 2x Lock.
+  _cardName: Hew the Weak
+  _cardDescription: Deals 7 Damages. Apply 2x Weakness for 1 turn.
   _cardLore: 
-  _cardOrigin: 2
-  _cardRarity: 2
+  _cardOrigin: 1
+  _cardRarity: 1
   _cardType: 4
-  _cardImage: {fileID: -1494844151, guid: a271d0c2fc904aa4ca5837fa4ed1bebf, type: 3}
+  _cardImage: {fileID: -7356215, guid: 0403b4fcade5ea749b8f9cca541c0434, type: 3}
   _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
-  _actionCost: 1
+  _actionCost: 2
   _consumeCard: 0
   _cardEffects:
   - EffectType: 0
-    Amount: 1
+    Amount: 7
     Duration: 0
     TargetSelf: 0
     NewCard: {fileID: 0}
-  - EffectType: 11
+  - EffectType: 3
     Amount: 2
     Duration: 1
     TargetSelf: 0
@@ -37,6 +37,6 @@ MonoBehaviour:
   _posIcon: {fileID: 21300000, guid: bebec778a275e3949ba8827f6030776b, type: 3}
   _targetType: 3
   _targetScope: 1
-  _targetPositions: 010000000200000003000000
+  _targetPositions: 0200000003000000
   _canTargetSelf: 0
-  _targetIcon: {fileID: 21300000, guid: 966071b4d24508a45b4bde1a681056e0, type: 3}
+  _targetIcon: {fileID: 21300000, guid: dd4bbd13063068b4580bb40807f8e675, type: 3}

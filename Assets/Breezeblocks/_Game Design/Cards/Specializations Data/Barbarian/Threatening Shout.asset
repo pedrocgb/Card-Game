@@ -10,33 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71a19dccf1348014ead4ded939d7251e, type: 3}
-  m_Name: Disarm
+  m_Name: Threatening Shout
   m_EditorClassIdentifier: 
-  _cardName: Disarm
-  _cardDescription: Deals 1 Damage. Apply 2x Lock.
+  _cardName: Threatening Shout
+  _cardDescription: '[ALL] Apply 2x Weakness for 1 turn.'
   _cardLore: 
-  _cardOrigin: 2
+  _cardOrigin: 1
   _cardRarity: 2
   _cardType: 4
-  _cardImage: {fileID: -1494844151, guid: a271d0c2fc904aa4ca5837fa4ed1bebf, type: 3}
+  _cardImage: {fileID: -1629785757, guid: 3fcbdc4add46fa44bbae401d4a8ab021, type: 3}
   _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
   _actionCost: 1
   _consumeCard: 0
   _cardEffects:
-  - EffectType: 0
-    Amount: 1
-    Duration: 0
-    TargetSelf: 0
-    NewCard: {fileID: 0}
-  - EffectType: 11
+  - EffectType: 3
     Amount: 2
     Duration: 1
     TargetSelf: 0
     NewCard: {fileID: 0}
-  _positions: 0100000002000000
-  _posIcon: {fileID: 21300000, guid: bebec778a275e3949ba8827f6030776b, type: 3}
+  _positions: 01000000020000000300000004000000
+  _posIcon: {fileID: 21300000, guid: 82ad41af0fecd294c8aa2ad5394e66aa, type: 3}
   _targetType: 3
-  _targetScope: 1
-  _targetPositions: 010000000200000003000000
+  _targetScope: 2
+  _targetPositions: 01000000020000000300000004000000
   _canTargetSelf: 0
-  _targetIcon: {fileID: 21300000, guid: 966071b4d24508a45b4bde1a681056e0, type: 3}
+  _targetIcon: {fileID: 21300000, guid: e41ebb9ac4c86fb438283eb392816e0e, type: 3}

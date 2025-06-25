@@ -1,0 +1,366 @@
+fileFormatVersion: 2
+guid: 169dcdbf35b0daa43af27ef4ad33d09b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1514315162651068219
+    second: Bararian Icons 6_0
+  - first:
+      213: 4722851473435862252
+    second: Bararian Icons 6_1
+  - first:
+      213: -2572061725596411330
+    second: Bararian Icons 6_2
+  - first:
+      213: 6130103242434549498
+    second: Bararian Icons 6_3
+  - first:
+      213: 8908516481957064405
+    second: Bararian Icons 6_4
+  - first:
+      213: 5124122037537150893
+    second: Bararian Icons 6_5
+  - first:
+      213: -6149211907491767099
+    second: Bararian Icons 6_6
+  - first:
+      213: -4818462124749846553
+    second: Bararian Icons 6_7
+  - first:
+      213: -8679438937581446980
+    second: Bararian Icons 6_8
+  - first:
+      213: 8217769834556033602
+    second: Bararian Icons 6_9
+  - first:
+      213: -1698196401094602444
+    second: Bararian Icons 6_10
+  - first:
+      213: -9009707791185557971
+    second: Bararian Icons 6_11
+  - first:
+      213: -5866827227604598540
+    second: Bararian Icons 6_12
+  - first:
+      213: -7177841239761942542
+    second: Bararian Icons 6_13
+  - first:
+      213: -6361616697998190436
+    second: Bararian Icons 6_14
+  - first:
+      213: -2861622890691442215
+    second: Bararian Icons 6_15
+  - first:
+      213: -6574610742140628608
+    second: Bararian Icons 6_16
+  - first:
+      213: 1545639165324228460
+    second: Bararian Icons 6_17
+  - first:
+      213: -2602447817825818056
+    second: Bararian Icons 6_18
+  - first:
+      213: -365544238596125170
+    second: Bararian Icons 6_19
+  - first:
+      213: -6537694536635956064
+    second: Bararian Icons 6_20
+  - first:
+      213: -9207096175897513293
+    second: Bararian Icons 6_21
+  - first:
+      213: -4170221411851646633
+    second: Bararian Icons 6_22
+  - first:
+      213: -4308968013321150297
+    second: Bararian Icons 6_23
+  - first:
+      213: -4423919347391125077
+    second: Bararian Icons 6_24
+  - first:
+      213: 7693039733599055020
+    second: Bararian Icons 6_25
+  - first:
+      213: 588109374006209468
+    second: Bararian Icons 6_26
+  - first:
+      213: 7281257889561307048
+    second: Bararian Icons 6_27
+  - first:
+      213: 706752368611256788
+    second: Bararian Icons 6_28
+  - first:
+      213: 579159265875751031
+    second: Bararian Icons 6_29
+  - first:
+      213: 8942939827866192912
+    second: Bararian Icons 6_30
+  - first:
+      213: -2126836022859758713
+    second: Bararian Icons 6_31
+  - first:
+      213: -5185383508410215201
+    second: Bararian Icons 6_32
+  - first:
+      213: 8239417101433409616
+    second: Bararian Icons 6_33
+  - first:
+      213: 4712203428353341603
+    second: Bararian Icons 6_34
+  - first:
+      213: 8207614072592908023
+    second: Bararian Icons 6_35
+  - first:
+      213: -6858649664172054227
+    second: Bararian Icons 6_36
+  - first:
+      213: 4565271348205633228
+    second: Bararian Icons 6_37
+  - first:
+      213: -8989476924636545090
+    second: Bararian Icons 6_38
+  - first:
+      213: -6788429831690273749
+    second: Bararian Icons 6_39
+  - first:
+      213: 6020479154823037412
+    second: Bararian Icons 6_40
+  - first:
+      213: 690999378413626965
+    second: Bararian Icons 6_41
+  - first:
+      213: 6174577676159857676
+    second: Bararian Icons 6_42
+  - first:
+      213: -7011649304422646143
+    second: Bararian Icons 6_43
+  - first:
+      213: 5356476014520126392
+    second: Bararian Icons 6_44
+  - first:
+      213: -5699967667102990213
+    second: Bararian Icons 6_45
+  - first:
+      213: 2808627558507872133
+    second: Bararian Icons 6_46
+  - first:
+      213: 7706769036277367260
+    second: Bararian Icons 6_47
+  - first:
+      213: -6950325418927720796
+    second: Bararian Icons 6_48
+  - first:
+      213: -8503381352756812892
+    second: Bararian Icons 6_49
+  - first:
+      213: 4210027405776238278
+    second: Bararian Icons 6_50
+  - first:
+      213: 2170570362130570752
+    second: Bararian Icons 6_51
+  - first:
+      213: -8159505199853580521
+    second: Bararian Icons 6_52
+  - first:
+      213: 5441378012538750484
+    second: Bararian Icons 6_53
+  - first:
+      213: -3374518704393765534
+    second: Bararian Icons 6_54
+  - first:
+      213: -5900674954458380352
+    second: Bararian Icons 6_55
+  - first:
+      213: -6793882460525141036
+    second: Bararian Icons 6_56
+  - first:
+      213: -8548760052056590394
+    second: Bararian Icons 6_57
+  - first:
+      213: 8504036464069797608
+    second: Bararian Icons 6_58
+  - first:
+      213: -5438189877263675744
+    second: Bararian Icons 6_59
+  - first:
+      213: -8096842874452219738
+    second: Bararian Icons 6_60
+  - first:
+      213: -2163532821676150847
+    second: Bararian Icons 6_61
+  - first:
+      213: -2985511767618088514
+    second: Bararian Icons 6_62
+  - first:
+      213: -3797699352970333153
+    second: Bararian Icons 6_63
+  - first:
+      213: 3843923879164644350
+    second: Bararian Icons 6_64
+  - first:
+      213: 2928333936997455436
+    second: Bararian Icons 6_65
+  - first:
+      213: 4756951586727151103
+    second: Bararian Icons 6_66
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Frenzied Attack
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 58
+        width: 780
+        height: 802
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a97ea25c594f944c9020bd8aeb661f8
+      internalID: -1093494585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blood Rite
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 88
+        width: 766
+        height: 832
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ce656a8257f76f4bbcdc86fabdccb7f
+      internalID: -1295945817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 24cf77cb15e76d843b7ccaef33f80480
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1536.0,"y":1024.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Blood Rite: -1295945817
+      Frenzied Attack: -1093494585
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

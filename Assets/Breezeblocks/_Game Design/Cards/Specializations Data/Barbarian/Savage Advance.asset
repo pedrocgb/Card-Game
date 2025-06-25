@@ -10,33 +10,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71a19dccf1348014ead4ded939d7251e, type: 3}
-  m_Name: Disarm
+  m_Name: Savage Advance
   m_EditorClassIdentifier: 
-  _cardName: Disarm
-  _cardDescription: Deals 1 Damage. Apply 2x Lock.
+  _cardName: Savage Advance
+  _cardDescription: Gain 2x Toughness. Move 2 foward.
   _cardLore: 
-  _cardOrigin: 2
-  _cardRarity: 2
-  _cardType: 4
-  _cardImage: {fileID: -1494844151, guid: a271d0c2fc904aa4ca5837fa4ed1bebf, type: 3}
+  _cardOrigin: 1
+  _cardRarity: 1
+  _cardType: 32
+  _cardImage: {fileID: -545620409, guid: 2ccce27aa29c6fb4eac53f00e427bb29, type: 3}
   _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
   _actionCost: 1
   _consumeCard: 0
   _cardEffects:
-  - EffectType: 0
-    Amount: 1
-    Duration: 0
-    TargetSelf: 0
-    NewCard: {fileID: 0}
-  - EffectType: 11
+  - EffectType: 107
     Amount: 2
     Duration: 1
     TargetSelf: 0
     NewCard: {fileID: 0}
-  _positions: 0100000002000000
-  _posIcon: {fileID: 21300000, guid: bebec778a275e3949ba8827f6030776b, type: 3}
-  _targetType: 3
+  - EffectType: 200
+    Amount: 2
+    Duration: 0
+    TargetSelf: 0
+    NewCard: {fileID: 0}
+  _positions: 0300000004000000
+  _posIcon: {fileID: 21300000, guid: 4db289aacf9b64c45b1ab4259ccc9e28, type: 3}
+  _targetType: 1
   _targetScope: 1
-  _targetPositions: 010000000200000003000000
+  _targetPositions: 
   _canTargetSelf: 0
-  _targetIcon: {fileID: 21300000, guid: 966071b4d24508a45b4bde1a681056e0, type: 3}
+  _targetIcon: {fileID: 21300000, guid: 0d1f5dd193ba94440b88866debc89101, type: 3}

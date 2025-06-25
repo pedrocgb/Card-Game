@@ -10,27 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71a19dccf1348014ead4ded939d7251e, type: 3}
-  m_Name: Disarm
+  m_Name: Open Wound
   m_EditorClassIdentifier: 
-  _cardName: Disarm
-  _cardDescription: Deals 1 Damage. Apply 2x Lock.
+  _cardName: Open Wound
+  _cardDescription: Apply 3x Vulnerability for 1 turn and 2x Bleed for 2 turns.
   _cardLore: 
-  _cardOrigin: 2
-  _cardRarity: 2
+  _cardOrigin: 1
+  _cardRarity: 1
   _cardType: 4
-  _cardImage: {fileID: -1494844151, guid: a271d0c2fc904aa4ca5837fa4ed1bebf, type: 3}
+  _cardImage: {fileID: 905657896, guid: 0403b4fcade5ea749b8f9cca541c0434, type: 3}
   _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
-  _actionCost: 1
+  _actionCost: 2
   _consumeCard: 0
   _cardEffects:
-  - EffectType: 0
-    Amount: 1
-    Duration: 0
+  - EffectType: 3
+    Amount: 3
+    Duration: 1
     TargetSelf: 0
     NewCard: {fileID: 0}
-  - EffectType: 11
+  - EffectType: 10
     Amount: 2
-    Duration: 1
+    Duration: 2
     TargetSelf: 0
     NewCard: {fileID: 0}
   _positions: 0100000002000000
