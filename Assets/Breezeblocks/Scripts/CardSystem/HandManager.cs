@@ -361,6 +361,8 @@ public class HandManager : MonoBehaviour
         seq.Play();
         RebuildHandLayout();
         yield return seq.WaitForCompletion();
+
+        TurnOrderUI.Instance.PlayerTurnButton(true);
     }
 
     /// <summary>

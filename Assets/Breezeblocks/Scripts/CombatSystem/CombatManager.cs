@@ -98,7 +98,6 @@ public class CombatManager : MonoBehaviour
         if (_currentCombatent is PlayerActor p)
         {
             PlayerTurnManager.Instance.StartPlayerTurn(p);
-            TurnOrderUI.Instance.PlayerTurnButton(true);
         }
         else if (_currentCombatent is EnemyActor e)
             EnemyTurnManager.Instance.StartEnemyTurn(e);
