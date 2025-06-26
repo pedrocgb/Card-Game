@@ -6,6 +6,7 @@ public static class UConstants
     public static int BURN_MULTIPLIER = 3;
     public static int BLEED_MULTIPLIER = 4;
     public static int MAX_RELICS_PER_ACTOR = 5;
+    public static int INITIATIVE_STATUS_MULTIPLIER = 2;
 
     public static float CARD_DRAW_FADE_DURATION = 0.2f;
     public static float CARD_DRAW_FADE_STAGGER = 0.1f;

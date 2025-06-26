@@ -10622,7 +10622,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -10642,11 +10642,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 527455087}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1626863874}
+        m_TargetAssemblyTypeName: TurnOrderUI, Assembly-CSharp
+        m_MethodName: PlayerTurnButton
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 706525089}
         m_TargetAssemblyTypeName: CombatManager, Assembly-CSharp
         m_MethodName: EndTurn
@@ -10688,7 +10700,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 0.7
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &527455088
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12428,9 +12440,6 @@ MonoBehaviour:
     parties:
     - enemyPrefabs:
       - {fileID: 11400000, guid: b7c9e5bf622e3a947948383ef33b878d, type: 2}
-      - {fileID: 11400000, guid: b7c9e5bf622e3a947948383ef33b878d, type: 2}
-      - {fileID: 11400000, guid: b7c9e5bf622e3a947948383ef33b878d, type: 2}
-      - {fileID: 11400000, guid: 8f997474dbeebee47bcfc0af30614c0c, type: 2}
   - level: 2
     parties:
     - enemyPrefabs:
@@ -21805,6 +21814,7 @@ MonoBehaviour:
   _enemyPortraitSprite: {fileID: 1674728996908312924, guid: 0532594bd219e8e4eb2cc1e1508cb31f, type: 3}
   _playerActionsSprite: {fileID: 1623072265, guid: 536957b338edfd744987864de172e28b, type: 3}
   _enemyActionsSprite: {fileID: -8997881579812785258, guid: 0532594bd219e8e4eb2cc1e1508cb31f, type: 3}
+  _playerPassTurnButton: {fileID: 527455086}
 --- !u!4 &1626863875
 Transform:
   m_ObjectHideFlags: 0

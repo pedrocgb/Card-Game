@@ -76,6 +76,11 @@ public class TurnOrderUI : MonoBehaviour
     [FoldoutGroup("Components/Combat Panel", expanded: true)]
     [SerializeField]
     private Sprite _enemyActionsSprite = null;
+
+
+    [FoldoutGroup("Components/Player", expanded: true)]
+    [SerializeField]
+    private Button _playerPassTurnButton = null;
     #endregion
 
     // ========================================================================
@@ -230,5 +235,9 @@ public class TurnOrderUI : MonoBehaviour
         _actorActionsPanel.sprite = isPlayer ? _playerActionsSprite : _enemyActionsSprite;
     }
 
+    public void PlayerTurnButton(bool interactable)
+    {
+        _playerPassTurnButton.interactable = interactable;
+    }
     // ========================================================================
 }

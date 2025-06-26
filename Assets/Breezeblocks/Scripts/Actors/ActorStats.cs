@@ -88,12 +88,16 @@ public class ActorStats : MonoBehaviour
     public void Initialize()
     {
         _isDead = false;
+        _isStunned = false;
+
         _maxHealth = _actor.Data.MaxHealth;
         _currentHealth = _maxHealth;
         _unmodifiedActionsPerTurn = _actor.Data.ActionsPerTurn;
         _actionsPerTurn = _unmodifiedActionsPerTurn;
         _currentActions = _actionsPerTurn;
         _cardBuy = _actor.Data.CardBuy;
+
+        RemoveAllStatusEffects();
 
         _ui.UpdateHealthUI();
         if (_actor.IsMyTurn)
@@ -250,6 +254,7 @@ public class ActorStats : MonoBehaviour
                     break;
                 case StatusEffects.Slow:
                     UpdateStatusDuration(effect);
+                    _actor.ResetInitiative();
                     break;
                 case StatusEffects.Stun:
                     _isStunned = false;
@@ -269,6 +274,7 @@ public class ActorStats : MonoBehaviour
 
                 case StatusEffects.Haste:
                     UpdateStatusDuration(effect);
+                    _actor.ResetInitiative();
                     break;
                 case StatusEffects.Toughness:
                     UpdateStatusDuration(effect);
@@ -328,9 +334,6 @@ public class ActorStats : MonoBehaviour
                     UpdateStatusDuration(effect);
                     break;
                 case StatusEffects.Riposte:
-                    UpdateStatusDuration(effect);
-                    break;
-                case StatusEffects.Haste:
                     UpdateStatusDuration(effect);
                     break;
             }
@@ -793,6 +796,7 @@ public class ActorStats : MonoBehaviour
     public void GainHaste(int amount, int duration)
     {
         AddStatusEffect(StatusEffects.Haste, amount, duration);
+        _actor.ChangeInitiative(amount);
     }
     #endregion
 
@@ -812,6 +816,7 @@ public class ActorStats : MonoBehaviour
     public void SufferSlow(int amount, int duration)
     {
         AddStatusEffect(StatusEffects.Slow, amount, duration);
+        _actor.ChangeInitiative(-amount);
     }
 
     public void SufferStun(int duration)

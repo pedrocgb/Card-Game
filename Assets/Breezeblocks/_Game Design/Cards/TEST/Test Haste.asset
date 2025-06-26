@@ -10,33 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71a19dccf1348014ead4ded939d7251e, type: 3}
-  m_Name: Rabies
+  m_Name: Test Haste
   m_EditorClassIdentifier: 
-  _cardName: Rabies
-  _cardDescription: Gain 2 Blocks and 1x Toughness for 1 turn.
+  _cardName: Test Slow
+  _cardDescription: Test Slow
   _cardLore: 
   _cardOrigin: 1
   _cardRarity: 1
-  _cardType: 2
-  _cardImage: {fileID: 7921548078594342549, guid: 877d4646e80dc7b4dad436103ba31b96, type: 3}
+  _cardType: 1
+  _cardImage: {fileID: -1577068087157668559, guid: 0ec2bc4433b15334ea8031cec49839f6, type: 3}
   _cardBackImage: {fileID: 1322017914, guid: 923d3210d4987a547be1e0efe176d040, type: 3}
   _actionCost: 0
   _consumeCard: 0
   _cardEffects:
-  - EffectType: 101
-    Amount: 2
-    Duration: 1
-    TargetSelf: 0
-    NewCard: {fileID: 0}
-  - EffectType: 107
-    Amount: 1
+  - EffectType: 4
+    Amount: 30
     Duration: 1
     TargetSelf: 0
     NewCard: {fileID: 0}
   _positions: 01000000020000000300000004000000
   _posIcon: {fileID: 21300000, guid: 82ad41af0fecd294c8aa2ad5394e66aa, type: 3}
-  _targetType: 1
+  _targetType: 2
   _targetScope: 1
-  _targetPositions: 
-  _canTargetSelf: 0
+  _targetPositions: 01000000020000000300000004000000
+  _canTargetSelf: 1
   _targetIcon: {fileID: 21300000, guid: 4a2fe08ef900a304a954bfc81bc411de, type: 3}

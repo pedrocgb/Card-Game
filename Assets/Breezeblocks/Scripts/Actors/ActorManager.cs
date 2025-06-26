@@ -122,9 +122,10 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
     #region Turn Methods
     public void RollInitiative()
     {
-        int init = UnityEngine.Random.Range(1, 9) + _initiativeBonus;
+        int roll = UnityEngine.Random.Range(1, 9);
+        int init = roll + _initiativeBonus;
         _currentInitiative = init;
-        Console.Log($"{name} rolled {init} + {_initiativeBonus} = {init + _initiativeBonus}");
+        Console.Log($"{name} rolled {roll} + {_initiativeBonus} = {init}");
     }
 
     public virtual void OnTurnStart()
@@ -277,7 +278,7 @@ public abstract class ActorManager : MonoBehaviour, IPointerEnterHandler, IPoint
 
     public void ChangeInitiative(int amount)
     {
-        _initiativeBonus += amount;
+        _initiativeBonus += (amount * UConstants.INITIATIVE_STATUS_MULTIPLIER);
     }
 
     public void ResetInitiative()
