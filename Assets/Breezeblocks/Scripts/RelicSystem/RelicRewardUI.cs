@@ -55,7 +55,7 @@ public class RelicRewardUI : MonoBehaviour
 
     public void ConfirmButton()
     {
-        _selectedActor.MyRelics.TryEquip(RelicRewardManager.GeneratedRelic);
+        _selectedActor.MyRelics.TryEquip(RewardManager.GeneratedRelic);
         GameManager.EndEvent(UEnums.MapNodeType.Treasure);
         _relicPanel.SetActive(false);
     }

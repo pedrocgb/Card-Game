@@ -2,10 +2,10 @@
 using UnityEngine;
 using static UEnums; 
 
-public class RelicRewardManager : MonoBehaviour
+public class RewardManager : MonoBehaviour
 {
     #region Variables and Properties
-    public static RelicRewardManager Instance = null;
+    public static RewardManager Instance = null;
 
     [Header("All possible relics")]
     [Tooltip("Drag in every RelicData asset that can ever drop")]
@@ -74,6 +74,16 @@ public class RelicRewardManager : MonoBehaviour
                 return;
             }
         }
+    }
+
+    public void GenerateGold()
+    {
+
+    }
+
+    public void GenerateSoul()
+    {
+
     }
 
     // ========================================================================

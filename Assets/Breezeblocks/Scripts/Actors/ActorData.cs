@@ -76,4 +76,22 @@ public class ActorData : ScriptableObject
     public int MaxHandSize => _maxHandSize;
 
     // ========================================================================
+
+    [FoldoutGroup("Actor Info/Rewards", expanded: true)]
+    [SerializeField]
+    private int _minGold = 0;
+    [FoldoutGroup("Actor Info/Rewards", expanded: true)]
+    [SerializeField]
+    private int _maxGold = 0;
+    public int GenerateGold { get { return Random.Range(_minGold, _maxGold); } }
+
+    [FoldoutGroup("Actor Info/Rewards", expanded: true)]
+    [SerializeField]
+    private int _minSoul = 0;
+    [FoldoutGroup("Actor Info/Rewards", expanded: true)]
+    [SerializeField]
+    private int _maxSoul = 0;
+    public int GenerateSoul { get { return Random.Range(_minSoul, _maxSoul); } }
+
+    // ========================================================================
 }

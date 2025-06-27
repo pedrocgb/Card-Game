@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
                 break;
 
             case MapNodeType.Treasure:
-                RelicRewardManager.Instance.GenerateRelic();
+                RewardManager.Instance.GenerateRelic();
                 break;
 
             case MapNodeType.Elite:
