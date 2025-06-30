@@ -12,6 +12,7 @@ public static class UConstants
     public static float CARD_DRAW_FADE_STAGGER = 0.1f;
     public static float CARD_DRAW_START_ANCHORED_X = -300f;
     public static float CARD_DRAW_ANCHORED_OFFSET = 150f;
+    public static float ENEMY_CARD_DRAW_ANCHORED_OFFSET = 200f;
 
     public static Color BASIC_DAMAGE_COLOR = Color.red;
     public static Color BURN_DAMAGE_COLOR = Color.orange;

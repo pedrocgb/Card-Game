@@ -241,7 +241,7 @@ public class HandManager : MonoBehaviour
             var ui = _currentEnemyHandUI[i];
             var rt = ui.MyRectTransform;
             float targetX = UConstants.CARD_DRAW_START_ANCHORED_X
-                          + i * UConstants.CARD_DRAW_ANCHORED_OFFSET;
+                          + i * UConstants.ENEMY_CARD_DRAW_ANCHORED_OFFSET;
             Vector2 pos = new Vector2(targetX, 0f);
 
             rt.DOKill();
